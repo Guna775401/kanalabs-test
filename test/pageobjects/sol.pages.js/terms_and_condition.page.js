@@ -1,0 +1,1 @@
+//android.view.ViewGroup[@content-desc="goToTermsAndConditions"]/android.widget.TextView

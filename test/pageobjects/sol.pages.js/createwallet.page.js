@@ -24,49 +24,97 @@ class CreateWalletPage {
     get backBtn() {
         return $('~goBackFromNameWallet');
     }
-    //Need element set pin
-    get inputsetPin() {
-        return $('~settYourPinContentWrapper');
+    
+    get loginPin1() {
+        return $('~pin1');
     }
-    get inputconfirmPin() {
-        return $('~confirmPinContentWrapper');
+    get loginPin2() {
+        return $('~pin2');
     }
-//android.view.ViewGroup[@content-desc="settYourPinContentWrapper"]/android.view.ViewGroup/android.view.ViewGroup[1]
-    //android.view.ViewGroup[@content-desc="settYourPinContentWrapper"]/android.view.ViewGroup/android.view.ViewGroup[1]
-    //android.view.ViewGroup[@content-desc="confirmPinContentWrapper"]/android.view.ViewGroup/android.view.ViewGroup[1]
+    get loginPin3() {
+        return $('~pin3');
+    }
+    get loginPin4() {
+        return $('~pin4');
+    }
+    get loginPin5() {
+        return $('~pin5');
+    }
+    get loginPin6() {
+        return $('~pin6');
+    }
 
-    async firstnextBtn() {
+async firstnextBtn() {
+    await this.nextBtn.waitForDisplayed({ timeout: 120000 });
         await (await this.nextBtn).click();
         await (await this.nextBtn).click();
         await (await this.nextBtn).click();
-    }
-    open() {
-        return super.firstnextBtn();
-    };
+        };
 
-    async createwallet(walletName, setpin, confirmpin) {
+    async createwallet(walletName) {
         // await createWalletPage.nextBtn.waitForDisplayed({timeout : 60000}) 
         await (await this.solWallet).click();
         await (await this.createNewWalletbtn).click();
         await (await this.inputwalletName).setValue(walletName);
         driver.hideKeyboard();
         await (await this.continueBtn).click();
-       // await (await this.inputsetPin).click(); 
-        //await (await this.inputsetPin).setValue(setpin);
-      //  await (await this.inputconfirmPin).setValue(confirmpin);
+     
+        }
 
+    async enterSetPin(pin){
+        await (await this.loginPin1).waitForDisplayed({timeout:240000});
         
-        // Need skip function
-        
+        await (await this.loginPin1).click(); 
+        await (await this.loginPin1).addValue(pin);
+        await (await this.loginPin2).click(); 
+        await (await this.loginPin2).addValue(pin);
+        await (await this.loginPin3).click(); 
+        await (await this.loginPin3).addValue(pin);
+        await (await this.loginPin4).click(); 
+        await (await this.loginPin4).addValue(pin);
+        await (await this.loginPin5).click(); 
+        await (await this.loginPin5).addValue(pin);
+        await (await this.loginPin6).click(); 
+        await (await this.loginPin6).addValue(pin);
+
     }
-    open() {
-        return super.createwallet();
-    };
+    async enterConfirmPin(pin){
+        await (await this.loginPin1).waitForDisplayed({timeout:240000});
+        
+        await (await this.loginPin1).click(); 
+        await (await this.loginPin1).addValue(pin);
+        await (await this.loginPin2).click(); 
+        await (await this.loginPin2).addValue(pin);
+        await (await this.loginPin3).click(); 
+        await (await this.loginPin3).addValue(pin);
+        await (await this.loginPin4).click(); 
+        await (await this.loginPin4).addValue(pin);
+        await (await this.loginPin5).click(); 
+        await (await this.loginPin5).addValue(pin);
+        await (await this.loginPin6).click(); 
+        await (await this.loginPin6).addValue(pin);
 
-    // Secure or skip use securenow page
+ }
+    async enterLoginPin(pin){
+        await (await this.loginPin1).waitForDisplayed({timeout:240000});
+        
+        await (await this.loginPin1).click(); 
+        await (await this.loginPin1).addValue(pin);
+        await (await this.loginPin2).click(); 
+        await (await this.loginPin2).addValue(pin);
+        await (await this.loginPin3).click(); 
+        await (await this.loginPin3).addValue(pin);
+        await (await this.loginPin4).click(); 
+        await (await this.loginPin4).addValue(pin);
+        await (await this.loginPin5).click(); 
+        await (await this.loginPin5).addValue(pin);
+        await (await this.loginPin6).click(); 
+        await (await this.loginPin6).addValue(pin);
 
 
+    }
 
-
+    
+   
 }
 module.exports = new CreateWalletPage();

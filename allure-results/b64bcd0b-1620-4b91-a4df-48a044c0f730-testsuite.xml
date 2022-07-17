@@ -1,0 +1,67 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657867747340' stop='1657867911023'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657867747343' status='passed' stop='1657867780690'>
+            <name>CS1: Verify Invalid wallet name while Sol account create</name>
+            <title>CS1: Verify Invalid wallet name while Sol account create</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1657867780692' status='broken' stop='1657867900705'>
+            <name>CS2: Verify Setpin confirm pin mismatch while come popup handling</name>
+            <title>CS2: Verify Setpin confirm pin mismatch while come popup handling</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timeout of 120000ms exceeded. The execution in the test "Create wallet Sol CS2: Verify Setpin confirm pin mismatch while come popup handling" took too long. Try to reduce the run time or increase your timeout for test specs (https://webdriver.io/docs/timeouts). (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js)</message>
+                <stack-trace>Error: Timeout of 120000ms exceeded. The execution in the test "Create wallet Sol CS2: Verify Setpin confirm pin mismatch while come popup handling" took too long. Try to reduce the run time or increase your timeout for test specs (https://webdriver.io/docs/timeouts). (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js)
+                    at createTimeoutError (C:\Users\Guna\kanalabs-test\node_modules\mocha\lib\errors.js:498:15)
+                    at Test.Runnable._timeoutError (C:\Users\Guna\kanalabs-test\node_modules\mocha\lib\runnable.js:431:10)
+                    at Timeout.&lt;anonymous> (C:\Users\Guna\kanalabs-test\node_modules\mocha\lib\runnable.js:246:24)
+                    at listOnTimeout (internal/timers.js:557:17)
+                    at processTimers (internal/timers.js:500:7)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1657867900709' status='broken' stop='1657867911020'>
+            <name>CS3: Create new Sol wallet vaild wallet name</name>
+            <title>CS3: Create new Sol wallet vaild wallet name</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Can't call click on element with selector "~solHomeDashboardBackIcon" because element wasn't found</message>
+                <stack-trace>Error: Can't call click on element with selector "~solHomeDashboardBackIcon" because element wasn't found
+                    at implicitWait (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:20:29)
+                    at async Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async LogoutPage.logout (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\logut.page.js:21:9)
+                    at async Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:78:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

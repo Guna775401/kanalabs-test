@@ -1,0 +1,62 @@
+{
+  "uid" : "43123d4c284fef0c",
+  "name" : "CS3: Create new Sol wallet vaild wallet name",
+  "fullName" : "Create wallet Sol.CS3: Create new Sol wallet vaild wallet name",
+  "historyId" : "e91d451cd0b89923adc75b0e1a07ddea",
+  "time" : {
+    "start" : 1657825315755,
+    "stop" : 1657825378620,
+    "duration" : 62865
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "Cannot read property 'waitForDisplayed' of undefined",
+  "statusTrace" : "TypeError: Cannot read property 'waitForDisplayed' of undefined\n                    at DashBoardPage.verifySolDash (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\dashboard.page.js:45:36)\n                    at Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js:83:29)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS3: Create new Sol wallet vaild wallet name"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "43123d4c284fef0c.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

@@ -1,0 +1,62 @@
+{
+  "uid" : "70633869c28999f5",
+  "name" : "CS1: Verify Invalid wallet name while Sol account create",
+  "fullName" : "Create wallet Sol.CS1: Verify Invalid wallet name while Sol account create",
+  "historyId" : "c286bcc861479882c9684dc5b8a5beda",
+  "time" : {
+    "start" : 1657811211937,
+    "stop" : 1657811248785,
+    "duration" : 36848
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+  "statusTrace" : "Error: Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"\n                    at CreateWalletPage.backButtonClickable (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\createwallet.page.js:69:33)\n                    at Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js:20:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS1: Verify Invalid wallet name while Sol account create"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "70633869c28999f5.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

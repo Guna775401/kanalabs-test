@@ -13,5 +13,10 @@ class TurboPage{
     get sendSolToken() {
         return $('~lendSol');
     }
+    async verifyTurbobtn () {
+        await expect(this.turboBtn).toBeDisplayed();
+    }
+    
+
 }
 module.exports = new TurboPage();

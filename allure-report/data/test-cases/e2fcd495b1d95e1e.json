@@ -1,0 +1,62 @@
+{
+  "uid" : "e2fcd495b1d95e1e",
+  "name" : "CS3: Create new Sol wallet vaild wallet name",
+  "fullName" : "Create wallet Sol.CS3: Create new Sol wallet vaild wallet name",
+  "historyId" : "e91d451cd0b89923adc75b0e1a07ddea",
+  "time" : {
+    "start" : 1657891410359,
+    "stop" : 1657891530395,
+    "duration" : 120036
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "Timeout of 120000ms exceeded. The execution in the test \"Create wallet Sol CS3: Create new Sol wallet vaild wallet name\" took too long. Try to reduce the run time or increase your timeout for test specs (https://webdriver.io/docs/timeouts). (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js)",
+  "statusTrace" : "Error: Timeout of 120000ms exceeded. The execution in the test \"Create wallet Sol CS3: Create new Sol wallet vaild wallet name\" took too long. Try to reduce the run time or increase your timeout for test specs (https://webdriver.io/docs/timeouts). (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js)\n                    at createTimeoutError (C:\\Users\\Guna\\kanalabs-test\\node_modules\\mocha\\lib\\errors.js:498:15)\n                    at Test.Runnable._timeoutError (C:\\Users\\Guna\\kanalabs-test\\node_modules\\mocha\\lib\\runnable.js:431:10)\n                    at Timeout.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\node_modules\\mocha\\lib\\runnable.js:246:24)\n                    at listOnTimeout (internal/timers.js:557:17)\n                    at processTimers (internal/timers.js:500:7)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS3: Create new Sol wallet vaild wallet name"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e2fcd495b1d95e1e.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

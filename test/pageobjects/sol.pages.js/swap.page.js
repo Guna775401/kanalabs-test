@@ -41,6 +41,10 @@ class SwapPage {
         return $('~token1Amount');
     }
     
+    async verifySwapbtn () {
+        await expect(this.swapBtn).toBeDisplayed();
+    }
+
 
 }
 module.exports = new SwapPage(); 

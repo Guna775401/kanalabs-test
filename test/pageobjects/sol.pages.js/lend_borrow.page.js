@@ -1,5 +1,6 @@
 class Lend_BorrowPage {
-    get sendSolToken() {
+
+    get lend_borrowBtn() {
         return $('~lendSol');
     }
     get startLendBtn() {
@@ -15,7 +16,9 @@ class Lend_BorrowPage {
         return $('~lendSol');
     }
 // Need some elements 
-
+async verifyLend_Borrowbtn () {
+    await expect(this.lend_borrowBtn).toBeDisplayed();
+}
 
 }
 module.exports = new Lend_BorrowPage();

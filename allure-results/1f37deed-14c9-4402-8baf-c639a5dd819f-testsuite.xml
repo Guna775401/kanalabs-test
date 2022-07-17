@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657825216315' stop='1657825378622'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657825216315' status='passed' stop='1657825247034'>
+            <name>CS1: Verify Invalid wallet name while Sol account create</name>
+            <title>CS1: Verify Invalid wallet name while Sol account create</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1657825247034' status='broken' stop='1657825315750'>
+            <name>CS2: Verify Setpin confirm pin mismatch while come popup handling</name>
+            <title>CS2: Verify Setpin confirm pin mismatch while come popup handling</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Cannot read property 'waitForDisplayed' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'waitForDisplayed' of undefined
+                    at DashBoardPage.verifySolDash (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\dashboard.page.js:45:36)
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:68:28)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1657825315755' status='broken' stop='1657825378620'>
+            <name>CS3: Create new Sol wallet vaild wallet name</name>
+            <title>CS3: Create new Sol wallet vaild wallet name</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Cannot read property 'waitForDisplayed' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'waitForDisplayed' of undefined
+                    at DashBoardPage.verifySolDash (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\dashboard.page.js:45:36)
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:83:29)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,3 +1,5 @@
+const allure = require('allure-commandline')
+
 exports.config = {
     //
     // ====================
@@ -25,10 +27,25 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        //'./test/specs/**/*.js'
+        [
+       // './test/specs/**/*.js',
         //'./test/specs/login.js'
-        './test/specs/createwallet.js'
-],
+       './test/specs/createwallet.js',
+       //'./test/specs/importwallet.js',
+       './test/specs/dashboard.js'
+
+
+
+       
+        ],
+    ],
+
+//  suites: {
+//      specs: [
+//          './test/specs/createwallet.js',
+//          './test/specs/importwallet.js'
+//      ],
+//    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -58,14 +75,29 @@ exports.config = {
     
      capabilities: [{
     
-        platformName: 'Android',
-//'appium:automationName': 'UiAutomator2',
-  'appium:platformVersion': '11',
-  'appium:deviceName': 'Moto g71',
-  'appium:appPackage': 'com.kanaswapapp',
-  'appium:appActivity': 'com.kanaswapapp.MainActivity',
-  'appium:udid': 'ZD2225BZ8T',
-  'appium:ignoreHiddenApiPolicyError': 'true',
+        platformName: "Android",
+//"appium:automationName": "UiAutomator1",
+  "appium:platformVersion": "11",
+  "appium:deviceName": "Moto g71",
+  "appium:appPackage": "com.kanaswapapp",
+  "appium:appActivity": "com.kanaswapapp.MainActivity",
+  "appium:udid": "ZD2225BZ8T",
+  //"appium:ignoreHiddenApiPolicyError": "true",
+  //"appium:autoGrantPermission": true
+
+
+//   platformName: "Android",
+//   "appium:automationName": "UiAutomator1",
+//     "appium:platformVersion": "9",
+//     "appium:deviceName": "realme 2",
+//    "appium:appPackage": "com.kanaswapapp",
+//     "appium:appActivity": "com.kanaswapapp.MainActivity",
+//     "appium:udid": "a1a7aa9a",
+ //"appium:ignoreHiddenApiPolicyError": "true",
+//     //"appium:autoGrantPermission": true
+
+
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -147,10 +179,35 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
+   
     reporters: ['spec'],
+    // reporters: [['allure', {
+    //     outputDir: 'allure-results',
+    //     disableWebdriverStepsReporting: true,
+    //     disableWebdriverScreenshotsReporting: false,
+    // }]],
 
+    //  onComplete: function() {
+    //     const reportError = new Error('Could not generate Allure report')
+    //     const generation = allure(['generate', 'allure-results', '--clean'])
+    //     return new Promise((resolve, reject) => {
+    //         const generationTimeout = setTimeout(
+    //             () => reject(reportError),
+    //             5000)
 
-    
+    //         generation.on('exit', function(exitCode) {
+    //             clearTimeout(generationTimeout)
+
+    //             if (exitCode !== 0) {
+    //                 return reject(reportError)
+    //             }
+
+    //             console.log('Allure report successfully generated')
+    //             resolve()
+    //         })
+    //     })
+    //},
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -252,7 +309,11 @@ exports.config = {
      * @param {Boolean} result.passed    true if test has passed, otherwise false
      * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    //  afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    //     if (error) {
+    //          browser.takeScreenshot();
+    //       }
+    
     // },
 
 

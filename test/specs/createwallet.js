@@ -1,62 +1,78 @@
-const { AppiumDriver } = require('appium/build/lib/appium');
+//const assert = require("assert");
+//const { AppiumDriver } = require('appium/build/lib/appium');
+const logindata = require('../../testdata/logindata');
 const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
+const DashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
+const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const RemindMeLaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
-const SendPage = require('../pageobjects/sol.pages.js/send.page');
-//const LoginPage = require('../pageobjects/login.page');
-//const SecurePage = require('../pageobjects/secure.page');
+const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
 
-describe('My Login application', () => {
 
-    it('should first time login with valid credentials', async () => {
+// new UiSelector().text("Confirm your Pin").className("android.widget.TextView")
+//new UiSelector().text("Confirm Pin doesen't match").className(" ")
 
-        await CreateWalletPage.nextBtn.waitForDisplayed({ timeout: 60000 });
+// await browser.pause(10000);
+
+describe('Create wallet Sol', () => {
+
+    it('CS1: Verify Invalid wallet name while Sol account create', async () => {
+
         await CreateWalletPage.firstnextBtn();
-        await CreateWalletPage.createwallet('gunatest0965');
-        await CreateWalletPage.enterSetPin('000000');
-        await CreateWalletPage.enterConfirmPin('000000');
+       // console.log(await expect(CreateWalletPage.solWallet).toBeDisplayed());
+        await CreateWalletPage.createwallet(logindata.invaildwalletname);
+        await CreateWalletPage.backButtonClick();
+        // Need to handle popup 
+        // try this
+        // await expect(SecurePage.flashAlert).toBeExisting();
+    });
+
+    it('CS2: Verify Setpin confirm pin mismatch while come popup handling', async () => {
+
+        await (await CreateWalletPage.createNewWalletbtn).click();
+        await (await CreateWalletPage.inputwalletName).click();
+        await (await CreateWalletPage.inputwalletName).setValue(logindata.vaildwalletname);
+        driver.hideKeyboard();
+        await CreateWalletPage.backButtonExisting();
+        await (await CreateWalletPage.continueBtn).click();
+       
+        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
+        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinone);
+
+        // Need to handle popup
+        // try this
+        // await expect(SecurePage.flashAlert).toBeExisting();
+
+        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
+        //toastAnimatedContainer
+        // const alret = await $('id=toastAnimatedContainer');
+        //const alrettxt = alret.getText();
+        //await console.log(alrettxt);
+        //assert.deepEqual(alrettxt, "Confirm Pin doesen't match");
+        // alret.click();
+        //waitForDisplayed({ timeout: 120000 });
+        //await (await $('~toastAnimatedContainer'));
+        //console.log('Alert text',await driver.getAlertText());
+        // await driver.acceptAlert();
+        // await driver.closeApp();
         await RemindMeLaterPage.remindmelater();
+        await DashboardPage.verifySolDash();
     });
 
-    xit('should login with Invalid credentials', async () => {
-        //need to logout function
-        //reset function
-        await CreateWalletPage.solWallet.waitForDisplayed({ timeout: 60000 });
-        //await CreateWalletPage.firstnextBtn();
-        await CreateWalletPage.createwallet('gunatest0965', '000001', '000000');
-        //handle the alert popup
-        await driver.back();
-    });
+    it.only('CS3: Create new Sol wallet vaild wallet name', async () => {
 
-    xit('send amount', async () => {
-        await SendPage.sendBtn.waitForDisplayed({ timeout: 120000 });
-        await SendPage.sendbuttonclick();
-        await SendPage.toAddressWallet('6qLQAekc6VUBqsCMuLoRHT6o3m4vELSureKo3rdGeMew ');
-        await SendPage.enterAmount.waitForDisplayed({ timeout: 120000 });
-        await SendPage.enteramountinput('1');
-        // await RemindMeLaterPage.remindmelater();
+       // await LogoutPage.logout();
+       // await resetwalletPage.clickResetWalletbutton();
+        //    await CreateWalletPage.solWallet.waitForDisplayed({ timeout: 60000 });
+        await CreateWalletPage.firstnextBtn(); // need to delete
+        await CreateWalletPage.createwallet(logindata.vaildwalletname);
+        await CreateWalletPage.entersetPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
+        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
+        await RemindMeLaterPage.remindmelater();
+        await DashboardPage.verifySolDash();
+
     });
 
 
-
-    // await createWalletPage.nextBtn.waitForDisplayed({timeout : 60000})    
-    // await createWalletPage.nextBtn.click();
-    // await createWalletPage.nextBtn.click();
-    // await createWalletPage.nextBtn.click();
-    // await createWalletPage.solWallet.click();
-    // await createWalletPage.createNewWalletbtn.click();
-    // await createWalletPage.walletName.click();
-    // // Back
-    // await createWalletPage.walletName.setValue("gunasssssjh");
-    // await createWalletPage.continueBtn.click();
-    // await browser.pause(10000);
-
-    //     await LoginPage.open();
-
-    //     await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-    //     await expect(SecurePage.flashAlert).toBeExisting();
-    //     await expect(SecurePage.flashAlert).toHaveTextContaining(
-    //         'You logged into a secure area!');
-    //});
 
 });
 

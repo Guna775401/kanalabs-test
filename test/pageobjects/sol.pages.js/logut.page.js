@@ -1,6 +1,12 @@
-class LogoutPage{
 
-    get logoutTab() {
+class LogoutPage {
+    // get menuTab() {
+    //     return $('~setDrawerOpen');
+    // }
+    get menuTab() {
+        return $('~solHomeDashboardBackIcon');
+    }
+     get logoutTab() {
         return $('~solDrawerLogoutBtn');
     }
     get logoutYes() {
@@ -10,6 +16,14 @@ class LogoutPage{
         return $('~showLogoutModalSol');
     }
 
-    
+
+    async logout() {
+        await this.menuTab.click();
+        await (await this.logoutTab).click();
+        await (await this.logoutYes).click();
+
+    };
+
+
 }
 module.exports = new LogoutPage();

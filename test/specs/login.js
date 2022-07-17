@@ -5,7 +5,7 @@ const createWalletPage = require('../pageobjects/sol.pages.js/createwallet.page'
 
 describe('My Login application', () => {
     
-  it('should login with valid credentials', async () => {
+  xit('should login with valid credentials', async () => {
     
 await createWalletPage.nextBtn.waitForDisplayed({timeout : 60000})    
 await createWalletPage.nextBtn.click();
@@ -17,7 +17,7 @@ await createWalletPage.walletName.click();
 // Back
 await createWalletPage.walletName.setValue("gunasssssjh");
 await createWalletPage.continueBtn.click();
-await browser.pause(10000);
+//await browser.pause(10000);
     
         //     await LoginPage.open();
 

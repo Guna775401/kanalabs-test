@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657905277077' stop='1657905280006'>
+    <name>Verify Dashboard Sol</name>
+    <title>Verify Dashboard Sol</title>
+    <test-cases>
+        <test-case start='1657905277080' status='passed' stop='1657905280005'>
+            <name>DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet </name>
+            <title>DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet </title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

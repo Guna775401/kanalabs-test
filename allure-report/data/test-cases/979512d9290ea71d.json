@@ -1,0 +1,62 @@
+{
+  "uid" : "979512d9290ea71d",
+  "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+  "fullName" : "Create wallet Sol.CS2: Verify Setpin confirm pin mismatch while come popup handling",
+  "historyId" : "c92991f21f3862b032729781d01f3c72",
+  "time" : {
+    "start" : 1657825247034,
+    "stop" : 1657825315750,
+    "duration" : 68716
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "Cannot read property 'waitForDisplayed' of undefined",
+  "statusTrace" : "TypeError: Cannot read property 'waitForDisplayed' of undefined\n                    at DashBoardPage.verifySolDash (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\dashboard.page.js:45:36)\n                    at Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js:68:28)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS2: Verify Setpin confirm pin mismatch while come popup handling"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "979512d9290ea71d.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

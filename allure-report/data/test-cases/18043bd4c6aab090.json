@@ -1,0 +1,62 @@
+{
+  "uid" : "18043bd4c6aab090",
+  "name" : "IS3: Import acount invalid seed pharse with invaild name",
+  "fullName" : "Import Sol Account.IS3: Import acount invalid seed pharse with invaild name",
+  "historyId" : "fbef34ccc3fd5af6474e88ef1b424c37",
+  "time" : {
+    "start" : 1657857925398,
+    "stop" : 1657857925529,
+    "duration" : 131
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details",
+  "statusTrace" : "unknown error: An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details\n                    at getErrorFromResponseBody (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriver\\build\\utils.js:198:12)\n                    at NodeJSRequest._request (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriver\\build\\request\\index.js:166:60)\n                    at async Browser.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Browser.$ (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\commands\\browser\\$.js:91:17)\n                    at async Browser.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Importwallet.importwallet (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\importwallet.page.js:43:16)\n                    at async Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\importwallet.js:31:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testClass",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testMethod",
+    "value" : "IS3: Import acount invalid seed pharse with invaild name"
+  }, {
+    "name" : "package",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "18043bd4c6aab090.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

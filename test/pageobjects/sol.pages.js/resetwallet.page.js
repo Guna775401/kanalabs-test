@@ -13,5 +13,11 @@ get resetwalletBtn() {
     }
 
 
+async clickResetWalletbutton(){
+await (await this.resetwalletBtn).click();
+await (await this.understoodEraseWalletBtn).click();
+
+}
+
 }
 module.exports = new ResetWalletPage();

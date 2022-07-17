@@ -16,6 +16,15 @@ class StakePage{
     get backBtn() {
         return $('~goBackFromStaking');
     }
+
+    async verifyStakebtn () {
+        await expect(this.stakeBtn).toBeDisplayed();
+    }
+
+
+
+
+
 }
 
 module.exports = new StakePage();

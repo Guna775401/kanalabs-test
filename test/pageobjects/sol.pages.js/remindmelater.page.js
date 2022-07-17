@@ -16,15 +16,13 @@ get secureNowBtn(){
 
 
 async remindmelater() {
-await (await this.remindMeLaterBtn).waitForDisplayed({timeout:240000});
+await (await this.remindMeLaterBtn).waitForDisplayed({timeout:300000});
 await (await this.remindMeLaterBtn).click();
 await (await this.checkBox).click();
 await (await this.skipNowBtn).click();
 }
 
-open(){
-    return super.open('remindmelater');
-}
+
 
 
 }

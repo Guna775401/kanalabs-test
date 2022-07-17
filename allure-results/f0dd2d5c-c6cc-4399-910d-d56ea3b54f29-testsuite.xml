@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657806451558' stop='1657806515907'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657806451592' status='broken' stop='1657806515900'>
+            <name>IS5: Import acount valid seed pharse with vaild name</name>
+            <title>IS5: Import acount valid seed pharse with vaild name</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>except is not defined</message>
+                <stack-trace>ReferenceError: except is not defined
+                    at DashBoardPage.verifySolDash (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\dashboard.page.js:59:10)
+                    at async Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\importwallet.js:57:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

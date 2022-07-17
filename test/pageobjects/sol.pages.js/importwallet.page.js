@@ -1,40 +1,54 @@
+const createwalletPage = require("./createwallet.page");
+
 class Importwallet {
 
 
-    get importWalletBtn(){
+    get importWalletBtn() {
         return $('~goToImportWallet');
     }
 
-    get seedPharse(){
+    get seedPharse() {
         return $('~seedPhrase');
     }
 
-    get walletName(){
+    get walletName() {
         return $('~walletName');
     }
-    get importBtn(){
+    get importBtn() {
         return $('~importAccount');
     }
     // back button element need
-    get backBtn(){
+    get backBtn() {
         return $('~');
     }
     //Need to need element
-    get eyeIcon(){
+    get eyeIcon() {
         return $('~');
     }
 
-// Setpin Elemet
-    get setPin(){
+    // Setpin Elemet
+    get setPin() {
         return $('~');
     }
-get confirmPin(){
+    get confirmPin() {
         return $('~');
     }
     // Confirm pin Back Button
-    get confirmPinbackBtn(){
+    get confirmPinbackBtn() {
         return $('~goBackFromPinValid');
     }
-    
-    
+
+
+    async importwallet(seeds, name) {
+        await (await this.importWalletBtn).click();
+        await (await this.seedPharse).setValue(seeds);
+        await (await this.walletName).setValue(name);
+        await (await this.importBtn).click();
+    }
+
+    async clickbackbtn() {
+        await (await this.backBtn).click();
+
+    }
 }
+module.exports = new Importwallet();

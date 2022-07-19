@@ -16,6 +16,10 @@ class TurboPage{
     async verifyTurbobtn () {
         await expect(this.turboBtn).toBeDisplayed();
     }
+    async verifyTurbobtnClickable () {
+        await expect(this.turboBtn).toBeClickable();
+    }
+    
     
 
 }

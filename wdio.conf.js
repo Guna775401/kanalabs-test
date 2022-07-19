@@ -31,8 +31,11 @@ exports.config = {
        // './test/specs/**/*.js',
         //'./test/specs/login.js'
        './test/specs/createwallet.js',
-       //'./test/specs/importwallet.js',
-       './test/specs/dashboard.js'
+       './test/specs/importwallet.js',
+       './test/specs/dashboard.js',
+       './test/specs/login.js',
+       './test/specs/send.js',
+
 
 
 
@@ -76,7 +79,7 @@ exports.config = {
      capabilities: [{
     
         platformName: "Android",
-//"appium:automationName": "UiAutomator1",
+"appium:automationName": "UiAutomator2",
   "appium:platformVersion": "11",
   "appium:deviceName": "Moto g71",
   "appium:appPackage": "com.kanaswapapp",

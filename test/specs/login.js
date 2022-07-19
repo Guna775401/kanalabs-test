@@ -1,33 +1,30 @@
 const { AppiumDriver } = require('appium/build/lib/appium');
 const createWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
-//const LoginPage = require('../pageobjects/login.page');
+const LoginPage = require('../pageobjects/login.page');
+const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
+const { async } = require('../pageobjects/sol.pages.js/dashboard.page');
+const loginPage = require('../pageobjects/login.page');
 //const SecurePage = require('../pageobjects/secure.page');
 
 describe('My Login application', () => {
     
-  xit('should login with valid credentials', async () => {
-    
-await createWalletPage.nextBtn.waitForDisplayed({timeout : 60000})    
-await createWalletPage.nextBtn.click();
-await createWalletPage.nextBtn.click();
-await createWalletPage.nextBtn.click();
-await createWalletPage.solWallet.click();
-await createWalletPage.createNewWalletbtn.click();
-await createWalletPage.walletName.click();
-// Back
-await createWalletPage.walletName.setValue("gunasssssjh");
-await createWalletPage.continueBtn.click();
-//await browser.pause(10000);
-    
-        //     await LoginPage.open();
+  it('LS1: Verify Login Invaild Pin popup handling', async () => {
+    await LogoutPage.logout();
+    await createWalletPage.enterPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZONE);
+    // Need to popup handle
+});
 
-    //     await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-    //     await expect(SecurePage.flashAlert).toBeExisting();
-    //     await expect(SecurePage.flashAlert).toHaveTextContaining(
-    //         'You logged into a secure area!');
-    //});
-console.log('Hello world');
-     });
+it('LS2: Verify Welcome back tittle and Eye icon and Reset Wallet button Displayed or Not', async () => {
+await loginPage.verifyWelcomeBack();
+await loginPage.verifyEyeiconClickable();
+await loginPage.verifyResetWalletBtn();
+})
+
+// Need to Login
+it(' ', async () => {
+
+
+})
       });
 
 

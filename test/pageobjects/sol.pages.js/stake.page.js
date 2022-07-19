@@ -20,9 +20,12 @@ class StakePage{
     async verifyStakebtn () {
         await expect(this.stakeBtn).toBeDisplayed();
     }
+    async verifyStakebtnClickable () {
+        await expect(this.stakeBtn).toBeClickable();
+    }
 
 
-
+    
 
 
 }

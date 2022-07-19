@@ -16,7 +16,7 @@ class SendPage {
     get toAddressOrScanText() {
         return $('//android.view.ViewGroup[@content-desc="contentViewDismiss"]/android.widget.TextView[3]');
     }
-    
+
     get selectTokensToTransferText() {
         return $('//android.view.ViewGroup[@content-desc="contentViewDismiss"]/android.widget.TextView[4]');
     }
@@ -49,7 +49,7 @@ class SendPage {
     get enterAmountMax() {
         return $('~enterAmountMaxSol');
     }
-    
+
     get selectTokenText() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[3]');
     }
@@ -63,52 +63,93 @@ class SendPage {
         return $('~goToHomeDone');
     }
 
-    async verifySendscreen(){
-    const send = 'new UiSelector().text("Send").className("android.widget.TextView")'
-    const sendscreen = await (await $(`android=${send}`))
-    await expect(sendscreen).toBeDisplayed();
-}
+    async verifySendscreen() {
+        const send = 'new UiSelector().text("Send").className("android.widget.TextView")'
+        const sendscreen = await (await $(`android=${send}`))
+        await expect(sendscreen).toBeDisplayed();
+    }
+    // Display
 
-async verifySendbtn () {
-    await expect(this.sendBtn).toBeDisplayed();
-}
+    async verifySendbtn() {
+        await expect(this.sendBtn).toBeDisplayed();
+    }
 
+    // Clickable function
 
+    async verifySendbtnClickable() {
+        await expect(this.sendBtn).toBeClickable();
+    }
 
+    // Click function 
 
-
+    async sendbuttonclick() {
+        await this.sendBtn.waitForDisplayed({ timeout: 120000 });
+        await (await this.sendBtn).click();
+    }
+   
 //android.view.ViewGroup[@content-desc="enterAmountMaxSol"]/android.widget.TextView
+
+    // need to write but no token , after sometime try
+
+    async toAddressWallet(publicAddress) {
+        await (await this.inputAddressField).click();
+        await (await this.inputAddressField).setValue(publicAddress);
+        driver.hideKeyboard();
+        await (await this.continueBtn).click();
+    }
+    async enteramountinput(amount) {
+        await (await this.enterAmount).setValue(amount);
+        driver.hideKeyboard();
+        }
+
+      async verifySendDoneBtn(){
+        await this.sendDonebutton.waitForDisplayed({ timeout: 10000 });
+        await expect(this.sendDonebutton).toBeDisplayed();
+      }  
     
-// need to write but no token , after sometime try
+  async slideToSend(){
+    const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup')
+    //const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup');
+        await browser.touchAction({
+            action: 'tap',
+            x: 700,
+        element: swipe
+        })
+    }
+
+    async slideToSend1(){
+        //const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup')
+    const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup');
+    await swipe.touchAction([
+        'press',
+        { action: 'moveTo', element: swipe },
+        'release'
+    ])
+    }
+    async slideToSend2(){
+    //    const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup')
+        const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup');
+        await swipe.touchAction([
+            'press',
+            { action: 'moveTo', x: 700},
+            'release'
+        ])
+
+    }
+
+    async slideToSend3(){
+        //const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup');
+        const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup')
+        //const swipe = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup')
+        await swipe.touchAction({
+            action: 'tap', x: 700,
+        })
+
+    }
 
 
-async sendbuttonclick(){
-await (await this.sendBtn).click();
 }
-open(){
-    return super.sendbuttonclick();
-}
-
-async toAddressWallet(publicAddress){
-    await (await this.inputAddressField).setValue(publicAddress);
-driver.hideKeyboard();
-await (await this.continueBtn).click();
-
-}
-open(){
-    return super.toAddressWallet();
-}
-async enteramountinput(amount){
-    await (await this.enterAmount).setValue(amount);
-driver.hideKeyboard();
-// need slide to stake 
-}
-open(){
-    return super.enteramountinput();
-}
 
 
 
-
-}
 module.exports = new SendPage();

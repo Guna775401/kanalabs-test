@@ -19,25 +19,24 @@ class Importwallet {
     }
     // back button element need
     get backBtn() {
-        return $('~');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup');
     }
     //Need to need element
     get eyeIcon() {
         return $('~');
     }
 
-    // Setpin Elemet
-    get setPin() {
-        return $('~');
-    }
-    get confirmPin() {
-        return $('~');
-    }
-    // Confirm pin Back Button
+    // Confirm pin to Set Pin Back Button
     get confirmPinbackBtn() {
         return $('~goBackFromPinValid');
     }
-
+    async verifyConfirmPinToSetPinBackBtnClickable(){
+        await expect(this.confirmPinbackBtn).toBeClickable();
+    }
+    
+async verifyConfirmPinToSetPinBackBtDisplay(){
+    await expect(this.confirmPinbackBtn).toBeDisplayed();
+}
 
     async importwallet(seeds, name) {
         await (await this.importWalletBtn).click();
@@ -50,5 +49,7 @@ class Importwallet {
         await (await this.backBtn).click();
 
     }
+
+    
 }
 module.exports = new Importwallet();

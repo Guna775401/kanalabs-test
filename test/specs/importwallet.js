@@ -4,15 +4,18 @@ const ImportWalletPage = require('../pageobjects/sol.pages.js/importwallet.page'
 const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const remindmelaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
 const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
-const logindata = require('../../testdata/logindata');
+const menutabsPage = require('../pageobjects/sol.pages.js/menutabs.page');
+const importwalletPage = require('../pageobjects/sol.pages.js/importwallet.page');
+require('dotenv').config()
 
-describe('Import Sol Account', () => {
+describe.only('Import Sol Account', () => {
 
     it('IS1: Import acount valid seed pharse with invaild name', async () => {
         await LogoutPage.logout();
         await resetwalletPage.clickResetWalletbutton();
         await CreateWalletPage.clickSolWalletlogo();
-        await ImportWalletPage.importwallet(logindata.vaildSeedPhrase, logindata.inVaildWalletname1);
+        // need to INVAILDSEEDPHRASE to VAILDSEEDPHRASE
+        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
         // handle the popup
 
         await ImportWalletPage.clickbackbtn();
@@ -20,38 +23,38 @@ describe('Import Sol Account', () => {
 
     it('IS2: Import acount invalid seed pharse with vaild name ', async () => {
 
-        await ImportWalletPage.importwallet(logindata.inVaildSeedPhrase, logindata.vaildwalletname);
+        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
         // Need to handle the popup
         await ImportWalletPage.clickbackbtn();
     });
     it('IS3: Import acount invalid seed pharse with invaild name', async () => {
 
-        await ImportWalletPage.importwallet(logindata.inVaildSeedPhrase, logindata.invaildwalletname);
+        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
         // Need to handle the popup
         await ImportWalletPage.clickbackbtn();
     });
     it('IS4: Import acount Setpin confirmpin mismatch popup handling', async () => {
 
-        await ImportWalletPage.importwallet(logindata.vaildSeedPhrase, logindata.vaildwalletname);
-        await CreateWalletPage.enterPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinone);
+        await ImportWalletPage.importwallet(process.env.VAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
+        // need verify button clickable or not
+        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await importwalletPage.verifyConfirmPinToSetPinBackBtDisplay();
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
         // Need to handle the popup
-        await ImportWalletPage.clickbackbtn();
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
-        await remindmelaterPage.remindmelater();
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+       // await remindmelaterPage.remindmelater();
         await dashboardPage.verifySolDash();
     });
-    it('IS5: Import acount valid seed pharse with vaild name', async () => {
+    it.only('IS5: Import acount valid seed pharse with vaild name', async () => {
 
-        //  await CreateWalletPage.firstnextBtn();
-        await LogoutPage.logout();
-        await resetwalletPage.clickResetWalletbutton();
+          await CreateWalletPage.firstnextBtn();
+       // await LogoutPage.logout();
+       // await resetwalletPage.clickResetWalletbutton();
         await CreateWalletPage.clickSolWalletlogo();
-        await ImportWalletPage.importwallet(logindata.vaildSeedPhrase, logindata.vaildwalletname);
-        await CreateWalletPage.enterPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
-        await remindmelaterPage.remindmelater();
-        await dashboardPage.verifySolDash();
+        await ImportWalletPage.importwallet(process.env.SEEDDEMO, process.env.VAILDWALLETNAME);
+        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+       await dashboardPage.verifySolDash();
 
     });
 

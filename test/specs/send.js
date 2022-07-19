@@ -1,11 +1,21 @@
+const sendPage = require("../pageobjects/sol.pages.js/send.page");
 
 
+describe('Solana Send DevNet', () => {
 
-xit('send amount', async () => {
-    await SendPage.sendBtn.waitForDisplayed({ timeout: 120000 });
-    await SendPage.sendbuttonclick();
-    await SendPage.toAddressWallet('6qLQAekc6VUBqsCMuLoRHT6o3m4vELSureKo3rdGeMew ');
-    await SendPage.enterAmount.waitForDisplayed({ timeout: 120000 });
-    await SendPage.enteramountinput('1');
-    // await RemindMeLaterPage.remindmelater();
+// Need to Login
+
+
+it.only('SS2: Verify Valid public address Send tokens Sol Maxout amount and Valid amount', async () => {
+
+   await sendPage.sendbuttonclick();
+   await sendPage.toAddressWallet(process.env.SOLADDRESSVAILD);
+    await sendPage.enteramountinput(process.env.SOLAMOUNTONE);
+    await sendPage.slideToSend1();
+    await sendPage.verifySendDoneBtn();
+    
 });
+
+
+
+})

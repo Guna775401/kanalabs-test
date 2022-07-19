@@ -1,11 +1,12 @@
 //const assert = require("assert");
 //const { AppiumDriver } = require('appium/build/lib/appium');
-const logindata = require('../../testdata/logindata');
 const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
 const DashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
 const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const RemindMeLaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
 const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
+require('dotenv').config()
+
 
 
 // new UiSelector().text("Confirm your Pin").className("android.widget.TextView")
@@ -19,7 +20,7 @@ describe('Create wallet Sol', () => {
 
         await CreateWalletPage.firstnextBtn();
        // console.log(await expect(CreateWalletPage.solWallet).toBeDisplayed());
-        await CreateWalletPage.createwallet(logindata.invaildwalletname);
+        await CreateWalletPage.createwallet(process.env.INVAILDWALLETNAME);
         await CreateWalletPage.backButtonClick();
         // Need to handle popup 
         // try this
@@ -30,19 +31,19 @@ describe('Create wallet Sol', () => {
 
         await (await CreateWalletPage.createNewWalletbtn).click();
         await (await CreateWalletPage.inputwalletName).click();
-        await (await CreateWalletPage.inputwalletName).setValue(logindata.vaildwalletname);
+        await (await CreateWalletPage.inputwalletName).setValue(process.env.VAILDWALLETNAME);
         driver.hideKeyboard();
         await CreateWalletPage.backButtonExisting();
         await (await CreateWalletPage.continueBtn).click();
        
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinone);
+        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
 
         // Need to handle popup
         // try this
         // await expect(SecurePage.flashAlert).toBeExisting();
 
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
         //toastAnimatedContainer
         // const alret = await $('id=toastAnimatedContainer');
         //const alrettxt = alret.getText();
@@ -58,15 +59,15 @@ describe('Create wallet Sol', () => {
         await DashboardPage.verifySolDash();
     });
 
-    it.only('CS3: Create new Sol wallet vaild wallet name', async () => {
-
-       // await LogoutPage.logout();
-       // await resetwalletPage.clickResetWalletbutton();
-        //    await CreateWalletPage.solWallet.waitForDisplayed({ timeout: 60000 });
-        await CreateWalletPage.firstnextBtn(); // need to delete
-        await CreateWalletPage.createwallet(logindata.vaildwalletname);
-        await CreateWalletPage.entersetPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
-        await CreateWalletPage.enterConfirmPin(logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero, logindata.pinzero);
+    it('CS3: Create new Sol wallet vaild wallet name', async () => {
+       //console.log(process.env.NAME)
+        await LogoutPage.logout();
+       await resetwalletPage.clickResetWalletbutton();
+        //  await CreateWalletPage.solWallet.waitForDisplayed({ timeout: 60000 });
+        //await CreateWalletPage.firstnextBtn(); // need to delete
+        await CreateWalletPage.createwallet(process.env.VAILDWALLETNAME);
+        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
         await DashboardPage.verifySolDash();
 

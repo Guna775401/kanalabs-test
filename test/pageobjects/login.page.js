@@ -1,21 +1,35 @@
+const resetwalletPage = require("./sol.pages.js/resetwallet.page");
+
 class Loginpage {
 
-    get enterPin() {
-        return $('~nextButton');
-    }
-
-    get eyeShowBtn() {
+    //android.view.ViewGroup[@content-desc="showBtn"]/android.view.ViewGroup
+    get eyeIcon() {
         return $('~showBtn');
     }
 
-
-    async login(pin) {
-        await (await this.enterPin).setValue(pin);
+    // Need to Welcome back! Text
+    async verifyWelcomeBack() {
+        const welcomeBack = 'new UiSelector().text("Welcome Back").className("")'
+        const welcomeback = await $(`android=${welcomeBack}`)
+        await welcomeback.waitForDisplayed({ timeout: 120000 })
+        await expect(welcomeback).toBeDisplayed();
     }
 
-    open() {
-        return super.open('login');
+    async verifyResetWalletBtn() {
+        await expect(resetwalletPage.resetwalletBtn).toBeDisplayed();
+        await resetwalletPage.resetwalletBtn.click();
+        await expect(resetwalletPage.cancelBtn).toBeDisplayed();
+        await expect(resetwalletPage.understoodEraseWalletBtn).toBeDisplayed();
+        await resetwalletPage.cancelBtn.click();
     }
+
+    async verifyEyeicon() {
+        await expect(this.eyeIcon).toBeDisplayed();
+    }
+    async verifyEyeiconClickable() {
+        await expect(this.eyeIcon).toBeClickable();
+    }
+
 
 }
 

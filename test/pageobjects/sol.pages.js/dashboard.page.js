@@ -68,7 +68,8 @@ class DashBoardPage {
     async verifySolDash() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
         const walletSol = 'new UiSelector().text("Wallet").className("android.widget.TextView")'
-        const walletSOL = await (await $(`android=${walletSol}`))
+        const walletSOL = await $(`android=${walletSol}`)
+        await walletSOL.waitForDisplayed({timeout:120000})
         await expect(walletSOL).toBeDisplayed();
     }
 
@@ -85,6 +86,7 @@ class DashBoardPage {
 
     async verifymenuoption() {
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await (await this.menuTab).click();
         await expect(this.menuTab).toBeExisting();
     }
 
@@ -100,17 +102,38 @@ class DashBoardPage {
         await expect(this.holdlingValueAmount).toBeDisplayed();
     }
 
-
-
-
-
-
-
-
-    async() {
-
-
+    // Clickable function
+    async verifyCopyclipboardAndQRcode_Clickable(){
+        await expect(this.copyClipboard).toBeClickable();
+        await expect(this.nftBtn).toBeClickable();
     }
+    async verifyNeonWalletClickable() {
+        await expect(this.neonWallet).toBeClickable();
+    }
+
+    async verifyHistorytabClickable() {
+        await expect(this.historyTab).toBeClickable();
+    }
+
+    async verifyTokentabClickable() {
+        await expect(this.tokensTab).toBeClickable();
+    }
+    async verifyCreate_ViewwalletClickable() {
+        await expect(this.create_Viewwallet).toBeClickable();
+    }
+
+
+
+// Display function
+
+ async () {
+
+}
+
+   async() {
+}
+
+
 
 
 }

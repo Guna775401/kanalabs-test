@@ -45,6 +45,10 @@ class SwapPage {
         await expect(this.swapBtn).toBeDisplayed();
     }
 
+    async verifySwapbtnClickable () {
+        await expect(this.swapBtn).toBeClickable();
+    }
+
 
 }
 module.exports = new SwapPage(); 

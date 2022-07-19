@@ -3,7 +3,7 @@ const { createwallet } = require("./createwallet.page");
 const { logout } = require("./logut.page");
 
 
-class MenuTabsOptions{
+class MenuTabsOptions {
 
     get menuTab() {
         return $('~solHomeDashboardBackIcon');
@@ -26,96 +26,141 @@ class MenuTabsOptions{
 
 
 
-// one click dark mode two click dark mode
-get solDarkmode() {
-    return $('~solDarkModeSwitch');
-}
+    // one click dark mode two click dark mode
+    get solDarkmode() {
+        return $('~solDarkModeSwitch');
+    }
 
-get language() {
-    return $('~');
-}
+    get language() {
+        return $('~');
+    }
 
-//ChangePin tab
+    //ChangePin tab
 
-get dashboardChangePin() {
-    return $('~solDrawerChangePinBtn');
-}
+    get dashboardChangePin() {
+        return $('~solDrawerChangePinBtn');
+    }
 
-// First backbutton change pin to dashboard
-get changepinToBackDash() {
-    return $('~goBackFromSetPin');
-}
-// Setpin after confirm pin screen to set pin
-get confirmPintoSetpinBackbtn(){
-    return $('~goBackFromPinValid');
-   
-}
+    // First backbutton change pin to dashboard
+    get changepinToBackDash() {
+        return $('~goBackFromSetPin');
+    }
+    // Setpin after confirm pin screen to set pin
+    get confirmPintoSetpinBackbtn() {
+        return $('~goBackFromPinValid');
 
+    }
 
-get logoutTab() {
-    return $('~solDrawerLogoutBtn');
-}
-get cancelButton() {
-    return $('~SolDrawerClose');
-}
+    get logoutTab() {
+        return $('~solDrawerLogoutBtn');
+    }
+    get cancelButton() {
+        return $('~SolDrawerClose');
+    }
 
-get show_seed_phrase(){
-    return $('~solDrawerShowPhraseBtn')
-}
+    get show_seed_phrase() {
+        return $('~solDrawerShowPhraseBtn')
+    }
 
-async verifyMenuTab(){
-    await expect(this.menuTab).toBeDisplayed();
-}
-async clickMenuTab(){
-    await this.menuTab.click();
-}
-async verifyNetwork(){
-    await expect(this.dashboardNetworkTab).toBeDisplayed();
-}
-async clickChangePin(){
-    await this.dashboardChangePin.click();
-}
+    // Displayed Functions
 
-async verifyLanguage(){
-    await expect(this).toBeDisplayed();
-}
-async verifyChangePinTab(){
-    await expect(this.dashboardChangePin).toBeDisplayed();
-}
-async verifyLightMode(){
-    await expect(this.solDarkmode).toBeDisplayed();
-}
-async verifyLogout(){
-    await expect(this.logoutTab).toBeDisplayed();
-}
-async verifyShow_Seed_phrase(){
-    await expect(this.show_seed_phrase).toBeDisplayed();
-}
+    async verifyMenuTab() {
+        await expect(this.menuTab).toBeDisplayed();
+    }
+    async verifyNetwork() {
+        await expect(this.dashboardNetworkTab).toBeDisplayed();
+    }
+    async verifyLanguage() {
+        await expect(this).toBeDisplayed();
+    }
+    async verifyChangePinTab() {
+        await expect(this.dashboardChangePin).toBeDisplayed();
+    }
+    async verifyLightMode() {
+        await expect(this.solDarkmode).toBeDisplayed();
+    }
+    async verifyLogout() {
+        await expect(this.logoutTab).toBeDisplayed();
+    }
+    async verifyShow_Seed_phrase() {
+        await expect(this.show_seed_phrase).toBeDisplayed();
+    }
 
-async changeToMaintoDev(){
+    // Click Function
+
+    async clickMenuTab() {
+        await this.menuTab.click();
+    }
+    async clickChangePin() {
+        await this.dashboardChangePin.click();
+    }
+    async clickCancelbtn() {
+        await (await this.cancelButton).click();
+    }
+
+    // Clickable Functions
+
+    async verifyMenuTabClickable() {
+        await expect(this.menuTab).toBeClickable();
+    }
+    async verifyNetworkClickable() {
+        await expect(this.dashboardNetworkTab).toBeClickable();
+    }
+    async verifyChangePinClickable() {
+        await this.dashboardChangePin.toBeClickable();
+    }
+    async verifyLanguageClickable() {
+        await expect(this).toBeClickable();
+    }
+    async verifyLightModeClickable() {
+        await expect(this.solDarkmode).toBeClickable();
+    }
+    async verifyLogoutClickable() {
+        await expect(this.logoutTab).toBeClickable();
+    }
+    async verifyShow_Seed_phraseClickable() {
+        await expect(this.show_seed_phrase).toBeClickable();
+    }
+async verifyCLickable_DevNetAndMainNet(){
     await this.menuTab.click();
     await this.dashboardNetworkTab.click();
-    await this.devNetworkTab.click();
-    await (await this.backBtnNetwork).click();
-    }
-
-async changeToDevtoMain(){
-await this.menuTab.click();
-await this.dashboardNetworkTab.click();
-await this.mainNetworkTab.click();
-await (await this.backBtnNetwork).click();
+    await this.devNetworkTab.toBeClickable();
+    await this.mainNetworkTab.toBeClickable();
+    await this.backBtnNetwork.click();
 }
 
-async changeToLightMode(){
-await (await this.solDarkmode).click();
+async verifyClickable_MainNet() {
+    await this.dashboardNetworkTab.toBeClickable();
+    await this.mainNetworkTab.toBeClickable();
+    await (await this.backBtnNetwork).toBeClickable();
 }
 
-async changeToDarkMode(){
-    await (await this.solDarkmode).click();
+
+
+    async changeToMaintoDev() {
+        await this.menuTab.click();
+        await this.dashboardNetworkTab.click();
+        await this.devNetworkTab.click();
+        await (await this.backBtnNetwork).click();
     }
-    
-async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
-    await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
+
+    async changeToDevtoMain() {
+        await this.menuTab.click();
+        await this.dashboardNetworkTab.click();
+        await this.mainNetworkTab.click();
+        await (await this.backBtnNetwork).click();
+    }
+
+    async changeToLightMode() {
+        await (await this.solDarkmode).click();
+    }
+
+    async changeToDarkMode() {
+        await (await this.solDarkmode).click();
+    }
+
+    async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
+        await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);
@@ -127,41 +172,47 @@ async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
     }
     async changePin_SetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
         await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
-    
-            await (await createwalletPage.loginPin1).click();
-            await (await createwalletPage.loginPin1).setValue(pin1);
-            await (await createwalletPage.loginPin2).setValue(pin2);
-            await (await createwalletPage.loginPin3).setValue(pin3);
-            await (await createwalletPage.loginPin4).setValue(pin4);
-            await (await createwalletPage.loginPin5).setValue(pin5);
-            await (await createwalletPage.loginPin6).setValue(pin6);
-         }
-         async changePin_ConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-            await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
-        
-                await (await createwalletPage.loginPin1).click();
-                await (await createwalletPage.loginPin1).setValue(pin1);
-                await (await createwalletPage.loginPin2).setValue(pin2);
-                await (await createwalletPage.loginPin3).setValue(pin3);
-                await (await createwalletPage.loginPin4).setValue(pin4);
-                await (await createwalletPage.loginPin5).setValue(pin5);
-                await (await createwalletPage.loginPin6).setValue(pin6);
-             }
-        
-async verifychangePintoDashBackbtn(){
-    await expect(this.changepinToBackDash).toBeDisplayed();
-}
-async verifyConfirmPinToSetPin(){
-    await expect(this.confirmPintoSetpinBackbtn).toBeDisplayed();
-}
 
-open (){
-return super.ChangePin();
-}
+        await (await createwalletPage.loginPin1).click();
+        await (await createwalletPage.loginPin1).setValue(pin1);
+        await (await createwalletPage.loginPin2).setValue(pin2);
+        await (await createwalletPage.loginPin3).setValue(pin3);
+        await (await createwalletPage.loginPin4).setValue(pin4);
+        await (await createwalletPage.loginPin5).setValue(pin5);
+        await (await createwalletPage.loginPin6).setValue(pin6);
+    }
+    async changePin_ConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
+        await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
+
+        await (await createwalletPage.loginPin1).click();
+        await (await createwalletPage.loginPin1).setValue(pin1);
+        await (await createwalletPage.loginPin2).setValue(pin2);
+        await (await createwalletPage.loginPin3).setValue(pin3);
+        await (await createwalletPage.loginPin4).setValue(pin4);
+        await (await createwalletPage.loginPin5).setValue(pin5);
+        await (await createwalletPage.loginPin6).setValue(pin6);
+    }
+
+    async verifychangePintoDashBackbtn() {
+        await expect(this.changepinToBackDash).toBeDisplayed();
+    }
+    async verifyConfirmPinToSetPin() {
+        await expect(this.confirmPintoSetpinBackbtn).toBeDisplayed();
+    }
+
+    async verifyConfirmPinToSetPinClickable() {
+        await expect(this.confirmPintoSetpinBackbtn).toBeClickable();
+    }
 
 
 
-//Language tabs element need    
+    open() {
+        return super.ChangePin();
+    }
+
+
+
+    //Language tabs element need    
 
 
 

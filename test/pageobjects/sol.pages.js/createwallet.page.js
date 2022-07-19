@@ -70,7 +70,7 @@ class CreateWalletPage {
         const backbutton = $('~goBackFromNameWallet');
         await backbutton.waitForDisplayed({ timeout: 60000 });
         // need to clickable but now click using
-        await expect (backbutton).toBeExisting();
+        await expect(backbutton).toBeClickable();
     }
     async backButtonExisting() {
         const backbutton = $('~goBackFromNameWallet');
@@ -84,15 +84,10 @@ class CreateWalletPage {
 
         await (await this.loginPin1).click();
         await (await this.loginPin1).setValue(pin1);
-        await (await this.loginPin2).click();
         await (await this.loginPin2).setValue(pin2);
-        await (await this.loginPin3).click();
         await (await this.loginPin3).setValue(pin3);
-        await (await this.loginPin4).click();
         await (await this.loginPin4).setValue(pin4);
-        await (await this.loginPin5).click();
         await (await this.loginPin5).setValue(pin5);
-        await (await this.loginPin6).click();
         await (await this.loginPin6).setValue(pin6);
     }
 
@@ -123,5 +118,19 @@ class CreateWalletPage {
         await (await this.loginPin5).setValue(pin5);
         await (await this.loginPin6).setValue(pin6);
     }
+
+    async enterPin(pin1,pin2,pin3,pin4,pin5,pin6) {
+        await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
+
+        await (await this.loginPin1).click();
+        await (await this.loginPin1).setValue(pin1);
+        await (await this.loginPin2).setValue(pin2);
+        await (await this.loginPin3).setValue(pin3);
+        await (await this.loginPin4).setValue(pin4);
+        await (await this.loginPin5).setValue(pin5);
+        await (await this.loginPin6).setValue(pin6);
+    }
+
+
 }
 module.exports = new CreateWalletPage();

@@ -19,6 +19,11 @@ class Lend_BorrowPage {
 async verifyLend_Borrowbtn () {
     await expect(this.lend_borrowBtn).toBeDisplayed();
 }
+async verifyLend_BorrowbtnClickable () {
+    await expect(this.lend_borrowBtn).toBeClickable();
+}
+
+
 
 }
 module.exports = new Lend_BorrowPage();

@@ -15,14 +15,11 @@ class LogoutPage {
     get cancelBtn() {
         return $('~showLogoutModalSol');
     }
-
-
     async logout() {
-        await this.menuTab.click();
+        await (await this.menuTab).click();
         await (await this.logoutTab).click();
         await (await this.logoutYes).click();
-
-    };
+    }
 
 
 }

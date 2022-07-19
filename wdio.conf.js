@@ -31,10 +31,10 @@ exports.config = {
        // './test/specs/**/*.js',
         //'./test/specs/login.js'
        './test/specs/createwallet.js',
-       './test/specs/importwallet.js',
+     //  './test/specs/importwallet.js',
        './test/specs/dashboard.js',
-       './test/specs/login.js',
-       './test/specs/send.js',
+       //'./test/specs/login.js',
+       //'./test/specs/send.js',
 
 
 

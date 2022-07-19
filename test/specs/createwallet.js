@@ -1,6 +1,8 @@
 //const assert = require("assert");
 //const { AppiumDriver } = require('appium/build/lib/appium');
+const createneonwalletPage = require('../pageobjects/neon.pages.js/createneonwallet.page');
 const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
+const { async } = require('../pageobjects/sol.pages.js/dashboard.page');
 const DashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
 const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const RemindMeLaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
@@ -14,67 +16,82 @@ require('dotenv').config()
 
 // await browser.pause(10000);
 
-describe('Create wallet Sol', () => {
+describe.only('Create wallet Sol', () => {
 
     it('CS1: Verify Invalid wallet name while Sol account create', async () => {
 
         await CreateWalletPage.firstnextBtn();
-       // console.log(await expect(CreateWalletPage.solWallet).toBeDisplayed());
         await CreateWalletPage.createwallet(process.env.INVAILDWALLETNAME);
         await CreateWalletPage.backButtonClick();
-        // Need to handle popup 
-        // try this
-        // await expect(SecurePage.flashAlert).toBeExisting();
+        // Need to handle popup verify toast message text
+
     });
 
     it('CS2: Verify Setpin confirm pin mismatch while come popup handling', async () => {
 
-        await (await CreateWalletPage.createNewWalletbtn).click();
-        await (await CreateWalletPage.inputwalletName).click();
-        await (await CreateWalletPage.inputwalletName).setValue(process.env.VAILDWALLETNAME);
-        driver.hideKeyboard();
-        await CreateWalletPage.backButtonExisting();
-        await (await CreateWalletPage.continueBtn).click();
-       
-        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
+        await CreateWalletPage.clickCreateWalletBtn();
+        await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
+        await CreateWalletPage.continueBtnClick();
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
 
         // Need to handle popup
-        // try this
-        // await expect(SecurePage.flashAlert).toBeExisting();
-
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        //toastAnimatedContainer
-        // const alret = await $('id=toastAnimatedContainer');
-        //const alrettxt = alret.getText();
-        //await console.log(alrettxt);
-        //assert.deepEqual(alrettxt, "Confirm Pin doesen't match");
-        // alret.click();
-        //waitForDisplayed({ timeout: 120000 });
-        //await (await $('~toastAnimatedContainer'));
-        //console.log('Alert text',await driver.getAlertText());
-        // await driver.acceptAlert();
-        // await driver.closeApp();
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
         await DashboardPage.verifySolDash();
     });
 
     it('CS3: Create new Sol wallet vaild wallet name', async () => {
-       //console.log(process.env.NAME)
         await LogoutPage.logout();
-       await resetwalletPage.clickResetWalletbutton();
-        //  await CreateWalletPage.solWallet.waitForDisplayed({ timeout: 60000 });
+        await resetwalletPage.clickResetWalletbutton();
         //await CreateWalletPage.firstnextBtn(); // need to delete
         await CreateWalletPage.createwallet(process.env.VAILDWALLETNAME);
-        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
         await DashboardPage.verifySolDash();
-
     });
-
-
 
 });
 
+describe('Create wallet Neon', async () => {
+
+    it('CN1: Verify Invalid wallet name while Neon account create', async () => {
+        await LogoutPage.logout();
+        await resetwalletPage.clickResetWalletbutton();
+        await createneonwalletPage.createwalletNeon(process.env.INVAILDWALLETNAME);
+        await createneonwalletPage.backButtonClickNeon();
+     // Need to popup handle
+
+    })
+
+it('CN2: Verify Setpin confirm pin mismatch while come popup handling', async () => {
+
+        await CreateWalletPage.clickCreateWalletBtn();
+        await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
+        await CreateWalletPage.continueBtnClick();
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+        // Need to handle popup
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await RemindMeLaterPage.remindmelater();
+        await DashboardPage.verifyNeonDash();
+});
+
+    it('CN3: Create new Sol wallet vaild wallet name', async () => {
+        await LogoutPage.logoutNeon();
+        await resetwalletPage.clickResetWalletbutton();
+        await createneonwalletPage.clickNeonWalletlogo();
+        await CreateWalletPage.clickCreateWalletBtn();
+        await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
+        await CreateWalletPage.continueBtnClick();
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        // Need to handle popup
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await RemindMeLaterPage.remindmelater();
+        await DashboardPage.verifyNeonDash();
+    });
+
+   
+})
 

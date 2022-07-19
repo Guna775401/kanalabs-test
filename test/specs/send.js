@@ -12,7 +12,7 @@ it.only('SS2: Verify Valid public address Send tokens Sol Maxout amount and Vali
    await sendPage.toAddressWallet(process.env.SOLADDRESSVAILD);
     await sendPage.enteramountinput(process.env.SOLAMOUNTONE);
     await sendPage.slideToSend1();
-    await sendPage.verifySendDoneBtn();
+   // await sendPage.verifySendDoneBtn();
     
 });
 

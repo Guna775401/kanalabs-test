@@ -12,11 +12,18 @@ class DashBoardPage {
         return $('~changeWalletTypeNeon');
     }
 
-    // NeonWallet in dashboard
+    // SolWallet in dashboard Neon Wallet logo
+
     get neonWallet() {
         return $('~goToNeonWallet');
     }
+// NeonWallet in dashboard Sol Wallet logo
 
+    get solWallet() {
+        return $('~');
+    }
+
+    
     get menuTab() {
         return $('~solHomeDashboardBackIcon');
     }
@@ -36,6 +43,11 @@ class DashBoardPage {
     get nftBtn() {
         return $('~receiveNFTbtn');
     }
+get menuCancelbtn(){
+    return $('~SolDrawerClose')
+//android.view.ViewGroup[@content-desc="SolDrawerClose"]/android.view.ViewGroup
+}
+
     //dashboard token tab bottom SOL send sol token
     get sendSolToken() {
         return $('~sendSolToken');
@@ -72,6 +84,13 @@ class DashBoardPage {
         await walletSOL.waitForDisplayed({timeout:120000})
         await expect(walletSOL).toBeDisplayed();
     }
+    async verifyNeonDash() {
+        //await this.solWallet.waitForDisplayed({ timeout: 60000 });
+        const walletNeon = 'new UiSelector().text("NEON Wallet").className("android.widget.TextView")'
+        const walletNEON = await $(`android=${walletNeon}`)
+        await walletNEON.waitForDisplayed({timeout:120000})
+        await expect(walletNEON).toBeDisplayed();
+    }
 
     async verifyHistorytab() {
         await expect(this.historyTab).toBeDisplayed();
@@ -84,11 +103,11 @@ class DashBoardPage {
         await expect(this.create_Viewwallet).toBeDisplayed();
     }
 
+    // Display function
     async verifymenuoption() {
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
-        await (await this.menuTab).click();
-        await expect(this.menuTab).toBeExisting();
-    }
+        await expect(this.menuTab).toBeDisplayed();
+        }
 
     async verifyNeonWallet() {
         await expect(this.neonWallet).toBeDisplayed();
@@ -123,8 +142,18 @@ class DashBoardPage {
     }
 
 
+  // Click function
+  async clickMenuoption() {
+    await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
+    await expect(this.menuTab).toBeDisplayed();
+    await (await this.menuTab).click();
+   }
+   async clickMenuCancelBtn() {
+    await (await this.menuCancelbtn).waitForDisplayed({ timeout: 60000 });
+    await expect(this.menuCancelbtn).toBeDisplayed();
+    await (await this.menuCancelbtn).click();
+   }
 
-// Display function
 
  async () {
 

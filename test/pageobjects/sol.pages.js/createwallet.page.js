@@ -5,11 +5,11 @@ class CreateWalletPage {
     //FirstTime open the application What is Kana page NextButton
 
     get nextBtn() {
-    return $('~nextButton');
+        return $('~nextButton');
     }
     get nextBtn1() {
         return $('~nextButton');
-        }
+    }
     // Choose wallet Sol
     get solWallet() {
         return $('~solWalletCard');
@@ -63,23 +63,43 @@ class CreateWalletPage {
 
     }
     async clickSolWalletlogo() {
+        await this.solWallet.waitForDisplayed({ timeout: 60000 });
         await (await this.solWallet).click();
     }
+    async clickCreateWalletBtn() {
+        await this.createNewWalletbtn.waitForDisplayed({ timeout: 60000 });
+        await (this.createNewWalletbtn).click();
+    }
+    async enterWalletName(name) {
+        await this.inputwalletName.waitForDisplayed({ timeout: 60000 });
+        await (this.inputwalletName).click();
+        await (this.inputwalletName).setValue(name);
+        driver.hideKeyboard();
+        const backbutton = $('~goBackFromNameWallet');
+        await backbutton.waitForDisplayed({ timeout: 60000 });
+        await expect(backbutton).toBeDisplayed();
+        }
 
     async backButtonClick() {
         const backbutton = $('~goBackFromNameWallet');
         await backbutton.waitForDisplayed({ timeout: 60000 });
-        // need to clickable but now click using
-        await expect(backbutton).toBeClickable();
+        await expect(backbutton).toBeDisplayed();
+        await backbutton.click();
     }
+    
+
     async backButtonExisting() {
         const backbutton = $('~goBackFromNameWallet');
         await backbutton.waitForDisplayed({ timeout: 60000 });
-        // need to clickable but now click using
         await expect(backbutton).toBeExisting();
     }
+    async continueBtnClick(){
+        await this.continueBtn.waitForDisplayed({ timeout: 60000 });
+        await (this.continueBtn).click();
 
-    async entersetPin(pin1,pin2,pin3,pin4,pin5,pin6) {
+    }
+
+    async entersetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
         await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await this.loginPin1).click();
@@ -119,7 +139,7 @@ class CreateWalletPage {
         await (await this.loginPin6).setValue(pin6);
     }
 
-    async enterPin(pin1,pin2,pin3,pin4,pin5,pin6) {
+    async enterPin(pin1, pin2, pin3, pin4, pin5, pin6) {
         await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await this.loginPin1).click();

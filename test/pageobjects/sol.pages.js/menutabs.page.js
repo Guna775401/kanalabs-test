@@ -86,12 +86,22 @@ class MenuTabsOptions {
         await expect(this.show_seed_phrase).toBeDisplayed();
     }
 
+    async verifyDisplay_DevNetAndMainNet(){
+        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await this.menuTab.click();
+        await this.dashboardNetworkTab.click();
+        await expect(this.devNetworkTab).toBeDisplayed();
+        await expect(this.mainNetworkTab).toBeDisplayed();
+        await this.backBtnNetwork.click();
+    }
+
     // Click Function
 
     async clickMenuTab() {
         await this.menuTab.click();
     }
     async clickChangePin() {
+        await expect(this.dashboardChangePin).toBeDisplayed();
         await this.dashboardChangePin.click();
     }
     async clickCancelbtn() {
@@ -122,17 +132,18 @@ class MenuTabsOptions {
         await expect(this.show_seed_phrase).toBeClickable();
     }
 async verifyCLickable_DevNetAndMainNet(){
+    await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
     await this.menuTab.click();
     await this.dashboardNetworkTab.click();
-    await this.devNetworkTab.toBeClickable();
-    await this.mainNetworkTab.toBeClickable();
+    await expect(this.devNetworkTab).toBeClickable();
+    await expect(this.mainNetworkTab).toBeClickable();
     await this.backBtnNetwork.click();
 }
 
 async verifyClickable_MainNet() {
-    await this.dashboardNetworkTab.toBeClickable();
-    await this.mainNetworkTab.toBeClickable();
-    await (await this.backBtnNetwork).toBeClickable();
+    await expect(this.dashboardNetworkTab).toBeClickable();
+    await expect(this.mainNetworkTab).toBeClickable();
+    await expect(this.backBtnNetwork).toBeClickable();
 }
 
 
@@ -160,7 +171,7 @@ async verifyClickable_MainNet() {
     }
 
     async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
+        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);

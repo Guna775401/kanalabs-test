@@ -1,0 +1,62 @@
+{
+  "uid" : "28793643d811fae7",
+  "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+  "fullName" : "Create wallet Sol.CS2: Verify Setpin confirm pin mismatch while come popup handling",
+  "historyId" : "c92991f21f3862b032729781d01f3c72",
+  "time" : {
+    "start" : 1657822371332,
+    "stop" : 1657822382474,
+    "duration" : 11142
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "CreateWalletPage.backButtonClickable is not a function",
+  "statusTrace" : "TypeError: CreateWalletPage.backButtonClickable is not a function\n                    at Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js:40:32)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS2: Verify Setpin confirm pin mismatch while come popup handling"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "28793643d811fae7.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657905070313' stop='1657905070529'>
+    <name>Verify Dashboard Sol</name>
+    <title>Verify Dashboard Sol</title>
+    <test-cases>
+        <test-case start='1657905070315' status='broken' stop='1657905070528'>
+            <name>DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet </name>
+            <title>DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet </title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>(intermediate value).toBeDisplayed is not a function</message>
+                <stack-trace>TypeError: (intermediate value).toBeDisplayed is not a function
+                    at DashBoardPage.verifyHistorytab (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\dashboard.page.js:54:39)
+                    at async Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\dashboard.js:7:1)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

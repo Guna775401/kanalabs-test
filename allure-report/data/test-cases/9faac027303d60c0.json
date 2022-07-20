@@ -1,0 +1,158 @@
+{
+  "uid" : "9faac027303d60c0",
+  "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+  "fullName" : "Import Sol Account.IS2: Import acount invalid seed pharse with vaild name ",
+  "historyId" : "850dfca2a0f9e6f2979e3bd3ad213291",
+  "time" : {
+    "start" : 1657902524089,
+    "stop" : 1657902534827,
+    "duration" : 10738
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "Can't call click on element with selector \"~goToImportWallet\" because element wasn't found",
+  "statusTrace" : "Error: Can't call click on element with selector \"~goToImportWallet\" because element wasn't found\n                    at implicitWait (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\utils\\implicitWait.js:34:19)\n                    at async Element.elementErrorHandlerCallbackFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\middlewares.js:20:29)\n                    at async Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Importwallet.importwallet (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\importwallet.page.js:43:9)\n                    at async Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\importwallet.js:23:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 10,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testClass",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testMethod",
+    "value" : "IS2: Import acount invalid seed pharse with vaild name "
+  }, {
+    "name" : "package",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e59c43b140fb8ae2",
+      "status" : "broken",
+      "statusDetails" : "An unknown server-side error occurred while processing the command. Original error: Must provide a selector when finding elements",
+      "time" : {
+        "start" : 1657902182466,
+        "stop" : 1657902195732,
+        "duration" : 13266
+      }
+    }, {
+      "uid" : "1194eb7d74c5ea2a",
+      "status" : "broken",
+      "statusDetails" : "Can't call click on element with selector \"~goToImportWallet\" because element wasn't found",
+      "time" : {
+        "start" : 1657891549619,
+        "stop" : 1657891560522,
+        "duration" : 10903
+      }
+    }, {
+      "uid" : "d58fbf5d6e13a319",
+      "status" : "broken",
+      "statusDetails" : "Can't call click on element with selector \"~goToImportWallet\" because element wasn't found",
+      "time" : {
+        "start" : 1657890821780,
+        "stop" : 1657890832374,
+        "duration" : 10594
+      }
+    }, {
+      "uid" : "642856db292b07f",
+      "status" : "broken",
+      "statusDetails" : "An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up",
+      "time" : {
+        "start" : 1657882410639,
+        "stop" : 1657882410803,
+        "duration" : 164
+      }
+    }, {
+      "uid" : "f24fb9a4700caf76",
+      "status" : "broken",
+      "statusDetails" : "An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details",
+      "time" : {
+        "start" : 1657867724980,
+        "stop" : 1657867725559,
+        "duration" : 579
+      }
+    }, {
+      "uid" : "b18b89e43137414b",
+      "status" : "broken",
+      "statusDetails" : "An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details",
+      "time" : {
+        "start" : 1657867676709,
+        "stop" : 1657867676971,
+        "duration" : 262
+      }
+    }, {
+      "uid" : "7306c6f078354502",
+      "status" : "broken",
+      "statusDetails" : "Can't call click on element with selector \"~goToImportWallet\" because element wasn't found",
+      "time" : {
+        "start" : 1657866104261,
+        "stop" : 1657866114919,
+        "duration" : 10658
+      }
+    }, {
+      "uid" : "449932775cab65bd",
+      "status" : "broken",
+      "statusDetails" : "An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details",
+      "time" : {
+        "start" : 1657857925293,
+        "stop" : 1657857925397,
+        "duration" : 104
+      }
+    }, {
+      "uid" : "f5e18f9b30e240cd",
+      "status" : "broken",
+      "statusDetails" : "A session is either terminated or not started",
+      "time" : {
+        "start" : 1657825589845,
+        "stop" : 1657825589983,
+        "duration" : 138
+      }
+    }, {
+      "uid" : "8afd519dc9685b11",
+      "status" : "broken",
+      "statusDetails" : "Can't call click on element with selector \"~goToImportWallet\" because element wasn't found",
+      "time" : {
+        "start" : 1657824458127,
+        "stop" : 1657824468403,
+        "duration" : 10276
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "9faac027303d60c0.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

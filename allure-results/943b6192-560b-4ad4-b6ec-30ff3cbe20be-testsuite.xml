@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657809469338' stop='1657809496366'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657809469339' status='broken' stop='1657809496364'>
+            <name>CS1: Verify Invalid wallet name while Sol account create</name>
+            <title>CS1: Verify Invalid wallet name while Sol account create</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Method is not implemented</message>
+                <stack-trace>unknown method: Method is not implemented
+                    at getErrorFromResponseBody (C:\Users\Guna\kanalabs-test\node_modules\webdriver\build\utils.js:198:12)
+                    at NodeJSRequest._request (C:\Users\Guna\kanalabs-test\node_modules\webdriver\build\request\index.js:166:60)
+                    at Browser.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Browser.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at CreateWalletPage.backButtonClickable (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\createwallet.page.js:68:9)
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:20:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

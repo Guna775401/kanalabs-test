@@ -1,0 +1,62 @@
+{
+  "uid" : "25a4c97022e679bb",
+  "name" : "CS1: Verify Invalid wallet name while Sol account create",
+  "fullName" : "Create wallet Sol.CS1: Verify Invalid wallet name while Sol account create",
+  "historyId" : "c286bcc861479882c9684dc5b8a5beda",
+  "time" : {
+    "start" : 1657810558031,
+    "stop" : 1657810598963,
+    "duration" : 40932
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "element (\"~nextButton\") still not displayed after 10000ms",
+  "statusTrace" : "Error: element (\"~nextButton\") still not displayed after 10000ms\n                    at C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\commands\\browser\\waitUntil.js:66:23\n                    at Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at Element.elementErrorHandlerCallbackFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\middlewares.js:24:32)\n                    at Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at Element.elementErrorHandlerCallbackFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\middlewares.js:24:32)\n                    at Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at CreateWalletPage.backButtonClickable (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\createwallet.page.js:68:5)\n                    at Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js:20:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS1: Verify Invalid wallet name while Sol account create"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "25a4c97022e679bb.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

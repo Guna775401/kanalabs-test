@@ -1,0 +1,78 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657822339565' stop='1657822443674'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657822339565' status='passed' stop='1657822371331'>
+            <name>CS1: Verify Invalid wallet name while Sol account create</name>
+            <title>CS1: Verify Invalid wallet name while Sol account create</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1657822371332' status='broken' stop='1657822382474'>
+            <name>CS2: Verify Setpin confirm pin mismatch while come popup handling</name>
+            <title>CS2: Verify Setpin confirm pin mismatch while come popup handling</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>CreateWalletPage.backButtonClickable is not a function</message>
+                <stack-trace>TypeError: CreateWalletPage.backButtonClickable is not a function
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:40:32)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1657822382474' status='broken' stop='1657822443669'>
+            <name>CS3: Create new Sol wallet vaild wallet name</name>
+            <title>CS3: Create new Sol wallet vaild wallet name</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>element ("~solWalletCard") still not displayed after 60000ms</message>
+                <stack-trace>Error: element ("~solWalletCard") still not displayed after 60000ms
+                    at C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\commands\browser\waitUntil.js:66:23
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:72:9)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1657822443673' status='pending' stop='1657822443673'>
+            <name>send amount</name>
+            <title>send amount</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,62 @@
+{
+  "uid" : "f5e18f9b30e240cd",
+  "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+  "fullName" : "Import Sol Account.IS2: Import acount invalid seed pharse with vaild name ",
+  "historyId" : "850dfca2a0f9e6f2979e3bd3ad213291",
+  "time" : {
+    "start" : 1657825589845,
+    "stop" : 1657825589983,
+    "duration" : 138
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "A session is either terminated or not started",
+  "statusTrace" : "invalid session id: A session is either terminated or not started\n                    at getErrorFromResponseBody (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriver\\build\\utils.js:198:12)\n                    at NodeJSRequest._request (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriver\\build\\request\\index.js:166:60)\n                    at async Browser.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Browser.$ (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\commands\\browser\\$.js:91:17)\n                    at async Browser.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Importwallet.importwallet (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\importwallet.page.js:43:16)\n                    at async Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\importwallet.js:24:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testClass",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testMethod",
+    "value" : "IS2: Import acount invalid seed pharse with vaild name "
+  }, {
+    "name" : "package",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f5e18f9b30e240cd.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

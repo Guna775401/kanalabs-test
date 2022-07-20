@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657822634008' stop='1657822740679'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657822634008' status='passed' stop='1657822661536'>
+            <name>CS1: Verify Invalid wallet name while Sol account create</name>
+            <title>CS1: Verify Invalid wallet name while Sol account create</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1657822661536' status='broken' stop='1657822730438'>
+            <name>CS2: Verify Setpin confirm pin mismatch while come popup handling</name>
+            <title>CS2: Verify Setpin confirm pin mismatch while come popup handling</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>dashboardPage is not defined</message>
+                <stack-trace>ReferenceError: dashboardPage is not defined
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:66:8)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1657822730442' status='broken' stop='1657822740667'>
+            <name>CS3: Create new Sol wallet vaild wallet name</name>
+            <title>CS3: Create new Sol wallet vaild wallet name</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Can't call click on element with selector "~setDrawerOpen" because element wasn't found</message>
+                <stack-trace>Error: Can't call click on element with selector "~setDrawerOpen" because element wasn't found
+                    at implicitWait (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:20:29)
+                    at Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at LogoutPage.logout (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\logut.page.js:18:9)
+                    at Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\createwallet.js:73:9)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1657822740669' status='pending' stop='1657822740670'>
+            <name>send amount</name>
+            <title>send amount</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,2690 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "0-0",
+    "children" : [ {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "31402b306e5675e4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657883670137,
+        "stop" : 1657883790151,
+        "duration" : 120014
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "815ad75caa0974f0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657802180342,
+        "stop" : 1657802300357,
+        "duration" : 120015
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "66c0462d3dc4dc02",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657822634008,
+        "stop" : 1657822661536,
+        "duration" : 27528
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "73c99ce5a42c87f1",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657819245001,
+        "stop" : 1657819276722,
+        "duration" : 31721
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "1c54ba2a0c3fb646",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657822004088,
+        "stop" : 1657822033685,
+        "duration" : 29597
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "dabaa204f96a163d",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902217083,
+        "stop" : 1657902227291,
+        "duration" : 10208
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "45677a5b1fe6b109",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657819490703,
+        "stop" : 1657819529936,
+        "duration" : 39233
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "78a6374aa12b86bd",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657905194171,
+        "stop" : 1657905277037,
+        "duration" : 82866
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ",
+      "uid" : "2aec30d5131a6eca",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657906669221,
+        "stop" : 1657906672416,
+        "duration" : 3195
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 4,
+      "retriesStatusChange" : true,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "25a4c97022e679bb",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657810558031,
+        "stop" : 1657810598963,
+        "duration" : 40932
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e44a9e459418ce8",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657821923599,
+        "stop" : 1657821954743,
+        "duration" : 31144
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "ee5481760647166f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902206840,
+        "stop" : 1657902217079,
+        "duration" : 10239
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "1f20de11fb5d8334",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890682789,
+        "stop" : 1657890802813,
+        "duration" : 120024
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "bd25fc7c2c1ed9aa",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657810400764,
+        "stop" : 1657810487551,
+        "duration" : 86787
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "859c61abf6dbdb2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657822730442,
+        "stop" : 1657822740667,
+        "duration" : 10225
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "ec3cf187e9d9fff7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657885607246,
+        "stop" : 1657885636028,
+        "duration" : 28782
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "d9c81522e0b0a2c6",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891530588,
+        "stop" : 1657891549619,
+        "duration" : 19031
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "7f8bd37da534403e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657822339565,
+        "stop" : 1657822371331,
+        "duration" : 31766
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "2ed0cb2befddd92d",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657803481470,
+        "stop" : 1657803601484,
+        "duration" : 120014
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "9b24da777e788cde",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890842809,
+        "stop" : 1657890853435,
+        "duration" : 10626
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "f5c6c5ecd6363ff2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824468404,
+        "stop" : 1657824478552,
+        "duration" : 10148
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "979512d9290ea71d",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825247034,
+        "stop" : 1657825315750,
+        "duration" : 68716
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "f7eceb28eebe6450",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867780692,
+        "stop" : 1657867900705,
+        "duration" : 120013
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "8afd519dc9685b11",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824458127,
+        "stop" : 1657824468403,
+        "duration" : 10276
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "96b953207d896cb5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657822382474,
+        "stop" : 1657822443669,
+        "duration" : 61195
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "42863c4a3857bd80",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657804403653,
+        "stop" : 1657804475179,
+        "duration" : 71526
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "1cfe9f5cf9df5707",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657900967654,
+        "stop" : 1657900978411,
+        "duration" : 10757
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "realme 2 9-9" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "97a6dfa6e47f57b0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657811034367,
+        "stop" : 1657811071848,
+        "duration" : 37481
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "28f2f36f8286d5ae",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891290324,
+        "stop" : 1657891410349,
+        "duration" : 120025
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 14,
+      "retriesStatusChange" : true,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "6989ccdeb42ed0c9",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902573037,
+        "stop" : 1657902584399,
+        "duration" : 11362
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 10,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "dfeca7e359b36571",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890562766,
+        "stop" : 1657890682775,
+        "duration" : 120009
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "b161e4f4c552820b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657810928218,
+        "stop" : 1657810959666,
+        "duration" : 31448
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "48331180ef91a73e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657904787156,
+        "stop" : 1657904862125,
+        "duration" : 74969
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "770ecc57d5e89f47",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821221285,
+        "stop" : 1657821250004,
+        "duration" : 28719
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "1cae2b922da50f2d",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867900709,
+        "stop" : 1657867911020,
+        "duration" : 10311
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "fc5c76f6742142e9",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657882918571,
+        "stop" : 1657883038587,
+        "duration" : 120016
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "99a511fb258f4f3c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890853435,
+        "stop" : 1657890863564,
+        "duration" : 10129
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "37c11b9a7537a1fb",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657804254158,
+        "stop" : 1657804320527,
+        "duration" : 66369
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ",
+      "uid" : "13af50e263ca089d",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657904862157,
+        "stop" : 1657904862288,
+        "duration" : 131
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "8b18bc45de50db6b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657804603281,
+        "stop" : 1657804668583,
+        "duration" : 65302
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "b06ba5b47e00f1fe",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824478553,
+        "stop" : 1657824488826,
+        "duration" : 10273
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "b1ad560699dd1ab9",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657818713790,
+        "stop" : 1657818754806,
+        "duration" : 41016
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "should login with valid credentials",
+      "uid" : "7518bac737e8a402",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656338381469,
+        "stop" : 1656338381476,
+        "duration" : 7
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : false,
+      "parameters" : [ "chrome-103.0.5060.53" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "ebb5446f3d4ce2f6",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657795262657,
+        "stop" : 1657795382674,
+        "duration" : 120017
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "987b567d32118c4b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823135090,
+        "stop" : 1657823203841,
+        "duration" : 68751
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "1143fe18232189dc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821068967,
+        "stop" : 1657821099027,
+        "duration" : 30060
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "58ab95150e9a88e3",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657906594113,
+        "stop" : 1657906669192,
+        "duration" : 75079
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 15,
+      "retriesStatusChange" : true,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "d5b5957cb9aa4ddf",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657885581194,
+        "stop" : 1657885607245,
+        "duration" : 26051
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "bb66b29329c9b8b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657883642428,
+        "stop" : 1657883670136,
+        "duration" : 27708
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "e59c43b140fb8ae2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902182466,
+        "stop" : 1657902195732,
+        "duration" : 13266
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "9faac027303d60c0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902524089,
+        "stop" : 1657902534827,
+        "duration" : 10738
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 10,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "7469fa05b10e366b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891560523,
+        "stop" : 1657891570787,
+        "duration" : 10264
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "d9ce6290cffb4f78",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823515516,
+        "stop" : 1657823581397,
+        "duration" : 65881
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "93e3e97b424458c1",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657885276421,
+        "stop" : 1657885303623,
+        "duration" : 27202
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "43afcc17f1390222",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657819004895,
+        "stop" : 1657819041600,
+        "duration" : 36705
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "f8c4db277b094089",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657809469339,
+        "stop" : 1657809496364,
+        "duration" : 27025
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "328d94cca097dab6",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902195733,
+        "stop" : 1657902206839,
+        "duration" : 11106
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "1553c9c907d53961",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657882562215,
+        "stop" : 1657882589754,
+        "duration" : 27539
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "43123d4c284fef0c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825315755,
+        "stop" : 1657825378620,
+        "duration" : 62865
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ",
+      "uid" : "69f15f9f61f816ae",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657905277080,
+        "stop" : 1657905280005,
+        "duration" : 2925
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "37b4dab25d6f3b87",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890802937,
+        "stop" : 1657890821780,
+        "duration" : 18843
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e8817a26e5988094",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657890535066,
+        "stop" : 1657890562764,
+        "duration" : 27698
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "76b23a8a3506ef0d",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657809956854,
+        "stop" : 1657809982778,
+        "duration" : 25924
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ",
+      "uid" : "1acd3c44b04eec85",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657906475635,
+        "stop" : 1657906478655,
+        "duration" : 3020
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "d58fbf5d6e13a319",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890821780,
+        "stop" : 1657890832374,
+        "duration" : 10594
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "806949498cedc798",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657891258555,
+        "stop" : 1657891290318,
+        "duration" : 31763
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 40,
+      "retriesStatusChange" : true,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "28793643d811fae7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657822371332,
+        "stop" : 1657822382474,
+        "duration" : 11142
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "e69092197550ce8b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657803937814,
+        "stop" : 1657804057835,
+        "duration" : 120021
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "b84a34d2347d46f3",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657883038592,
+        "stop" : 1657883097836,
+        "duration" : 59244
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e5ad6bffd6b354ec",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657819142858,
+        "stop" : 1657819174618,
+        "duration" : 31760
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "95175877f2c0b3cd",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657810045909,
+        "stop" : 1657810085860,
+        "duration" : 39951
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "8b2f7df7d176c21e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657806451592,
+        "stop" : 1657806515900,
+        "duration" : 64308
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "cf55576ebc74319",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657883199243,
+        "stop" : 1657883231634,
+        "duration" : 32391
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "d49414722c76ccb0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657825216315,
+        "stop" : 1657825247034,
+        "duration" : 30719
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "d6970bfbf91cbc71",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657900998955,
+        "stop" : 1657901033038,
+        "duration" : 34083
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "realme 2 9-9" ]
+    }, {
+      "name" : "should login with valid credentials",
+      "uid" : "dfe683ec34a017c3",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656338149291,
+        "stop" : 1656338161629,
+        "duration" : 12338
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "chrome-103.0.5060.53" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "98c986e33dd89381",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824447628,
+        "stop" : 1657824458125,
+        "duration" : 10497
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "c0bfd358bcb07029",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657818208254,
+        "stop" : 1657818236490,
+        "duration" : 28236
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "400a6926ef28fbf5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824488827,
+        "stop" : 1657824498977,
+        "duration" : 10150
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e2332396dd1e3d7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657882891842,
+        "stop" : 1657882918569,
+        "duration" : 26727
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "eeda1f1368d20f94",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657906402273,
+        "stop" : 1657906475576,
+        "duration" : 73303
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "9bb00c52e8b2b27e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657796341873,
+        "stop" : 1657796461884,
+        "duration" : 120011
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "1194eb7d74c5ea2a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891549619,
+        "stop" : 1657891560522,
+        "duration" : 10903
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "f24b04fee325e21a",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823415873,
+        "stop" : 1657823447996,
+        "duration" : 32123
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "49cadde38bbb13a1",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657819381502,
+        "stop" : 1657819408765,
+        "duration" : 27263
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "ca2402834a35ddc4",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902172061,
+        "stop" : 1657902182463,
+        "duration" : 10402
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "d8572562a9399599",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657795726583,
+        "stop" : 1657795774870,
+        "duration" : 48287
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "5d205cb3e2ffe6fd",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657890832374,
+        "stop" : 1657890842807,
+        "duration" : 10433
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "8b47d0895b134e76",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657822661536,
+        "stop" : 1657822730438,
+        "duration" : 68902
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ",
+      "uid" : "925313968daa8bb9",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657905070315,
+        "stop" : 1657905070528,
+        "duration" : 213
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "91e4d079176a6771",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821727366,
+        "stop" : 1657821758751,
+        "duration" : 31385
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e05d935c7403346c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657883368496,
+        "stop" : 1657883401479,
+        "duration" : 32983
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "ac4f480179408c12",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657900978413,
+        "stop" : 1657900988845,
+        "duration" : 10432
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "realme 2 9-9" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "ff34fe2a1d8d11ec",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657904993275,
+        "stop" : 1657905070285,
+        "duration" : 77010
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "should login with valid credentials",
+      "uid" : "326fff9edccf47d5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656337952224,
+        "stop" : 1656337959026,
+        "duration" : 6802
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "chrome-103.0.5060.53" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "f7c4d04b93feb6db",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902501980,
+        "stop" : 1657902524087,
+        "duration" : 22107
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 10,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "8acc949e5644c6a0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657885303625,
+        "stop" : 1657885351770,
+        "duration" : 48145
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "6e0357e6a5bb63e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902534828,
+        "stop" : 1657902544986,
+        "duration" : 10158
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 10,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "70633869c28999f5",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657811211937,
+        "stop" : 1657811248785,
+        "duration" : 36848
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "1ded13151a9455a9",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657883401484,
+        "stop" : 1657883521502,
+        "duration" : 120018
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "3f262d114481edb7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824681555,
+        "stop" : 1657824801580,
+        "duration" : 120025
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "49a9f27fff7550f7",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824801588,
+        "stop" : 1657824801646,
+        "duration" : 58
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "1aaa2e1489bc6ef2",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891581001,
+        "stop" : 1657891591565,
+        "duration" : 10564
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "a91ecfb1b110ff7f",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657818877606,
+        "stop" : 1657818917677,
+        "duration" : 40071
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "5c2375f31067e4e0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657823203846,
+        "stop" : 1657823288565,
+        "duration" : 84719
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "64280f3017daa0d6",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657801995452,
+        "stop" : 1657802052400,
+        "duration" : 56948
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "a93e1c997a6b00fe",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821611340,
+        "stop" : 1657821641455,
+        "duration" : 30115
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "fbc6f90ae07e5e47",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823447997,
+        "stop" : 1657823515511,
+        "duration" : 67514
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "9e2c0bb66967323",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657807392406,
+        "stop" : 1657807457701,
+        "duration" : 65295
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 11,
+      "retriesStatusChange" : true,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "92c8ec32897409d0",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657867747343,
+        "stop" : 1657867780690,
+        "duration" : 33347
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "2a994bea384ea2ca",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657824801647,
+        "stop" : 1657824801697,
+        "duration" : 50
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "ab80233072cb6e93",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891570788,
+        "stop" : 1657891581001,
+        "duration" : 10213
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "7de7a8dc315e017b",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657901033039,
+        "stop" : 1657901043304,
+        "duration" : 10265
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "realme 2 9-9" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "11771afddbfcccb9",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823107809,
+        "stop" : 1657823135089,
+        "duration" : 27280
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "bd24c65fe9c546cc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657900988846,
+        "stop" : 1657900998954,
+        "duration" : 10108
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "realme 2 9-9" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "e2fcd495b1d95e1e",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657891410359,
+        "stop" : 1657891530395,
+        "duration" : 120036
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e608921c4176dc73",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1657819602700,
+        "stop" : 1657819645831,
+        "duration" : 43131
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "ea1ddf0e778f90c",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657810199750,
+        "stop" : 1657810240619,
+        "duration" : 40869
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "6debc31245598dcc",
+      "parentUid" : "516fe00eea05ad99e936fa729b55eff4",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657902544987,
+        "stop" : 1657902573036,
+        "duration" : 28049
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 10,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    } ],
+    "uid" : "516fe00eea05ad99e936fa729b55eff4"
+  }, {
+    "name" : "0-1",
+    "children" : [ {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "642856db292b07f",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657882410639,
+        "stop" : 1657882410803,
+        "duration" : 164
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "b18b89e43137414b",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867676709,
+        "stop" : 1657867676971,
+        "duration" : 262
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "206311e47273600e",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657857914918,
+        "stop" : 1657857925292,
+        "duration" : 10374
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "295fc384bde951d5",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657882410804,
+        "stop" : 1657882410970,
+        "duration" : 166
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "fe226595c9be01f5",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657866125927,
+        "stop" : 1657866142737,
+        "duration" : 16810
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "aaf0efba2172c4",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867677117,
+        "stop" : 1657867678943,
+        "duration" : 1826
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "e4d7d022d8f21669",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867676971,
+        "stop" : 1657867677048,
+        "duration" : 77
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "b1a25a7c02df61fa",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825590125,
+        "stop" : 1657825590222,
+        "duration" : 97
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "af602349f2dd47fa",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657866094163,
+        "stop" : 1657866104260,
+        "duration" : 10097
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "1c81fa1620a2f8c3",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657857925530,
+        "stop" : 1657857925727,
+        "duration" : 197
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "f9298bb9d97e0316",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825579346,
+        "stop" : 1657825589840,
+        "duration" : 10494
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "dcdeceac74145c8d",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657882411049,
+        "stop" : 1657882411120,
+        "duration" : 71
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "d548645ec3ecf513",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657882409737,
+        "stop" : 1657882410638,
+        "duration" : 901
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "93c807d977c43717",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657857925728,
+        "stop" : 1657857925932,
+        "duration" : 204
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "acbd0290f5f18ed5",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867677048,
+        "stop" : 1657867677117,
+        "duration" : 69
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "98738ebfbf5de243",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657882410971,
+        "stop" : 1657882411048,
+        "duration" : 77
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "fa7543fcfc1b72bf",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825589983,
+        "stop" : 1657825590125,
+        "duration" : 142
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "75379867f51afc7c",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867666108,
+        "stop" : 1657867676708,
+        "duration" : 10600
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "449932775cab65bd",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657857925293,
+        "stop" : 1657857925397,
+        "duration" : 104
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "7306c6f078354502",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657866104261,
+        "stop" : 1657866114919,
+        "duration" : 10658
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "18043bd4c6aab090",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657857925398,
+        "stop" : 1657857925529,
+        "duration" : 131
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "d0b82f654d3fbf70",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825590222,
+        "stop" : 1657825590346,
+        "duration" : 124
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "a3fee49f12d89ff3",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657866114919,
+        "stop" : 1657866125927,
+        "duration" : 11008
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "63458862c9bfcf5a",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657866142738,
+        "stop" : 1657866159369,
+        "duration" : 16631
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "f5e18f9b30e240cd",
+      "parentUid" : "27fa874cadc1574e37a07abb440963bd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657825589845,
+        "stop" : 1657825589983,
+        "duration" : 138
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    } ],
+    "uid" : "27fa874cadc1574e37a07abb440963bd"
+  }, {
+    "name" : "0-4",
+    "children" : [ {
+      "name" : "CS1: Verify Invalid wallet name while Sol account create",
+      "uid" : "e7d96b95c2c40685",
+      "parentUid" : "24bc2dfa7c2fb5a7cdc8e85ad96a418d",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867722067,
+        "stop" : 1657867842087,
+        "duration" : 120020
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS3: Create new Sol wallet vaild wallet name",
+      "uid" : "e50e2575622f8b3e",
+      "parentUid" : "24bc2dfa7c2fb5a7cdc8e85ad96a418d",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867842337,
+        "stop" : 1657867842536,
+        "duration" : 199
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "CS2: Verify Setpin confirm pin mismatch while come popup handling",
+      "uid" : "ed075655177a49ba",
+      "parentUid" : "24bc2dfa7c2fb5a7cdc8e85ad96a418d",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867842099,
+        "stop" : 1657867842336,
+        "duration" : 237
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    } ],
+    "uid" : "24bc2dfa7c2fb5a7cdc8e85ad96a418d"
+  }, {
+    "name" : "0-5",
+    "children" : [ {
+      "name" : "IS4: Import acount Setpin confirmpin mismatch popup handling",
+      "uid" : "9c4c713d6256ef19",
+      "parentUid" : "6ea253441b78cd38797e932a74777a9c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867725880,
+        "stop" : 1657867725987,
+        "duration" : 107
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS1: Import acount valid seed pharse with invaild name",
+      "uid" : "59d377434eb24f4c",
+      "parentUid" : "6ea253441b78cd38797e932a74777a9c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867714594,
+        "stop" : 1657867724978,
+        "duration" : 10384
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS5: Import acount valid seed pharse with vaild name",
+      "uid" : "6f0d8f7ff4f21d35",
+      "parentUid" : "6ea253441b78cd38797e932a74777a9c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867725988,
+        "stop" : 1657867726048,
+        "duration" : 60
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS3: Import acount invalid seed pharse with invaild name",
+      "uid" : "be46e7fdd738f009",
+      "parentUid" : "6ea253441b78cd38797e932a74777a9c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867725563,
+        "stop" : 1657867725879,
+        "duration" : 316
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    }, {
+      "name" : "IS2: Import acount invalid seed pharse with vaild name ",
+      "uid" : "f24fb9a4700caf76",
+      "parentUid" : "6ea253441b78cd38797e932a74777a9c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1657867724980,
+        "stop" : 1657867725559,
+        "duration" : 579
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Moto g71 11-11" ]
+    } ],
+    "uid" : "6ea253441b78cd38797e932a74777a9c"
+  }, {
+    "name" : "send amount",
+    "uid" : "c61df8e4347b77d4",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1657822740669,
+      "stop" : 1657822740670,
+      "duration" : 1
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "send amount",
+    "uid" : "5ed7ffd65ee9b770",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1657822443673,
+      "stop" : 1657822443673,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "should login with valid credentials",
+    "uid" : "14536f38d4a64c90",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1657867704848,
+      "stop" : 1657867704848,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "send amount",
+    "uid" : "ec0d20c5697802c",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1657823581401,
+      "stop" : 1657823581401,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 3,
+    "retriesStatusChange" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "send amount",
+    "uid" : "186ecec9f407b8c7",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1657823288567,
+      "stop" : 1657823288567,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "newPassed" : false,
+    "newBroken" : false,
+    "retriesCount" : 0,
+    "retriesStatusChange" : false,
+    "parameters" : [ ]
+  } ]
+}

@@ -1,0 +1,62 @@
+{
+  "uid" : "b84a34d2347d46f3",
+  "name" : "CS3: Create new Sol wallet vaild wallet name",
+  "fullName" : "Create wallet Sol.CS3: Create new Sol wallet vaild wallet name",
+  "historyId" : "e91d451cd0b89923adc75b0e1a07ddea",
+  "time" : {
+    "start" : 1657883038592,
+    "stop" : 1657883097836,
+    "duration" : 59244
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "Can't call addValue on element with selector \"~pin1\" because element wasn't found",
+  "statusTrace" : "Error: Can't call addValue on element with selector \"~pin1\" because element wasn't found\n                    at implicitWait (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\utils\\implicitWait.js:34:19)\n                    at async C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\utils\\refetchElement.js:29:16\n                    at async Element.elementErrorHandlerCallbackFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\middlewares.js:41:37)\n                    at async Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Element.elementErrorHandlerCallbackFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\middlewares.js:24:32)\n                    at async Element.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async CreateWalletPage.enterConfirmPin (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\createwallet.page.js:90:9)\n                    at async Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js:85:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS3: Create new Sol wallet vaild wallet name"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b84a34d2347d46f3.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

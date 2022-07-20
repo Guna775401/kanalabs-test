@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657885276420' stop='1657885351775'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657885276421' status='passed' stop='1657885303623'>
+            <name>CS1: Verify Invalid wallet name while Sol account create</name>
+            <title>CS1: Verify Invalid wallet name while Sol account create</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1657885303625' status='broken' stop='1657885351770'>
+            <name>CS2: Verify Setpin confirm pin mismatch while come popup handling</name>
+            <title>CS2: Verify Setpin confirm pin mismatch while come popup handling</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Can't call elementSendKeys on element with selector "~pin3" because element wasn't found</message>
+                <stack-trace>Error: Can't call elementSendKeys on element with selector "~pin3" because element wasn't found
+                    at implicitWait (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\utils\refetchElement.js:29:16
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:41:37)
+                    at async Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at async Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at async Element.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

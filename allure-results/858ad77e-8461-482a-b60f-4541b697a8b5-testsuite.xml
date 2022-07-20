@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1657804403652' stop='1657804475188'>
+    <name>Create wallet Sol</name>
+    <title>Create wallet Sol</title>
+    <test-cases>
+        <test-case start='1657804403653' status='broken' stop='1657804475179'>
+            <name>IS5: Import acount valid seed pharse with vaild name</name>
+            <title>IS5: Import acount valid seed pharse with vaild name</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Moto g71 11-11'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>The selector "android =${walletSol}" used with strategy "css selector" is invalid! For more information on selectors visit the WebdriverIO docs at: https://webdriver.io/docs/selectors</message>
+                <stack-trace>invalid selector: The selector "android =${walletSol}" used with strategy "css selector" is invalid! For more information on selectors visit the WebdriverIO docs at: https://webdriver.io/docs/selectors
+                    at getErrorFromResponseBody (C:\Users\Guna\kanalabs-test\node_modules\webdriver\build\utils.js:198:12)
+                    at NodeJSRequest._request (C:\Users\Guna\kanalabs-test\node_modules\webdriver\build\request\index.js:166:60)
+                    at async Browser.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Browser.$ (C:\Users\Guna\kanalabs-test\node_modules\webdriverio\build\commands\browser\$.js:91:17)
+                    at async Browser.wrapCommandFn (C:\Users\Guna\kanalabs-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async DashBoardPage.verifySolDash (C:\Users\Guna\kanalabs-test\test\pageobjects\sol.pages.js\dashboard.page.js:56:27)
+                    at async Context.&lt;anonymous> (C:\Users\Guna\kanalabs-test\test\specs\importwallet.js:57:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

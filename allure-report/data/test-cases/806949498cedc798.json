@@ -1,0 +1,401 @@
+{
+  "uid" : "806949498cedc798",
+  "name" : "CS1: Verify Invalid wallet name while Sol account create",
+  "fullName" : "Create wallet Sol.CS1: Verify Invalid wallet name while Sol account create",
+  "historyId" : "c286bcc861479882c9684dc5b8a5beda",
+  "time" : {
+    "start" : 1657891258555,
+    "stop" : 1657891290318,
+    "duration" : 31763
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 40,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testClass",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "testMethod",
+    "value" : "CS1: Verify Invalid wallet name while Sol account create"
+  }, {
+    "name" : "package",
+    "value" : "Create wallet Sol"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e8817a26e5988094",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657890535066,
+        "stop" : 1657890562764,
+        "duration" : 27698
+      }
+    }, {
+      "uid" : "d5b5957cb9aa4ddf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657885581194,
+        "stop" : 1657885607245,
+        "duration" : 26051
+      }
+    }, {
+      "uid" : "93e3e97b424458c1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657885276421,
+        "stop" : 1657885303623,
+        "duration" : 27202
+      }
+    }, {
+      "uid" : "bb66b29329c9b8b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657883642428,
+        "stop" : 1657883670136,
+        "duration" : 27708
+      }
+    }, {
+      "uid" : "e05d935c7403346c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657883368496,
+        "stop" : 1657883401479,
+        "duration" : 32983
+      }
+    }, {
+      "uid" : "cf55576ebc74319",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657883199243,
+        "stop" : 1657883231634,
+        "duration" : 32391
+      }
+    }, {
+      "uid" : "e2332396dd1e3d7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657882891842,
+        "stop" : 1657882918569,
+        "duration" : 26727
+      }
+    }, {
+      "uid" : "1553c9c907d53961",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657882562215,
+        "stop" : 1657882589754,
+        "duration" : 27539
+      }
+    }, {
+      "uid" : "92c8ec32897409d0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657867747343,
+        "stop" : 1657867780690,
+        "duration" : 33347
+      }
+    }, {
+      "uid" : "e7d96b95c2c40685",
+      "status" : "broken",
+      "statusDetails" : "Timeout of 120000ms exceeded. The execution in the test \"Create wallet Sol CS1: Verify Invalid wallet name while Sol account create\" took too long. Try to reduce the run time or increase your timeout for test specs (https://webdriver.io/docs/timeouts). (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js)",
+      "time" : {
+        "start" : 1657867722067,
+        "stop" : 1657867842087,
+        "duration" : 120020
+      }
+    }, {
+      "uid" : "d49414722c76ccb0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657825216315,
+        "stop" : 1657825247034,
+        "duration" : 30719
+      }
+    }, {
+      "uid" : "3f262d114481edb7",
+      "status" : "broken",
+      "statusDetails" : "Timeout of 120000ms exceeded. The execution in the test \"Create wallet Sol CS1: Verify Invalid wallet name while Sol account create\" took too long. Try to reduce the run time or increase your timeout for test specs (https://webdriver.io/docs/timeouts). (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\createwallet.js)",
+      "time" : {
+        "start" : 1657824681555,
+        "stop" : 1657824801580,
+        "duration" : 120025
+      }
+    }, {
+      "uid" : "f24b04fee325e21a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823415873,
+        "stop" : 1657823447996,
+        "duration" : 32123
+      }
+    }, {
+      "uid" : "11771afddbfcccb9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657823107809,
+        "stop" : 1657823135089,
+        "duration" : 27280
+      }
+    }, {
+      "uid" : "66c0462d3dc4dc02",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657822634008,
+        "stop" : 1657822661536,
+        "duration" : 27528
+      }
+    }, {
+      "uid" : "7f8bd37da534403e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657822339565,
+        "stop" : 1657822371331,
+        "duration" : 31766
+      }
+    }, {
+      "uid" : "1c54ba2a0c3fb646",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657822004088,
+        "stop" : 1657822033685,
+        "duration" : 29597
+      }
+    }, {
+      "uid" : "e44a9e459418ce8",
+      "status" : "failed",
+      "statusDetails" : "expect(...).click is not a function",
+      "time" : {
+        "start" : 1657821923599,
+        "stop" : 1657821954743,
+        "duration" : 31144
+      }
+    }, {
+      "uid" : "91e4d079176a6771",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821727366,
+        "stop" : 1657821758751,
+        "duration" : 31385
+      }
+    }, {
+      "uid" : "a93e1c997a6b00fe",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821611340,
+        "stop" : 1657821641455,
+        "duration" : 30115
+      }
+    }, {
+      "uid" : "770ecc57d5e89f47",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821221285,
+        "stop" : 1657821250004,
+        "duration" : 28719
+      }
+    }, {
+      "uid" : "1143fe18232189dc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657821068967,
+        "stop" : 1657821099027,
+        "duration" : 30060
+      }
+    }, {
+      "uid" : "e608921c4176dc73",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~createWalletSOL`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657819602700,
+        "stop" : 1657819645831,
+        "duration" : 43131
+      }
+    }, {
+      "uid" : "45677a5b1fe6b109",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657819490703,
+        "stop" : 1657819529936,
+        "duration" : 39233
+      }
+    }, {
+      "uid" : "49cadde38bbb13a1",
+      "status" : "broken",
+      "statusDetails" : "backBtn is not defined",
+      "time" : {
+        "start" : 1657819381502,
+        "stop" : 1657819408765,
+        "duration" : 27263
+      }
+    }, {
+      "uid" : "73c99ce5a42c87f1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657819245001,
+        "stop" : 1657819276722,
+        "duration" : 31721
+      }
+    }, {
+      "uid" : "e5ad6bffd6b354ec",
+      "status" : "failed",
+      "statusDetails" : "expect(...).click is not a function",
+      "time" : {
+        "start" : 1657819142858,
+        "stop" : 1657819174618,
+        "duration" : 31760
+      }
+    }, {
+      "uid" : "43afcc17f1390222",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657819004895,
+        "stop" : 1657819041600,
+        "duration" : 36705
+      }
+    }, {
+      "uid" : "a91ecfb1b110ff7f",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657818877606,
+        "stop" : 1657818917677,
+        "duration" : 40071
+      }
+    }, {
+      "uid" : "b1ad560699dd1ab9",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657818713790,
+        "stop" : 1657818754806,
+        "duration" : 41016
+      }
+    }, {
+      "uid" : "c0bfd358bcb07029",
+      "status" : "failed",
+      "statusDetails" : "expect(...).isClickable is not a function",
+      "time" : {
+        "start" : 1657818208254,
+        "stop" : 1657818236490,
+        "duration" : 28236
+      }
+    }, {
+      "uid" : "70633869c28999f5",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657811211937,
+        "stop" : 1657811248785,
+        "duration" : 36848
+      }
+    }, {
+      "uid" : "97a6dfa6e47f57b0",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657811034367,
+        "stop" : 1657811071848,
+        "duration" : 37481
+      }
+    }, {
+      "uid" : "b161e4f4c552820b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1657810928218,
+        "stop" : 1657810959666,
+        "duration" : 31448
+      }
+    }, {
+      "uid" : "25a4c97022e679bb",
+      "status" : "broken",
+      "statusDetails" : "element (\"~nextButton\") still not displayed after 10000ms",
+      "time" : {
+        "start" : 1657810558031,
+        "stop" : 1657810598963,
+        "duration" : 40932
+      }
+    }, {
+      "uid" : "bd25fc7c2c1ed9aa",
+      "status" : "broken",
+      "statusDetails" : "element (\"~nextButton\") still not displayed after 60000ms",
+      "time" : {
+        "start" : 1657810400764,
+        "stop" : 1657810487551,
+        "duration" : 86787
+      }
+    }, {
+      "uid" : "ea1ddf0e778f90c",
+      "status" : "broken",
+      "statusDetails" : "element (\"~nextButton\") still not displayed after 15000ms",
+      "time" : {
+        "start" : 1657810199750,
+        "stop" : 1657810240619,
+        "duration" : 40869
+      }
+    }, {
+      "uid" : "95175877f2c0b3cd",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`~goBackFromNameWallet`) to be clickable\n                \n                Expected: \"clickable\"\n                Received: \"not clickable\"",
+      "time" : {
+        "start" : 1657810045909,
+        "stop" : 1657810085860,
+        "duration" : 39951
+      }
+    }, {
+      "uid" : "76b23a8a3506ef0d",
+      "status" : "broken",
+      "statusDetails" : "backBtn is not defined",
+      "time" : {
+        "start" : 1657809956854,
+        "stop" : 1657809982778,
+        "duration" : 25924
+      }
+    }, {
+      "uid" : "f8c4db277b094089",
+      "status" : "broken",
+      "statusDetails" : "Method is not implemented",
+      "time" : {
+        "start" : 1657809469339,
+        "stop" : 1657809496364,
+        "duration" : 27025
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "806949498cedc798.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

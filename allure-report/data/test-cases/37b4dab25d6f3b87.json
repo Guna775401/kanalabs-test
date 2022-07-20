@@ -1,0 +1,62 @@
+{
+  "uid" : "37b4dab25d6f3b87",
+  "name" : "IS1: Import acount valid seed pharse with invaild name",
+  "fullName" : "Import Sol Account.IS1: Import acount valid seed pharse with invaild name",
+  "historyId" : "98d51febdcdb5cf1fb08468bdd38a4a7",
+  "time" : {
+    "start" : 1657890802937,
+    "stop" : 1657890821780,
+    "duration" : 18843
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "An unknown server-side error occurred while processing the command. Original error: Must provide a selector when finding elements",
+  "statusTrace" : "unknown error: An unknown server-side error occurred while processing the command. Original error: Must provide a selector when finding elements\n                    at getErrorFromResponseBody (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriver\\build\\utils.js:198:12)\n                    at NodeJSRequest._request (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriver\\build\\request\\index.js:166:60)\n                    at async Browser.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Browser.$ (C:\\Users\\Guna\\kanalabs-test\\node_modules\\webdriverio\\build\\commands\\browser\\$.js:91:17)\n                    at async Browser.wrapCommandFn (C:\\Users\\Guna\\kanalabs-test\\node_modules\\@wdio\\utils\\build\\shim.js:137:29)\n                    at async Importwallet.clickbackbtn (C:\\Users\\Guna\\kanalabs-test\\test\\pageobjects\\sol.pages.js\\importwallet.page.js:50:16)\n                    at async Context.<anonymous> (C:\\Users\\Guna\\kanalabs-test\\test\\specs\\importwallet.js:17:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testClass",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "testMethod",
+    "value" : "IS1: Import acount valid seed pharse with invaild name"
+  }, {
+    "name" : "package",
+    "value" : "Import Sol Account"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "device",
+    "value" : "Moto g71 11-11"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "37b4dab25d6f3b87.json",
+  "parameterValues" : [ "Moto g71 11-11" ]
+}

@@ -6,13 +6,13 @@ get neonDashCreate_viewWallet() {
     return $('');
 }
 
- get neonDashCreateWallet() {
-        return $('goToNameWalletNeon');
+ get neonDash() {
+        return $('~goToNameWalletNeon');
     }
 //Wallet name element need 
 
 get continueBtn() {
-    return $('createWalletNeon');
+    return $('~createWalletNeon');
 }
 
 }

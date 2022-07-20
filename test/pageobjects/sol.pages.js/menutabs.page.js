@@ -65,6 +65,7 @@ class MenuTabsOptions {
     // Displayed Functions
 
     async verifyMenuTab() {
+        await browser.pause(10000);
         await expect(this.menuTab).toBeDisplayed();
     }
     async verifyNetwork() {
@@ -88,6 +89,7 @@ class MenuTabsOptions {
 
     async verifyDisplay_DevNetAndMainNet(){
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await browser.pause(10000);
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
         await expect(this.devNetworkTab).toBeDisplayed();
@@ -98,6 +100,7 @@ class MenuTabsOptions {
     // Click Function
 
     async clickMenuTab() {
+
         await this.menuTab.click();
     }
     async clickChangePin() {
@@ -146,8 +149,6 @@ async verifyClickable_MainNet() {
     await expect(this.backBtnNetwork).toBeClickable();
 }
 
-
-
     async changeToMaintoDev() {
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
@@ -182,7 +183,7 @@ async verifyClickable_MainNet() {
         await (await createwalletPage.loginPin6).setValue(pin6);
     }
     async changePin_SetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
+        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);
@@ -193,7 +194,7 @@ async verifyClickable_MainNet() {
         await (await createwalletPage.loginPin6).setValue(pin6);
     }
     async changePin_ConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
+        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);

@@ -12,18 +12,14 @@ class DashBoardPage {
         return $('~changeWalletTypeNeon');
     }
 
-    // SolWallet in dashboard Neon Wallet logo
-
-    get neonWallet() {
-        return $('~goToNeonWallet');
-    }
-// NeonWallet in dashboard Sol Wallet logo
+    
+    // NeonWallet in dashboard Sol Wallet logo
 
     get solWallet() {
         return $('~');
     }
 
-    
+
     get menuTab() {
         return $('~solHomeDashboardBackIcon');
     }
@@ -43,10 +39,10 @@ class DashBoardPage {
     get nftBtn() {
         return $('~receiveNFTbtn');
     }
-get menuCancelbtn(){
-    return $('~SolDrawerClose')
-//android.view.ViewGroup[@content-desc="SolDrawerClose"]/android.view.ViewGroup
-}
+    get menuCancelbtn() {
+        return $('~SolDrawerClose')
+        //android.view.ViewGroup[@content-desc="SolDrawerClose"]/android.view.ViewGroup
+    }
 
     //dashboard token tab bottom SOL send sol token
     get sendSolToken() {
@@ -81,16 +77,10 @@ get menuCancelbtn(){
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
         const walletSol = 'new UiSelector().text("Wallet").className("android.widget.TextView")'
         const walletSOL = await $(`android=${walletSol}`)
-        await walletSOL.waitForDisplayed({timeout:120000})
+        await walletSOL.waitForDisplayed({ timeout: 120000 })
         await expect(walletSOL).toBeDisplayed();
     }
-    async verifyNeonDash() {
-        //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const walletNeon = 'new UiSelector().text("NEON Wallet").className("android.widget.TextView")'
-        const walletNEON = await $(`android=${walletNeon}`)
-        await walletNEON.waitForDisplayed({timeout:120000})
-        await expect(walletNEON).toBeDisplayed();
-    }
+    
 
     async verifyHistorytab() {
         await expect(this.historyTab).toBeDisplayed();
@@ -107,11 +97,9 @@ get menuCancelbtn(){
     async verifymenuoption() {
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
         await expect(this.menuTab).toBeDisplayed();
-        }
-
-    async verifyNeonWallet() {
-        await expect(this.neonWallet).toBeDisplayed();
     }
+
+    
     async verifyCopyclipboardAndQRcode() {
         await expect(this.copyClipboard).toBeDisplayed();
         await expect(this.nftBtn).toBeDisplayed();
@@ -122,7 +110,7 @@ get menuCancelbtn(){
     }
 
     // Clickable function
-    async verifyCopyclipboardAndQRcode_Clickable(){
+    async verifyCopyclipboardAndQRcode_Clickable() {
         await expect(this.copyClipboard).toBeClickable();
         await expect(this.nftBtn).toBeClickable();
     }
@@ -142,25 +130,39 @@ get menuCancelbtn(){
     }
 
 
-  // Click function
-  async clickMenuoption() {
-    await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
-    await expect(this.menuTab).toBeDisplayed();
-    await (await this.menuTab).click();
-   }
-   async clickMenuCancelBtn() {
-    await (await this.menuCancelbtn).waitForDisplayed({ timeout: 60000 });
-    await expect(this.menuCancelbtn).toBeDisplayed();
-    await (await this.menuCancelbtn).click();
-   }
+    // Click function
+    async clickMenuoption() {
+        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await expect(this.menuTab).toBeDisplayed();
+        await (await this.menuTab).click();
+    }
+    async clickMenuCancelBtn() {
+        await (await this.menuCancelbtn).waitForDisplayed({ timeout: 60000 });
+        await expect(this.menuCancelbtn).toBeDisplayed();
+        await (await this.menuCancelbtn).click();
+    }
 
+  
 
- async () {
+    async() {
+    }
 
-}
+    async() {
+    }
 
-   async() {
-}
+    async() {
+    }
+
+    async() {
+    }
+
+    async() {
+    }
+
+    async() {
+    }
+    async() {
+    }
 
 
 

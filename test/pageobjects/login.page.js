@@ -31,6 +31,11 @@ class Loginpage {
     }
 
 
+async loginSOL(){
+
+
+}
+
 }
 
 

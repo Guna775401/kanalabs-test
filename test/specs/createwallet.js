@@ -1,12 +1,15 @@
 //const assert = require("assert");
 //const { AppiumDriver } = require('appium/build/lib/appium');
 const createneonwalletPage = require('../pageobjects/neon.pages.js/createneonwallet.page');
+const neonDashCreateWallet = require('../pageobjects/neon.pages.js/dashneoncreatewallet.page');
+const neondashboardPage = require('../pageobjects/neon.pages.js/neondashboard.page');
 const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
 const { async } = require('../pageobjects/sol.pages.js/dashboard.page');
 const DashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
 const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const RemindMeLaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
 const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
+const securenowPage = require('../pageobjects/sol.pages.js/securenow.page');
 require('dotenv').config()
 
 
@@ -16,7 +19,7 @@ require('dotenv').config()
 
 // await browser.pause(10000);
 
-describe.only('Create wallet Sol', () => {
+describe('Create wallet Sol', () => {
 
     it('CS1: Verify Invalid wallet name while Sol account create', async () => {
 
@@ -34,22 +37,28 @@ describe.only('Create wallet Sol', () => {
         await CreateWalletPage.continueBtnClick();
         await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
-
         // Need to handle popup
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
         await DashboardPage.verifySolDash();
     });
 
-    it('CS3: Create new Sol wallet vaild wallet name', async () => {
-        await LogoutPage.logout();
-        await resetwalletPage.clickResetWalletbutton();
-        //await CreateWalletPage.firstnextBtn(); // need to delete
+    it.only('CS3: Create new Sol wallet vaild wallet name', async () => {
+        //await LogoutPage.logout();
+        //await resetwalletPage.clickResetWalletbutton();
+        await CreateWalletPage.firstnextBtn(); // need to delete
         await CreateWalletPage.createwallet(process.env.VAILDWALLETNAME);
         await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
-        await RemindMeLaterPage.remindmelater();
-        await DashboardPage.verifySolDash();
+        await securenowPage.clickstartBtn();
+        await securenowPage.eyeIconClick();
+        const pattern = await securenowPage.getAllKeyValue();
+        await securenowPage.continueBtnClick();
+        await securenowPage.checkFlashKeys(pattern);
+
+        //console.log(await securenowPage.getflashItem1());
+        //await RemindMeLaterPage.remindmelater();
+        // await DashboardPage.verifySolDash();
     });
 
 });
@@ -61,11 +70,11 @@ describe('Create wallet Neon', async () => {
         await resetwalletPage.clickResetWalletbutton();
         await createneonwalletPage.createwalletNeon(process.env.INVAILDWALLETNAME);
         await createneonwalletPage.backButtonClickNeon();
-     // Need to popup handle
+        // Need to popup handle
 
     })
 
-it('CN2: Verify Setpin confirm pin mismatch while come popup handling', async () => {
+    it('CN2: Verify Setpin confirm pin mismatch while come popup handling', async () => {
 
         await CreateWalletPage.clickCreateWalletBtn();
         await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
@@ -75,12 +84,14 @@ it('CN2: Verify Setpin confirm pin mismatch while come popup handling', async ()
         // Need to handle popup
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
-        await DashboardPage.verifyNeonDash();
-});
+        await neondashboardPage.verifyNeonDash();
+    });
 
     it('CN3: Create new Sol wallet vaild wallet name', async () => {
+
         await LogoutPage.logoutNeon();
         await resetwalletPage.clickResetWalletbutton();
+        //await CreateWalletPage.firstnextBtn();
         await createneonwalletPage.clickNeonWalletlogo();
         await CreateWalletPage.clickCreateWalletBtn();
         await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
@@ -89,9 +100,9 @@ it('CN2: Verify Setpin confirm pin mismatch while come popup handling', async ()
         // Need to handle popup
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
-        await DashboardPage.verifyNeonDash();
+        await neondashboardPage.verifyNeonDash();
     });
 
-   
+
 })
 

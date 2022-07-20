@@ -1,3 +1,4 @@
+const neondashboardPage = require("../pageobjects/neon.pages.js/neondashboard.page");
 const { createwallet } = require("../pageobjects/sol.pages.js/createwallet.page");
 const { async } = require("../pageobjects/sol.pages.js/dashboard.page");
 const dashboardPage = require("../pageobjects/sol.pages.js/dashboard.page");
@@ -14,7 +15,7 @@ const turboPage = require("../pageobjects/sol.pages.js/turbo.page");
 
 // /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageView
 
-describe.only('Verify Dashboard SOL', () => {
+describe('Verify Dashboard SOL', async () => {
 
     it('DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ', async () => {
 
@@ -44,7 +45,7 @@ describe.only('Verify Dashboard SOL', () => {
 
         await dashboardPage.verifymenuoption();
         await dashboardPage.clickMenuoption();
-         await menutabsPage.verifyNetwork();
+        await menutabsPage.verifyNetwork();
         await menutabsPage.verifyChangePinTab();
         //await menutabsPage.verifyLanguage();
         await menutabsPage.verifyLightMode();
@@ -53,8 +54,8 @@ describe.only('Verify Dashboard SOL', () => {
         await menutabsPage.clickCancelbtn();
 
     });
-
-    it('DS5: Verify Buttons Clickable or Not Send and Swap and Stake and Turbo and Lend/borrow', async () => {
+    // DS3 same to DS5
+    xit('DS5: Verify Buttons Clickable or Not Send and Swap and Stake and Turbo and Lend/borrow', async () => {
         await sendPage.verifySendbtn();
         await swapPage.verifySwapbtn();
         await stakePage.verifyStakebtn();
@@ -91,11 +92,11 @@ describe.only('Verify Dashboard SOL', () => {
     it('DS9: Verify Clickable and Displayed or Not DevNet and MainNet', async () => {
 
         await menutabsPage.verifyDisplay_DevNetAndMainNet();
-       // await menutabsPage.clickCancelbtn();
+        // await menutabsPage.clickCancelbtn();
     })
 
 
-    it('DS10:Verify ChangePin funtionality working or not', async () => {
+    it('DS10: Verify ChangePin funtionality working or not', async () => {
 
         // Need run becz fail
         await logutPage.clickMenuSol();
@@ -106,13 +107,35 @@ describe.only('Verify Dashboard SOL', () => {
         await menutabsPage.verifyConfirmPinToSetPin();
         await menutabsPage.changePin_ConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
         await dashboardPage.verifySolDash();
- })
+    })
 
 });
 
-describe('Verify Dashboard NEON', () => {
+describe('Verify Dashboard NEON', async () => {
+
+    it('DN1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ',)
+    await neondashboardPage.clickNeonWalletDash();
+    await neondashboardPage.verifyNeonDash();
+    await neondashboardPage.verifyTokensNeon();
+    await neondashboardPage.verifyHistoryNeon();
+    await neondashboardPage.verifyCreate_ViewWallet();
+})
+
+it('DN2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value and ', async () => {
+    await neondashboardPage.verifySOLWallet();
+    await neondashboardPage.verifyNeonWalletMenuOption();
+    await neondashboardPage.verifyNeonWalletCopyClipboard();
+    await neondashboardPage.verifyNeonWalletScanQR();
+    await neondashboardPage.verifyNeonWalletHoldingValueTxt();
+})
+
+it('DN3: Verify Buttons Displayed or Not Send and Faucet ', async () => {
+await neondashboardPage.verifyNeonWalletSendBtn();
+await neondashboardPage.verifyNeonWalletFaucetBtn();
+})
+
+it('DN4: Verify Menu Options Displayed or Not Network and Change Pin and Language and Lightmode and Logout Show seed phrase', async () =>{
 
 
-
-
+    
 })

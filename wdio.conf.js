@@ -28,11 +28,12 @@ exports.config = {
     //
     specs: [
         [
-       // './test/specs/**/*.js',
+        // './test/specs/**/*.js',
         //'./test/specs/login.js'
-       './test/specs/createwallet.js',
-     //  './test/specs/importwallet.js',
-       './test/specs/dashboard.js',
+        './test/specs/createwallet.js',
+        //'./test/specs/importwallet.js',
+       // './test/specs/dashboard.js',
+      //    './test/specs/importwallet.js',
        //'./test/specs/login.js',
        //'./test/specs/send.js',
 
@@ -43,12 +44,7 @@ exports.config = {
         ],
     ],
 
-//  suites: {
-//      specs: [
-//          './test/specs/createwallet.js',
-//          './test/specs/importwallet.js'
-//      ],
-//    },
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'

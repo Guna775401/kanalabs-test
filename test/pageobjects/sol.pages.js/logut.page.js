@@ -33,19 +33,22 @@ get cancelBtnNeon() {
 
 
     async logout() {
+        await browser.pause(10000);
         await this.menuTabSol.waitForDisplayed({ timeout: 60000 });
         await (this.menuTabSol).click();
         await (this.logoutTab).click();
         await (this.logoutYes).click();
     }
     async logoutNeon() {
+        await browser.pause(10000);
         await this.menuTabNeon.waitForDisplayed({ timeout: 60000 });
-        await (this.menuTabNeon).click();
+         await (this.menuTabNeon).click();
         await (this.logoutTabNeon).click();
         await (this.logoutYesNeon).click();
     }
 
     async clickMenuSol(){
+        await browser.pause(10000)
         await (await this.menuTabSol).click()
     }
     async clickMenuNeon(){

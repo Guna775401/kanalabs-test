@@ -175,7 +175,9 @@ class SecureNowPage {
         const flash10 = await (await this.flashItem10).getText();
         const flash11 = await (await this.flashItem11).getText();
         const flash12 = await (await this.flashItem12).getText();
-        var keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        
+    
+        var keys = ['1','2','3','4','5','6','7','8','9','10','11','12'];
         var values = [flash1, flash2, flash3, flash4, flash5, flash6, flash7, flash8, flash9, flash10, flash11, flash12];
         var pattern = new Map();
         for (var i = 0; i < keys.length; i++) {
@@ -207,64 +209,68 @@ class SecureNowPage {
         const flashInputKey1 = await (await this.flashInput1).getText();
         const flashInputKey2 = await (await this.flashInput2).getText();
         const flashInputKey3 = await (await this.flashInput3).getText();
-        const flashAnswer1 = pattern.get(flashInputKey1);
-        const flashAnswer2 = pattern.get(flashInputKey2);
-        const flashAnswer3 = pattern.get(flashInputKey3);
+        var flashAnswer1 = pattern.get(flashInputKey1);
+        flashAnswer1=flashAnswer1.replace(/[^a-z]+/i,'');
+        var flashAnswer2 = pattern.get(flashInputKey2);
+        flashAnswer2=flashAnswer2.replace(/[^a-z]+/i,'');
+        var flashAnswer3 = pattern.get(flashInputKey3);
+        flashAnswer3=flashAnswer3.replace(/[^a-z]+/i,'');
+
         var values = [flash1, flash2, flash3, flash4, flash5, flash6, flash7, flash8, flash9, flash10, flash11, flash12];
         var fa = [];
         for (var value of values) {
-            if (assert.equal(value, flashAnswer1)) {
+            if ((value==flashAnswer1)) {
                 fa[0] = values.indexOf(value) + 1;
             }
-            if (assert.equal(value, flashAnswer2)) {
+            if (value==flashAnswer2) {
                 fa[1] = values.indexOf(value) + 1;
 
             }
-            if (assert.equal(value, flashAnswer3)) {
+            if (value==flashAnswer3) {
                 fa[2] = values.indexOf(value) + 1;
 
             }
         }
         for (var value of fa) {
             switch (value) {
-                case '1':
+                case 1:
                     await this.flashItemCopy1.click();
                     break;
-                case '2':
+                case 2:
                     await this.flashItemCopy2.click();
                     break;
-                case '3':
+                case 3:
                     await this.flashItemCopy3.click();
                     break;
-                case '4':
+                case 4:
                     await this.flashItemCopy4.click();
                     break;
-                case '5':
+                case 5:
                     await this.flashItemCopy5.click();
                     break;
-                case '6':
+                case 6:
                     await this.flashItemCopy6.click();
                     break;
-                case '7':
+                case 7:
                     await this.flashItemCopy7.click();
                     break;
-                case '8':
+                case 8:
                     await this.flashItemCopy8.click();
                     break;
-                case '9':
+                case 9:
                     await this.flashItemCopy9.click();
                     break;
-                case '10':
+                case 10:
                     await this.flashItemCopy10.click();
                     break;
-                case '11':
+                case 11:
                     await this.flashItemCopy11.click();
                     break;
-                case '12':
+                case 12:
                     await this.flashItemCopy12.click();
                     break;
             default:
-                console.log(error)
+                console.log("Error");
 
             }
 

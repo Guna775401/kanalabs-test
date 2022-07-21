@@ -43,10 +43,22 @@ describe('Create wallet Sol', () => {
         await DashboardPage.verifySolDash();
     });
 
-    it.only('CS3: Create new Sol wallet vaild wallet name', async () => {
-        //await LogoutPage.logout();
-        //await resetwalletPage.clickResetWalletbutton();
+    it('CS3: Create new Sol wallet vaild wallet name, RemindmeLater ', async () => {
+        await LogoutPage.logout();
+        await resetwalletPage.clickResetWalletbutton();
         await CreateWalletPage.firstnextBtn(); // need to delete
+        await CreateWalletPage.createwallet(process.env.VAILDWALLETNAME);
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await RemindMeLaterPage.remindmelater();
+        await DashboardPage.verifySolDash(); 
+       
+       })
+
+   it('CS4: Create new Sol wallet vaild wallet name Secure Now', async () => {
+        await LogoutPage.logout();
+        await resetwalletPage.clickResetWalletbutton();
+        // await CreateWalletPage.firstnextBtn(); // need to delete
         await CreateWalletPage.createwallet(process.env.VAILDWALLETNAME);
         await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
@@ -55,10 +67,7 @@ describe('Create wallet Sol', () => {
         const pattern = await securenowPage.getAllKeyValue();
         await securenowPage.continueBtnClick();
         await securenowPage.checkFlashKeys(pattern);
-
-        //console.log(await securenowPage.getflashItem1());
-        //await RemindMeLaterPage.remindmelater();
-        // await DashboardPage.verifySolDash();
+        await DashboardPage.verifySolDash();
     });
 
 });
@@ -87,7 +96,7 @@ describe('Create wallet Neon', async () => {
         await neondashboardPage.verifyNeonDash();
     });
 
-    it('CN3: Create new Sol wallet vaild wallet name', async () => {
+    it('CN3: Create new Neon wallet vaild wallet name RemindmeLater', async () => {
 
         await LogoutPage.logoutNeon();
         await resetwalletPage.clickResetWalletbutton();
@@ -103,6 +112,23 @@ describe('Create wallet Neon', async () => {
         await neondashboardPage.verifyNeonDash();
     });
 
+ it('CS4: Create new Neon wallet vaild wallet name Secure Now', async () => {
+        await LogoutPage.logoutNeon();
+        await resetwalletPage.clickResetWalletbutton();
+        // await CreateWalletPage.firstnextBtn(); // need to delete
+        await createneonwalletPage.clickNeonWalletlogo();
+        await CreateWalletPage.clickCreateWalletBtn();
+        await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
+        await CreateWalletPage.continueBtnClick();
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await securenowPage.clickstartBtn();
+        await securenowPage.eyeIconClick();
+        const pattern = await securenowPage.getAllKeyValue();
+        await securenowPage.continueBtnClick();
+        await securenowPage.checkFlashKeys(pattern);
+        await neondashboardPage.verifyNeonDash();
+});
 
 })
 

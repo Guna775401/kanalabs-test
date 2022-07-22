@@ -73,15 +73,27 @@ exports.config = {
     //
     
      capabilities: [{
-    
-        platformName: "Android",
-"appium:automationName": "UiAutomator2",
+ 
+        // platformName: "Ios",
+        // "appium:platformVersion": "15.5",
+        // "appium:deviceName": "Karthik's iPhone",
+        // "appium:automationName": "XCUITest",
+
+        // "appium:appPackage": "com.kanaswapapp",
+        // "appium:appActivity": "com.kanaswapapp.MainActivity",
+        // "appium:udid": "ZD2225BZ8T",
+
+
+   platformName: "Android",
+  "appium:automationName": "UiAutomator2",
   "appium:platformVersion": "11",
   "appium:deviceName": "Moto g71",
   "appium:appPackage": "com.kanaswapapp",
   "appium:appActivity": "com.kanaswapapp.MainActivity",
   "appium:udid": "ZD2225BZ8T",
-  //"appium:ignoreHiddenApiPolicyError": "true",
+  
+
+//"appium:ignoreHiddenApiPolicyError": "true",
   //"appium:autoGrantPermission": true
 
 

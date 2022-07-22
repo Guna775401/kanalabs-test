@@ -46,7 +46,7 @@ describe('Create wallet Sol', () => {
     it('CS3: Create new Sol wallet vaild wallet name, RemindmeLater ', async () => {
         await LogoutPage.logout();
         await resetwalletPage.clickResetWalletbutton();
-        await CreateWalletPage.firstnextBtn(); // need to delete
+       // await CreateWalletPage.firstnextBtn(); // need to delete
         await CreateWalletPage.createwallet(process.env.VAILDWALLETNAME);
         await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
@@ -67,6 +67,7 @@ describe('Create wallet Sol', () => {
         const pattern = await securenowPage.getAllKeyValue();
         await securenowPage.continueBtnClick();
         await securenowPage.checkFlashKeys(pattern);
+        await securenowPage.clickContinueandFinishBtn();
         await DashboardPage.verifySolDash();
     });
 
@@ -127,6 +128,7 @@ describe('Create wallet Neon', async () => {
         const pattern = await securenowPage.getAllKeyValue();
         await securenowPage.continueBtnClick();
         await securenowPage.checkFlashKeys(pattern);
+        await securenowPage.clickContinueandFinishBtn();
         await neondashboardPage.verifyNeonDash();
 });
 

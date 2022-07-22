@@ -40,6 +40,12 @@ class SecureNowPage {
     get confirmseeedbackBtn() {
         return $('~confrimSeedBackBtn');
     }
+
+// continue button seed correct answer after continue
+get correctContinueBtn() {
+    return $('~confrimSeedContinueBtn');
+}
+
     get finishBtn() {
         return $('~goToHomeDashboardFromSuccessProtection');
     }
@@ -160,6 +166,12 @@ class SecureNowPage {
         await (await this.confirmSeedContinueBtn).click();
 
     }
+    async clickContinueandFinishBtn() {
+        await (await this.correctContinueBtn).waitForDisplayed({ timeout: 120000 });
+        await (await this.correctContinueBtn).click();
+        await (await this.finishBtn).click();
+
+    }
 
 
     async getAllKeyValue() {
@@ -175,23 +187,15 @@ class SecureNowPage {
         const flash10 = await (await this.flashItem10).getText();
         const flash11 = await (await this.flashItem11).getText();
         const flash12 = await (await this.flashItem12).getText();
-        
-    
-        var keys = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+
+        var keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
         var values = [flash1, flash2, flash3, flash4, flash5, flash6, flash7, flash8, flash9, flash10, flash11, flash12];
         var pattern = new Map();
         for (var i = 0; i < keys.length; i++) {
             pattern.set(keys[i], values[i]);
         }
-
-        // for (var key of pattern.keys()) {
-        //     console.log(key + ":" + Map.get(key) + "\t");
-        // }
-       // var ptn = { 1: "ramesh", 2: "guna" };
-
         return pattern;
     }
-
 
     async checkFlashKeys(pattern) {
         const flash1 = await (await this.flashItemCopy1).getText();
@@ -210,23 +214,23 @@ class SecureNowPage {
         const flashInputKey2 = await (await this.flashInput2).getText();
         const flashInputKey3 = await (await this.flashInput3).getText();
         var flashAnswer1 = pattern.get(flashInputKey1);
-        flashAnswer1=flashAnswer1.replace(/[^a-z]+/i,'');
+        flashAnswer1 = flashAnswer1.replace(/[^a-z]+/i, '');
         var flashAnswer2 = pattern.get(flashInputKey2);
-        flashAnswer2=flashAnswer2.replace(/[^a-z]+/i,'');
+        flashAnswer2 = flashAnswer2.replace(/[^a-z]+/i, '');
         var flashAnswer3 = pattern.get(flashInputKey3);
-        flashAnswer3=flashAnswer3.replace(/[^a-z]+/i,'');
+        flashAnswer3 = flashAnswer3.replace(/[^a-z]+/i, '');
 
         var values = [flash1, flash2, flash3, flash4, flash5, flash6, flash7, flash8, flash9, flash10, flash11, flash12];
         var fa = [];
         for (var value of values) {
-            if ((value==flashAnswer1)) {
+            if ((value == flashAnswer1)) {
                 fa[0] = values.indexOf(value) + 1;
             }
-            if (value==flashAnswer2) {
+            if (value == flashAnswer2) {
                 fa[1] = values.indexOf(value) + 1;
 
             }
-            if (value==flashAnswer3) {
+            if (value == flashAnswer3) {
                 fa[2] = values.indexOf(value) + 1;
 
             }
@@ -269,25 +273,15 @@ class SecureNowPage {
                 case 12:
                     await this.flashItemCopy12.click();
                     break;
-            default:
-                console.log("Error");
-
-            }
-
+                default:
+                    console.log("Error");
             }
 
         }
 
     }
 
-
-
-
-   
-    
-
-
-
+}
 
 
 module.exports = new SecureNowPage();

@@ -52,7 +52,6 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.verifyLogout();
         await menutabsPage.verifyShow_Seed_phrase();
         await menutabsPage.clickCancelbtn();
-
     });
     // DS3 same to DS5
     xit('DS5: Verify Buttons Clickable or Not Send and Swap and Stake and Turbo and Lend/borrow', async () => {
@@ -73,28 +72,23 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.verifyShow_Seed_phraseClickable();
         await menutabsPage.verifyLogoutClickable();
         await menutabsPage.clickCancelbtn();
-
     })
     xit('DS7: Verify Clickable or Not Sol wallet dashboard and Menuoption Neon wallet and Cliped copy and Scan QR and Display Holdling value and Holding Value Text', async () => {
-
         await dashboardPage.verifyCopyclipboardAndQRcode_Clickable();
         await dashboardPage.verifyNeonWalletClickable();
         await dashboardPage.verifyHoldingTextAndValue();
     })
 
     xit('DS8: Verify Clickable or Not Tokens tab and history tab and Create/View wallet', async () => {
-
         await dashboardPage.verifyHistorytabClickable();
         await dashboardPage.verifyTokentabClickable();
         await dashboardPage.verifyCreate_ViewwalletClickable();
     })
 
     it('DS9: Verify Clickable and Displayed or Not DevNet and MainNet', async () => {
-
         await menutabsPage.verifyDisplay_DevNetAndMainNet();
         // await menutabsPage.clickCancelbtn();
     })
-
 
     it('DS10: Verify ChangePin funtionality working or not', async () => {
 
@@ -108,7 +102,6 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.changePin_ConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
         await dashboardPage.verifySolDash();
     })
-
 });
 
 describe('Verify Dashboard NEON', async () => {
@@ -119,7 +112,7 @@ describe('Verify Dashboard NEON', async () => {
     await neondashboardPage.verifyTokensNeon();
     await neondashboardPage.verifyHistoryNeon();
     await neondashboardPage.verifyCreate_ViewWallet();
-})
+});
 
 it('DN2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value and ', async () => {
     await neondashboardPage.verifySOLWallet();
@@ -127,15 +120,29 @@ it('DN2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon walle
     await neondashboardPage.verifyNeonWalletCopyClipboard();
     await neondashboardPage.verifyNeonWalletScanQR();
     await neondashboardPage.verifyNeonWalletHoldingValueTxt();
-})
+});
 
 it('DN3: Verify Buttons Displayed or Not Send and Faucet ', async () => {
-await neondashboardPage.verifyNeonWalletSendBtn();
-await neondashboardPage.verifyNeonWalletFaucetBtn();
-})
+    await neondashboardPage.verifyNeonWalletSendBtnAndFaucetBtn();
+});
 
-it('DN4: Verify Menu Options Displayed or Not Network and Change Pin and Language and Lightmode and Logout Show seed phrase', async () =>{
+it('DN4: Verify Menu Options Displayed or Not Network and Change Pin and Language and Lightmode and Logout Show seed phrase', async () => {
+    await neondashboardPage.verifyMenuOptions();
+});
 
+it('DN5: Verify Buttons Clickable or Not Send and Faucet ', async () => {
+    await neondashboardPage.verifyNeonWalletSendBtnAndFaucetBtn();
+});
+it('DN8: Verify Clickable or Not Tokens tab and history tab and Create/View wallet ', async () => {
+    await neondashboardPage.verifyTokenAndHistoryAndCreate_ViewWallet();
+});
+it('DN10: Verify ChangePin funtionality working or not ', async () => {
 
-    
-})
+    await neondashboardPage.clickNeonWalletMenuOption();
+    await neondashboardPage.clickChangePin();
+    await menutabsPage.changePin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO)
+    await menutabsPage.changePin_SetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+    await menutabsPage.verifyConfirmPinToSetPin();
+    await menutabsPage.changePin_ConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+    await neondashboardPage.verifyNeonDash();
+});

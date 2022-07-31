@@ -49,13 +49,13 @@ describe('Import Sol Account', async () => {
        // await remindmelaterPage.remindmelater();
         await dashboardPage.verifySolDash();
     });
-    it('IS5: Import acount valid seed pharse with vaild name', async () => {
+    it.only('IS5: Import acount valid seed pharse with vaild name', async () => {
 
-       //   await CreateWalletPage.firstnextBtn();
-        await LogoutPage.logout();
-        await resetwalletPage.clickResetWalletbutton();
+       await CreateWalletPage.firstnextBtn();
+    //    await LogoutPage.logout();
+      //  await resetwalletPage.clickResetWalletbutton();
         await CreateWalletPage.clickSolWalletlogo();
-        await ImportWalletPage.importwallet(process.env.SEEDDEMO, process.env.VAILDWALLETNAME);
+        await ImportWalletPage.importwallet(process.env.SEEDHURRY, process.env.VAILDWALLETNAME);
         await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
        await dashboardPage.verifySolDash();

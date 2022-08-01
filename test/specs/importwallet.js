@@ -72,7 +72,7 @@ describe('Import Neon Account', async () => {
         await resetwalletPage.clickResetWalletbutton();
         await createneonwalletPage.clickNeonWalletlogo();
         // need to INVAILDSEEDPHRASE to VAILDSEEDPHRASE
-        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
+        await ImportWalletPage.importwallet(process.env.VAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
         // handle the popup
 
         await ImportWalletPage.clickbackbtn();

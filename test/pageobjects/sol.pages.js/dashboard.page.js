@@ -75,12 +75,19 @@ class DashBoardPage {
 
     async verifySolDash() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const walletSol = 'new UiSelector().text("Wallet").className("android.widget.TextView")'
+        const walletSol = 'new UiSelector().text("Solana - Devnet").className("android.widget.TextView")'
         const walletSOL = await $(`android=${walletSol}`)
         await walletSOL.waitForDisplayed({ timeout: 120000 })
         await expect(walletSOL).toBeDisplayed();
     }
     
+    async verifySolDashMainNet() {
+        //await this.solWallet.waitForDisplayed({ timeout: 60000 });
+        const walletSol = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
+        const walletSOL = await $(`android=${walletSol}`)
+        await walletSOL.waitForDisplayed({ timeout: 120000 })
+        await expect(walletSOL).toBeDisplayed();
+    }
 
     async verifyHistorytab() {
         await expect(this.historyTab).toBeDisplayed();

@@ -7,8 +7,8 @@ describe('Solana Swap USDT to USDC', () => {
 
 
     // Need to Login
-    it('SS2: USDT To USDC Swap', async () => {
-    
+    it.only('SS2: USDT To USDC Swap', async () => {
+  
        await swapPage.clickSwapBtn();
        await swapPage.verifyDevToMainNetWarning();
        await swapPage.changeToDevtoMain();
@@ -29,13 +29,11 @@ describe('Solana Swap USDT to USDC', () => {
       await swapPage.uSDTtoUSDC(process.env.USDT,process.env.USDC);
       await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
       await swapPage.verifySwapScreenUI();
-      await swapPage.secondMarketPlace();
-
+      await swapPage.secondMarketPlace()
       await swapPage.slidetoSwap();
   });
 
-
-  it.only('SS5: USDT To USDC Swap', async () => {
+  it('SS5: USDT To USDC Swap', async () => {
     
    await swapPage.clickSwapBtn();
    await swapPage.verifyDevToMainNetWarning();

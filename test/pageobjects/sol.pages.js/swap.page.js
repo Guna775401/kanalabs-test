@@ -78,7 +78,7 @@ class SwapPage {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup');
     }
 
-    
+
     get marketPlace3() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup');
     }
@@ -88,7 +88,7 @@ class SwapPage {
     get marketPlace5() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup');
     }
-    
+
     get marketPlace6() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup');
     }
@@ -123,6 +123,7 @@ class SwapPage {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[17]/android.view.ViewGroup');
     }
 
+    
     // Market Place route Name 
     get marketPlaceName1() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]')
@@ -276,22 +277,30 @@ class SwapPage {
     async fivthMarketPlace() {
 
         driver.touchAction([
-            {action: 'longPress', x: 670, y: 2011},
-            {action: 'moveTo', x: 643, y: 1383},
+            { action: 'longPress', x: 670, y: 2011 },
+            { action: 'moveTo', x: 643, y: 1383 },
             'release'
-          ]);
+        ]);
 
-    //    await this.marketPlace5.waitForDisplayed({ timeout: 60000 })
-      //  await expect(this.marketPlace5).toBeDisplayed();
-      browser.pause(10000);
-        const marketName5 = await this.marketPlaceName5.getText();
-        console.log("Third Market Name :" + " " + marketName5);
-        const marketTokenName5 = await this.marketPlaceTokenName5.getText();
-        console.log("Market Token Name :" + " " + marketTokenName5);
+        //    await this.marketPlace5.waitForDisplayed({ timeout: 60000 })
+        //  await expect(this.marketPlace5).toBeDisplayed();
+        await browser.pause(10000);
+        console.log(await this.marketPlaceName6.getText());
+
+        // const marketName5 = await this.marketPlaceName6.getText();
+        //console.log("Third Market Name :" + " " + marketName5);
+        //const marketTokenName5 = await this.marketPlaceTokenName6.getText();
+        //console.log("Market Token Name :" + " " + marketTokenName5);
         await (await this.marketPlaceName5).click();
     }
 
-
+    async refresh() {
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
+    }
 
 
     async clickSwapBtn() {
@@ -390,10 +399,11 @@ class SwapPage {
         ])
 
         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-        //browser.pause(10000);
+        //await browser.pause(10000);
         const usDtSwap = 'new UiSelector().text("USDT swapped!").className("android.widget.TextView")'
         const uSDTSwap = $(`android=${usDtSwap}`)
         await expect(uSDTSwap).toBeDisplayed();
+        await (await this.doneBtn).click();
     }
 
     async verifySwapScreenUI() {
@@ -414,7 +424,7 @@ class SwapPage {
 
         const rate = 'new UiSelector().text("Rate").className("android.widget.TextView")'
         const rate1 = $(`android=${rate}`)
-        await (rate1).waitForDisplayed({ timeout: 10000 })
+        await (rate1).waitForDisplayed({ timeout: 30000 })
         await expect(rate1).toBeDisplayed();
 
         const bestPrice = 'new UiSelector().text("Best price").className("android.widget.TextView")'
@@ -446,7 +456,14 @@ class SwapPage {
         await (await menutabsPage.backBtnNetwork).click();
         await this.swapBtn.waitForDisplayed({ timeout: 6000 })
         await expect(this.swapBtn).toBeDisplayed();
-        browser.pause(10000);
+       await browser.pause(10000);
+        
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
+        await browser.pause(5000);
         await this.swapBtn.click();
     }
 

@@ -44,8 +44,13 @@ class CreateWalletPage {
     get loginPin6() {
         return $('~pin6');
     }
+    get popupdismiss(){
+        return $('~com.kanaswapapp:id/ib_core_onboarding_container')
+    }
 
     async firstnextBtn() {
+        // await this.popupdismiss.waitForDisplayed({ timeout: 60000 });
+        // await (this.popupdismiss).click();
         await this.nextBtn.waitForDisplayed({ timeout: 60000 });
         await (await this.nextBtn).click();
         await (await this.nextBtn).click();

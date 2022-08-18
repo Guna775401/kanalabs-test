@@ -162,6 +162,12 @@ async verifyClickable_MainNet() {
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
         await this.mainNetworkTab.click();
+        await browser.pause(2000)
+        driver.touchAction([
+            { action: 'longPress', x: 486, y: 149 },
+            { action: 'moveTo', x: 452, y: 904 },
+            'release'
+        ]);
         }
 
     async changeToLightMode() {

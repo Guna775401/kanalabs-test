@@ -46,7 +46,6 @@ describe('Import Sol Account', async () => {
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
         // Need to handle the popup
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-       // await remindmelaterPage.remindmelater();
         await dashboardPage.verifySolDash();
     });
     it.only('IS5: Import acount valid seed pharse with vaild name', async () => {

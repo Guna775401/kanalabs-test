@@ -150,18 +150,19 @@ async verifyClickable_MainNet() {
 }
 
     async changeToMaintoDev() {
+        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
         await this.devNetworkTab.click();
-        await (await this.backBtnNetwork).click();
+       
     }
 
     async changeToDevtoMain() {
+        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
         await this.mainNetworkTab.click();
-        await (await this.backBtnNetwork).click();
-    }
+        }
 
     async changeToLightMode() {
         await (await this.solDarkmode).click();

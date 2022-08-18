@@ -1,9 +1,15 @@
+const { async } = require("../pageobjects/sol.pages.js/dashboard.page");
 const menutabsPage = require("../pageobjects/sol.pages.js/menutabs.page");
 const swapPage = require("../pageobjects/sol.pages.js/swap.page");
 
-describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
+const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
+const dashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
+const ImportWalletPage = require('../pageobjects/sol.pages.js/importwallet.page');
+require('dotenv').config()
 
-  it.only('SS1: USDT To USDC First Market Swap', async () => {
+describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
+
+  it('SS1: USDT To USDC First Market Swap', async () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifyDevToMainNetWarning();
     await swapPage.changeToDevtoMain();
@@ -110,7 +116,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDC(process.env.SOL);
+    // await swapPage.sOLtoUSDC(process.env.SOL);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
@@ -122,7 +128,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDC(process.env.SOL);
+    // await swapPage.sOLtoUSDC(process.env.SOL);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
@@ -134,7 +140,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDC(process.env.SOL);
+    //  await swapPage.sOLtoUSDC(process.env.SOL);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
@@ -146,7 +152,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDC(process.env.SOL);
+    //  await swapPage.sOLtoUSDC(process.env.SOL);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
@@ -212,7 +218,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDT(process.env.SOL, process.env.USDT);
+    await swapPage.sOLtoUSDT(process.env.USDT);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
@@ -224,7 +230,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDT(process.env.SOL, process.env.USDT);
+    await swapPage.sOLtoUSDT(process.env.USDT);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
@@ -236,7 +242,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDT(process.env.SOL, process.env.USDT);
+    await swapPage.sOLtoUSDT(process.env.USDT);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
@@ -248,7 +254,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-    await swapPage.sOLtoUSDT(process.env.SOL, process.env.USDT);
+    await swapPage.sOLtoUSDT(process.env.USDT);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
@@ -415,6 +421,10 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
   it('SS33 : USDH to USDT First Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
+    // Need to comment two line
+    // await swapPage.verifyDevToMainNetWarning();
+    //await swapPage.changeToDevtoMain();
+
     await swapPage.verifySwapScreen();
     await swapPage.uSDHtoUSDT(process.env.USDH, process.env.USDT);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
@@ -460,55 +470,55 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifyUSDHSwapped();
   });
 
-// USDT to USDH
+  // USDT to USDH
 
-it('SS37 : USDT to USDH First Market Swap', async () => {
-  await swapPage.refresh();
-  await swapPage.clickSwapBtn();
-  await swapPage.verifySwapScreen();
-  await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
-  await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
-  await swapPage.verifySwapScreenUI();
-  await swapPage.firstMarketPlace();
-  await swapPage.slidetoSwap();
-  await swapPage.verifyUSDTSwapped();
-});
+  it('SS37 : USDT to USDH First Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.firstMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSDTSwapped();
+  });
 
-it('SS38 : USDT to USDH Second Market Swap', async () => {
-  await swapPage.refresh();
-  await swapPage.clickSwapBtn();
-  await swapPage.verifySwapScreen();
-  await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
-  await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
-  await swapPage.verifySwapScreenUI();
-  await swapPage.secondMarketPlace()
-  await swapPage.slidetoSwap();
-  await swapPage.verifyUSDTSwapped();
-});
+  it('SS38 : USDT to USDH Second Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.secondMarketPlace()
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSDTSwapped();
+  });
 
-it('SS39 : USDT to USDH Third Market Swap', async () => {
-  await swapPage.refresh();
-  await swapPage.clickSwapBtn();
-  await swapPage.verifySwapScreen();
-  await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
-  await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
-  await swapPage.verifySwapScreenUI();
-  await swapPage.thirdMarketPlace();
-  await swapPage.slidetoSwap();
-  await swapPage.verifyUSDTSwapped();
-});
+  it('SS39 : USDT to USDH Third Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.thirdMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSDTSwapped();
+  });
 
-it('SS40 : USDT to USDH Fourth Market Swap', async () => {
-  await swapPage.refresh();
-  await swapPage.clickSwapBtn();
-  await swapPage.verifySwapScreen();
-  await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
-  await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
-  await swapPage.verifySwapScreenUI();
-  await swapPage.fourthMarketPlace();
-  await swapPage.slidetoSwap();
-  await swapPage.verifyUSDTSwapped();
-});
+  it('SS40 : USDT to USDH Fourth Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSDTtoUSDH(process.env.USDT, process.env.USDH);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.fourthMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSDTSwapped();
+  });
 
 })
 
@@ -611,10 +621,257 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.slidetoSwap();
     await swapPage.verifymSOLSwapped();
   });
+})
+
+
+describe('Solana Swap SRM to UST && UST to SRM', () => {
+
+  // SRM to UST
+
+  it('SS49 : SRM to UST First Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.sRMtoUST(process.env.SRM, process.env.UST);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.firstMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifySRMSwapped();
+  });
+
+  it('SS50 : SRM to UST Second Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.sRMtoUST(process.env.SRM, process.env.UST);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.secondMarketPlace()
+    await swapPage.slidetoSwap();
+    await swapPage.verifySRMSwapped();
+  });
+
+  it('SS51 : SRM to UST Third Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.sRMtoUST(process.env.SRM, process.env.UST);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.thirdMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifySRMSwapped();
+  });
+
+  it('SS52 : SRM to UST Fourth Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.sRMtoUST(process.env.SRM, process.env.UST);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.fourthMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifySRMSwapped();
+  });
+
+  // UST to SRM
+
+  it('SS53 : UST to SRM First Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSTtoSRM(process.env.UST, process.env.SRM);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.firstMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSTSwapped();
+  });
+
+  it('SS54 : UST to SRM Second Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSTtoSRM(process.env.UST, process.env.SRM);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.secondMarketPlace()
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSTSwapped();
+  });
+
+  it('SS55 : UST to SRM Third Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSTtoSRM(process.env.UST, process.env.SRM);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.thirdMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSTSwapped();
+  });
+
+  it('SS56 : UST to SRM Fourth Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.uSTtoSRM(process.env.UST, process.env.SRM);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.fourthMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyUSTSwapped();
+  });
+
+})
+
+// soSHUSHI to ORCA & ORCA to soSHUSHI
+
+describe('Solana Swap soSHUSHI to ORCA & ORCA to soSHUSHI', () => {
+
+
+  it('SS57 : soSHUSHI to ORCA First Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.soSUSHItoORCA(process.env.SOSUSHI, process.env.ORCA);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.firstMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifysoSUSHISwapped();
+  });
+
+  // it('SS58 : soSHUSHI to ORCA Second Market Swap', async () => {
+  //   await swapPage.refresh();
+  //   await swapPage.clickSwapBtn();
+  //   await swapPage.verifySwapScreen();
+  //   await swapPage.soSUSHItoORCA(process.env.SOSUSHI, process.env.ORCA);
+  //   await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+  //   await swapPage.verifySwapScreenUI();
+  //   await swapPage.secondMarketPlace()
+  //   await swapPage.slidetoSwap();
+  //   await swapPage.verifysoSUSHISwapped();
+  // });
+
+  // it('SS59 : soSHUSHI to ORCA Third Market Swap', async () => {
+  //   await swapPage.refresh();
+  //   await swapPage.clickSwapBtn();
+  //   await swapPage.verifySwapScreen();
+  //   await swapPage.soSUSHItoORCA(process.env.SOSUSHI, process.env.ORCA);
+  //   await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+  //   await swapPage.verifySwapScreenUI();
+  //   await swapPage.thirdMarketPlace();
+  //   await swapPage.slidetoSwap();
+  //   await swapPage.verifysoSUSHISwapped();
+  // });
+
+  // it('SS60 : soSHUSHI to ORCA Fourth Market Swap', async () => {
+  //   await swapPage.refresh();
+  //   await swapPage.clickSwapBtn();
+  //   await swapPage.verifySwapScreen();
+  //   await swapPage.soSUSHItoORCA(process.env.SOSUSHI, process.env.ORCA);
+  //   await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+  //   await swapPage.verifySwapScreenUI();
+  //   await swapPage.fourthMarketPlace();
+  //   await swapPage.slidetoSwap();
+  //   await swapPage.verifysoSUSHISwapped();
+  // });
+
+
+  // ORCA to soSHUSHI
+
+  it('SS61 : ORCA to soSHUSHI First Market Swap', async () => {
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    await swapPage.verifySwapScreen();
+    await swapPage.oRCAtosoSUSHI(process.env.ORCA, process.env.SOSUSHI);
+    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.verifySwapScreenUI();
+    await swapPage.firstMarketPlace();
+    await swapPage.slidetoSwap();
+    await swapPage.verifyORCASwapped();
+  });
+
+  // it('SS62 : ORCA to soSHUSHI Second Market Swap', async () => {
+  //   await swapPage.refresh();
+  //   await swapPage.clickSwapBtn();
+  //   await swapPage.verifySwapScreen();
+  //   await swapPage.oRCAtosoSUSHI(process.env.ORCA, process.env.SOSUSHI);
+  //   await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+  //   await swapPage.verifySwapScreenUI();
+  //   await swapPage.secondMarketPlace()
+  //   await swapPage.slidetoSwap();
+  //   await swapPage.verifyORCASwapped();
+  // });
+
+  // it('SS63 : ORCA to soSHUSHI Third Market Swap', async () => {
+  //   await swapPage.refresh();
+  //   await swapPage.clickSwapBtn();
+  //   await swapPage.verifySwapScreen();
+  //   await swapPage.oRCAtosoSUSHI(process.env.ORCA, process.env.SOSUSHI);
+  //   await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+  //   await swapPage.verifySwapScreenUI();
+  //   await swapPage.thirdMarketPlace();
+  //   await swapPage.slidetoSwap();
+  //   await swapPage.verifyORCASwapped();
+  // });
+
+  // it('SS64 : ORCA to soSHUSHI Fourth Market Swap', async () => {
+  //   await swapPage.refresh();
+  //   await swapPage.clickSwapBtn();
+  //   await swapPage.verifySwapScreen();
+  //   await swapPage.oRCAtosoSUSHI(process.env.ORCA, process.env.SOSUSHI);
+  //   await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+  //   await swapPage.verifySwapScreenUI();
+  //   await swapPage.fourthMarketPlace();
+  //   await swapPage.slidetoSwap();
+  //   await swapPage.verifyORCASwapped();
+  // });
 
 })
 
 
-// describe('Solana Swap USDT to SOL', () => {
 
-// })
+
+describe('Verify Solana Swap Max Amount equal to Balance Amount ', () => {
+
+  it('SS: Verify Sol max amount eqaul to balance', async () => {
+
+    await swapPage.refresh();
+    await swapPage.clickSwapBtn();
+    // Need to delete two line
+    await swapPage.verifyDevToMainNetWarning();
+    await swapPage.changeToDevtoMain();
+    // SOL
+    await swapPage.verifySwapScreen();
+    // await swapPage.getMaxAmount();
+    await swapPage.selectUSDC(process.env.USDC);
+    await swapPage.getMaxAmount();
+    await swapPage.selectUSDT(process.env.USDT);
+    await swapPage.getMaxAmount();
+    await swapPage.selectUST(process.env.UST);
+    await swapPage.getMaxAmount();
+    await swapPage.selectmSOL(process.env.MSOL);
+    await swapPage.getMaxAmount();
+    await swapPage.selectSRM(process.env.SRM);
+    await swapPage.getMaxAmount();
+  })
+})
+
+
+describe('Solana Swap integration test case', () => {
+
+
+})
+
+
+
+describe('Solana Swap USDT to SOL', () => {
+})
+
+describe('Solana Swap USDT to SOL', () => {
+})

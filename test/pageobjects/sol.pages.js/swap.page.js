@@ -1,5 +1,7 @@
 const menutabsPage = require("./menutabs.page");
 
+const fs = require('fs');
+
 class SwapPage {
 
     get swapBtn() {
@@ -48,7 +50,7 @@ class SwapPage {
     get youReceivedropdown() {
         return $("~searchTextForToken2");
     }
-    get youPaydropdownSearh() {
+    get youPaydropdownSearch() {
         return $("~swapTokenListViewText");
     }
     get youReceivedropdownSearch() {
@@ -57,7 +59,7 @@ class SwapPage {
     get doneBtn() {
         return $('~goToHomeDone');
     }
-    get result(){
+    get result() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]')
     }
     // const findindBestRoute = 'new UiSelector().text("Finding you the best route and price").className("android.widget.TextView")'
@@ -139,25 +141,27 @@ class SwapPage {
 
 
     async firstMarketPlace() {
-
         await this.marketPlaceName1.waitForDisplayed({ timeout: 60000 })
         await expect(this.marketPlaceName1).toBeDisplayed();
-        console.log(await this.marketPlaceName1.getText());
-        console.log(await this.marketPlaceTokenName1.getText());
 
+        const marketName1 = await this.marketPlaceName1.getText()
+        const marketTokenName2 = await this.marketPlaceTokenName1.getText()
+        console.log(marketName1)
+        console.log(marketTokenName2)
+        // fs.open('result.txt', marketName1, function(err) {
+        //     if(err) throw err;
+        //          console.log(err);
+        //     //console.log("marketName2");
+        // }); 
 
-        //  await (await this.marketPlace1).click();
+        // fs.open('result.txt', marketTokenName2, function(err, ) {
+        //     if(err) throw err; 
+        //          console.log(err);
+        //          // console.log("marketTokenName2");
+        // }); 
 
-        //    driver.touchAction([
-        //     {action: 'press', x: 498, y: 1961},
-        //     {action: 'moveTo', x: 502, y: 1337},
-        //     'release'
-        //   ]);
-
-        //   console.log (await this.marketPlace5.getText());
-        //   await this.marketPlaceName7.scrollIntoView();
-        //   console.log (await this.marketPlaceName7.getText());
-
+      //  fs.writeFileSync('F:\KanaLabs\Reports', marketName1);
+       // fs.writeFileSync('F:\KanaLabs\Reports', marketTokenName2);
     }
 
     async secondMarketPlace() {
@@ -198,30 +202,41 @@ class SwapPage {
             'release'
         ]);
 
-        //    await this.marketPlace5.waitForDisplayed({ timeout: 60000 })
+        //  await this.marketPlace5.waitForDisplayed({ timeout: 60000 })
         //  await expect(this.marketPlace5).toBeDisplayed();
         await browser.pause(10000);
         console.log(await this.marketPlaceName6.getText());
-
         // const marketName5 = await this.marketPlaceName6.getText();
         //console.log("Third Market Name :" + " " + marketName5);
         //const marketTokenName5 = await this.marketPlaceTokenName6.getText();
         //console.log("Market Token Name :" + " " + marketTokenName5);
         await (await this.marketPlaceName5).click();
     }
+    async getBalance() {
+
+    }
+    async getMaxAmount() {
+        await this.maxBtn.waitForDisplayed({ timeout: 60000 })
+        await (await this.maxBtn).click();
+        const maxAmount = await (this.youPayInputAmount).getText();
+        const balanceAmount = await (this.balance).getText();
+        const res = (maxAmount == balanceAmount);
+        console.log(res);
+        //console.log(await maxAmount.isEqual(balanceAmount));
+        // await (await this.youPayInputAmount).getText();
+    }
 
     async refresh() {
         await browser.pause(2000)
         driver.touchAction([
-            { action: 'longPress', x: 525, y: 172 },
-            { action: 'moveTo', x: 517, y: 628 },
+            { action: 'longPress', x: 486, y: 149 },
+            { action: 'moveTo', x: 452, y: 904 },
             'release'
         ]);
     }
 
-
     async clickSwapBtn() {
-        await this.swapBtn.waitForDisplayed({ timeout: 60000 })
+        await (await this.swapBtn).waitForDisplayed({ timeout: 60000 })
         await expect(this.swapBtn).toBeDisplayed();
         await this.swapBtn.click();
     }
@@ -243,7 +258,6 @@ class SwapPage {
     }
 
     async verifySwapScreen() {
-        browser.pause(30000);
         //await this.swapBtn.waitForClickable({ reverse: true });
         //await this.swapBtn.waitForDisplayed({ timeout: 20000 })
         // await (await this.swapBtn).click();// Need to delete
@@ -281,12 +295,12 @@ class SwapPage {
         const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
         const searchText = $(`android=${search}`)
         await expect(searchText).toBeDisplayed();
-        await (await this.youPaydropdownSearh).click();
-        await (await this.youPaydropdownSearh).setValue(usdt);
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdt);
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
-        uSDTtxt.click();
-        uSDTtxt.click();
+        await uSDTtxt.click();
+        await uSDTtxt.click();
 
         // await (await this.youReceivedropdown).click();
         //const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -298,8 +312,8 @@ class SwapPage {
         const uSDCtxt = $(`android=${usdctxt}`)
         await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
         await expect(uSDCtxt).toBeDisplayed();
-        //uSDCtxt.click();
-        //uSDCtxt.click();
+        //await uSDCtxt.click();
+        //await uSDCtxt.click();
     }
 
     async uSDCtoUSDT(usdc, usdt) {
@@ -307,12 +321,12 @@ class SwapPage {
         const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
         const searchText = $(`android=${search}`)
         await expect(searchText).toBeDisplayed();
-        await (await this.youPaydropdownSearh).click();
-        await (await this.youPaydropdownSearh).setValue(usdc);
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdc);
         const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const uSDCtxt = $(`android=${usdctxt}`)
-        uSDCtxt.click();
-        uSDCtxt.click();
+        await uSDCtxt.click();
+        await uSDCtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -322,255 +336,419 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(usdt);
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
-        uSDTtxt.click();
-        uSDTtxt.click();
+        await uSDTtxt.click();
+        await uSDTtxt.click();
     }
     async sOLtoUSDC(sol) {
         await (await this.youPaydropdown).click();
         const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
         const searchText = $(`android=${search}`)
         await expect(searchText).toBeDisplayed();
-        await (await this.youPaydropdownSearh).click();
-        await (await this.youPaydropdownSearh).setValue(sol);
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(sol);
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
-        sOLtxt.click();
-        sOLtxt.click();
+        await sOLtxt.click();
+        await sOLtxt.click();
 
         const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const uSDCtxt = $(`android=${usdctxt}`)
         await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
         await expect(uSDCtxt).toBeDisplayed();
-        }
+    }
 
-        async uSDCtoSOL(usdc, sol) {
-            await (await this.youPaydropdown).click();
-            const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-            const searchText = $(`android=${search}`)
-            await expect(searchText).toBeDisplayed();
-            await (await this.youPaydropdownSearh).click();
-            await (await this.youPaydropdownSearh).setValue(usdc);
-            const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
-            const uSDCtxt = $(`android=${usdctxt}`)
-            uSDCtxt.click();
-            uSDCtxt.click();
-    
-            await (await this.youReceivedropdown).click();
-            const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-            const searchText1 = $(`android=${search1}`)
-            await expect(searchText1).toBeDisplayed();
-            await (await this.youReceivedropdownSearch).click();
-            await (await this.youReceivedropdownSearch).setValue(sol);
-            const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-            const sOLtxt = $(`android=${soltxt}`)
-            sOLtxt.click();
-            sOLtxt.click();
-        }
+    async uSDCtoSOL(usdc, sol) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdc);
+        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+        const uSDCtxt = $(`android=${usdctxt}`)
+        await uSDCtxt.click();
+        await uSDCtxt.click();
 
-        async sOLtoUSDT(sol, usdt) {
-            await (await this.youPaydropdown).click();
-            const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-            const searchText = $(`android=${search}`)
-            await expect(searchText).toBeDisplayed();
-            await (await this.youPaydropdownSearh).click();
-            await (await this.youPaydropdownSearh).setValue(sol);
-            const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-            const sOLtxt = $(`android=${soltxt}`)
-            sOLtxt.click();
-            sOLtxt.click();
-    
-            await (await this.youReceivedropdown).click();
-            const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-            const searchText1 = $(`android=${search1}`)
-            await expect(searchText1).toBeDisplayed();
-            await (await this.youReceivedropdownSearch).click();
-            await (await this.youReceivedropdownSearch).setValue(usdt);
-            const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
-            const uSDTtxt = $(`android=${usdttxt}`)
-            uSDTtxt.click();
-            uSDTtxt.click();
-        }
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        await sOLtxt.click();
+        await sOLtxt.click();
+    }
 
-        async uSDTtoSOL(usdt,sol) {
-            
-            await (await this.youReceivedropdown).click();
-            const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-            const searchText1 = $(`android=${search1}`)
-            await expect(searchText1).toBeDisplayed();
-            await (await this.youReceivedropdownSearch).click();
-            await (await this.youReceivedropdownSearch).setValue(usdt);
-            const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
-            const uSDTtxt = $(`android=${usdttxt}`)
-            uSDTtxt.click();
-            uSDTtxt.click();
+    async sOLtoUSDT(usdt) {
+        // await (await this.youPaydropdown).click();
+        // const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        // const searchText = $(`android=${search}`)
+        // await expect(searchText).toBeDisplayed();
+        // await (await this.youPaydropdownSearch).click();
+        // await (await this.youPaydropdownSearch).setValue(sol);
+        // const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        // const sOLtxt = $(`android=${soltxt}`)
+        // sOLtxt.click();
+        // sOLtxt.click();
 
-            await (await this.youPaydropdown).click();
-            const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-            const searchText = $(`android=${search}`)
-            await expect(searchText).toBeDisplayed();
-            await (await this.youPaydropdownSearh).click();
-            await (await this.youPaydropdownSearh).setValue(sol);
-            const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-            const sOLtxt = $(`android=${soltxt}`)
-            sOLtxt.click();
-            sOLtxt.click();
- }
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(usdt);
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        await uSDTtxt.click();
+        await uSDTtxt.click();
+    }
 
- async sOLtoSRM(sol, srm) {
-    await (await this.youPaydropdown).click();
-    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText = $(`android=${search}`)
-    await expect(searchText).toBeDisplayed();
-    await (await this.youPaydropdownSearh).click();
-    await (await this.youPaydropdownSearh).setValue(sol);
-    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-    const sOLtxt = $(`android=${soltxt}`)
-    sOLtxt.click();
-    sOLtxt.click();
+    async uSDTtoSOL(usdt, sol) {
 
-    await (await this.youReceivedropdown).click();
-    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText1 = $(`android=${search1}`)
-    await expect(searchText1).toBeDisplayed();
-    await (await this.youReceivedropdownSearch).click();
-    await (await this.youReceivedropdownSearch).setValue(srm);
-    const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
-    const sRMtxt = $(`android=${srmtxt}`)
-    sRMtxt.click();
-    sRMtxt.click();
-}
-
-async sRMtoSOL(srm,sol) {
-   
-    await (await this.youReceivedropdown).click();
-    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText1 = $(`android=${search1}`)
-    await expect(searchText1).toBeDisplayed();
-    await (await this.youReceivedropdownSearch).click();
-    await (await this.youReceivedropdownSearch).setValue(srm);
-    const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
-    const sRMtxt = $(`android=${srmtxt}`)
-    sRMtxt.click();
-    sRMtxt.click();
-
-    await (await this.youPaydropdown).click();
-    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText = $(`android=${search}`)
-    await expect(searchText).toBeDisplayed();
-    await (await this.youPaydropdownSearh).click();
-    await (await this.youPaydropdownSearh).setValue(sol);
-    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-    const sOLtxt = $(`android=${soltxt}`)
-    sOLtxt.click();
-    sOLtxt.click();
-}
-
-async uSDHtoUSDT(usdh, usdt) {
-    await (await this.youPaydropdown).click();
-    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText = $(`android=${search}`)
-    await expect(searchText).toBeDisplayed();
-    await (await this.youPaydropdownSearh).click();
-    await (await this.youPaydropdownSearh).setValue(usdh);
-    const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
-    const uSDHtxt = $(`android=${usdhtxt}`)
-    uSDHtxt.click();
-    uSDHtxt.click();
-
-    await (await this.youReceivedropdown).click();
-    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText1 = $(`android=${search1}`)
-    await expect(searchText1).toBeDisplayed();
-    await (await this.youReceivedropdownSearch).click();
-    await (await this.youReceivedropdownSearch).setValue(usdt);
-    const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
-    const uSDTtxt = $(`android=${usdttxt}`)
-    uSDTtxt.click();
-    uSDTtxt.click();
-}
-
-async uSDTtoUSDH(usdt, usdh) {
-   
-    await (await this.youReceivedropdown).click();
-    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText1 = $(`android=${search1}`)
-    await expect(searchText1).toBeDisplayed();
-    await (await this.youReceivedropdownSearch).click();
-    await (await this.youReceivedropdownSearch).setValue(usdt);
-    const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
-    const uSDTtxt = $(`android=${usdttxt}`)
-    uSDTtxt.click();
-    uSDTtxt.click();
-   
-    await (await this.youPaydropdown).click();
-    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText = $(`android=${search}`)
-    await expect(searchText).toBeDisplayed();
-    await (await this.youPaydropdownSearh).click();
-    await (await this.youPaydropdownSearh).setValue(usdh);
-    const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
-    const uSDHtxt = $(`android=${usdhtxt}`)
-    uSDHtxt.click();
-    uSDHtxt.click();
-}
-
-async sOLtomSOL(sol, mSOL) {
-    await (await this.youPaydropdown).click();
-    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText = $(`android=${search}`)
-    await expect(searchText).toBeDisplayed();
-    await (await this.youPaydropdownSearh).click();
-    await (await this.youPaydropdownSearh).setValue(sol);
-    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-    const sOLtxt = $(`android=${soltxt}`)
-    sOLtxt.click();
-    sOLtxt.click();
-
-    await (await this.youReceivedropdown).click();
-    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText1 = $(`android=${search1}`)
-    await expect(searchText1).toBeDisplayed();
-    await (await this.youReceivedropdownSearch).click();
-    await (await this.youReceivedropdownSearch).setValue(mSOL);
-    const msoltxt = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
-    const mSOLTxt = $(`android=${msoltxt}`)
-    mSOLTxt.click();
-    mSOLTxt.click();
-}
-
-async mSOLtoSOL(mSOL,sol) {
-    
-    await (await this.youReceivedropdown).click();
-    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText1 = $(`android=${search1}`)
-    await expect(searchText1).toBeDisplayed();
-    await (await this.youReceivedropdownSearch).click();
-    await (await this.youReceivedropdownSearch).setValue(mSOL);
-    const msolTxt1 = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
-    const mSOLTxt1 = $(`android=${msolTxt1}`)
-    mSOLTxt1.click();
-    mSOLTxt1.click();
-
-    await (await this.youPaydropdown).click();
-    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    const searchText = $(`android=${search}`)
-    await expect(searchText).toBeDisplayed();
-    await (await this.youPaydropdownSearh).click();
-    await (await this.youPaydropdownSearh).setValue(sol);
-    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-    const sOLtxt = $(`android=${soltxt}`)
-    sOLtxt.click();
-    sOLtxt.click();
-}
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdt);
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        await uSDTtxt.click();
+        await uSDTtxt.click();
 
 
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        await sOLtxt.click();
+        await sOLtxt.click();
+    }
 
+    async sOLtoSRM(sol, srm) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        await sOLtxt.click();
+        await sOLtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(srm);
+        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+        const sRMtxt = $(`android=${srmtxt}`)
+        await sRMtxt.click();
+        await sRMtxt.click();
+    }
+
+    async sRMtoSOL(srm, sol) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(srm);
+        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+        const sRMtxt = $(`android=${srmtxt}`)
+        await sRMtxt.click();
+        await sRMtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        await sOLtxt.click();
+        await sOLtxt.click();
+
+    }
+
+    async sRMtoUST(srm, ust) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(srm);
+        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+        const sRMtxt = $(`android=${srmtxt}`)
+        await sRMtxt.click();
+        await sRMtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(ust);
+        const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
+        const uSTtxt = $(`android=${usttxt}`)
+        await uSTtxt.click();
+        await uSTtxt.click();
+    }
+
+    async uSTtoSRM(ust, srm) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(ust);
+        const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
+        const uSTtxt = $(`android=${usttxt}`)
+        await uSTtxt.click();
+        await uSTtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(srm);
+        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+        const sRMtxt = $(`android=${srmtxt}`)
+        await sRMtxt.click();
+        await sRMtxt.click();
+    }
+
+    async uSDHtoUSDT(usdh, usdt) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdh);
+        const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
+        const uSDHtxt = $(`android=${usdhtxt}`)
+        await uSDHtxt.click();
+        await uSDHtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(usdt);
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        await uSDTtxt.click();
+        await uSDTtxt.click();
+    }
+
+    async uSDTtoUSDH(usdt, usdh) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdt);
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        await uSDTtxt.click();
+        await uSDTtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(usdh);
+        const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
+        const uSDHtxt = $(`android=${usdhtxt}`)
+        await uSDHtxt.click();
+        await uSDHtxt.click();
+    }
+
+    async sOLtomSOL(sol, mSOL) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        await sOLtxt.click();
+        await sOLtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(mSOL);
+        const msoltxt = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+        const mSOLTxt = $(`android=${msoltxt}`)
+        await mSOLTxt.click();
+        await mSOLTxt.click();
+    }
+
+    async mSOLtoSOL(mSOL, sol) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(mSOL);
+        const msolTxt1 = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+        const mSOLTxt1 = $(`android=${msolTxt1}`)
+        await mSOLTxt1.click();
+        await mSOLTxt1.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        await sOLtxt.click();
+        await sOLtxt.click();
+    }
+
+    async soSUSHItoORCA(soSUSHI, orca) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(soSUSHI);
+        const sosushiItxt = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
+        const soSUSHItxt = $(`android=${sosushiItxt}`)
+        await soSUSHItxt.click();
+        await soSUSHItxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(orca);
+        const orcatxt = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
+        const oRCAtxt = $(`android=${orcatxt}`)
+        await oRCAtxt.click();
+        await oRCAtxt.click();
+    }
+
+    async oRCAtosoSUSHI(orca,soSUSHI) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(orca);
+        const orcatxt = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
+        const oRCAtxt = $(`android=${orcatxt}`)
+        await oRCAtxt.click();
+        await oRCAtxt.click();
+
+        await (await this.youReceivedropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(soSUSHI);
+        const sosushiItxt = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
+        const soSUSHItxt = $(`android=${sosushiItxt}`)
+        await soSUSHItxt.click();
+        await soSUSHItxt.click();
+       
+    }
+
+    async selectUSDC(usdc) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdc);
+        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+        const uSDCtxt = $(`android=${usdctxt}`)
+        await uSDCtxt.click();
+        await uSDCtxt.click();
+    }
+    async selectUST(ust) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(ust);
+        const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
+        const uSTtxt = $(`android=${usttxt}`)
+        await uSTtxt.click();
+        await uSTtxt.click();
+    }
+    async selectUSDT(usdt) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdt);
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        await uSDTtxt.click();
+        await uSDTtxt.click();
+    }
+
+    async selectSRM(srm) {
+
+        await (await this.youPaydropdown).click();
+        const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText1 = $(`android=${search1}`)
+        await expect(searchText1).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(srm);
+        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+        const sRMtxt = $(`android=${srmtxt}`)
+        await sRMtxt.click();
+        await sRMtxt.click();
+    }
+
+    async selectmSOL(mSOL) {
+
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(mSOL);
+        const msolTxt1 = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+        const mSOLTxt1 = $(`android=${msolTxt1}`)
+        await mSOLTxt1.click();
+        await mSOLTxt1.click();
+    }
 
     async slidetoSwap() {
-
         const slide = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup');
         await slide.waitForDisplayed({ timeout: 120000 })
-
         const slideToSwapTxt = 'new UiSelector().text("Slide to swap").className("android.widget.TextView")'
         const slideToSwapTxt1 = $(`android=${slideToSwapTxt}`)
         await expect(slideToSwapTxt1).toBeDisplayed();
@@ -580,87 +758,91 @@ async mSOLtoSOL(mSOL,sol) {
             { action: 'moveTo', x: 930, y: 2168 },
             'release'
         ])
-
-
     }
 
     async verifyUSDTSwapped() {
         const usDtSwap = 'new UiSelector().text("USDT swapped!").className("android.widget.TextView")'
         const uSDTSwap = $(`android=${usDtSwap}`)
-        await (uSDTSwap).waitForDisplayed({ timeout: 60000 })
+        await (uSDTSwap).waitForDisplayed({ timeout: 120000 })
         await expect(uSDTSwap).toBeDisplayed();
-        await (this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        // await (this.doneBtn).waitForDisplayed({ timeout: 120000 })
         await (this.doneBtn).click();
     }
-    
+
     async verifyUSDCSwapped() {
-       const uSDcSwap = 'new UiSelector().text("USDC swapped!").className("android.widget.TextView")'
+        const uSDcSwap = 'new UiSelector().text("USDC swapped!").className("android.widget.TextView")'
         const uSDCSwap = $(`android=${uSDcSwap}`)
+        await (uSDCSwap).waitForDisplayed({ timeout: 60000 })
         await expect(uSDCSwap).toBeDisplayed();
         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
         await (await this.doneBtn).click();
     }
 
     async verifySOLSwapped() {
-        const uSDcSwap = 'new UiSelector().text("SOL swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
-     async verifyUSDHSwapped() {
-        const uSDcSwap = 'new UiSelector().text("USDH swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
- 
-     async verifySRMSwapped() {
-        const uSDcSwap = 'new UiSelector().text("SRM swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
-     async verifymSOLSwapped() {
-        const uSDcSwap = 'new UiSelector().text("mSOL swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
-     async verifysoSUSHISwapped() {
-        const uSDcSwap = 'new UiSelector().text("soSUSHI swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
-     async verifyUSTSwapped() {
-        const uSDcSwap = 'new UiSelector().text("UST swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
-     async verifyORCASwapped() {
-        const uSDcSwap = 'new UiSelector().text("ORCA swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
-     async verifyETHSwapped() {
-        const uSDcSwap = 'new UiSelector().text("ETH swapped!").className("android.widget.TextView")'
-         const uSDCSwap = $(`android=${uSDcSwap}`)
-         await expect(uSDCSwap).toBeDisplayed();
-         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-         await (await this.doneBtn).click();
-     }
- 
- 
-     
+        const solSwap = 'new UiSelector().text("SOL swapped!").className("android.widget.TextView")'
+        const sOLSwap = $(`android=${solSwap}`)
+        await (sOLSwap).waitForDisplayed({ timeout: 120000 })
+        await expect(sOLSwap).toBeDisplayed();
+        //  await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+    async verifyUSDHSwapped() {
+        const usdhSwap = 'new UiSelector().text("USDH swapped!").className("android.widget.TextView")'
+        const uSDHSwap = $(`android=${usdhSwap}`)
+        await (uSDHSwap).waitForDisplayed({ timeout: 120000 })
+        await expect(uSDHSwap).toBeDisplayed();
+        //   await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+
+    async verifySRMSwapped() {
+        const srmSwap = 'new UiSelector().text("SRM swapped!").className("android.widget.TextView")'
+        const sRMSwap = $(`android=${srmSwap}`)
+        await (sRMSwap).waitForDisplayed({ timeout: 120000 })
+        await expect(sRMSwap).toBeDisplayed();
+        // await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+    async verifymSOLSwapped() {
+        const msolSwap = 'new UiSelector().text("mSOL swapped!").className("android.widget.TextView")'
+        const mSOLSwap = $(`android=${msolSwap}`)
+        await (mSOLSwap).waitForDisplayed({ timeout: 120000 })
+        await expect(mSOLSwap).toBeDisplayed();
+        // await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+    async verifysoSUSHISwapped() {
+        const sosushiSwap = 'new UiSelector().text("soSUSHI swapped!").className("android.widget.TextView")'
+        const soSUSHISwap = $(`android=${sosushiSwap}`)
+        await (soSUSHISwap).waitForDisplayed({ timeout: 90000 })
+        await expect(soSUSHISwap).toBeDisplayed();
+        //await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+    async verifyUSTSwapped() {
+        const ustSwap = 'new UiSelector().text("UST swapped!").className("android.widget.TextView")'
+        const uSTSwap = $(`android=${ustSwap}`)
+        await (uSTSwap).waitForDisplayed({ timeout: 90000 })
+        await expect(uSTSwap).toBeDisplayed();
+        //await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+    async verifyORCASwapped() {
+        const orcaSwap = 'new UiSelector().text("ORCA swapped!").className("android.widget.TextView")'
+        const oRCASwap = $(`android=${orcaSwap}`)
+        await (oRCASwap).waitForDisplayed({ timeout: 90000 })
+        await expect(oRCASwap).toBeDisplayed();
+        // await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+    async verifyETHSwapped() {
+        const ethSwap = 'new UiSelector().text("ETH swapped!").className("android.widget.TextView")'
+        const eTHSwap = $(`android=${ethSwap}`)
+        await (eTHSwap).waitForDisplayed({ timeout: 90000 })
+        await expect(eTHSwap).toBeDisplayed();
+        // await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
 
     async clickDoneBtn() {
         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
@@ -694,7 +876,6 @@ async mSOLtoSOL(mSOL,sol) {
 
     }
 
-
     async verifyDevToMainNetWarning() {
         await expect(this.devToMain_OkButton).toBeDisplayed();
         await expect(this.devToMain_CancelBtn).toBeDisplayed();
@@ -715,17 +896,28 @@ async mSOLtoSOL(mSOL,sol) {
         await menutabsPage.mainNetworkTab.click();
         await this.swapBtn.waitForDisplayed({ timeout: 6000 })
         await expect(this.swapBtn).toBeDisplayed();
-        await browser.pause(10000);
+        await browser.pause(5000);
 
         driver.touchAction([
             { action: 'longPress', x: 525, y: 172 },
             { action: 'moveTo', x: 517, y: 628 },
             'release'
         ]);
-        await browser.pause(5000);
         await this.swapBtn.click();
     }
 
+    async changeToMainToDev() {
+        await menutabsPage.mainNetworkTab.click();
+        await this.swapBtn.waitForDisplayed({ timeout: 6000 })
+        await expect(this.swapBtn).toBeDisplayed();
+        await browser.pause(5000);
 
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
+
+    }
 }
 module.exports = new SwapPage(); 

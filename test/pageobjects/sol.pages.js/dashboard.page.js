@@ -1,4 +1,5 @@
 const lend_borrowPage = require("./lend_borrow.page");
+const menutabsPage = require("./menutabs.page");
 const sendPage = require("./send.page");
 const stakePage = require("./stake.page");
 const swapPage = require("./swap.page");
@@ -75,18 +76,18 @@ class DashBoardPage {
 
     async verifySolDash() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const walletSol = 'new UiSelector().text("Solana - Devnet").className("android.widget.TextView")'
-        const walletSOL = await $(`android=${walletSol}`)
-        await walletSOL.waitForDisplayed({ timeout: 120000 })
-        await expect(walletSOL).toBeDisplayed();
+        const devDash = 'new UiSelector().text("Solana - Devnet").className("android.widget.TextView")'
+        const devDash1 = await $(`android=${devDash}`)
+        await devDash1.waitForDisplayed({ timeout: 120000 })
+        await expect(devDash1).toBeDisplayed();
     }
     
     async verifySolDashMainNet() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const walletSol = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
-        const walletSOL = await $(`android=${walletSol}`)
-        await walletSOL.waitForDisplayed({ timeout: 120000 })
-        await expect(walletSOL).toBeDisplayed();
+        const mainDash = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
+        const mainDash1 = await $(`android=${mainDash}`)
+        await mainDash1.waitForDisplayed({ timeout: 120000 })
+        await expect(mainDash1).toBeDisplayed();
     }
 
     async verifyHistorytab() {
@@ -116,27 +117,7 @@ class DashBoardPage {
         await expect(this.holdlingValueAmount).toBeDisplayed();
     }
 
-    // Clickable function
-    async verifyCopyclipboardAndQRcode_Clickable() {
-        await expect(this.copyClipboard).toBeClickable();
-        await expect(this.nftBtn).toBeClickable();
-    }
-    async verifyNeonWalletClickable() {
-        await expect(this.neonWallet).toBeClickable();
-    }
-
-    async verifyHistorytabClickable() {
-        await expect(this.historyTab).toBeClickable();
-    }
-
-    async verifyTokentabClickable() {
-        await expect(this.tokensTab).toBeClickable();
-    }
-    async verifyCreate_ViewwalletClickable() {
-        await expect(this.create_Viewwallet).toBeClickable();
-    }
-
-
+   
     // Click function
     async clickMenuoption() {
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
@@ -151,8 +132,19 @@ class DashBoardPage {
 
   
 
-    async() {
+    async devNetworkChange() {
+        await (this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await this.menuTab.click();
+        await menutabsPage.dashboardNetworkTab.click();
+        await menutabsPage.devNetworkTab.click();
     }
+    async mainNetworkChange() {
+        await (this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await this.menuTab.click();
+        await menutabsPage.dashboardNetworkTab.click();
+        await menutabsPage.mainNetworkTab.click();
+    }
+
 
     async() {
     }

@@ -32,13 +32,13 @@ exports.config = {
       // './test/specs/**/*.js',
       //'./test/specs/login.js'
       //'./test/specs/createwallet.js',
-      './test/specs/importwallet.js',
+      //'./test/specs/importwallet.js',
       // './test/specs/dashboard.js',
-      //    './test/specs/importwallet.js',
+          './test/specs/importwallet.js',
       //'./test/specs/login.js',
-      // './test/specs/send.js',
-      './test/specs/swap.js',
-
+     // './test/specs/send.js',
+      //'./test/specs/swap.js',
+      './test/specs/stake_unstake.js',
 
 
 
@@ -87,7 +87,7 @@ exports.config = {
      platformName: "Android",
     "appium:automationName": "UiAutomator2",
     "appium:platformVersion": "11",
-    "appium:deviceName": "Moto g71",
+    "appium:deviceName": "Moto g71", 
     "appium:appPackage": "com.kanaswapapp",
     "appium:appActivity": "com.kanaswapapp.MainActivity",
     "appium:udid": "ZD2225BZ8T",

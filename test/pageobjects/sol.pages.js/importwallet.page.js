@@ -30,18 +30,21 @@ class Importwallet {
     get confirmPinbackBtn() {
         return $('~goBackFromPinValid');
     }
-    async verifyConfirmPinToSetPinBackBtnClickable(){
+    async verifyConfirmPinToSetPinBackBtnClickable() {
         await expect(this.confirmPinbackBtn).toBeClickable();
     }
-    
-async verifyConfirmPinToSetPinBackBtDisplay(){
-    await expect(this.confirmPinbackBtn).toBeDisplayed();
-}
+
+    async verifyConfirmPinToSetPinBackBtDisplay() {
+        await expect(this.confirmPinbackBtn).toBeDisplayed();
+    }
 
     async importwallet(seeds, name) {
+        await this.importWalletBtn.waitForDisplayed({ timeout: 5000 })
         await (await this.importWalletBtn).click();
+        await (await this.seedPharse).click();
         await (await this.seedPharse).setValue(seeds);
         await (await this.walletName).setValue(name);
+        driver.hideKeyboard();
         await (await this.importBtn).click();
     }
 
@@ -50,6 +53,6 @@ async verifyConfirmPinToSetPinBackBtDisplay(){
 
     }
 
-    
+
 }
 module.exports = new Importwallet();

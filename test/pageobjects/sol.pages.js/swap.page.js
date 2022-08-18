@@ -57,12 +57,16 @@ class SwapPage {
     get doneBtn() {
         return $('~goToHomeDone');
     }
+    get result(){
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]')
+    }
     // const findindBestRoute = 'new UiSelector().text("Finding you the best route and price").className("android.widget.TextView")'
     // const findindBestRoute1 = $(`android=${findindBestRoute}`)
 
 
     // Swap Ui elements
 
+    //await browser.pause(10000);
 
 
     get bestPricetxt() {
@@ -78,7 +82,6 @@ class SwapPage {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup');
     }
 
-    
     get marketPlace3() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup');
     }
@@ -88,39 +91,9 @@ class SwapPage {
     get marketPlace5() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup');
     }
-    
+
     get marketPlace6() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup');
-    }
-    get marketPlace7() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]/android.view.ViewGroup');
-    }
-    get marketPlace8() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]/android.view.ViewGroup');
-    }
-    get marketPlace9() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[10]/android.view.ViewGroup');
-    }
-    get marketPlace10() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[11]/android.view.ViewGroup');
-    }
-    get marketPlace11() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[12]/android.view.ViewGroup');
-    }
-    get marketPlace12() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[13]/android.view.ViewGroup');
-    }
-    get marketPlace13() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[14]/android.view.ViewGroup');
-    }
-    get marketPlace14() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[15]/android.view.ViewGroup');
-    }
-    get marketPlace15() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[16]/android.view.ViewGroup');
-    }
-    get marketPlace16() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[17]/android.view.ViewGroup');
     }
 
     // Market Place route Name 
@@ -141,33 +114,6 @@ class SwapPage {
     }
     get marketPlaceName6() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName7() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName8() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName9() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[10]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName10() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[11]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName11() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[12]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName12() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[13]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName13() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[14]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName14() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[15]/android.view.ViewGroup/android.widget.TextView[1]')
-    }
-    get marketPlaceName15() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[16]/android.view.ViewGroup/android.widget.TextView[1]')
     }
 
 
@@ -190,46 +136,17 @@ class SwapPage {
     get marketPlaceTokenName6() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.widget.TextView[2]')
     }
-    get marketPlaceTokenName7() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[8]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName8() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName9() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[10]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName10() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[11]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName11() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[12]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName12() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[13]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName13() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[14]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName14() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[15]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
-    get marketPlaceTokenName15() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[16]/android.view.ViewGroup/android.widget.TextView[2]')
-    }
+
 
     async firstMarketPlace() {
 
-
-        //console.log (await this.marketPlace1.getText());
-        // console.log(await this.marketPlaceName1.getText());
-        //console.log(await this.marketPlaceTokenName1.getText());
-
-        //  await this.marketPlaceTokenName5.scrollIntoView();
-        //await this.marketPlaceName5.waitForDisplayed({ timeout: 60000 })
+        await this.marketPlaceName1.waitForDisplayed({ timeout: 60000 })
         await expect(this.marketPlaceName1).toBeDisplayed();
-        await (await this.marketPlace1).click();
+        console.log(await this.marketPlaceName1.getText());
+        console.log(await this.marketPlaceTokenName1.getText());
 
+
+        //  await (await this.marketPlace1).click();
 
         //    driver.touchAction([
         //     {action: 'press', x: 498, y: 1961},
@@ -247,8 +164,8 @@ class SwapPage {
         await this.marketPlace2.waitForDisplayed({ timeout: 60000 })
         await expect(this.marketPlace2).toBeDisplayed();
         const marketName2 = await this.marketPlaceName2.getText();
-        console.log("Second Market Name :" + " " + marketName2);
         const marketTokenName2 = await this.marketPlaceTokenName2.getText();
+        console.log("Second Market Name :" + " " + marketName2);
         console.log("Market Token Name :" + " " + marketTokenName2);
         await (await this.marketPlace2).click();
     }
@@ -257,41 +174,50 @@ class SwapPage {
         await this.marketPlace3.waitForDisplayed({ timeout: 60000 })
         await expect(this.marketPlace3).toBeDisplayed();
         const marketName3 = await this.marketPlaceName3.getText();
-        console.log("Third Market Name :" + " " + marketName3);
         const marketTokenName3 = await this.marketPlaceTokenName3.getText();
+        console.log("Third Market Name :" + " " + marketName3);
         console.log("Market Token Name :" + " " + marketTokenName3);
         await (await this.marketPlace3).click();
     }
 
-    async thirdMarketPlace() {
-        await this.marketPlace3.waitForDisplayed({ timeout: 60000 })
-        await expect(this.marketPlace3).toBeDisplayed();
-        const marketName3 = await this.marketPlaceName3.getText();
-        console.log("Third Market Name :" + " " + marketName3);
-        const marketTokenName3 = await this.marketPlaceTokenName3.getText();
-        console.log("Market Token Name :" + " " + marketTokenName3);
-        await (await this.marketPlace3).click();
+    async fourthMarketPlace() {
+        await this.marketPlace4.waitForDisplayed({ timeout: 60000 })
+        await expect(this.marketPlace4).toBeDisplayed();
+        const marketName4 = await this.marketPlaceName4.getText();
+        const marketTokenName4 = await this.marketPlaceTokenName4.getText();
+        console.log("Third Market Name :" + " " + marketName4);
+        console.log("Market Token Name :" + " " + marketTokenName4);
+        await (await this.marketPlace4).click();
     }
 
     async fivthMarketPlace() {
 
         driver.touchAction([
-            {action: 'longPress', x: 670, y: 2011},
-            {action: 'moveTo', x: 643, y: 1383},
+            { action: 'longPress', x: 670, y: 2011 },
+            { action: 'moveTo', x: 643, y: 1383 },
             'release'
-          ]);
+        ]);
 
-    //    await this.marketPlace5.waitForDisplayed({ timeout: 60000 })
-      //  await expect(this.marketPlace5).toBeDisplayed();
-      browser.pause(10000);
-        const marketName5 = await this.marketPlaceName5.getText();
-        console.log("Third Market Name :" + " " + marketName5);
-        const marketTokenName5 = await this.marketPlaceTokenName5.getText();
-        console.log("Market Token Name :" + " " + marketTokenName5);
+        //    await this.marketPlace5.waitForDisplayed({ timeout: 60000 })
+        //  await expect(this.marketPlace5).toBeDisplayed();
+        await browser.pause(10000);
+        console.log(await this.marketPlaceName6.getText());
+
+        // const marketName5 = await this.marketPlaceName6.getText();
+        //console.log("Third Market Name :" + " " + marketName5);
+        //const marketTokenName5 = await this.marketPlaceTokenName6.getText();
+        //console.log("Market Token Name :" + " " + marketTokenName5);
         await (await this.marketPlaceName5).click();
     }
 
-
+    async refresh() {
+        await browser.pause(2000)
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
+    }
 
 
     async clickSwapBtn() {
@@ -350,7 +276,7 @@ class SwapPage {
         await expect(findindBestRoute1).toBeDisplayed();
     }
 
-    async uSDTtoUSDC(usdt, usdc) {
+    async uSDTtoUSDC(usdt) {
         await (await this.youPaydropdown).click();
         const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
         const searchText = $(`android=${search}`)
@@ -362,17 +288,283 @@ class SwapPage {
         uSDTtxt.click();
         uSDTtxt.click();
 
+        // await (await this.youReceivedropdown).click();
+        //const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        //const searchText1 = $(`android=${search1}`)
+        //await expect(searchText1).toBeDisplayed();
+        //await (await this.youReceivedropdownSearch).click();
+        //await (await this.youReceivedropdownSearch).setValue(usdc);
+        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+        const uSDCtxt = $(`android=${usdctxt}`)
+        await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
+        await expect(uSDCtxt).toBeDisplayed();
+        //uSDCtxt.click();
+        //uSDCtxt.click();
+    }
+
+    async uSDCtoUSDT(usdc, usdt) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearh).click();
+        await (await this.youPaydropdownSearh).setValue(usdc);
+        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+        const uSDCtxt = $(`android=${usdctxt}`)
+        uSDCtxt.click();
+        uSDCtxt.click();
+
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
         const searchText1 = $(`android=${search1}`)
         await expect(searchText1).toBeDisplayed();
         await (await this.youReceivedropdownSearch).click();
-        await (await this.youReceivedropdownSearch).setValue(usdc);
+        await (await this.youReceivedropdownSearch).setValue(usdt);
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        uSDTtxt.click();
+        uSDTtxt.click();
+    }
+    async sOLtoUSDC(sol) {
+        await (await this.youPaydropdown).click();
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        await expect(searchText).toBeDisplayed();
+        await (await this.youPaydropdownSearh).click();
+        await (await this.youPaydropdownSearh).setValue(sol);
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        sOLtxt.click();
+        sOLtxt.click();
+
         const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const uSDCtxt = $(`android=${usdctxt}`)
-        uSDCtxt.click();
-        uSDCtxt.click();
-    }
+        await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
+        await expect(uSDCtxt).toBeDisplayed();
+        }
+
+        async uSDCtoSOL(usdc, sol) {
+            await (await this.youPaydropdown).click();
+            const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+            const searchText = $(`android=${search}`)
+            await expect(searchText).toBeDisplayed();
+            await (await this.youPaydropdownSearh).click();
+            await (await this.youPaydropdownSearh).setValue(usdc);
+            const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+            const uSDCtxt = $(`android=${usdctxt}`)
+            uSDCtxt.click();
+            uSDCtxt.click();
+    
+            await (await this.youReceivedropdown).click();
+            const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+            const searchText1 = $(`android=${search1}`)
+            await expect(searchText1).toBeDisplayed();
+            await (await this.youReceivedropdownSearch).click();
+            await (await this.youReceivedropdownSearch).setValue(sol);
+            const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+            const sOLtxt = $(`android=${soltxt}`)
+            sOLtxt.click();
+            sOLtxt.click();
+        }
+
+        async sOLtoUSDT(sol, usdt) {
+            await (await this.youPaydropdown).click();
+            const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+            const searchText = $(`android=${search}`)
+            await expect(searchText).toBeDisplayed();
+            await (await this.youPaydropdownSearh).click();
+            await (await this.youPaydropdownSearh).setValue(sol);
+            const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+            const sOLtxt = $(`android=${soltxt}`)
+            sOLtxt.click();
+            sOLtxt.click();
+    
+            await (await this.youReceivedropdown).click();
+            const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+            const searchText1 = $(`android=${search1}`)
+            await expect(searchText1).toBeDisplayed();
+            await (await this.youReceivedropdownSearch).click();
+            await (await this.youReceivedropdownSearch).setValue(usdt);
+            const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+            const uSDTtxt = $(`android=${usdttxt}`)
+            uSDTtxt.click();
+            uSDTtxt.click();
+        }
+
+        async uSDTtoSOL(usdt,sol) {
+            
+            await (await this.youReceivedropdown).click();
+            const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+            const searchText1 = $(`android=${search1}`)
+            await expect(searchText1).toBeDisplayed();
+            await (await this.youReceivedropdownSearch).click();
+            await (await this.youReceivedropdownSearch).setValue(usdt);
+            const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+            const uSDTtxt = $(`android=${usdttxt}`)
+            uSDTtxt.click();
+            uSDTtxt.click();
+
+            await (await this.youPaydropdown).click();
+            const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+            const searchText = $(`android=${search}`)
+            await expect(searchText).toBeDisplayed();
+            await (await this.youPaydropdownSearh).click();
+            await (await this.youPaydropdownSearh).setValue(sol);
+            const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+            const sOLtxt = $(`android=${soltxt}`)
+            sOLtxt.click();
+            sOLtxt.click();
+ }
+
+ async sOLtoSRM(sol, srm) {
+    await (await this.youPaydropdown).click();
+    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText = $(`android=${search}`)
+    await expect(searchText).toBeDisplayed();
+    await (await this.youPaydropdownSearh).click();
+    await (await this.youPaydropdownSearh).setValue(sol);
+    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+    const sOLtxt = $(`android=${soltxt}`)
+    sOLtxt.click();
+    sOLtxt.click();
+
+    await (await this.youReceivedropdown).click();
+    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText1 = $(`android=${search1}`)
+    await expect(searchText1).toBeDisplayed();
+    await (await this.youReceivedropdownSearch).click();
+    await (await this.youReceivedropdownSearch).setValue(srm);
+    const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+    const sRMtxt = $(`android=${srmtxt}`)
+    sRMtxt.click();
+    sRMtxt.click();
+}
+
+async sRMtoSOL(srm,sol) {
+   
+    await (await this.youReceivedropdown).click();
+    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText1 = $(`android=${search1}`)
+    await expect(searchText1).toBeDisplayed();
+    await (await this.youReceivedropdownSearch).click();
+    await (await this.youReceivedropdownSearch).setValue(srm);
+    const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+    const sRMtxt = $(`android=${srmtxt}`)
+    sRMtxt.click();
+    sRMtxt.click();
+
+    await (await this.youPaydropdown).click();
+    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText = $(`android=${search}`)
+    await expect(searchText).toBeDisplayed();
+    await (await this.youPaydropdownSearh).click();
+    await (await this.youPaydropdownSearh).setValue(sol);
+    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+    const sOLtxt = $(`android=${soltxt}`)
+    sOLtxt.click();
+    sOLtxt.click();
+}
+
+async uSDHtoUSDT(usdh, usdt) {
+    await (await this.youPaydropdown).click();
+    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText = $(`android=${search}`)
+    await expect(searchText).toBeDisplayed();
+    await (await this.youPaydropdownSearh).click();
+    await (await this.youPaydropdownSearh).setValue(usdh);
+    const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
+    const uSDHtxt = $(`android=${usdhtxt}`)
+    uSDHtxt.click();
+    uSDHtxt.click();
+
+    await (await this.youReceivedropdown).click();
+    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText1 = $(`android=${search1}`)
+    await expect(searchText1).toBeDisplayed();
+    await (await this.youReceivedropdownSearch).click();
+    await (await this.youReceivedropdownSearch).setValue(usdt);
+    const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+    const uSDTtxt = $(`android=${usdttxt}`)
+    uSDTtxt.click();
+    uSDTtxt.click();
+}
+
+async uSDTtoUSDH(usdt, usdh) {
+   
+    await (await this.youReceivedropdown).click();
+    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText1 = $(`android=${search1}`)
+    await expect(searchText1).toBeDisplayed();
+    await (await this.youReceivedropdownSearch).click();
+    await (await this.youReceivedropdownSearch).setValue(usdt);
+    const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+    const uSDTtxt = $(`android=${usdttxt}`)
+    uSDTtxt.click();
+    uSDTtxt.click();
+   
+    await (await this.youPaydropdown).click();
+    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText = $(`android=${search}`)
+    await expect(searchText).toBeDisplayed();
+    await (await this.youPaydropdownSearh).click();
+    await (await this.youPaydropdownSearh).setValue(usdh);
+    const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
+    const uSDHtxt = $(`android=${usdhtxt}`)
+    uSDHtxt.click();
+    uSDHtxt.click();
+}
+
+async sOLtomSOL(sol, mSOL) {
+    await (await this.youPaydropdown).click();
+    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText = $(`android=${search}`)
+    await expect(searchText).toBeDisplayed();
+    await (await this.youPaydropdownSearh).click();
+    await (await this.youPaydropdownSearh).setValue(sol);
+    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+    const sOLtxt = $(`android=${soltxt}`)
+    sOLtxt.click();
+    sOLtxt.click();
+
+    await (await this.youReceivedropdown).click();
+    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText1 = $(`android=${search1}`)
+    await expect(searchText1).toBeDisplayed();
+    await (await this.youReceivedropdownSearch).click();
+    await (await this.youReceivedropdownSearch).setValue(mSOL);
+    const msoltxt = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+    const mSOLTxt = $(`android=${msoltxt}`)
+    mSOLTxt.click();
+    mSOLTxt.click();
+}
+
+async mSOLtoSOL(mSOL,sol) {
+    
+    await (await this.youReceivedropdown).click();
+    const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText1 = $(`android=${search1}`)
+    await expect(searchText1).toBeDisplayed();
+    await (await this.youReceivedropdownSearch).click();
+    await (await this.youReceivedropdownSearch).setValue(mSOL);
+    const msolTxt1 = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+    const mSOLTxt1 = $(`android=${msolTxt1}`)
+    mSOLTxt1.click();
+    mSOLTxt1.click();
+
+    await (await this.youPaydropdown).click();
+    const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    const searchText = $(`android=${search}`)
+    await expect(searchText).toBeDisplayed();
+    await (await this.youPaydropdownSearh).click();
+    await (await this.youPaydropdownSearh).setValue(sol);
+    const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+    const sOLtxt = $(`android=${soltxt}`)
+    sOLtxt.click();
+    sOLtxt.click();
+}
+
+
+
 
     async slidetoSwap() {
 
@@ -389,11 +581,90 @@ class SwapPage {
             'release'
         ])
 
-        await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
-        //browser.pause(10000);
+
+    }
+
+    async verifyUSDTSwapped() {
         const usDtSwap = 'new UiSelector().text("USDT swapped!").className("android.widget.TextView")'
         const uSDTSwap = $(`android=${usDtSwap}`)
+        await (uSDTSwap).waitForDisplayed({ timeout: 60000 })
         await expect(uSDTSwap).toBeDisplayed();
+        await (this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (this.doneBtn).click();
+    }
+    
+    async verifyUSDCSwapped() {
+       const uSDcSwap = 'new UiSelector().text("USDC swapped!").className("android.widget.TextView")'
+        const uSDCSwap = $(`android=${uSDcSwap}`)
+        await expect(uSDCSwap).toBeDisplayed();
+        await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
+    }
+
+    async verifySOLSwapped() {
+        const uSDcSwap = 'new UiSelector().text("SOL swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+     async verifyUSDHSwapped() {
+        const uSDcSwap = 'new UiSelector().text("USDH swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+ 
+     async verifySRMSwapped() {
+        const uSDcSwap = 'new UiSelector().text("SRM swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+     async verifymSOLSwapped() {
+        const uSDcSwap = 'new UiSelector().text("mSOL swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+     async verifysoSUSHISwapped() {
+        const uSDcSwap = 'new UiSelector().text("soSUSHI swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+     async verifyUSTSwapped() {
+        const uSDcSwap = 'new UiSelector().text("UST swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+     async verifyORCASwapped() {
+        const uSDcSwap = 'new UiSelector().text("ORCA swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+     async verifyETHSwapped() {
+        const uSDcSwap = 'new UiSelector().text("ETH swapped!").className("android.widget.TextView")'
+         const uSDCSwap = $(`android=${uSDcSwap}`)
+         await expect(uSDCSwap).toBeDisplayed();
+         await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+         await (await this.doneBtn).click();
+     }
+ 
+ 
+     
+
+    async clickDoneBtn() {
+        await (await this.doneBtn).waitForDisplayed({ timeout: 120000 })
+        await (await this.doneBtn).click();
     }
 
     async verifySwapScreenUI() {
@@ -414,7 +685,7 @@ class SwapPage {
 
         const rate = 'new UiSelector().text("Rate").className("android.widget.TextView")'
         const rate1 = $(`android=${rate}`)
-        await (rate1).waitForDisplayed({ timeout: 10000 })
+        await (rate1).waitForDisplayed({ timeout: 30000 })
         await expect(rate1).toBeDisplayed();
 
         const bestPrice = 'new UiSelector().text("Best price").className("android.widget.TextView")'
@@ -441,12 +712,17 @@ class SwapPage {
     }
 
     async changeToDevtoMain() {
-        //await menutabsPage.dashboardNetworkTab.click();
         await menutabsPage.mainNetworkTab.click();
-        await (await menutabsPage.backBtnNetwork).click();
         await this.swapBtn.waitForDisplayed({ timeout: 6000 })
         await expect(this.swapBtn).toBeDisplayed();
-        browser.pause(10000);
+        await browser.pause(10000);
+
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
+        await browser.pause(5000);
         await this.swapBtn.click();
     }
 

@@ -7,9 +7,9 @@ const dashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
 const ImportWalletPage = require('../pageobjects/sol.pages.js/importwallet.page');
 require('dotenv').config()
 
-describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
+describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
 
-  it('SS1: USDT To USDC First Market Swap', async () => {
+  it.only('SS1: USDT To USDC First Market Swap', async () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifyDevToMainNetWarning();
     await swapPage.changeToDevtoMain();

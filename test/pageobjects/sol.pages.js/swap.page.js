@@ -1,6 +1,6 @@
 const menutabsPage = require("./menutabs.page");
 
-const fs = require('fs');
+var fs = require('fs');
 
 class SwapPage {
 
@@ -144,34 +144,37 @@ class SwapPage {
         await this.marketPlaceName1.waitForDisplayed({ timeout: 60000 })
         await expect(this.marketPlaceName1).toBeDisplayed();
 
-        const marketName1 = await this.marketPlaceName1.getText()
-        const marketTokenName2 = await this.marketPlaceTokenName1.getText()
-        console.log(marketName1)
-        console.log(marketTokenName2)
-        // fs.open('result.txt', marketName1, function(err) {
-        //     if(err) throw err;
-        //          console.log(err);
-        //     //console.log("marketName2");
-        // }); 
+        let marketName1 = await this.marketPlaceName1.getText()
+        marketName1 = ('First MarketName :' + marketName1)
 
-        // fs.open('result.txt', marketTokenName2, function(err, ) {
-        //     if(err) throw err; 
-        //          console.log(err);
-        //          // console.log("marketTokenName2");
-        // }); 
+        let marketTokenName1 = await this.marketPlaceTokenName1.getText()
+        marketTokenName1 = ('First MarketName TokenName :' + marketTokenName1)
 
-      //  fs.writeFileSync('F:\KanaLabs\Reports', marketName1);
-       // fs.writeFileSync('F:\KanaLabs\Reports', marketTokenName2);
+        fs.writeFile('result', marketName1, function (err) {
+            console.log(err)
+        })
+        fs.appendFile('result', marketTokenName1, function (err) {
+            console.log(err)
+        })
+
+       
     }
 
     async secondMarketPlace() {
         await this.marketPlace2.waitForDisplayed({ timeout: 60000 })
         await expect(this.marketPlace2).toBeDisplayed();
+
+
+
+
         const marketName2 = await this.marketPlaceName2.getText();
         const marketTokenName2 = await this.marketPlaceTokenName2.getText();
         console.log("Second Market Name :" + " " + marketName2);
         console.log("Market Token Name :" + " " + marketTokenName2);
         await (await this.marketPlace2).click();
+  
+  
+  
     }
 
     async thirdMarketPlace() {
@@ -300,7 +303,6 @@ class SwapPage {
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
         await uSDTtxt.click();
-        await uSDTtxt.click();
 
         // await (await this.youReceivedropdown).click();
         //const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -326,7 +328,6 @@ class SwapPage {
         const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const uSDCtxt = $(`android=${usdctxt}`)
         await uSDCtxt.click();
-        await uSDCtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -337,25 +338,23 @@ class SwapPage {
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
         await uSDTtxt.click();
-        await uSDTtxt.click();
     }
-    async sOLtoUSDC(sol) {
-        await (await this.youPaydropdown).click();
-        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-        const searchText = $(`android=${search}`)
-        await expect(searchText).toBeDisplayed();
-        await (await this.youPaydropdownSearch).click();
-        await (await this.youPaydropdownSearch).setValue(sol);
-        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-        const sOLtxt = $(`android=${soltxt}`)
-        await sOLtxt.click();
-        await sOLtxt.click();
+    // async sOLtoUSDC(sol) {
+    //     await (await this.youPaydropdown).click();
+    //     const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+    //     const searchText = $(`android=${search}`)
+    //     await expect(searchText).toBeDisplayed();
+    //     await (await this.youPaydropdownSearch).click();
+    //     await (await this.youPaydropdownSearch).setValue(sol);
+    //     const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+    //     const sOLtxt = $(`android=${soltxt}`)
+    //     await sOLtxt.click();
 
-        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
-        const uSDCtxt = $(`android=${usdctxt}`)
-        await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
-        await expect(uSDCtxt).toBeDisplayed();
-    }
+    //     const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+    //     const uSDCtxt = $(`android=${usdctxt}`)
+    //     await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
+    //     await expect(uSDCtxt).toBeDisplayed();
+    // }
 
     async uSDCtoSOL(usdc, sol) {
         await (await this.youPaydropdown).click();
@@ -367,7 +366,6 @@ class SwapPage {
         const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const uSDCtxt = $(`android=${usdctxt}`)
         await uSDCtxt.click();
-        await uSDCtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -378,20 +376,9 @@ class SwapPage {
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
         await sOLtxt.click();
-        await sOLtxt.click();
     }
 
     async sOLtoUSDT(usdt) {
-        // await (await this.youPaydropdown).click();
-        // const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-        // const searchText = $(`android=${search}`)
-        // await expect(searchText).toBeDisplayed();
-        // await (await this.youPaydropdownSearch).click();
-        // await (await this.youPaydropdownSearch).setValue(sol);
-        // const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-        // const sOLtxt = $(`android=${soltxt}`)
-        // sOLtxt.click();
-        // sOLtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -401,7 +388,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(usdt);
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
-        await uSDTtxt.click();
         await uSDTtxt.click();
     }
 
@@ -416,7 +402,6 @@ class SwapPage {
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
         await uSDTtxt.click();
-        await uSDTtxt.click();
 
 
         await (await this.youReceivedropdown).click();
@@ -427,7 +412,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(sol);
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
-        await sOLtxt.click();
         await sOLtxt.click();
     }
 
@@ -441,7 +425,6 @@ class SwapPage {
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
         await sOLtxt.click();
-        await sOLtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -451,7 +434,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(srm);
         const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
         const sRMtxt = $(`android=${srmtxt}`)
-        await sRMtxt.click();
         await sRMtxt.click();
     }
 
@@ -466,7 +448,6 @@ class SwapPage {
         const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
         const sRMtxt = $(`android=${srmtxt}`)
         await sRMtxt.click();
-        await sRMtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -476,7 +457,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(sol);
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
-        await sOLtxt.click();
         await sOLtxt.click();
 
     }
@@ -492,7 +472,6 @@ class SwapPage {
         const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
         const sRMtxt = $(`android=${srmtxt}`)
         await sRMtxt.click();
-        await sRMtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -502,7 +481,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(ust);
         const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
         const uSTtxt = $(`android=${usttxt}`)
-        await uSTtxt.click();
         await uSTtxt.click();
     }
 
@@ -517,7 +495,6 @@ class SwapPage {
         const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
         const uSTtxt = $(`android=${usttxt}`)
         await uSTtxt.click();
-        await uSTtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -527,7 +504,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(srm);
         const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
         const sRMtxt = $(`android=${srmtxt}`)
-        await sRMtxt.click();
         await sRMtxt.click();
     }
 
@@ -541,7 +517,6 @@ class SwapPage {
         const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
         const uSDHtxt = $(`android=${usdhtxt}`)
         await uSDHtxt.click();
-        await uSDHtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -551,7 +526,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(usdt);
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
-        await uSDTtxt.click();
         await uSDTtxt.click();
     }
 
@@ -566,7 +540,6 @@ class SwapPage {
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
         await uSDTtxt.click();
-        await uSDTtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -576,7 +549,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(usdh);
         const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
         const uSDHtxt = $(`android=${usdhtxt}`)
-        await uSDHtxt.click();
         await uSDHtxt.click();
     }
 
@@ -590,7 +562,6 @@ class SwapPage {
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
         await sOLtxt.click();
-        await sOLtxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -600,7 +571,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(mSOL);
         const msoltxt = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
         const mSOLTxt = $(`android=${msoltxt}`)
-        await mSOLTxt.click();
         await mSOLTxt.click();
     }
 
@@ -615,7 +585,6 @@ class SwapPage {
         const msolTxt1 = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
         const mSOLTxt1 = $(`android=${msolTxt1}`)
         await mSOLTxt1.click();
-        await mSOLTxt1.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -625,7 +594,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(sol);
         const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const sOLtxt = $(`android=${soltxt}`)
-        await sOLtxt.click();
         await sOLtxt.click();
     }
 
@@ -640,7 +608,6 @@ class SwapPage {
         const sosushiItxt = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
         const soSUSHItxt = $(`android=${sosushiItxt}`)
         await soSUSHItxt.click();
-        await soSUSHItxt.click();
 
         await (await this.youReceivedropdown).click();
         const search1 = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -651,10 +618,9 @@ class SwapPage {
         const orcatxt = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
         const oRCAtxt = $(`android=${orcatxt}`)
         await oRCAtxt.click();
-        await oRCAtxt.click();
     }
 
-    async oRCAtosoSUSHI(orca,soSUSHI) {
+    async oRCAtosoSUSHI(orca, soSUSHI) {
 
         await (await this.youPaydropdown).click();
         const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
@@ -664,7 +630,6 @@ class SwapPage {
         await (await this.youPaydropdownSearch).setValue(orca);
         const orcatxt = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
         const oRCAtxt = $(`android=${orcatxt}`)
-        await oRCAtxt.click();
         await oRCAtxt.click();
 
         await (await this.youReceivedropdown).click();
@@ -676,8 +641,7 @@ class SwapPage {
         const sosushiItxt = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
         const soSUSHItxt = $(`android=${sosushiItxt}`)
         await soSUSHItxt.click();
-        await soSUSHItxt.click();
-       
+
     }
 
     async selectUSDC(usdc) {
@@ -690,7 +654,6 @@ class SwapPage {
         const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const uSDCtxt = $(`android=${usdctxt}`)
         await uSDCtxt.click();
-        await uSDCtxt.click();
     }
     async selectUST(ust) {
         await (await this.youPaydropdown).click();
@@ -701,7 +664,6 @@ class SwapPage {
         await (await this.youPaydropdownSearch).setValue(ust);
         const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
         const uSTtxt = $(`android=${usttxt}`)
-        await uSTtxt.click();
         await uSTtxt.click();
     }
     async selectUSDT(usdt) {
@@ -714,7 +676,6 @@ class SwapPage {
         await (await this.youPaydropdownSearch).setValue(usdt);
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
-        await uSDTtxt.click();
         await uSDTtxt.click();
     }
 
@@ -729,7 +690,6 @@ class SwapPage {
         const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
         const sRMtxt = $(`android=${srmtxt}`)
         await sRMtxt.click();
-        await sRMtxt.click();
     }
 
     async selectmSOL(mSOL) {
@@ -743,14 +703,14 @@ class SwapPage {
         const msolTxt1 = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
         const mSOLTxt1 = $(`android=${msolTxt1}`)
         await mSOLTxt1.click();
-        await mSOLTxt1.click();
     }
 
     async slidetoSwap() {
-        const slide = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup');
-        await slide.waitForDisplayed({ timeout: 120000 })
+        // const slide = $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup');
+        //await slide.waitForDisplayed({ timeout: 120000 })
         const slideToSwapTxt = 'new UiSelector().text("Slide to swap").className("android.widget.TextView")'
         const slideToSwapTxt1 = $(`android=${slideToSwapTxt}`)
+        await slideToSwapTxt1.waitForDisplayed({ timeout: 60000 })
         await expect(slideToSwapTxt1).toBeDisplayed();
 
         driver.touchAction([
@@ -903,6 +863,7 @@ class SwapPage {
             { action: 'moveTo', x: 517, y: 628 },
             'release'
         ]);
+        await browser.pause(5000);
         await this.swapBtn.click();
     }
 

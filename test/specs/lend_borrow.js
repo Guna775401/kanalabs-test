@@ -25,7 +25,7 @@ describe('MainNet Lend/Borroww ', () => {
     it.only(' firt test', async () => {
 
         await menutabsPage.changeToDevtoMain();
-        //  await dashboardPage.verifySolDashMainNet(); 
+          await dashboardPage.verifySolDashMainNet(); 
         await lend_borrowPage.clickLend_Borrow();
         // await lend_borrowPage.verifyNAText();
         await lend_borrowPage.selectSOL();

@@ -9,13 +9,13 @@ require('dotenv').config()
 
 describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
 
-  it.only('SS1: USDT To USDC First Market Swap', async () => {
+  it('SS1: USDT To USDC First Market Swap', async () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifyDevToMainNetWarning();
     await swapPage.changeToDevtoMain();
     await swapPage.verifySwapScreen();
     await swapPage.uSDTtoUSDC(process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDT);
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
@@ -27,7 +27,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDTtoUSDC(process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDT);
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
@@ -39,7 +39,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDTtoUSDC(process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDT);
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
@@ -51,7 +51,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDTtoUSDC(process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDT);
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
@@ -65,7 +65,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDCtoUSDT(process.env.USDC, process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDC);
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
@@ -77,7 +77,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDCtoUSDT(process.env.USDC, process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDC);
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
@@ -89,7 +89,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDCtoUSDT(process.env.USDC, process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDC);
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
@@ -101,7 +101,7 @@ describe.only('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
     await swapPage.uSDCtoUSDT(process.env.USDC, process.env.USDT);
-    await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
+    await swapPage.enterAmtInput(process.env.SWAPUSDC);
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();

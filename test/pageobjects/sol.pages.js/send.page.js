@@ -179,7 +179,7 @@ class SendPage {
         let sucess = await (this.sendDonebutton).isDisplayed();
         let fail = await (this.sendFailedDonebutton).isDisplayed();
 
-        if (sucess == true) {
+        if (sucess) {
             console.log(successOrFailRes);
             await (await this.sendDonebutton).click();
         }

@@ -1,3 +1,6 @@
+
+var fs = require('fs');
+
 class Lend_BorrowPage {
 
     get lend_borrowBtn() {
@@ -158,7 +161,7 @@ class Lend_BorrowPage {
 
 
 
-    // Aggreator Percentage Amount Elemants
+    // Aggreator Percentage Amount Elements
 
     get firstBestPriceAmount() {
         return $('//android.view.ViewGroup[@content-desc="tab1ModalViewClose"]/android.view.ViewGroup/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[2]');
@@ -168,148 +171,77 @@ class Lend_BorrowPage {
         return $('//android.view.ViewGroup[@content-desc="tab1ModalViewClose"]/android.view.ViewGroup/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[2]');
     }
 
+    get successDoneBtn() {
+        return $('~goToHomeDone');
+    }
+    get failDoneBtn() {
+        return $('~goToHomeFromTokenSendFailed');
+    }
 
+    // SOL Deposit successful! (Result like Sol if try USDC ,  USDC Deposit successful!)
+    // Like SOL Withdraw successful!
+    get result() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]');
+    }
+
+    // Please check your dashboard for changes 
+    get checkYourDashboardChanges() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+
+    get insufficientBalanceText() {
+        return $('//android.view.ViewGroup[@content-desc="tab1ModalViewClose"]/android.view.ViewGroup/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+
+    async verifyDoneBtn() {
+        const doneTxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
+        const doneTxt1 = $(`android=${doneTxt}`)
+        await doneTxt1.waitForDisplayed({ timeout: 60000 })
+        await expect(doneTxt1).toBeDisplayed();
+
+        var res = await (await this.result).getText();
+        res = ('Result = ' + res);
+
+        var res1 = await (await this.checkYourDashboardChanges).getText();
+        res1 = ('Result = ' + res1);
+
+        const sucess = await expect(this.successDoneBtn).toBeDisplayed();
+        const fail = await expect(this.failDoneBtn).toBeDisplayed();
+
+        if (sucess) {
+            fs.appendFile('result', res, function (err) {
+                console.log(err)
+            })
+            fs.appendFile('result', res1, function (err) {
+                console.log(err)
+            })
+            await (await this.successDoneBtn).click();
+        }
+        else if (fail) {
+            fs.appendFile('result', res, function (err) {
+                console.log(err)
+            })
+            fs.appendFile('result', res1, function (err) {
+                console.log(err)
+            })
+            await (await this.failDoneBtn).click();
+        }
+        else {
+            await browser.saveScreenshot('screenshot.js')
+        }
+    }
 
     get() {
         return $('~');
-    } get() {
+    }
+    get() {
+        return $('~');
+    }
+    get() {
         return $('~');
     }
 
-
-
-
     // UI Element
-
-    // get lend_borrowScreen() {
-    //     const lend_borrowtext = 'new UiSelector().text("Lend / Borrow").className("android.widget.TextView")'
-    //     const lend_borrowtxt = $(`android=${lend_borrowtext}`)
-    //     // await lend_borrowtxt.waitForDisplayed({ timeout: 10000 })
-    //     // await expect(lend_borrowtxt).toBeDisplayed();
-    // }
-
-    // get lend_borrowAggeratorText() {
-    //     const lend_borrowAggeratortext = 'new UiSelector().text("Aggregated Lend/Borrow.").className("android.widget.TextView")'
-    //     const lend_borrowAggeratortxt = $(`android=${lend_borrowAggeratortext}`)
-    //     await lend_borrowAggeratortxt.waitForDisplayed({ timeout: 10000 });
-    //     await expect(lend_borrowAggeratortxt).toBeDisplayed();
-    // }
-
-    // get lend_borrowDesription() {
-    //     const lend_borrowDesriptiontext = 'new UiSelector().text("Now lend/borrow at the best rates from across the entire Solana ecosystem").className("android.widget.TextView")'
-    //     const lend_borrowDesriptiontxt = $(`android=${lend_borrowDesriptiontext}`)
-    //     await lend_borrowDesriptiontxt.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lend_borrowDesriptiontxt).toBeDisplayed();
-    // }
-
-    // get lend_borrowPoolOverview() {
-    //     const lend_borrowPooloverviewtext = 'new UiSelector().text("Pool overview").className("android.widget.TextView")'
-    //     const lend_borrowPooloverviewtxt = $(`android=${lend_borrowPooloverviewtext}`)
-    //     await lend_borrowPooloverviewtxt.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lend_borrowPooloverviewtxt).toBeDisplayed();
-    // }
-    // get lend_borrowAllAssets() {
-    //     const lend_borrowAllAssetstext = 'new UiSelector().text("All assets").className("android.widget.TextView")'
-    //     const lend_borrowAllAssetstxt = $(`android=${lend_borrowAllAssetstext}`)
-    //     await lend_borrowAllAssetstxt.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lend_borrowAllAssetstxt).toBeDisplayed();
-    // }
-    // get lend_borrowAsset() {
-    //     const lend_borrowAssettext = 'new UiSelector().text("Asset").className("android.widget.TextView")'
-    //     const lend_borrowAssettxt = $(`android=${lend_borrowAssettext}`)
-    //     await lend_borrowAssettxt.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lend_borrowAssettxt).toBeDisplayed();
-    // }
-    // get lend_borrowTotalSupply() {
-    //     const lend_borrowTotaSupplytext = 'new UiSelector().text("Total Supply").className("android.widget.TextView")'
-    //     const lend_borrowTotaSupplytxt = $(`android=${lend_borrowTotaSupplytext}`)
-    //     await lend_borrowTotaSupplytxt.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lend_borrowTotaSupplytxt).toBeDisplayed();
-    // }
-    // get lend_borrowTotalBorrow() {
-    //     const lend_borrowTotaBorrowtext = 'new UiSelector().text("Total Borrow").className("android.widget.TextView")'
-    //     const lend_borrowTotaBorrowtxt = $(`android=${lend_borrowTotaBorrowtext}`)
-    //     await lend_borrowTotaBorrowtxt.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lend_borrowTotaBorrowtxt).toBeDisplayed();
-    // }
-
-    // get supplyTabText() {
-    //     const supplytab = 'new UiSelector().text("Supply").className("android.widget.TextView")'
-    //     const supplytab1 = $(`android=${supplytab}`)
-    //     await supplytab1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(supplytab1).toBeDisplayed();
-    // }
-
-    // get borrowTabText() {
-    //     const borrowtab = 'new UiSelector().text("Borrow").className("android.widget.TextView")'
-    //     const borrowtab1 = $(`android=${borrowtab}`)
-    //     await borrowtab1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(borrowtab1).toBeDisplayed();
-    // }
-    // get withdrawTabText() {
-    //     const withdrawtab = 'new UiSelector().text("Withdraw").className("android.widget.TextView")'
-    //     const withdrawtab1 = $(`android=${withdrawtab}`)
-    //     await withdrawtab1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(withdrawtab1).toBeDisplayed();
-    // }
-    // get repayTabText() {
-    //     const repaytab = 'new UiSelector().text("Repay").className("android.widget.TextView")'
-    //     const repaytab1 = $(`android=${repaytab}`)
-    //     await repaytab1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(repaytab1).toBeDisplayed();
-    // }
-    // get maxText() {
-    //     const maxtext = 'new UiSelector().text("Max").className("android.widget.TextView")'
-    //     const maxtext1 = $(`android=${maxtext}`)
-    //     await maxtext1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(maxtext1).toBeDisplayed();
-    // }
-    // get supplyButtonText() {
-    //     const supplyButtontext = 'new UiSelector().text("Supply").className("android.widget.TextView")'
-    //     const supplyButtontext1 = $(`android=${supplyButtontext}`)
-    //     await supplyButtontext1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(supplyButtontext1).toBeDisplayed();
-    // }
-
-    // get reserveDepositLimitText() {
-    //     const reserveDepositLimittext = 'new UiSelector().text("Reserve deposit limit").className("android.widget.TextView")'
-    //     const reserveDepositLimittext1 = $(`android=${reserveDepositLimittext}`)
-    //     await reserveDepositLimittext1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(reserveDepositLimittext1).toBeDisplayed();
-    // }
-    // get userBorrowLimitText() {
-    //     const userBorrowLimittext = 'new UiSelector().text("User borrow limit").className("android.widget.TextView")'
-    //     const userBorrowLimittext1 = $(`android=${userBorrowLimittext}`)
-    //     await userBorrowLimittext1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(userBorrowLimittext1).toBeDisplayed();
-    // }
-    // get utilizationText() {
-    //     const utilizationtxt = 'new UiSelector().text("Utilization").className("android.widget.TextView")'
-    //     const utilizationtxt1 = $(`android=${utilizationtxt}`)
-    //     await utilizationtxt1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(utilizationtxt1).toBeDisplayed();
-    // }
-    // get lTVText() {
-    //     const lTVtxt = 'new UiSelector().text("LTV").className("android.widget.TextView")'
-    //     const lTVtxt1 = $(`android=${lTVtxt}`)
-    //     await lTVtxt1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(lTVtxt1).toBeDisplayed();
-    // }
-    // get bestPriceText() {
-    //     const bestPricetext = 'new UiSelector().text("Best price").className("android.widget.TextView")'
-    //     const bestPricetext1 = $(`android=${bestPricetext}`)
-    //     await bestPricetext1.waitForDisplayed({ timeout: 10000 })
-    //     await expect(bestPricetext1).toBeDisplayed();
-    // }
-
-    // get nAText() {
-    //     const nAtext = 'new UiSelector().text("NA").className("android.widget.TextView")'
-    //     const nAtext1 = $(`android=${nAtext}`)
-    //     // await nAtext1.waitForDisplayed({ timeout: 10000 })
-    //     // await expect(nAtext1).toBeDisplayed();
-    // }
-
-
     async verifyLend_BorrowUIText() {
         await this.startLendBtn.waitForDisplayed({ timeout: 30000 })
 
@@ -368,52 +300,66 @@ class Lend_BorrowPage {
         await expect(this.supplybtn).toBeDisplayed();
         await expect(supplytab1).toBeDisplayed();
 
+        const maxtext = 'new UiSelector().text("Max").className("android.widget.TextView")'
+        const maxtext1 = $(`android=${maxtext}`)
+
+        const reserveDepositLimittext = 'new UiSelector().text("Reserve deposit limit").className("android.widget.TextView")'
+        const reserveDepositLimittext1 = $(`android=${reserveDepositLimittext}`)
+
+        const userBorrowLimittext = 'new UiSelector().text("User borrow limit").className("android.widget.TextView")'
+        const userBorrowLimittext1 = $(`android=${userBorrowLimittext}`)
+
+        const utilizationtxt = 'new UiSelector().text("Utilization").className("android.widget.TextView")'
+        const utilizationtxt1 = $(`android=${utilizationtxt}`)
+
+        const lTVtxt = 'new UiSelector().text("LTV").className("android.widget.TextView")'
+        const lTVtxt1 = $(`android=${lTVtxt}`)
+
+        const bestPricetext = 'new UiSelector().text("Best price").className("android.widget.TextView")'
+        const bestPricetext1 = $(`android=${bestPricetext}`)
+
+        await expect(maxtext1).toBeDisplayed();
+        await expect(reserveDepositLimittext1).toBeDisplayed();
+        await expect(userBorrowLimittext1).toBeDisplayed();
+        await expect(utilizationtxt1).toBeDisplayed();
+        await expect(lTVtxt1).toBeDisplayed();
+        await expect(bestPricetext1).toBeDisplayed();
+
         const borrowtab = 'new UiSelector().text("Borrow").className("android.widget.TextView")'
         const borrowtab1 = $(`android=${borrowtab}`)
         await (await this.borrowTab).click();
-        await expect(this.borrowbtn).toBeDisplayed();
         await expect(borrowtab1).toBeDisplayed();
+        await expect(maxtext1).toBeDisplayed();
+        await expect(reserveDepositLimittext1).toBeDisplayed();
+        await expect(userBorrowLimittext1).toBeDisplayed();
+        await expect(utilizationtxt1).toBeDisplayed();
+        await expect(lTVtxt1).toBeDisplayed();
+        await expect(bestPricetext1).toBeDisplayed();
+        await expect(maxtext1).toBeDisplayed();
 
         const withdrawtab = 'new UiSelector().text("Withdraw").className("android.widget.TextView")'
         const withdrawtab1 = $(`android=${withdrawtab}`)
         await (await this.withdrawTab).click();
-        await expect(this.withdrawbtn).toBeDisplayed();
         await expect(withdrawtab1).toBeDisplayed();
+        await expect(maxtext1).toBeDisplayed();
+        await expect(reserveDepositLimittext1).toBeDisplayed();
+        await expect(userBorrowLimittext1).toBeDisplayed();
+        await expect(utilizationtxt1).toBeDisplayed();
+        await expect(lTVtxt1).toBeDisplayed();
+        // await expect(bestPricetext1).toBeDisplayed();
+        await expect(this.withdrawbtn).toBeDisplayed();
 
         const repaytab = 'new UiSelector().text("Repay").className("android.widget.TextView")'
         const repaytab1 = $(`android=${repaytab}`)
         await (await this.repayTab).click();
-        await expect(this.repaybtn).toBeDisplayed();
         await expect(repaytab1).toBeDisplayed();
-
-        const maxtext = 'new UiSelector().text("Max").className("android.widget.TextView")'
-        const maxtext1 = $(`android=${maxtext}`)
         await expect(maxtext1).toBeDisplayed();
-
-        const supplyButtontext = 'new UiSelector().text("Supply").className("android.widget.TextView")'
-        const supplyButtontext1 = $(`android=${supplyButtontext}`)
-        await expect(supplyButtontext1).toBeDisplayed();
-
-        const reserveDepositLimittext = 'new UiSelector().text("Reserve deposit limit").className("android.widget.TextView")'
-        const reserveDepositLimittext1 = $(`android=${reserveDepositLimittext}`)
         await expect(reserveDepositLimittext1).toBeDisplayed();
-
-        const userBorrowLimittext = 'new UiSelector().text("User borrow limit").className("android.widget.TextView")'
-        const userBorrowLimittext1 = $(`android=${userBorrowLimittext}`)
         await expect(userBorrowLimittext1).toBeDisplayed();
-
-        const utilizationtxt = 'new UiSelector().text("Utilization").className("android.widget.TextView")'
-        const utilizationtxt1 = $(`android=${utilizationtxt}`)
         await expect(utilizationtxt1).toBeDisplayed();
-
-        const lTVtxt = 'new UiSelector().text("LTV").className("android.widget.TextView")'
-        const lTVtxt1 = $(`android=${lTVtxt}`)
         await expect(lTVtxt1).toBeDisplayed();
-
-        const bestPricetext = 'new UiSelector().text("Best price").className("android.widget.TextView")'
-        const bestPricetext1 = $(`android=${bestPricetext}`)
-        await expect(bestPricetext1).toBeDisplayed();
-
+        //  await expect(bestPricetext1).toBeDisplayed();
+        await expect(this.repaybtn).toBeDisplayed();
     }
 
 
@@ -439,22 +385,22 @@ class Lend_BorrowPage {
         await expect(this.startLendBtn).toBeDisplayed();
         await (await this.startLendBtn).click();
     }
-async firstPoolSelect(){
-    await this.firstPool.waitForDisplayed({ timeout: 30000 })
-    await (await this.firstPool).click();    
-}
-async secondPoolSelect(){
-    await this.secondtPool.waitForDisplayed({ timeout: 30000 })
-    await (await this.secondtPool).click();    
-}
-async thirdPoolSelect(){
-    await this.thirdPool.waitForDisplayed({ timeout: 30000 })
-    await (await this.thirdPool).click();    
-}
-async fourthPoolSelect(){
-    await this.fourthPool.waitForDisplayed({ timeout: 30000 })
-    await (await this.fourthPool).click();    
-}
+    async firstPoolSelect() {
+        await this.firstPool.waitForDisplayed({ timeout: 30000 })
+        await (await this.firstPool).click();
+    }
+    async secondPoolSelect() {
+        await this.secondtPool.waitForDisplayed({ timeout: 30000 })
+        await (await this.secondtPool).click();
+    }
+    async thirdPoolSelect() {
+        await this.thirdPool.waitForDisplayed({ timeout: 30000 })
+        await (await this.thirdPool).click();
+    }
+    async fourthPoolSelect() {
+        await this.fourthPool.waitForDisplayed({ timeout: 30000 })
+        await (await this.fourthPool).click();
+    }
 
     async selectSOL() {
         const soltext = 'new UiSelector().text("SOL").className("android.widget.TextView")'
@@ -595,14 +541,6 @@ async fourthPoolSelect(){
         }
     }
 
-    async popupClose() {
-        driver.touchAction([
-            { action: 'longPress', x: 272, y: 2030 },
-            { action: 'moveTo', x: 839, y: 2011 },
-            'release'
-        ]);
-    }
-
     async verifyClickTokenNameSamePopUpTokenName() {
 
         await this.firstTokenName.waitForDisplayed({ timeout: 30000 })
@@ -631,7 +569,6 @@ async fourthPoolSelect(){
 
     }
 
-
     async verifyAggeratorBestPrice() {
 
         await this.firstTokenName.waitForDisplayed({ timeout: 30000 })
@@ -649,12 +586,9 @@ async fourthPoolSelect(){
         const firstResult = await expect(this.secondBestPriceAmount).toBeDisplayed();
         const secondResult = await expect(this.secondBestPriceAmount).toBeDisplayed();
 
-
         if (secondResult && firstResult) {
             (firstTokenPer > sencondTokenPer)
-
         }
-
         else {
             // Pop up close
             driver.touchAction([
@@ -662,10 +596,8 @@ async fourthPoolSelect(){
                 { action: 'moveTo', x: 839, y: 2011 },
                 'release'
             ]);
-
             await (await this.backBtn).click();
             await (await this.backBtn).click();
-
             // Refresh
             driver.touchAction([
                 { action: 'longPress', x: 486, y: 149 },
@@ -676,14 +608,13 @@ async fourthPoolSelect(){
         }
     }
 
-async popupClose(){
-
-    driver.touchAction([
-        { action: 'longPress', x: 272, y: 2030 },
-        { action: 'moveTo', x: 839, y: 2011 },
-        'release'
-    ]);
-}
+    async popupClose() {
+        driver.touchAction([
+            { action: 'longPress', x: 272, y: 2030 },
+            { action: 'moveTo', x: 839, y: 2011 },
+            'release'
+        ]);
+    }
 
     async verifySolPool_InputTokenName() {
         await this.inPopupTokenName.waitForDisplayed({ timeout: 10000 })
@@ -708,7 +639,6 @@ async popupClose(){
         (repayTokenName == 'SOL')
     }
 
-
     async verifyMaxOption_ChangeTokenBtn() {
         await this.supplybtn.waitForDisplayed({ timeout: 10000 })
         await expect(this.supplyMaxBtn).toBeDisplayed();
@@ -727,16 +657,136 @@ async popupClose(){
         await expect(this.repayexchageBtn).toBeDisplayed();
     }
 
+    async clickSupplyTab() {
+        await this.supplybtn.waitForDisplayed({ timeout: 15000 })
+        await (await this.supplyTab).click();
+    }
+    async clickBorrowTab() {
+        await this.borrowTab.waitForDisplayed({ timeout: 15000 })
+        await (await this.borrowTab).click();
+    }
+    async clickWithdrawTab() {
+        await this.withdrawTab.waitForDisplayed({ timeout: 15000 })
+        await (await this.withdrawTab).click();
+    }
+    async clickRepayTab() {
+        await this.repayTab.waitForDisplayed({ timeout: 15000 })
+        await (await this.repayTab).click();
+    }
+
+    async enterSupplyAmount(supplyAmt) {
+        await this.supplybtn.waitForDisplayed({ timeout: 15000 })
+        await (await this.supplyEnterAmount).click();
+        await (await this.supplyEnterAmount).clearValue();
+        await (await this.supplyEnterAmount).setValue(supplyAmt);
+        driver.hideKeyboard();
+    }
+    async enterBorrowAmount(borrowAmt) {
+        await this.borrowbtn.waitForDisplayed({ timeout: 15000 })
+        await (await this.borrowEnterAmount).click();
+        await (await this.borrowEnterAmount).clearValue();
+        await (await this.borrowEnterAmount).setValue(borrowAmt);
+        driver.hideKeyboard();
+    }
+    async enterRepayAmount(repayAmt) {
+        await this.repaybtn.waitForDisplayed({ timeout: 15000 })
+        await (await this.repayEnterAmount).click();
+        await (await this.repayEnterAmount).clearValue();
+        await (await this.repayEnterAmount).setValue(repayAmt);
+        driver.hideKeyboard();
+    }
+    async enterWithdrawAmount(withdrawAmt) {
+        await this.withdrawbtn.waitForDisplayed({ timeout: 15000 })
+        await (await this.withdrawEnterAmount).click();
+        await (await this.withdrawEnterAmount).clearValue();
+        await (await this.withdrawEnterAmount).setValue(withdrawAmt);
+        driver.hideKeyboard();
+    }
+
+    async clickSupplyBtn() {
+        await this.supplybtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.supplybtn).click();
+    }
+    async clickBorrowBtn() {
+        await this.borrowbtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.borrowbtn).click();
+    }
+    async clickWithdrawBtn() {
+        await this.repaybtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.repaybtn).click();
+    }
+    async clickRepayBtn() {
+        await this.withdrawbtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.withdrawbtn).click();
+    }
+
+
+    // Click MAX button
+    async clickSupplyMaxBtn() {
+        await this.supplyMaxBtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.supplyMaxBtn).click();
+    }
+    async clickBorrowMaxBtn() {
+        await this.borrowMaxBtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.borrowMaxBtn).click();
+    }
+    async clickWithdrawMaxBtn() {
+        await this.withdrawMaxBtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.withdrawMaxBtn).click();
+    }
+    async clickRepayMaxBtn() {
+        await this.repayMaxBtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.repayMaxBtn).click();
+    }
+
+    async enterGreaterThanMaxBalanceSupply(maxGreaterAmt) {
+        await this.supplybtn.waitForDisplayed({ timeout: 10000 })
+        await (await this.supplyEnterAmount).click();
+        await (await this.supplyEnterAmount).setValue(maxGreaterAmt);
+        driver.hideKeyboard();
+    }
+    async enterGreaterThanMaxBalanceBorrow(maxGreaterAmt) {
+        await this.borrowbtn.waitForDisplayed({ timeout: 10000 })
+        await (await this.borrowEnterAmount).click();
+        await (await this.borrowEnterAmount).setValue(maxGreaterAmt);
+        driver.hideKeyboard();
+    }
+    async enterGreaterThanMaxBalanceWithdraw(maxGreaterAmt) {
+        await this.withdrawbtn.waitForDisplayed({ timeout: 10000 })
+        await (await this.withdrawEnterAmount).click();
+        await (await this.withdrawEnterAmount).setValue(maxGreaterAmt);
+        driver.hideKeyboard();
+    }
+    async enterGreaterThanMaxBalanceRepay(maxGreaterAmt) {
+        await this.repaybtn.waitForDisplayed({ timeout: 10000 })
+        await (await this.repayEnterAmount).click();
+        await (await this.repayEnterAmount).setValue(maxGreaterAmt);
+        driver.hideKeyboard();
+    }
+
+    async verifyInsufficientBalanceText(insufficient) {
+        await this.insufficientBalanceText.waitForDisplayed({ timeout: 5000 })
+        var insufficientText = await (await this.insufficientBalanceText).getText();
+        if (insufficientText == insufficient) {
+            console.log('Verified Insufficient Balance')
+        }
+        else {
+            console.log(insufficient)
+        }
+    }
+
+    async verifySOL() {
+    }
 
     async() {
+    } async() {
+    } async() {
+    } async() {
+    } async() {
     }
-    async() {
-    }
-    async() {
-    }
-    async() {
-    }
-
+    async() { }
+    async() { }
+    async() { }
 
 }
 module.exports = new Lend_BorrowPage();

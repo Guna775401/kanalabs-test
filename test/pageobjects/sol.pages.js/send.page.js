@@ -151,7 +151,8 @@ class SendPage {
         return $('(//android.view.ViewGroup[@content-desc="sendSolToken"])[5]/android.view.ViewGroup');
     }
 
-    get() {
+    get balanceAmountNextScreen() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[4]')
     }
 
     get() {
@@ -178,7 +179,7 @@ class SendPage {
         let sucess = await (this.sendDonebutton).isDisplayed();
         let fail = await (this.sendFailedDonebutton).isDisplayed();
 
-        if (sucess == true) {
+        if (sucess) {
             console.log(successOrFailRes);
             await (await this.sendDonebutton).click();
         }
@@ -273,11 +274,13 @@ class SendPage {
     }
 
 
-
-
-
-
-    async() {
+    async verifyBalanceEqualToMax_Amount() {
+        await this.balanceAmountNextScreen.waitForDisplayed({ timeout: 30000 });
+        var balance = await (await this.balanceAmountNextScreen).getText();
+        var balance1 = balance.replace(/[^0-9 ^.]/g, ''); 
+        await (await this.maxBtn).click();
+        const maxAmount = await (await this.inputAmount).getText();
+        (balance1==maxAmount)
 
     }
 
@@ -325,13 +328,18 @@ class SendPage {
         await (await this.inputAddressField).setValue(address);
         driver.hideKeyboard();
     }
+    async clearAddress() {
+        await this.inputAddressField.waitForDisplayed({ timeout: 30000 });
+        await (await this.inputAddressField).clearValue();
+        driver.hideKeyboard();
+    }
 
     async enterAmount(amount) {
         await this.inputAmount.waitForDisplayed({ timeout: 30000 });
         await (await this.inputAmount).click();
         await (await this.inputAmount).setValue(amount);
         driver.hideKeyboard();
-        await browser.pause(3000)
+        //await browser.pause(3000)
     }
     async clickContinueBtn() {
         await this.continueBtn.waitForDisplayed({ timeout: 30000 });

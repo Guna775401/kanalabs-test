@@ -54,7 +54,7 @@ describe('Import Sol Account', async () => {
     //    await LogoutPage.logout();
       //  await resetwalletPage.clickResetWalletbutton();
         await CreateWalletPage.clickSolWalletlogo();
-        await ImportWalletPage.importwallet(process.env.SEEDHURRY, process.env.VAILDWALLETNAME);
+        await ImportWalletPage.importwallet(process.env.SEEDBORING, process.env.VAILDWALLETNAME);
         await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
        await dashboardPage.verifySolDash();
@@ -100,6 +100,7 @@ describe('Import Neon Account', async () => {
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
        // await remindmelaterPage.remindmelater();
         await neondashboardPage.verifyNeonDash();
+        
     });
     it('IN5: Import Neon acount valid seed pharse with vaild name', async () => {
 

@@ -1,5 +1,6 @@
 const allure = require('allure-commandline')
 const wdio = require('webdriverio');
+const path = require('path')
 
 exports.config = {
   //
@@ -32,15 +33,14 @@ exports.config = {
       // './test/specs/**/*.js',
       //'./test/specs/login.js'
       //'./test/specs/createwallet.js',
-      //'./test/specs/importwallet.js',
+      './test/specs/importwallet.js',
       // './test/specs/dashboard.js',
-          './test/specs/importwallet.js',
+     // './test/specs/importwallet.js',
       //'./test/specs/login.js',
-     // './test/specs/send.js',
-      //'./test/specs/swap.js',
-      './test/specs/stake_unstake.js',
-
-
+      // './test/specs/send.js',
+     // './test/specs/swap.js',
+      // './test/specs/stake_unstake.js',
+      './test/specs/lend_borrow.js',
 
     ],
   ],
@@ -81,19 +81,27 @@ exports.config = {
     // "appium:automationName": "XCUITest",
     // "appium:udid": "00008020-001858901E42002E",
     // "appium:bundleId": "com.Tradala.KanaSwap",
-    
 
 
-     platformName: "Android",
+
+    platformName: "Android",
     "appium:automationName": "UiAutomator2",
     "appium:platformVersion": "11",
-    "appium:deviceName": "Moto g71", 
+    "appium:deviceName": "Moto g71",
     "appium:appPackage": "com.kanaswapapp",
     "appium:appActivity": "com.kanaswapapp.MainActivity",
     "appium:udid": "ZD2225BZ8T",
+    "appium:noRest": "true",
+    "appium:ignoreHiddenApiPolicyError": "true"
 
-    //"appium:ignoreHiddenApiPolicyError": "true",
     //"appium:autoGrantPermission": true
+
+    // platformName: "Android",
+    // "appium:automationName": "UiAutomator2",
+    // "appium:platformVersion": "11",
+    // "appium:deviceName": "Galaxy Nexus API 30",
+    // "appium:app": path.join(process.cwd(), "./app-andriod/app-debug (5).apk"),
+    // "appium:udid": "emulator-5554",
 
 
     // platformName: "Ios",

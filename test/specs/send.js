@@ -24,19 +24,27 @@ describe('Solana Send DevNet', () => {
    })
    it('SSD2 : Verify Valid public address Send tokens Sol Maxout amount equal to Balane ', async () => {
 
+      await sendPage.enterAddress(process.env.PUBLICADDRESS)
+      await sendPage.clickContinueBtn();
+      await sendPage.verifyBalanceEqualToMax_Amount();
 
    })
    it('SSD3 : Verify Valid public address Send tokens Sol Minimum(0.001) amount and Valid amount ', async () => {
+      await sendPage.enterAmount(process.env.DECIMALAMOUNT);
+      await sendPage.slidetoSend();
+      await sendPage.clickSendDoneBtn();
+
 
    })
    it('SSD4 : Verify Valid public address Send tokens mSOL Maxout amount and Valid amount ', async () => {
 
+
    })
-   it('SSD5 : Verify Valid public address Send tokens Sol Minimum(0.001) amount and Valid amount', async () => {
+   it('SSD5 : Verify Valid public address Send tokens mSol Minimum(0.001) amount and Valid amount', async () => {
 
    })
 
-   it('SSD6 : Verify Sol send Devnet', async () => {
+   it('SSD6 : Verify 1 Sol send Devnet', async () => {
       await dashboardPage.devNetworkChange();
       await dashboardPage.verifySolDash();
       await sendPage.clickSendBtn();
@@ -52,7 +60,7 @@ describe('Solana Send DevNet', () => {
 
    })
    // Need to mSOL select option
-   xit('SSD3 : Send mSOL Devnet ', async () => {
+   xit('SSD3 : Send 1 mSOL Devnet ', async () => {
       await dashboardPage.verifySolDash();
       await sendPage.clickSendBtn();
       await sendPage.verifySendscreen();
@@ -74,16 +82,23 @@ describe('Solana Send DevNet', () => {
 
 describe('Solana Send DevNet in Dashboard ', async () => {
 
-   it('DST1 : Verify Invalid Public address couldnt allow popup in  dashboard screen send ', async () => { })
+   it('DST1 : Verify Invalid Public address couldnt allow popup in  dashboard screen send ', async () => {
+      await dashboardPage.verifySolDash();
+      await sendPage.dashboardFirstToken();
+      await sendPage.verifySendUI();
+      await sendPage.enterAddress(process.env.INVAILDPUBLICADDRESS);
+      await sendPage.clickContinueBtn();
+    })
 
 
 
    it('DST2 : Solana Send DevNet in Dashboard First Token', async () => {
 
-      await dashboardPage.verifySolDash();
-      await sendPage.dashboardFirstToken();
-      await sendPage.verifySendscreen();
-      await sendPage.verifySendUI();
+      // await dashboardPage.verifySolDash();
+      // await sendPage.dashboardFirstToken();
+      // await sendPage.verifySendscreen();
+      // await sendPage.verifySendUI();
+      await sendPage.clearAddress();
       await sendPage.enterAddress(process.env.PUBLICADDRESS);
       await sendPage.clickContinueBtn();
       await sendPage.enterAmount(process.env.MAINNETSOLAMOUNT);

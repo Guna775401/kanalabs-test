@@ -44,13 +44,44 @@ class CreateWalletPage {
     get loginPin6() {
         return $('~pin6');
     }
+    get popupdismiss() {
+        return $('~com.kanaswapapp:id/ib_core_onboarding_container')
+    }
 
     async firstnextBtn() {
+        // await this.popupdismiss.waitForDisplayed({ timeout: 60000 });
+        // await (this.popupdismiss).click();
         await this.nextBtn.waitForDisplayed({ timeout: 60000 });
         await (await this.nextBtn).click();
         await (await this.nextBtn).click();
         await (await this.nextBtn).click();
     };
+    get colorGet() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup')
+    }
+    async getcolor() {
+        // let el1 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
+        //client.getCssProperty(selector,cssProperty).then(callback);
+
+        //  const ele = await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup')
+
+//div._highlighter-box_619e8
+
+        const ele = $('div._highlighter-box_619e8')
+        const color = await ele.getCSSProperty('color')
+        console.log('color :' + color);
+
+
+        // getCssProperty(ele, 'color').then(function(color) {
+        //     console.log(color);
+
+        // const fontize = await ele.getCSSProperty('font-size')
+        // console.log('fontize :' + fontize);
+
+        // const fontfamily = await ele.getCSSProperty('font-family')
+        // console.log('fontfamily :' + fontfamily);
+        // });
+    }
 
     async createwallet(walletName) {
         await this.solWallet.waitForDisplayed({ timeout: 60000 });
@@ -78,7 +109,7 @@ class CreateWalletPage {
         const backbutton = $('~goBackFromNameWallet');
         await backbutton.waitForDisplayed({ timeout: 60000 });
         await expect(backbutton).toBeDisplayed();
-        }
+    }
 
     async backButtonClick() {
         const backbutton = $('~goBackFromNameWallet');
@@ -86,14 +117,14 @@ class CreateWalletPage {
         await expect(backbutton).toBeDisplayed();
         await backbutton.click();
     }
-    
+
 
     async backButtonExisting() {
         const backbutton = $('~goBackFromNameWallet');
         await backbutton.waitForDisplayed({ timeout: 60000 });
         await expect(backbutton).toBeExisting();
     }
-    async continueBtnClick(){
+    async continueBtnClick() {
         await this.continueBtn.waitForDisplayed({ timeout: 60000 });
         await (this.continueBtn).click();
 

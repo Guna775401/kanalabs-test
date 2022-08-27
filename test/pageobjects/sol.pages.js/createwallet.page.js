@@ -91,8 +91,8 @@ class CreateWalletPage {
         await (await this.inputwalletName).setValue(walletName);
         driver.hideKeyboard();
         await (await this.continueBtn).click();
-
     }
+
     async clickSolWalletlogo() {
         await this.solWallet.waitForDisplayed({ timeout: 60000 });
         await (await this.solWallet).click();
@@ -106,9 +106,9 @@ class CreateWalletPage {
         await (this.inputwalletName).click();
         await (this.inputwalletName).setValue(name);
         driver.hideKeyboard();
-        const backbutton = $('~goBackFromNameWallet');
-        await backbutton.waitForDisplayed({ timeout: 60000 });
-        await expect(backbutton).toBeDisplayed();
+        // const backbutton = $('~goBackFromNameWallet');
+        // await backbutton.waitForDisplayed({ timeout: 60000 });
+        await expect(this.backBtn).toBeDisplayed();
     }
 
     async backButtonClick() {
@@ -127,7 +127,6 @@ class CreateWalletPage {
     async continueBtnClick() {
         await this.continueBtn.waitForDisplayed({ timeout: 60000 });
         await (this.continueBtn).click();
-
     }
 
     async entersetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
@@ -141,24 +140,7 @@ class CreateWalletPage {
         await (await this.loginPin5).setValue(pin5);
         await (await this.loginPin6).setValue(pin6);
     }
-
-    async enterPin2(pin2) {
-        await (await this.loginPin2).setValue(pin2);
-    }
-    async enterPin3(pin3) {
-        await (await this.loginPin3).setValue(pin3);
-    }
-    async enterPin4(pin4) {
-        await (await this.loginPin4).setValue(pin4);
-    }
-    async enterPin5(pin5) {
-        await (await this.loginPin5).setValue(pin5);
-    }
-    async enterPin6(pin6) {
-        await (await this.loginPin6).setValue(pin6);
-    }
-
-    async enterConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
+   async enterConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
         await (await this.loginPin1).waitForDisplayed({ timeout: 240000 });
 
         await (await this.loginPin1).click();

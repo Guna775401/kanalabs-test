@@ -35,9 +35,9 @@ class NeonDashboardPage {
     }
 
 
-    get neonWalletLightModeBtn() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.Switch');
-    }
+    // get neonWalletLightModeBtn() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.Switch');
+    // }
     // Logout 
     get neonWalletLogutBtn() {
         return $('~logoutNeon');
@@ -124,7 +124,7 @@ class NeonDashboardPage {
         await expect(await this.neonWalletMenuTabCloseBtn).toBeDisplayed();
         await expect(await this.neonWalletMenuNetworkTab).toBeDisplayed();
         await expect(await this.neonWalletMenuChangePin).toBeDisplayed();
-        await expect(await this.neonWalletLightModeBtn).toBeDisplayed();
+        //await expect(await this.neonWalletLightModeBtn).toBeDisplayed();
         await expect(await this.neonWalletLogutBtn).toBeDisplayed();
         await expect(await this.neonWalletShowSeedPhrase).toBeDisplayed();
         await (await this.neonWalletMenuTabCloseBtn).click();

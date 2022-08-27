@@ -1,6 +1,6 @@
 
 
-
+var fs = require('fs');
 
 require('dotenv').config()
 
@@ -28,7 +28,7 @@ class StakePage {
         return $('~stakeAmount');
     }
     get youWillReceiveAmount() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]');
     }
     get maxBtn() {
         return $('~maxUnstake');
@@ -102,15 +102,15 @@ class StakePage {
     get slideToUnStakeText() {
         const slideToUnStaketxt = 'new UiSelector().text("Slide to unstake").className("android.widget.TextView")'
         const slideToUnStakeTxt = $(`android=${slideToUnStaketxt}`)
-        return slideToUnStakeTxt;
+        return  slideToUnStakeTxt;
     }
 
     get firstToken() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView')
     }
 
     get secondToken() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[1]')
     }
 
     // Unstaked
@@ -122,7 +122,7 @@ class StakePage {
     }
 
     get slideBtn() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup');
     }
     get exchangeRate() {
         return $('~stakeExchangeRate');
@@ -138,7 +138,7 @@ class StakePage {
         return $('~goToHomeFromTokenSendFailed');
     }
 
-    
+
     get() {
     }
     get() {
@@ -173,7 +173,7 @@ class StakePage {
         await (await this.maxBtn).click();
         await browser.pause(5000);
         var maxAmount = await (await this.stakeInputAmount).getText();
-        var newMaxAmount = (maxAmount - (0.1))
+        var newMaxAmount = (maxAmount - (2))
         await (await this.stakeInputAmount).setValue(newMaxAmount);
         driver.hideKeyboard();
     }
@@ -189,21 +189,31 @@ class StakePage {
         let sucess = await (this.stakeDoneBtn).isDisplayed();
         let fail = await (this.stakeFailDoneBtn).isDisplayed();
 
-        if (sucess == true) {
+        if (sucess) {
             await expect(solStaked1).toBeDisplayed();
-            console.log(successOrFailRes);
+            // fs.writeFile('./reports/stake_unstake.txt', successOrFailRes + '\n', function (err) {
+            //     console.log(err)
+            // })
             await (await this.stakeDoneBtn).click();
-
         }
-        else if (fail == true) {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+        else if (fail) {
+            fs.writeFile('./reports/stake_unstake.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/stake_unstake.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
             await (await this.stakeFailDoneBtn).click();
-
         }
         else {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+            fs.appendFile('./reports/stake_unstake.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/stake_unstake.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
+            await browser.saveScreenshot('screenshot.png')
+            await (await this.stakeFailDoneBtn).click();
         }
     }
 
@@ -219,21 +229,31 @@ class StakePage {
         let sucess = await (this.unStakeDoneBtn).isDisplayed();
         let fail = await (this.unStakeFailDoneBtn).isDisplayed();
 
-        if (sucess == true) {
+        if (sucess) {
             await expect(solunStaked1).toBeDisplayed();
-            console.log(successOrFailRes);
+            // fs.appendFile('./report/stake_unstake.txt', successOrFailRes + '\n', function (err) {
+            //     console.log(err)
+            // })
             await (await this.unStakeDoneBtn).click();
-
         }
-        else if (fail == true) {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+        else if (fail) {
+            fs.appendFile('./report/stake_unstake.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/stake_unstake.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
             await (await this.unStakeFailDoneBtn).click();
-
         }
         else {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+            fs.appendFile('./report/stake_unstake.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/stake_unstake.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
+            await browser.saveScreenshot('screenshot.png')
+            await (await this.unStakeFailDoneBtn).click();
         }
     }
 
@@ -260,26 +280,37 @@ class StakePage {
         await stake_UnStake.waitForDisplayed({ timeout: 30000 });
         await expect(stake_UnStake).toBeDisplayed();
     }
+
     async slideToStake() {
-        await (this.slideBtn).waitForDisplayed({ timeout: 30000 });
-        await expect(this.slideBtn).toBeDisplayed();
-        await this.slideToStakeText.waitForDisplayed({ timeout: 30000 });
-        await expect(this.slideToStakeText).toBeDisplayed();
+
+        await (this.slideBtn).waitForDisplayed({ timeout: 10000 });
+        // await expect(this.slideBtn).toBeDisplayed();
+       // console.log(await expect(this.slideBtn).toBeDisplayed());
+        
+        //await this.slideToStakeText.waitForDisplayed({ timeout: 5000 });
+        const res = await (this.slideToStakeText).isDisplayed();
+        console.log(await expect(this.slideToStakeText).toBeDisplayed());
+
+        fs.appendFile('./report/stake_unstake.txt', res + '\n', function (err) {
+            console.log(err)
+        })
+
+        // await expect(this.slideToStakeText).toBeDisplayed();
         driver.touchAction([
-            { action: 'longPress', x: 142, y: 1750 },
-            { action: 'moveTo', x: 934, y: 1750 },
+            { action: 'longPress', x: 146, y: 1746 },
+            { action: 'moveTo', x: 946, y: 1750 },
             'release'
         ]);
     }
 
     async slideToUnStake() {
-        await (this.slideBtn).waitForDisplayed({ timeout: 30000 });
+        await (this.slideBtn).waitForDisplayed({ timeout: 10000 });
         await expect(this.slideBtn).toBeDisplayed();
-        await this.slideToUnStakeText.waitForDisplayed({ timeout: 30000 });
+        await this.slideToUnStakeText.waitForDisplayed({ timeout: 5000 });
         await expect(this.slideToUnStakeText).toBeDisplayed();
         driver.touchAction([
-            { action: 'longPress', x: 142, y: 1750 },
-            { action: 'moveTo', x: 934, y: 1750 },
+            { action: 'longPress', x: 146, y: 1750 },
+            { action: 'moveTo', x: 919, y: 1762 },
             'release'
         ]);
     }
@@ -303,8 +334,6 @@ class StakePage {
 
 
     async verifyStakeScreenFirst_Sol_Second_mSOL(sol, msol) {
-        await this.stake_UnstakeText.waitForDisplayed({ timeout: 30000 });
-        await expect(this.stake_UnstakeText).toBeDisplayed();
         const firstToken = await (await this.firstToken).getText();
         const secondToken = await (await this.secondToken).getText();
         await (firstToken == sol);
@@ -331,8 +360,6 @@ class StakePage {
     }
 
     async verify1SOLequalmSOL() {
-        await (this.slideBtn).waitForDisplayed({ timeout: 30000 });
-        await expect(this.slideBtn).toBeDisplayed();
         const youGetAmount = await (await this.youWillReceiveAmount).getText();
         var exchangeAmount = await (await this.exchangeRate).getText();
         exchangeAmount = exchangeAmount.replace('1 SOL', '').replace(/[^0-9 ^.]/g, '');   // (/[^a-z]+/i, ''); // (/^\D+/g /=, ''); (/[^0-9]/g, '');
@@ -351,15 +378,13 @@ class StakePage {
     }
 
     async verify1mSOLequalSOL() {
-        await (this.slideBtn).waitForDisplayed({ timeout: 30000 });
-        await expect(this.slideBtn).toBeDisplayed();
         const youGetAmount = await (await this.youWillReceiveAmount).getText();
         var exchangeAmount = await (await this.unstakeExchangeRate).getText();
         exchangeAmount = exchangeAmount.replace('1 mSOL', '').replace(/[^0-9 ^.]/g, '');   // (/[^a-z]+/i, ''); // (/^\D+/g /=, ''); (/[^0-9]/g, '');
         await (youGetAmount == exchangeAmount);
 
     }
-    
+
 
     async clickUnStakeMaxBtn() {
         await this.unStakeMaxBtn.waitForDisplayed({ timeout: 5000 });
@@ -370,7 +395,7 @@ class StakePage {
         await (await this.unStakeInputAmount).setValue(newMaxAmount);
         driver.hideKeyboard();
     }
-    
+
     async() {
 
     } async() {

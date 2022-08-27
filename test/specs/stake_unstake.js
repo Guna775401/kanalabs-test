@@ -9,29 +9,22 @@ require('dotenv').config()
 describe.only('Stake/UnStake DevNet', () => {
 
     it('StD1 : Verify ExchangeRate eqaul to display mSOL or Not (Like 1 Sol = 0.94904 Need to give a 1 SOL recieve mSOl equal) PleaseUi see ', async () => {
-
         await dashboardPage.verifySolDash();
         await stakePage.clickStakebtn();
         await stakePage.verifyStake_UnstakeText();
         await stakePage.clickStart_Stakingbtn();
         await stakePage.enterStakeAmount(process.env.ONESOL);
         await stakePage.verify1SOLequalmSOL();
-
-
     })
     it('StD2 : Verify Stake Screen SOL first mSOL Second or Not ', async () => {
-
         await stakePage.verifyStakeScreenFirst_Sol_Second_mSOL(process.env.SOL, process.env.MSOL);
     })
-
     it('StD3 : Verify decimal value SOL can Stake or not ', async () => {
-
         await stakePage.enterStakeAmount(process.env.DECIMALAMOUNT);
         await stakePage.slideToStake();
         await stakePage.clickDonebtn();
     })
-
-    it('StD4 : Verify  1 SOL can Stake or not  ', async () => {
+   it('StD4 : Verify  1 SOL can Stake or not  ', async () => {
         await swapPage.refresh();
         await dashboardPage.verifySolDash();
         await stakePage.clickStakebtn();
@@ -100,7 +93,7 @@ describe.only('Stake/UnStake DevNet', () => {
     })
 })
 
-describe('Stake/UnStake MainNet', () => {
+describe.only('Stake/UnStake MainNet', () => {
 
     it('StM1 : Verify MainNet ExchangeRate eqaul to display mSOL or Not (Like 1 Sol = 0.94904 Need to give a 1 SOL recieve mSOl equal) PleaseUi see ', async () => {
         await dashboardPage.verifySolDash();
@@ -121,7 +114,7 @@ describe('Stake/UnStake MainNet', () => {
 
     it('StM3 : Verify MainNet decimal value SOL can Stake or not ', async () => {
        
-        await stakePage.enterStakeAmount(process.env.DECIMALAMOUNT);
+        await stakePage.enterStakeAmount(process.env.STAKEDECI);
         await stakePage.slideToStake();
         await stakePage.clickDonebtn();
     })
@@ -132,7 +125,7 @@ describe('Stake/UnStake MainNet', () => {
         await stakePage.clickStakebtn();
         await stakePage.verifyStake_UnstakeText();
         await stakePage.clickStart_Stakingbtn();
-        await stakePage.enterStakeAmount(process.env.ONESOL);
+        await stakePage.enterStakeAmount(process.env.STAKEDECIMAL);
         await stakePage.slideToStake();
         await stakePage.clickDonebtn();
     })
@@ -144,6 +137,7 @@ describe('Stake/UnStake MainNet', () => {
         await stakePage.verifyStake_UnstakeText();
         await stakePage.clickStart_Stakingbtn();
         await stakePage.clickMaxbtn();
+        await stakePage.enterStakeAmount(process.env.STAKEAMOUNT);
         await stakePage.slideToStake();
         await stakePage.clickDonebtn();
     })
@@ -167,7 +161,7 @@ describe('Stake/UnStake MainNet', () => {
 
     it('UnStM3 : Verify MainNet decimal value mSOL can UnStake or not ', async () => {
 
-        await stakePage.enterUnStakeAmount(process.env.DECIMALAMOUNT);
+        await stakePage.enterUnStakeAmount(process.env.UNSTAKEDECIMAL);
         await stakePage.slideToUnStake();
         await stakePage.verifySOLUnStake();
         await stakePage.clickUnstakeDonebtn();
@@ -179,7 +173,7 @@ describe('Stake/UnStake MainNet', () => {
         await stakePage.clickStakebtn();
         await stakePage.verifyStake_UnstakeText();
         await stakePage.clickUnstakeTab();
-        await stakePage.enterUnStakeAmount(process.env.ONEMSOL);
+        await stakePage.enterUnStakeAmount(process.env.STAKEDECI);
         await stakePage.slideToUnStake();
         await stakePage.verifySOLUnStake();
         await stakePage.clickUnstakeDonebtn();

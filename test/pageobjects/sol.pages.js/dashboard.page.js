@@ -13,7 +13,7 @@ class DashBoardPage {
         return $('~changeWalletTypeNeon');
     }
 
-    
+
     // NeonWallet in dashboard Sol Wallet logo
 
     get solWallet() {
@@ -52,18 +52,35 @@ class DashBoardPage {
     get solLogoDash() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]');
     }
+
+    get walletName() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]')
+    }
+
+    get holdlingValueText() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[2]');
+    }
+
+    get holdlingValueAmount() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[3]');
+    }
+    get() {
+        return $('');
+    }
+    get() {
+        return $('');
+    }
+    get() {
+        return $('');
+    }
+
     get sendSolToken() {
         return $('~sendSolToken');
     }
     get create_Viewwallet() {
         return $('~CREATEORVIEWWALLET');
     }
-    get holdlingValueText() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[2]');
-    }
-    get holdlingValueAmount() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[3]');
-    }
+
 
 
 
@@ -81,7 +98,7 @@ class DashBoardPage {
         await devDash1.waitForDisplayed({ timeout: 120000 })
         await expect(devDash1).toBeDisplayed();
     }
-    
+
     async verifySolDashMainNet() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
         const mainDash = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
@@ -103,11 +120,13 @@ class DashBoardPage {
 
     // Display function
     async verifymenuoption() {
-        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
+        await (await this.menuTab).waitForDisplayed({ timeout: 10000 });
         await expect(this.menuTab).toBeDisplayed();
     }
-
-    
+    async verifyWalletName_SolLogo() {
+        await expect(this.walletName).toBeDisplayed();
+        await expect(this.solLogoDash).toBeDisplayed();
+    }
     async verifyCopyclipboardAndQRcode() {
         await expect(this.copyClipboard).toBeDisplayed();
         await expect(this.nftBtn).toBeDisplayed();
@@ -117,7 +136,7 @@ class DashBoardPage {
         await expect(this.holdlingValueAmount).toBeDisplayed();
     }
 
-   
+
     // Click function
     async clickMenuoption() {
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
@@ -129,8 +148,6 @@ class DashBoardPage {
         await expect(this.menuCancelbtn).toBeDisplayed();
         await (await this.menuCancelbtn).click();
     }
-
-  
 
     async devNetworkChange() {
         await (this.menuTab).waitForDisplayed({ timeout: 60000 });

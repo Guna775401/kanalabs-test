@@ -54,7 +54,7 @@ class Lend_BorrowPage {
         return $('~findWithdrawMax');
     }
     get repayMaxBtn() {
-        return $('~findWithdrawMax');
+        return $('~findRepayMax');
     }
 
     // Token Exchange button
@@ -91,7 +91,7 @@ class Lend_BorrowPage {
     get firstPool() {
         return $('(//android.view.ViewGroup[@content-desc="tableIndexSol"])[1]');
     }
-    get secondtPool() {
+    get secondPool() {
         return $('(//android.view.ViewGroup[@content-desc="tableIndexSol"])[2]');
     }
     get thirdPool() {
@@ -190,13 +190,14 @@ class Lend_BorrowPage {
     }
 
     get insufficientBalanceText() {
-        return $('//android.view.ViewGroup[@content-desc="tab1ModalViewClose"]/android.view.ViewGroup/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]');
+        //android.view.ViewGroup[@content-desc="tab1ModalViewClose"]/android.view.ViewGroup/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView[2]
+        return $('//android.view.ViewGroup[@content-desc="tab1ModalViewClose"]/android.view.ViewGroup/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView[2]');
     }
 
     async verifyDoneBtn() {
         const doneTxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
         const doneTxt1 = $(`android=${doneTxt}`)
-        await doneTxt1.waitForDisplayed({ timeout: 60000 })
+        await doneTxt1.waitForDisplayed({ timeout: 120000 })
         await expect(doneTxt1).toBeDisplayed();
 
         var res = await (await this.result).getText();
@@ -205,31 +206,29 @@ class Lend_BorrowPage {
         var res1 = await (await this.checkYourDashboardChanges).getText();
         res1 = ('Result = ' + res1);
 
-        const sucess = await expect(this.successDoneBtn).toBeDisplayed();
-        const fail = await expect(this.failDoneBtn).toBeDisplayed();
+        const sucess = await (this.successDoneBtn).isDisplayed();
+       // const fail = await expect(this.failDoneBtn).toBeDisplayed();
 
         if (sucess) {
-            fs.appendFile('result', res, function (err) {
+            await this.successDoneBtn.waitForDisplayed({ timeout: 60000 })
+            fs.appendFile('./reports/lend_borrow.txt', res + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('result', res1, function (err) {
+            fs.appendFile('./reports/lend_borrow.txt', res1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.successDoneBtn).click();
         }
-        else if (fail) {
-            fs.appendFile('result', res, function (err) {
+        else {
+            fs.appendFile('./reports/lend_borrow.txt', res + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('result', res1, function (err) {
+            fs.appendFile('./reports/lend_borrow.txt', res1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failDoneBtn).click();
         }
-        else {
-            await browser.saveScreenshot('screenshot.js')
-        }
-    }
+      }
 
     get() {
         return $('~');
@@ -362,7 +361,10 @@ class Lend_BorrowPage {
         await expect(this.repaybtn).toBeDisplayed();
     }
 
-
+    async verifylend_borrowBtn() {
+        await this.lend_borrowBtn.waitForDisplayed({ timeout: 5000 })
+        await expect(this.lend_borrowBtn).toBeDisplayed();
+    }
 
     async clickLend_Borrow() {
         await this.lend_borrowBtn.waitForDisplayed({ timeout: 30000 })
@@ -390,8 +392,8 @@ class Lend_BorrowPage {
         await (await this.firstPool).click();
     }
     async secondPoolSelect() {
-        await this.secondtPool.waitForDisplayed({ timeout: 30000 })
-        await (await this.secondtPool).click();
+        await this.secondPool.waitForDisplayed({ timeout: 30000 })
+        await (await this.secondPool).click();
     }
     async thirdPoolSelect() {
         await this.thirdPool.waitForDisplayed({ timeout: 30000 })
@@ -406,7 +408,6 @@ class Lend_BorrowPage {
         const soltext = 'new UiSelector().text("SOL").className("android.widget.TextView")'
         const soltext1 = $(`android=${soltext}`)
 
-        await soltext1.waitForDisplayed({ timeout: 10000 })
         const res = await (soltext1).isDisplayed();
         if (res) {
             await (await soltext1).click();
@@ -430,11 +431,37 @@ class Lend_BorrowPage {
         }
     }
 
+    async selectmSOL() {
+        const msoltext = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+        const msoltext1 = $(`android=${msoltext}`)
+
+        const res = await (msoltext1).isDisplayed();
+        if (res) {
+            await (await msoltext1).click();
+
+        }
+        else if (res == false) {
+            driver.touchAction([
+                { action: 'longPress', x: 479, y: 2271 },
+                { action: 'moveTo', x: 471, y: 881 },
+                'release'
+            ]);
+            await (await msoltext1).click();
+        }
+        else {
+            driver.touchAction([
+                { action: 'longPress', x: 425, y: 1919 },
+                { action: 'moveTo', x: 429, y: 904 },
+                'release'
+            ]);
+            await (await msoltext1).click();
+        }
+    }
+
     async selectUSDC() {
         const usdctext = 'new UiSelector().text("USDC").className("android.widget.TextView")'
         const usdctext1 = $(`android=${usdctext}`)
 
-        await usdctext1.waitForDisplayed({ timeout: 10000 })
         const res = await expect(usdctext1).toBeDisplayed();
         if (res) {
             await (await usdctext1).click();
@@ -462,9 +489,8 @@ class Lend_BorrowPage {
         const usdttext = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const usdttext1 = $(`android=${usdttext}`)
 
-        await usdttext1.waitForDisplayed({ timeout: 10000 })
         const res = await expect(usdttext1).toBeDisplayed();
-        if (res == true) {
+        if (res) {
             await (await usdttext1).click();
 
         }
@@ -490,7 +516,6 @@ class Lend_BorrowPage {
         const srmtext = 'new UiSelector().text("SRM").className("android.widget.TextView")'
         const srmtext1 = $(`android=${srmtext}`)
 
-        await srmtext1.waitForDisplayed({ timeout: 10000 })
         const res = await expect(srmtext1).toBeDisplayed();
         if (res) {
             await (await srmtext1).click();
@@ -517,9 +542,8 @@ class Lend_BorrowPage {
         const usttext = 'new UiSelector().text("UST").className("android.widget.TextView")'
         const usttext1 = $(`android=${usttext}`)
 
-        await usttext1.waitForDisplayed({ timeout: 10000 })
         const res = await expect(usttext1).toBeDisplayed();
-        if (res == true) {
+        if (res) {
             await (await usttext1).click();
 
         }
@@ -541,29 +565,172 @@ class Lend_BorrowPage {
         }
     }
 
-    async verifyClickTokenNameSamePopUpTokenName() {
+
+
+    async selectORCA() {
+        const orcatext = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
+        const orcatext1 = $(`android=${orcatext}`)
+
+        const res = await expect(orcatext1).toBeDisplayed();
+        if (res) {
+            await (await orcatext1).click();
+
+        }
+        if (res == false) {
+            driver.touchAction([
+                { action: 'longPress', x: 479, y: 2271 },
+                { action: 'moveTo', x: 471, y: 881 },
+                'release'
+            ]);
+            await (await orcatext1).click();
+        }
+        else {
+            driver.touchAction([
+                { action: 'longPress', x: 425, y: 1919 },
+                { action: 'moveTo', x: 429, y: 904 },
+                'release'
+            ]);
+            await (await orcatext1).click();
+        }
+    }
+
+    async selectSolend() {
+
+        const solend = 'new UiSelector().text("solend").className("android.widget.TextView")'
+        const solend1 = $(`android=${solend}`)
+        await solend1.waitForDisplayed({ timeout: 15000 })
+        const res = await expect(solend1).toBeDisplayed();
+
+        if (res) {
+            await (await solend1).click();
+        }
+
+        else {
+            await browser.saveScreenshot('screenshot.png')
+        }
+
+    }
+    async selectApricot() {
+        const apricot = 'new UiSelector().text("apricot").className("android.widget.TextView")'
+        const apricot1 = $(`android=${apricot}`)
+        const res = await expect(apricot1).toBeDisplayed();
+
+        if (res) {
+            await (await apricot1).click();
+        }
+
+        else {
+            await browser.saveScreenshot('screenshot.png')
+        }
+    }
+
+
+
+    async verify_First_TokenNameSamePopUpTokenName() {
 
         await this.firstTokenName.waitForDisplayed({ timeout: 30000 })
         let outsideTokenName = await (await this.firstTokenName).getText();
         await (await this.firstTokenName).click();
 
-        let insideTokenName = await (await this.supplyPoPUpINTokenName).getText();
+        let insideTokenName = await (await this.inPopupTokenName).getText();
         outsideTokenName = outsideTokenName.replace(/[^a-z]+/i, '');
         insideTokenName = insideTokenName.replace(/[^a-z]+/i, '');
         (outsideTokenName == insideTokenName);
 
         await (await this.borrowTab).click();
-        let borrowinsideTokenName = await (await this.supplyPoPUpINTokenName).getText();
+        let borrowinsideTokenName = await (await this.inPopupTokenName).getText();
         borrowinsideTokenName = borrowinsideTokenName.replace(/[^a-z]+/i, '');
         (outsideTokenName == borrowinsideTokenName);
 
         await (await this.withdrawTab).click();
-        let withdrawinsideTokenName = await (await this.supplyPoPUpINTokenName).getText();
+        let withdrawinsideTokenName = await (await this.inPopupTokenName).getText();
         withdrawinsideTokenName = withdrawinsideTokenName.replace(/[^a-z]+/i, '');
         (outsideTokenName == withdrawinsideTokenName);
 
         await (await this.repayTab).click();
-        let repayinsideTokenName = await (await this.supplyPoPUpINTokenName).getText();
+        let repayinsideTokenName = await (await this.inPopupTokenName).getText();
+        repayinsideTokenName = repayinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == repayinsideTokenName);
+    }
+
+    async verify_Second_TokenNameSamePopUpTokenName() {
+
+        await this.secondTokenName.waitForDisplayed({ timeout: 30000 })
+        let outsideTokenName = await (await this.secondTokenName).getText();
+        await (await this.secondPool).click();
+
+        let insideTokenName = await (await this.inPopupTokenName).getText();
+        outsideTokenName = outsideTokenName.replace(/[^a-z]+/i, '');
+        insideTokenName = insideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == insideTokenName);
+
+        await (await this.borrowTab).click();
+        let borrowinsideTokenName = await (await this.inPopupTokenName).getText();
+        borrowinsideTokenName = borrowinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == borrowinsideTokenName);
+
+        await (await this.withdrawTab).click();
+        let withdrawinsideTokenName = await (await this.inPopupTokenName).getText();
+        withdrawinsideTokenName = withdrawinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == withdrawinsideTokenName);
+
+        await (await this.repayTab).click();
+        let repayinsideTokenName = await (await this.inPopupTokenName).getText();
+        repayinsideTokenName = repayinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == repayinsideTokenName);
+
+    }
+
+    async verify_Third_TokenNameSamePopUpTokenName() {
+
+        await this.secondTokenName.waitForDisplayed({ timeout: 30000 })
+        let outsideTokenName = await (await this.thirdTokenName).getText();
+        await (await this.thirdPool).click();
+
+        let insideTokenName = await (await this.inPopupTokenName).getText();
+        outsideTokenName = outsideTokenName.replace(/[^a-z]+/i, '');
+        insideTokenName = insideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == insideTokenName);
+
+        await (await this.borrowTab).click();
+        let borrowinsideTokenName = await (await this.inPopupTokenName).getText();
+        borrowinsideTokenName = borrowinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == borrowinsideTokenName);
+
+        await (await this.withdrawTab).click();
+        let withdrawinsideTokenName = await (await this.inPopupTokenName).getText();
+        withdrawinsideTokenName = withdrawinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == withdrawinsideTokenName);
+
+        await (await this.repayTab).click();
+        let repayinsideTokenName = await (await this.inPopupTokenName).getText();
+        repayinsideTokenName = repayinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == repayinsideTokenName);
+
+    }
+    async verify_Fourth_TokenNameSamePopUpTokenName() {
+
+        await this.secondTokenName.waitForDisplayed({ timeout: 30000 })
+        let outsideTokenName = await (await this.firstTokenName).getText();
+        await (await this.fourthTokenName).click();
+
+        let insideTokenName = await (await this.inPopupTokenName).getText();
+        outsideTokenName = outsideTokenName.replace(/[^a-z]+/i, '');
+        insideTokenName = insideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == insideTokenName);
+
+        await (await this.borrowTab).click();
+        let borrowinsideTokenName = await (await this.inPopupTokenName).getText();
+        borrowinsideTokenName = borrowinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == borrowinsideTokenName);
+
+        await (await this.withdrawTab).click();
+        let withdrawinsideTokenName = await (await this.inPopupTokenName).getText();
+        withdrawinsideTokenName = withdrawinsideTokenName.replace(/[^a-z]+/i, '');
+        (outsideTokenName == withdrawinsideTokenName);
+
+        await (await this.repayTab).click();
+        let repayinsideTokenName = await (await this.inPopupTokenName).getText();
         repayinsideTokenName = repayinsideTokenName.replace(/[^a-z]+/i, '');
         (outsideTokenName == repayinsideTokenName);
 
@@ -572,10 +739,10 @@ class Lend_BorrowPage {
     async verifyAggeratorBestPrice() {
 
         await this.firstTokenName.waitForDisplayed({ timeout: 30000 })
-        await (await this.firstTokenName).click();
+        await (await this.firstPool).click();
         await this.firstBestPriceAmount.waitForDisplayed({ timeout: 30000 })
-        let firstTokenPer = await (await this.firstBestPriceAmount).getText();
 
+        let firstTokenPer = await (await this.firstBestPriceAmount).getText();
         firstTokenPer = firstTokenPer.replace(/[^0-9,^.]+/i, '');
 
         let sencondTokenPer = await (await this.secondBestPriceAmount).getText();
@@ -604,6 +771,22 @@ class Lend_BorrowPage {
                 { action: 'moveTo', x: 452, y: 904 },
                 'release'
             ]);
+            await this.lend_borrowBtn.waitForDisplayed({ timeout: 10000 })
+            await (await this.lend_borrowBtn).click();
+            await this.startLendBtn.waitForDisplayed({ timeout: 30000 })
+            await expect(this.startLendBtn).toBeDisplayed();
+            await (await this.startLendBtn).click();
+
+            await (await this.firstPool).click();
+
+            let firstTokenPer = await (await this.firstBestPriceAmount).getText();
+            firstTokenPer = firstTokenPer.replace(/[^0-9,^.]+/i, '');
+
+            let sencondTokenPer = await (await this.secondBestPriceAmount).getText();
+            sencondTokenPer = sencondTokenPer.replace(/[^0-9,^.]+/i, '');
+
+            await expect(this.supplybtn).toBeDisplayed();
+
             (firstTokenPer > sencondTokenPer)
         }
     }
@@ -675,13 +858,14 @@ class Lend_BorrowPage {
     }
 
     async enterSupplyAmount(supplyAmt) {
-        await this.supplybtn.waitForDisplayed({ timeout: 15000 })
+        await this.supplybtn.waitForDisplayed({ timeout: 30000 })
         await (await this.supplyEnterAmount).click();
         await (await this.supplyEnterAmount).clearValue();
         await (await this.supplyEnterAmount).setValue(supplyAmt);
         driver.hideKeyboard();
     }
     async enterBorrowAmount(borrowAmt) {
+        await (await this.borrowTab).click();
         await this.borrowbtn.waitForDisplayed({ timeout: 15000 })
         await (await this.borrowEnterAmount).click();
         await (await this.borrowEnterAmount).clearValue();
@@ -689,6 +873,7 @@ class Lend_BorrowPage {
         driver.hideKeyboard();
     }
     async enterRepayAmount(repayAmt) {
+        await (await this.repayTab).click();
         await this.repaybtn.waitForDisplayed({ timeout: 15000 })
         await (await this.repayEnterAmount).click();
         await (await this.repayEnterAmount).clearValue();
@@ -696,6 +881,7 @@ class Lend_BorrowPage {
         driver.hideKeyboard();
     }
     async enterWithdrawAmount(withdrawAmt) {
+        await (await this.withdrawTab).click();
         await this.withdrawbtn.waitForDisplayed({ timeout: 15000 })
         await (await this.withdrawEnterAmount).click();
         await (await this.withdrawEnterAmount).clearValue();
@@ -712,12 +898,13 @@ class Lend_BorrowPage {
         await (await this.borrowbtn).click();
     }
     async clickWithdrawBtn() {
-        await this.repaybtn.waitForDisplayed({ timeout: 5000 })
-        await (await this.repaybtn).click();
-    }
-    async clickRepayBtn() {
         await this.withdrawbtn.waitForDisplayed({ timeout: 5000 })
         await (await this.withdrawbtn).click();
+    }
+    async clickRepayBtn() {
+        await this.repaybtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.repaybtn).click();
+        
     }
 
 
@@ -732,6 +919,7 @@ class Lend_BorrowPage {
     }
     async clickWithdrawMaxBtn() {
         await this.withdrawMaxBtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.withdrawTab).click();
         await (await this.withdrawMaxBtn).click();
     }
     async clickRepayMaxBtn() {
@@ -765,17 +953,21 @@ class Lend_BorrowPage {
     }
 
     async verifyInsufficientBalanceText(insufficient) {
-        await this.insufficientBalanceText.waitForDisplayed({ timeout: 5000 })
+        //await this.insufficientBalanceText.waitForDisplayed({ timeout: 5000 })
         var insufficientText = await (await this.insufficientBalanceText).getText();
         if (insufficientText == insufficient) {
             console.log('Verified Insufficient Balance')
         }
         else {
-            console.log(insufficient)
+            console.log(insufficientText)
         }
     }
 
-    async verifySOL() {
+    async verifyBeforeSupply_BorrowPoPUP() {
+        await this.borrowbtn.waitForDisplayed({ timeout: 5000 })
+        const borrowpopup = 'new UiSelector().text("You need to deposit first before you can borrow").className("android.widget.TextView")'
+        const borrowpopup1 = $(`android=${borrowpopup}`)
+        await expect(borrowpopup1).toBeDisplayed();
     }
 
     async() {

@@ -31,17 +31,15 @@ exports.config = {
   specs: [
     [
       // './test/specs/**/*.js',
-      //'./test/specs/login.js'
-      //'./test/specs/createwallet.js',
-      './test/specs/importwallet.js',
-      // './test/specs/dashboard.js',
-     // './test/specs/importwallet.js',
-      //'./test/specs/login.js',
-      // './test/specs/send.js',
-     // './test/specs/swap.js',
-      // './test/specs/stake_unstake.js',
-      './test/specs/lend_borrow.js',
 
+      // './test/specs/createwallet.js',
+      //'./test/specs/dashboard.js',
+      //'./test/specs/login.js'
+        './test/specs/importwallet.js',
+       './test/specs/swap.js',
+      // './test/specs/stake_unstake.js',
+      //'./test/specs/lend_borrow.js',
+      // './test/specs/send.js',
     ],
   ],
 
@@ -92,9 +90,8 @@ exports.config = {
     "appium:appActivity": "com.kanaswapapp.MainActivity",
     "appium:udid": "ZD2225BZ8T",
     "appium:noRest": "true",
-    "appium:ignoreHiddenApiPolicyError": "true"
-
-    //"appium:autoGrantPermission": true
+    "appium:ignoreHiddenApiPolicyError": "true",
+    "appium:autoGrantPermission": true
 
     // platformName: "Android",
     // "appium:automationName": "UiAutomator2",

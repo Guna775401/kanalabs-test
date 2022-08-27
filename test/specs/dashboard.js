@@ -1,3 +1,4 @@
+const loginPage = require("../pageobjects/login.page");
 const neondashboardPage = require("../pageobjects/neon.pages.js/neondashboard.page");
 const { createwallet } = require("../pageobjects/sol.pages.js/createwallet.page");
 const { async } = require("../pageobjects/sol.pages.js/dashboard.page");
@@ -18,7 +19,7 @@ const turboPage = require("../pageobjects/sol.pages.js/turbo.page");
 describe('Verify Dashboard SOL', async () => {
 
     it('DS1: Verify Displayed or Not Tokens tab and history tab and Create/View wallet ', async () => {
-
+        await dashboardPage.verifySolDash();
         await dashboardPage.verifyHistorytab();
         await dashboardPage.verifyTokentab();
         await dashboardPage.verifyCreate_Viewwallet();
@@ -27,18 +28,17 @@ describe('Verify Dashboard SOL', async () => {
 
     it('DS2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value and ', async () => {
         await dashboardPage.verifymenuoption();
-        await dashboardPage.verifyHistorytab();
-        await dashboardPage.verifyNeonWallet();
-        await dashboardPage.verifyCopyclipboardAndQRcode();
+        await neondashboardPage.verifyNeonWallet();
+        await dashboardPage.verifyWalletName_SolLogo();
         await dashboardPage.verifyHoldingTextAndValue();
+        await dashboardPage.verifyCopyclipboardAndQRcode();
     });
 
     it('DS3: Verify Buttons Displayed or Not Send and Swap and Stake and Turbo andLend/borrow', async () => {
         await sendPage.verifySendbtn();
         await swapPage.verifySwapbtn();
         await stakePage.verifyStakebtn();
-        await turboPage.verifyTurbobtn();
-        await lend_borrowPage.verifyLend_Borrowbtn();
+        await lend_borrowPage.verifylend_borrowBtn();
     });
 
     it('DS4: Verify Menu Options Displayed or Not Network and Change Pin and Language and Lightmode and Logout Show seed phrase ', async () => {
@@ -47,43 +47,15 @@ describe('Verify Dashboard SOL', async () => {
         await dashboardPage.clickMenuoption();
         await menutabsPage.verifyNetwork();
         await menutabsPage.verifyChangePinTab();
+        await menutabsPage.verifyReferralTab();
         //await menutabsPage.verifyLanguage();
-        await menutabsPage.verifyLightMode();
+        // await menutabsPage.verifyLightMode();
         await menutabsPage.verifyLogout();
         await menutabsPage.verifyShow_Seed_phrase();
         await menutabsPage.clickCancelbtn();
     });
     // DS3 same to DS5
-    xit('DS5: Verify Buttons Clickable or Not Send and Swap and Stake and Turbo and Lend/borrow', async () => {
-        await sendPage.verifySendbtn();
-        await swapPage.verifySwapbtn();
-        await stakePage.verifyStakebtn();
-        await turboPage.verifyTurbobtn();
-        await lend_borrowPage.verifyLend_Borrowbtn();
-    })
-    xit('DS6: Verify Menu Options Clickable or Not Network and Change Pin and Language and Lightmode and Logout Show seed phrase and Cancel  ', async () => {
 
-        await menutabsPage.verifyMenuTab();
-        await menutabsPage.clickMenuTab();
-        await menutabsPage.verifyNetworkClickable();
-        await menutabsPage.verifyChangePinClickable();
-        await menutabsPage.verifyLightModeClickable();
-        await menutabsPage.verifyLanguageClickable();
-        await menutabsPage.verifyShow_Seed_phraseClickable();
-        await menutabsPage.verifyLogoutClickable();
-        await menutabsPage.clickCancelbtn();
-    })
-    xit('DS7: Verify Clickable or Not Sol wallet dashboard and Menuoption Neon wallet and Cliped copy and Scan QR and Display Holdling value and Holding Value Text', async () => {
-        await dashboardPage.verifyCopyclipboardAndQRcode_Clickable();
-        await dashboardPage.verifyNeonWalletClickable();
-        await dashboardPage.verifyHoldingTextAndValue();
-    })
-
-    xit('DS8: Verify Clickable or Not Tokens tab and history tab and Create/View wallet', async () => {
-        await dashboardPage.verifyHistorytabClickable();
-        await dashboardPage.verifyTokentabClickable();
-        await dashboardPage.verifyCreate_ViewwalletClickable();
-    })
 
     it('DS9: Verify Clickable and Displayed or Not DevNet and MainNet', async () => {
         await menutabsPage.verifyDisplay_DevNetAndMainNet();
@@ -97,11 +69,74 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.clickChangePin();
         await menutabsPage.verifychangePintoDashBackbtn();
         await menutabsPage.changePin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO)
-        await menutabsPage.changePin_SetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+        await menutabsPage.changePin_SetPin(process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE);
         await menutabsPage.verifyConfirmPinToSetPin();
-        await menutabsPage.changePin_ConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+        await menutabsPage.changePin_ConfirmPin(process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE);
         await dashboardPage.verifySolDash();
+        await logutPage.logout();
+        await loginPage.verifyEyeicon();
+        // Need to verify biometric and etc
+
+        // and login
+        await menutabsPage.changePin_ConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+
+
+
     })
+    it('DS10: Create/View Wallet use can wallet create or not ', async () => {
+
+
+    })
+
+
+    it('DS: Verify Menu Wallet Logo and Name and Balance etc  ', async () => {
+        await menutabsPage.clickMenuTab();
+        await menutabsPage.VerifyMenu_Wallet();
+    })
+
+    it('DS : Verify Menu option in Create Wallet option while using New 4 Wallet Created displayed or not  ', async () => {
+        await menutabsPage.clickCreateWalletINMenutab();
+        await menutabsPage.enterWalletName(process.env.WALLETNAME1);
+        await menutabsPage.verifyCreateFirstName(process.env.WALLETNAME1);
+
+        await menutabsPage.clickCreateWalletINMenutab();
+        await menutabsPage.clickmenuINMultipleWallet_ViewOption();
+        await menutabsPage.enterWalletName(process.env.WALLETNAME2);
+        await menutabsPage.verifyCreateSecondName(process.env.WALLETNAME2);
+
+        await menutabsPage.clickCreateWalletINMenutab();
+        await menutabsPage.clickmenuINMultipleWallet_ViewOption();
+        await menutabsPage.enterWalletName(process.env.WALLETNAME3);
+        await menutabsPage.verifyCreateThirdName(process.env.WALLETNAME3);
+
+        await menutabsPage.clickCreateWalletINMenutab();
+        await menutabsPage.clickmenuINMultipleWallet_ViewOption();
+        await menutabsPage.enterWalletName(process.env.WALLETNAME4);
+        await menutabsPage.verifyCreateFourthName(process.env.WALLETNAME4);
+    })
+
+    it('DS : Verify ', async () => {
+
+
+    })
+
+    it('DS: Verify Change pin after login new pin or not ', async () => {
+        await menutabsPage.clickMenuTab();
+
+
+
+
+    })
+
+    it('DS: Verify ', async () => {
+
+    })
+    it('DS: Verify ', async () => {
+
+    })
+
+
+
 });
 
 describe('Verify Dashboard NEON', async () => {

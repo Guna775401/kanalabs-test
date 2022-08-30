@@ -19,10 +19,10 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDTSwapped();
   });
 
-  it('SS2: USDT To USDC Second Market Swap', async () => {
+  it.only('SS2: USDT To USDC Second Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
@@ -31,7 +31,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS3: USDT To USDC Third Market Swap', async () => {
@@ -43,7 +43,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS4: USDT To USDC Fourth Market Swap', async () => {
@@ -55,7 +55,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDTSwapped();
   });
 
   // USDC to USDT
@@ -69,7 +69,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
   it('SS6: USDC To USDT Second Market Swap', async () => {
@@ -81,7 +81,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
   it('SS7: USDC To USDT Third Market Swap', async () => {
@@ -93,7 +93,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
   it('SS8 : USDC To USDT Fourth Market Swap', async () => {
@@ -105,13 +105,13 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 })
 
 describe('Solana Swap SOL to USDC & USDC to SOL', () => {
 
-  it.only('SS9 : SOL To USDC First Market Swap', async () => {
+  it('SS9 : SOL To USDC First Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
@@ -119,7 +119,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS10 : SOL To USDC Second Market Swap', async () => {
@@ -130,7 +130,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS11 : SOL To USDC Third Market Swap', async () => {
@@ -141,7 +141,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS12 : SOL To USDC Fourth Market Swap', async () => {
@@ -152,7 +152,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifySOLSwapped();
   });
 
   // USDC tO SOL
@@ -166,7 +166,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
   it('SS14 : USDC to SOL Second Market Swap', async () => {
@@ -178,7 +178,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
   it('SS15 : USDC to SOL Third Market Swap', async () => {
@@ -190,7 +190,7 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
   it('SS16 : USDC to SOL Fourth Market Swap', async () => {
@@ -202,14 +202,14 @@ describe('Solana Swap SOL to USDC & USDC to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifyUSDCSwapped();
   });
 
 })
 
 describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
 
-  it.only('SS17 : SOL to USDT First Market Swap', async () => {
+  it('SS17 : SOL to USDT First Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
@@ -218,8 +218,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS18 : SOL to USDT Second Market Swap', async () => {
@@ -231,8 +230,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS19 : SOL to USDT Third Market Swap', async () => {
@@ -244,8 +242,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS20 : SOL to USDT Fourth Market Swap', async () => {
@@ -257,8 +254,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   // USDT to SOL
@@ -272,8 +268,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS22 : USDT to SOL Second Market Swap', async () => {
@@ -285,8 +280,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS23 : USDT to SOL Third Market Swap', async () => {
@@ -298,8 +292,7 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS24 : USDT to SOL Fourth Market Swap', async () => {
@@ -311,15 +304,14 @@ describe('Solana Swap SOL to USDT & USDT to SOL ', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
 })
 
 describe('Solana Swap SOL to SRM & SRM to SOL', () => {
 
-  it.only('SS25 : SOL to SRM First Market Swap', async () => {
+  it('SS25 : SOL to SRM First Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
@@ -328,47 +320,43 @@ describe('Solana Swap SOL to SRM & SRM to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS26 : SOL to SRM Second Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-   await swapPage.sOLtoSRM(process.env.SRM);
+    await swapPage.sOLtoSRM(process.env.SRM);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS27 : SOL to SRM Third Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-   await swapPage.sOLtoSRM(process.env.SRM);
+    await swapPage.sOLtoSRM(process.env.SRM);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS28 : SOL to SRM Fourth Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();
-   await swapPage.sOLtoSRM(process.env.SRM);
+    await swapPage.sOLtoSRM(process.env.SRM);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySOLSwapped();
+    await swapPage.verifySOLSwapped();
   });
 
   // SRM to SOL
@@ -382,8 +370,7 @@ describe('Solana Swap SOL to SRM & SRM to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   it('SS30 : SRM to SOL Second Market Swap', async () => {
@@ -395,8 +382,7 @@ describe('Solana Swap SOL to SRM & SRM to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   it('SS31 : SRM to SOL Third Market Swap', async () => {
@@ -408,8 +394,7 @@ describe('Solana Swap SOL to SRM & SRM to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   it('SS32 : SRM to SOL Fourth Market Swap', async () => {
@@ -421,10 +406,8 @@ describe('Solana Swap SOL to SRM & SRM to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
-
 })
 
 describe('Solana Swap USDH to USDT & USDT to USDH', () => {
@@ -432,18 +415,13 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
   it('SS33 : USDH to USDT First Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
-    // Need to comment two line
-    // await swapPage.verifyDevToMainNetWarning();
-    //await swapPage.changeToDevtoMain();
-
     await swapPage.verifySwapScreen();
     await swapPage.uSDHtoUSDT(process.env.USDH, process.env.USDT);
     await swapPage.enterAmtInput(process.env.SWAPAMOUNT);
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDHSwapped();
+    await swapPage.verifyUSDHSwapped();
   });
 
   it('SS34 : USDH to USDT Second Market Swap', async () => {
@@ -455,8 +433,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDHSwapped();
+    await swapPage.verifyUSDHSwapped();
   });
 
   it('SS35 : USDH to USDT Third Market Swap', async () => {
@@ -468,8 +445,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDHSwapped();
+    await swapPage.verifyUSDHSwapped();
   });
 
   it('SS36 : USDH to USDT Fourth Market Swap', async () => {
@@ -481,8 +457,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDHSwapped();
+    await swapPage.verifyUSDHSwapped();
   });
 
   // USDT to USDH
@@ -496,8 +471,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS38 : USDT to USDH Second Market Swap', async () => {
@@ -509,8 +483,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS39 : USDT to USDH Third Market Swap', async () => {
@@ -522,8 +495,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
   it('SS40 : USDT to USDH Fourth Market Swap', async () => {
@@ -535,8 +507,7 @@ describe('Solana Swap USDH to USDT & USDT to USDH', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSDTSwapped();
+    await swapPage.verifyUSDTSwapped();
   });
 
 })
@@ -552,7 +523,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS42 : SOL to mSOL Second Market Swap', async () => {
@@ -564,7 +535,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS43 : SOL to mSOL Third Market Swap', async () => {
@@ -576,7 +547,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifySOLSwapped();
   });
 
   it('SS44 : SOL to mSOL Fourth Market Swap', async () => {
@@ -588,7 +559,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifySOLSwapped();
   });
 
   // mSOL to SOL
@@ -602,7 +573,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifymSOLSwapped();
   });
 
   it('SS46 : mSOL to SOL Second Market Swap', async () => {
@@ -614,7 +585,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifymSOLSwapped();
   });
 
   it('SS47 : mSOL to SOL Third Market Swap', async () => {
@@ -626,7 +597,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifymSOLSwapped();
   });
 
   it('SS48 : mSOL to SOL Fourth Market Swap', async () => {
@@ -638,7 +609,7 @@ describe('Solana Swap SOL to mSOL & mSOL to SOL', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn(); 
+    await swapPage.verifymSOLSwapped();
   });
 })
 
@@ -656,8 +627,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   it('SS50 : SRM to UST Second Market Swap', async () => {
@@ -669,8 +639,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   it('SS51 : SRM to UST Third Market Swap', async () => {
@@ -682,8 +651,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   it('SS52 : SRM to UST Fourth Market Swap', async () => {
@@ -695,8 +663,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifySRMSwapped();
+    await swapPage.verifySRMSwapped();
   });
 
   // UST to SRM
@@ -710,8 +677,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //await swapPage.verifyUSTSwapped();
+    await swapPage.verifyUSTSwapped();
   });
 
   it('SS54 : UST to SRM Second Market Swap', async () => {
@@ -723,8 +689,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.secondMarketPlace()
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    // await swapPage.verifyUSTSwapped();
+    await swapPage.verifyUSTSwapped();
   });
 
   it('SS55 : UST to SRM Third Market Swap', async () => {
@@ -736,8 +701,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.thirdMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //   await swapPage.verifyUSTSwapped();
+    await swapPage.verifyUSTSwapped();
   });
 
   it('SS56 : UST to SRM Fourth Market Swap', async () => {
@@ -749,8 +713,7 @@ describe('Solana Swap SRM to UST && UST to SRM', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.fourthMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-   // await swapPage.verifyUSTSwapped();
+    await swapPage.verifyUSTSwapped();
   });
 
 })
@@ -769,8 +732,7 @@ describe('Solana Swap soSHUSHI to ORCA & ORCA to soSHUSHI', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-   // await swapPage.verifysoSUSHISwapped();
+    await swapPage.verifysoSUSHISwapped();
   });
 
   // it('SS58 : soSHUSHI to ORCA Second Market Swap', async () => {
@@ -821,8 +783,7 @@ describe('Solana Swap soSHUSHI to ORCA & ORCA to soSHUSHI', () => {
     await swapPage.verifySwapScreenUI();
     await swapPage.firstMarketPlace();
     await swapPage.slidetoSwap();
-    await swapPage.verifyResult_And_DoneBtn();
-    //   await swapPage.verifyORCASwapped();
+    await swapPage.verifyORCASwapped();
   });
 
   // it('SS62 : ORCA to soSHUSHI Second Market Swap', async () => {
@@ -868,7 +829,7 @@ describe('Solana Swap soSHUSHI to ORCA & ORCA to soSHUSHI', () => {
 
 describe('Verify Solana Swap Max Amount equal to Balance Amount ', () => {
 
-  it('SS: Verify Sol max amount eqaul to balance', async () => {
+  it('SS65 : Verify Sol max amount eqaul to balance', async () => {
 
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
@@ -877,7 +838,7 @@ describe('Verify Solana Swap Max Amount equal to Balance Amount ', () => {
     // await swapPage.changeToDevtoMain();
     // SOL
     await swapPage.verifySwapScreen();
-    // await swapPage.getMaxAmount();
+    await swapPage.getMaxAmount();
     await swapPage.selectUSDC(process.env.USDC);
     await swapPage.getMaxAmount();
     await swapPage.selectUSDT(process.env.USDT);

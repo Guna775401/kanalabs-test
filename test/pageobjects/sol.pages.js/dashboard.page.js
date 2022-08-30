@@ -3,7 +3,6 @@ const menutabsPage = require("./menutabs.page");
 const sendPage = require("./send.page");
 const stakePage = require("./stake.page");
 const swapPage = require("./swap.page");
-const turboPage = require("./turbo.page");
 
 
 class DashBoardPage {
@@ -13,13 +12,11 @@ class DashBoardPage {
         return $('~changeWalletTypeNeon');
     }
 
-
     // NeonWallet in dashboard Sol Wallet logo
 
     get solWallet() {
         return $('~');
     }
-
 
     get menuTab() {
         return $('~solHomeDashboardBackIcon');
@@ -81,8 +78,16 @@ class DashBoardPage {
         return $('~CREATEORVIEWWALLET');
     }
 
-
-
+    get devnetDash() {
+        const devDash = 'new UiSelector().text("Solana - Devnet").className("android.widget.TextView")'
+        const devDash1 =  $(`android=${devDash}`)
+        return devDash1;
+    }
+    get mainnetDash() {
+        const mainDash = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
+        const mainDash1 =  $(`android=${mainDash}`)
+        return mainDash1;
+    }
 
     //android.view.ViewGroup[@content-desc="CREATEORVIEWWALLET"]/android.widget.TextView
     // Need elements Wallet Name, Holding value , Refresh 
@@ -92,19 +97,13 @@ class DashBoardPage {
     // }
 
     async verifySolDash() {
-        //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const devDash = 'new UiSelector().text("Solana - Devnet").className("android.widget.TextView")'
-        const devDash1 = await $(`android=${devDash}`)
-        await devDash1.waitForDisplayed({ timeout: 120000 })
-        await expect(devDash1).toBeDisplayed();
+        await this.devnetDash.waitForDisplayed({ timeout: 120000 })
+        await expect(this.devnetDash).toBeDisplayed();
     }
 
     async verifySolDashMainNet() {
-        //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const mainDash = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
-        const mainDash1 = await $(`android=${mainDash}`)
-        await mainDash1.waitForDisplayed({ timeout: 120000 })
-        await expect(mainDash1).toBeDisplayed();
+        await this.mainnetDash.waitForDisplayed({ timeout: 120000 })
+        await expect(this.mainnetDash).toBeDisplayed();
     }
 
     async verifyHistorytab() {

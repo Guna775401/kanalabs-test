@@ -148,6 +148,183 @@ class SwapPage {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.widget.TextView[2]')
     }
 
+    // Ui Elements
+
+    get youPayText() {
+        const youPay = 'new UiSelector().text("You pay").className("android.widget.TextView")'
+        const youPay1 = $(`android=${youPay}`)
+        return youPay1;
+    }
+    get youReceiveText() {
+        const youReceive = 'new UiSelector().text("You receive").className("android.widget.TextView")'
+        const youReceive1 = $(`android=${youReceive}`)
+        return youReceive1;
+    }
+    get rateText() {
+        const rate = 'new UiSelector().text("Rate").className("android.widget.TextView")'
+        const rate1 = $(`android=${rate}`)
+        return rate1;
+    }
+    get bestPriceText() {
+        const bestPrice = 'new UiSelector().text("Best price").className("android.widget.TextView")'
+        const bestPrice1 = $(`android=${bestPrice}`)
+        return bestPrice1;
+    }
+    get swapWarningText() {
+        const swapWarning = 'new UiSelector().text("Swap Warning").className("android.widget.TextView")'
+        const swapWarning1 = $(`android=${swapWarning}`)
+        return swapWarning1;
+    }
+    get changeNetworkAsmainText() {
+        const changeNetworkAsmain = 'new UiSelector().text("Please change network as mainnet").className("android.widget.TextView")'
+        const changeNetworkAsMain = $(`android=${changeNetworkAsmain}`)
+        return changeNetworkAsMain;
+    }
+    get searchForTokenText() {
+        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
+        const searchText = $(`android=${search}`)
+        return searchText;
+    }
+    get uSDTText() {
+        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+        const uSDTtxt = $(`android=${usdttxt}`)
+        return uSDTtxt;
+    }
+    get uSDCText() {
+        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+        const uSDCtxt = $(`android=${usdctxt}`)
+        return uSDCtxt;
+    }
+    get sOLText() {
+        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
+        const sOLtxt = $(`android=${soltxt}`)
+        return sOLtxt;
+    }
+    get sRMText() {
+        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
+        const sRMtxt = $(`android=${srmtxt}`)
+        return sRMtxt;
+    }
+    get uSTText() {
+        const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
+        const uSTtxt = $(`android=${usttxt}`)
+        return uSTtxt;
+    }
+    get oRCAText() {
+        const orcatxt = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
+        const oRCAtxt = $(`android=${orcatxt}`)
+        return oRCAtxt;
+    }
+    get soSUSHIText() {
+        const sosushiItxt = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
+        const soSUSHItxt = $(`android=${sosushiItxt}`)
+        return soSUSHItxt;
+    }
+    get mSolText() {
+        const msoltxt = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
+        const mSOLTxt = $(`android=${msoltxt}`)
+        return mSOLTxt;
+    }
+    get uSDHText() {
+        const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
+        const uSDHtxt = $(`android=${usdhtxt}`)
+        return uSDHtxt;
+    }
+    get doneText() {
+        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
+        const doneTxt = $(`android=${donetxt}`)
+        return doneTxt;
+    }
+    get slideToSwapText() {
+        const slideToSwapTxt = 'new UiSelector().text("Slide to swap").className("android.widget.TextView")'
+        const slideToSwapTxt1 = $(`android=${slideToSwapTxt}`)
+        return slideToSwapTxt1;
+    }
+
+    get swapText() {
+        const swapScreen = 'new UiSelector().text("Swap").className("android.widget.TextView")'
+        const swapScreen1 =  $(`android=${swapScreen}`)
+        return swapScreen1;
+    }
+    get findindBestRouteText() {
+        const findindBestRoute = 'new UiSelector().text("Finding you the best route and price").className("android.widget.TextView")'
+        const findindBestRoute1 = $(`android=${findindBestRoute}`)
+        return findindBestRoute1;
+    }
+
+    get kanaAggregatorText() {
+        const kanaAggregator = 'new UiSelector().text("Kana Aggregator").className("android.widget.TextView")'
+        const kanaAggregator1 = $(`android=${kanaAggregator}`)
+        return kanaAggregator1;
+    }
+    get kanaAggregatorDesText() {
+        const kanaAggregatorDes = 'new UiSelector().text("Brings you the best priced swap on Solana with a seamless, flexible and attractive UI").className("android.widget.TextView")'
+        const kanaAggregatorDes1 = $(`android=${kanaAggregatorDes}`)
+        return kanaAggregatorDes1;
+    }
+
+    // Swap Results UI Elements
+
+    get pleaseCheckText() {
+        const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
+        const changeRes1 = $(`android=${changeRes}`)
+        return changeRes1;
+    }
+    get uSDTSwapText() {
+        const usDtSwap = 'new UiSelector().text("USDT swapped!").className("android.widget.TextView")'
+        const uSDTSwap = $(`android=${usDtSwap}`)
+        return uSDTSwap;
+    }
+    get uSDCSwapText() {
+        const uSDcSwap = 'new UiSelector().text("USDC swapped!").className("android.widget.TextView")'
+        const uSDCSwap = $(`android=${uSDcSwap}`)
+        return uSDCSwap;
+    }
+    get sOLSwapText() {
+        const solSwap = 'new UiSelector().text("SOL swapped!").className("android.widget.TextView")'
+        const sOLSwap = $(`android=${solSwap}`)
+        return sOLSwap;
+    }
+    get uSDHSwapText() {
+        const usdhSwap = 'new UiSelector().text("USDH swapped!").className("android.widget.TextView")'
+        const uSDHSwap = $(`android=${usdhSwap}`)
+        return uSDHSwap;
+    }
+    get sRMSwapText() {
+        const srmSwap = 'new UiSelector().text("SRM swapped!").className("android.widget.TextView")'
+        const sRMSwap = $(`android=${srmSwap}`)
+        return sRMSwap;
+    }
+    get eTHSwapText() {
+        const ethSwap = 'new UiSelector().text("ETH swapped!").className("android.widget.TextView")'
+        const eTHSwap = $(`android=${ethSwap}`)
+        return eTHSwap;
+    }
+    get mSOLSwapText() {
+        const msolSwap = 'new UiSelector().text("mSOL swapped!").className("android.widget.TextView")'
+        const mSOLSwap = $(`android=${msolSwap}`)
+        return mSOLSwap;
+    }
+    get soSUSHISwapText() {
+        const sosushiSwap = 'new UiSelector().text("soSUSHI swapped!").className("android.widget.TextView")'
+        const soSUSHISwap = $(`android=${sosushiSwap}`)
+        return soSUSHISwap;
+    }
+    get uSTSwapText() {
+        const ustSwap = 'new UiSelector().text("UST swapped!").className("android.widget.TextView")'
+        const uSTSwap = $(`android=${ustSwap}`)
+        return uSTSwap;
+    }
+    get oRCASwapText() {
+        const orcaSwap = 'new UiSelector().text("ORCA swapped!").className("android.widget.TextView")'
+        const oRCASwap = $(`android=${orcaSwap}`)
+        return oRCASwap;
+    }
+
+    get() {
+
+    }
+
 
     async verifySwapbtn() {
         await expect(this.swapBtn).toBeDisplayed();
@@ -347,10 +524,7 @@ class SwapPage {
         await (await this.maxBtn).click();
         const maxAmount = await (this.youPayInputAmount).getText();
         const balanceAmount = await (this.balance).getText();
-        const res = (maxAmount == balanceAmount);
-        console.log(res);
-        //console.log(await maxAmount.isEqual(balanceAmount));
-        // await (await this.youPayInputAmount).getText();
+        (maxAmount == balanceAmount);
     }
 
     async refresh() {
@@ -385,18 +559,17 @@ class SwapPage {
         await (await this.startSwappinBtn).click();
     }
 
+
     async verifySwapScreen() {
-        //await this.swapBtn.waitForClickable({ reverse: true });
-        //await this.swapBtn.waitForDisplayed({ timeout: 20000 })
-        // await (await this.swapBtn).click();// Need to delete
-        //await (await this.swapBtn).click();
         await this.startSwappinBtn.waitForDisplayed({ timeout: 10000 })
+        await expect(this.swapText).toBeDisplayed();
+        await expect(this.kanaAggregatorText).toBeDisplayed();
+        await expect(this.kanaAggregatorDesText).toBeDisplayed();
+        await expect(this.backBtn).toBeDisplayed();
         await (await this.startSwappinBtn).click();
         await expect(this.backBtn).toBeDisplayed();
-        const swapScreen = 'new UiSelector().text("Swap").className("android.widget.TextView")'
-        const SwapScreen = await $(`android=${swapScreen}`)
-        await SwapScreen.waitForDisplayed({ timeout: 30000 })
-        await expect(SwapScreen).toBeDisplayed();
+        await this.swapText.waitForDisplayed({ timeout: 30000 })
+        await expect(this.swapText).toBeDisplayed();
     }
 
     async verifySwapNow() {
@@ -411,86 +584,10 @@ class SwapPage {
         await (await this.youPayInputAmount).click();
         await (await this.youPayInputAmount).setValue(amount);
         driver.hideKeyboard();
-
-        // const findindBestRoute = 'new UiSelector().text("Finding you the best route and price").className("android.widget.TextView")'
-        // const findindBestRoute1 = $(`android=${findindBestRoute}`)
-        // await (await findindBestRoute1).waitForDisplayed({ timeout: 60000 })
-        // await expect(findindBestRoute1).toBeDisplayed();
+        await (await this.findindBestRouteText).waitForDisplayed({ timeout: 5000 })
+        await expect(this.findindBestRouteText).toBeDisplayed();
     }
 
-    get searchForTokenText() {
-        const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-        const searchText = $(`android=${search}`)
-        return searchText;
-    }
-    get uSDTText() {
-        const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
-        const uSDTtxt = $(`android=${usdttxt}`)
-        return uSDTtxt;
-    }
-
-    get uSDCText() {
-        const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
-        const uSDCtxt = $(`android=${usdctxt}`)
-        return uSDCtxt;
-    }
-
-    get sOLText() {
-        const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-        const sOLtxt = $(`android=${soltxt}`)
-        return sOLtxt;
-    }
-
-    get sRMText() {
-        const srmtxt = 'new UiSelector().text("SRM").className("android.widget.TextView")'
-        const sRMtxt = $(`android=${srmtxt}`)
-        return sRMtxt;
-    }
-
-    get uSTText() {
-        const usttxt = 'new UiSelector().text("UST").className("android.widget.TextView")'
-        const uSTtxt = $(`android=${usttxt}`)
-        return uSTtxt;
-    }
-    get oRCAText() {
-        const orcatxt = 'new UiSelector().text("ORCA").className("android.widget.TextView")'
-        const oRCAtxt = $(`android=${orcatxt}`)
-        return oRCAtxt;
-    }
-    get soSUSHIText() {
-        const sosushiItxt = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
-        const soSUSHItxt = $(`android=${sosushiItxt}`)
-        return soSUSHItxt;
-
-    }
-    get mSolText() {
-        const msoltxt = 'new UiSelector().text("mSOL").className("android.widget.TextView")'
-        const mSOLTxt = $(`android=${msoltxt}`)
-        return mSOLTxt;
-    }
-
-    get uSDHText() {
-        const usdhtxt = 'new UiSelector().text("USDH").className("android.widget.TextView")'
-        const uSDHtxt = $(`android=${usdhtxt}`)
-        return uSDHtxt;
-    }
-    get doneText() {
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt =  $(`android=${donetxt}`)
-        return doneTxt;
-    }
-    get slideToSwapText() {
-        const slideToSwapTxt = 'new UiSelector().text("Slide to swap").className("android.widget.TextView")'
-        const slideToSwapTxt1 = $(`android=${slideToSwapTxt}`)
-        return slideToSwapTxt1;
-    }
-
-    get() {
-
-    }
-    get() {
-
-    }
     get() {
 
     }
@@ -526,23 +623,6 @@ class SwapPage {
         await (await this.youReceivedropdownSearch).setValue(usdt);
         await (this.uSDTText).click();
     }
-
-    // async sOLtoUSDC(sol) {
-    //     await (await this.youPaydropdown).click();
-    //     const search = 'new UiSelector().text("Search for a token").className("android.widget.EditText")'
-    //     const searchText = $(`android=${search}`)
-    //     await expect(searchText).toBeDisplayed();
-    //     await (await this.youPaydropdownSearch).click();
-    //     await (await this.youPaydropdownSearch).setValue(sol);
-    //     const soltxt = 'new UiSelector().text("SOL").className("android.widget.TextView")'
-    //     const sOLtxt = $(`android=${soltxt}`)
-    //     await sOLtxt.click();
-
-    //     const usdctxt = 'new UiSelector().text("USDC").className("android.widget.TextView")'
-    //     const uSDCtxt = $(`android=${usdctxt}`)
-    //     await (await uSDCtxt).waitForDisplayed({ timeout: 60000 })
-    //     await expect(uSDCtxt).toBeDisplayed();
-    // }
 
     async uSDCtoSOL(usdc, sol) {
 
@@ -770,6 +850,8 @@ class SwapPage {
         await this.mSolText.click();
     }
 
+
+
     async slidetoSwap() {
 
         await this.slideToSwapText.waitForDisplayed({ timeout: 60000 })
@@ -823,86 +905,40 @@ class SwapPage {
         }
     }
 
-    // async clickDoneBtn() {
-
-    //     const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-    //     const doneTxt = await $(`android=${donetxt}`)
-    //     await doneTxt.waitForDisplayed({ timeout: 30000 });
-
-    //     let sucess = await (this.successDoneBtn).isDisplayed();
-    //     let fail = await (this.failedDoneBtn).isDisplayed();
-
-    //     var result = await (this.result).getText();
-    //     result = (' Swap Result = ' + result + ' ');
-
-    //     if (sucess) {
-    //         fs.appendFile('result', result, function (err) {
-    //             console.log(err)
-    //         })
-    //         await (await this.successDoneBtn).click();
-    //     }
-    //     else if (fail) {
-    //         fs.appendFile('result', result, function (err) {
-    //             console.log(err)
-    //         })
-
-    //         await (await this.failedDoneBtn).click();
-
-    //     }
-    //     else {
-    //         await browser.saveScreenshot('screenshot.png')
-    //     }
-    // }
-
     async verifyUSDTSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         let sucess = await (this.successDoneBtn).isDisplayed();
         let fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' USDT Swap Result = ' + result + ' ');
 
         var result1 = await (this.checkYourDashboardChanges).getText();
-        result1 = (' Swap Fail Reason = ' + result1 + ' ');
+        result1 = (' USDT Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const usDtSwap = 'new UiSelector().text("USDT swapped!").className("android.widget.TextView")'
-            const uSDTSwap = $(`android=${usDtSwap}`)
 
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.writeFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(uSDTSwap).toBeDisplayed();
+            await expect(this.uSDTSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
+            await browser.saveScreenshot('./screenshot/swap.png')
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.writeFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
@@ -912,31 +948,20 @@ class SwapPage {
 
     async verifyUSDCSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         let sucess = await (this.successDoneBtn).isDisplayed();
         let fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' USDC Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' USDC Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const uSDcSwap = 'new UiSelector().text("USDC swapped!").className("android.widget.TextView")'
-            const uSDCSwap = $(`android=${uSDcSwap}`)
-            await (uSDCSwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(uSDCSwap).toBeDisplayed();
+            await expect(this.uSDCSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
@@ -949,383 +974,331 @@ class SwapPage {
             await (await this.failedDoneBtn).click();
         }
         else {
+            fs.appendFile('./reports/swap.txt', result, function (err) {
+                console.log(err)
+            })
             fs.appendFile('./reports/swap.txt', result1, function (err) {
                 console.log(err)
             })
+            await (await this.failedDoneBtn).click();
             await browser.saveScreenshot('screenshot.png')
         }
     }
 
     async verifySOLSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = ('SOL Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' SOL Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const solSwap = 'new UiSelector().text("SOL swapped!").className("android.widget.TextView")'
-            const sOLSwap = $(`android=${solSwap}`)
-            await (sOLSwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(sOLSwap).toBeDisplayed();
+            await expect(this.sOLSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
-            await browser.saveScreenshot('screenshot.png')
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await browser.saveScreenshot('screenshot.png')
             await (await this.failedDoneBtn).click();
         }
     }
-
-
 
     async verifyUSDHSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' USDH Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' USDH Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const usdhSwap = 'new UiSelector().text("USDH swapped!").className("android.widget.TextView")'
-            const uSDHSwap = $(`android=${usdhSwap}`)
-            await (uSDHSwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(uSDHSwap).toBeDisplayed();
+            await expect(this.uSDHSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await browser.saveScreenshot('screenshot.png')
+            await (await this.failedDoneBtn).click();
         }
     }
-
 
 
     async verifySRMSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 45000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' SRM Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' SRM Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const srmSwap = 'new UiSelector().text("SRM swapped!").className("android.widget.TextView")'
-            const sRMSwap = $(`android=${srmSwap}`)
-            await (sRMSwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(sRMSwap).toBeDisplayed();
+            await expect(this.sRMSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
+
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await browser.saveScreenshot('screenshot.png')
+            await (await this.failedDoneBtn).click();
         }
     }
 
+
+
     async verifymSOLSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' mSOL Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' mSOL Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const msolSwap = 'new UiSelector().text("mSOL swapped!").className("android.widget.TextView")'
-            const mSOLSwap = $(`android=${msolSwap}`)
-            await (mSOLSwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(mSOLSwap).toBeDisplayed();
+            await expect(this.mSOLSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
+                console.log(err)
+            })
             fs.appendFile('./reports/swap.txt', result1, function (err) {
                 console.log(err)
             })
             await browser.saveScreenshot('screenshot.png')
+            await (await this.failedDoneBtn).click();
         }
     }
     async verifysoSUSHISwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' soSUSHI Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' soSUSHI Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const sosushiSwap = 'new UiSelector().text("soSUSHI swapped!").className("android.widget.TextView")'
-            const soSUSHISwap = $(`android=${sosushiSwap}`)
-            await (soSUSHISwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(soSUSHISwap).toBeDisplayed();
+            await expect(this.soSUSHISwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await browser.saveScreenshot('screenshot.png')
+            await (await this.failedDoneBtn).click();
         }
     }
 
     async verifyUSTSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' UST Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' UST Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const ustSwap = 'new UiSelector().text("UST swapped!").className("android.widget.TextView")'
-            const uSTSwap = $(`android=${ustSwap}`)
-            await (uSTSwap).waitForDisplayed({ timeout: 10000 })
 
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(uSTSwap).toBeDisplayed();
+            await expect(this.uSTSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
+                console.log(err)
+            })
+            await (await this.failedDoneBtn).click();
             await browser.saveScreenshot('screenshot.png')
         }
     }
 
     async verifyORCASwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' ORCA Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' ORCA Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const orcaSwap = 'new UiSelector().text("ORCA swapped!").className("android.widget.TextView")'
-            const oRCASwap = $(`android=${orcaSwap}`)
-            await (oRCASwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(oRCASwap).toBeDisplayed();
+            await expect(this.oRCASwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
+            await browser.saveScreenshot('./F:/KanaLabs/FailReasonScreenshot.png')
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
-            await browser.saveScreenshot('screenshot.png')
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
+                console.log(err)
+            })
+            await browser.saveScreenshot('F:/KanaLabs/FailReasonScreenshot.png')
+            await (await this.failedDoneBtn).click();
         }
     }
 
     async verifyETHSwapped() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        await this.doneText.waitForDisplayed({ timeout: 30000 });
 
         const sucess = await (this.successDoneBtn).isDisplayed();
         const fail = await (this.failedDoneBtn).isDisplayed();
 
         var result = await (this.result).getText();
-        result = (' Swap Result = ' + result + ' ');
+        result = (' ETH Swap Result = ' + result + ' ');
+
+        var result1 = await (this.checkYourDashboardChanges).getText();
+        result1 = (' ETH Swap Fail Reason = ' + result1 + ' ');
 
         if (sucess) {
-            const ethSwap = 'new UiSelector().text("ETH swapped!").className("android.widget.TextView")'
-            const eTHSwap = $(`android=${ethSwap}`)
-            await (eTHSwap).waitForDisplayed({ timeout: 10000 })
-
-            const changeRes = 'new UiSelector().text("Please check your dashboard for changes ").className("android.widget.TextView")'
-            const changeRes1 = $(`android=${changeRes}`)
-
-            var result1 = await (this.checkYourDashboardChanges).getText();
-
-            fs.appendFile('./reports/swap.txt', result, function (err) {
-                console.log(err)
-            })
-            await expect(changeRes1).toBeDisplayed();
-            await expect(eTHSwap).toBeDisplayed();
+            await expect(this.eTHSwapText).toBeDisplayed();
+            await expect(this.pleaseCheckText).toBeDisplayed();
             await (await this.successDoneBtn).click();
         }
         else if (fail) {
-            fs.appendFile('./reports/swap.txt', result, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
                 console.log(err)
             })
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await (await this.failedDoneBtn).click();
         }
         else {
-            fs.appendFile('./reports/swap.txt', result1, function (err) {
+            fs.appendFile('./reports/swap.txt', result + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/swap.txt', result1 + '\n', function (err) {
                 console.log(err)
             })
             await browser.saveScreenshot('screenshot.png')
+            await (await this.failedDoneBtn).click();
         }
     }
 
@@ -1334,35 +1307,16 @@ class SwapPage {
         await (await this.doneBtn).click();
     }
 
-    get youPayText() {
-        const youPay = 'new UiSelector().text("You pay").className("android.widget.TextView")'
-        const youPay1 = $(`android=${youPay}`)
-        return youPay1;
-    }
 
-    get youReceiveText() {
-        const youReceive = 'new UiSelector().text("You receive").className("android.widget.TextView")'
-        const youReceive1 = $(`android=${youReceive}`)
-        return youReceive1;
-    }
-
-    get rateText() {
-        const rate = 'new UiSelector().text("Rate").className("android.widget.TextView")'
-        const rate1 = $(`android=${rate}`)
-        return rate1;
-    }
-    get bestPriceText() {
-        const bestPrice = 'new UiSelector().text("Best price").className("android.widget.TextView")'
-        const bestPrice1 = $(`android=${bestPrice}`)
-        return bestPrice1;
-    }
     get() {
 
-    }
-    get() {
+    } get() {
+
+    } get() {
+
+    } get() {
 
     }
-
 
     async verifySwapScreenUI() {
 
@@ -1385,12 +1339,8 @@ class SwapPage {
     async verifyDevToMainNetWarning() {
         await expect(this.devToMain_OkButton).toBeDisplayed();
         await expect(this.devToMain_CancelBtn).toBeDisplayed();
-        const swapWarning = 'new UiSelector().text("Swap Warning").className("android.widget.TextView")'
-        const SwapWarning = $(`android=${swapWarning}`)
-        await SwapWarning.waitForDisplayed({ timeout: 120000 })
-        const changeNetworkAsmain = 'new UiSelector().text("Please change network as mainnet").className("android.widget.TextView")'
-        const changeNetworkAsMain = $(`android=${changeNetworkAsmain}`)
-        await changeNetworkAsMain.waitForDisplayed({ timeout: 120000 })
+        await this.swapWarningText.waitForDisplayed({ timeout: 120000 })
+        await this.changeNetworkAsmainText.waitForDisplayed({ timeout: 10000 })
         await (await this.devToMain_OkButton).click();
     }
 

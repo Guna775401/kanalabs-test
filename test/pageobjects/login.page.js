@@ -6,11 +6,62 @@ class Loginpage {
     get eyeIcon() {
         return $('~showBtn');
     }
+    get biometric() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.Switch');
+    }
+
+    // UI Text
+
+    get welcomeBackText() {
+        const welcomeBack = 'new UiSelector().text("Welcome Back").className("android.widget.TextView")'
+        const welcomeback =  $(`android=${welcomeBack}`)
+        return welcomeback;
+    }
+    get enterPinText() {
+        const enterPin = 'new UiSelector().text("Enter Pin").className("android.widget.TextView")'
+        const enterPin1 =  $(`android=${enterPin}`)
+        return enterPin1;
+    }
+    get SignInWithBiometricsText() {
+        const SignInWithBiometrics = 'new UiSelector().text("Sign in with biometrics?").className("android.widget.TextView")'
+        const SignInWithBiometrics1 =  $(`android=${SignInWithBiometrics}`)
+        return SignInWithBiometrics1;
+    }
+
+    get cantloginText() {
+        const cantlogin = 'new UiSelector().text("Can’t login? You can erase your current wallet and set up a new one").className("android.widget.TextView")'
+        const cantlogin1 =  $(`android=${cantlogin}`)
+        return cantlogin1;
+    }
+    // get() {
+    //     const mainDash = 'new UiSelector().text("Sign in with biometrics?").className("android.widget.TextView")'
+    //     const mainDash1 = await $(`android=${mainDash}`)
+    //     return mainDash1;
+    // }
+
+    get() {
+        const mainDash = 'new UiSelector().text("").className("android.widget.TextView")'
+        const mainDash1 =  $(`android=${mainDash}`)
+        return mainDash1;
+    }
+    get() {
+        const mainDash = 'new UiSelector().text("").className("android.widget.TextView")'
+        const mainDash1 =  $(`android=${mainDash}`)
+        return mainDash1;
+    }
+
+
+    // POPUP Text
+
+    get incorrectPinPopupText() {
+        const pleaseEnterCorrectPin = 'new UiSelector().text("Please enter the correct Pin").className("android.widget.TextView")'
+        const pleaseEnterCorrectPin1 =  $(`android=${pleaseEnterCorrectPin}`)
+        return pleaseEnterCorrectPin1;
+    }
 
     // Need to Welcome back! Text
     async verifyWelcomeBack() {
-        const welcomeBack = 'new UiSelector().text("Welcome Back").className("")'
-        const welcomeback = await $(`android=${welcomeBack}`)
+
         await welcomeback.waitForDisplayed({ timeout: 120000 })
         await expect(welcomeback).toBeDisplayed();
     }
@@ -29,12 +80,28 @@ class Loginpage {
     async verifyEyeiconClickable() {
         await expect(this.eyeIcon).toBeClickable();
     }
-
-
-async loginSOL(){
-
-
+async verifyLoginScreenUI(){
+    await (this.enterPinText).waitForDisplayed({ timeout: 60000 })
+   // await expect(this.welcomeBackText).toBeDisplayed();
+    await expect(this.enterPinText).toBeDisplayed();
+    await expect(this.SignInWithBiometricsText).toBeDisplayed();
+    await expect(this.cantloginText).toBeDisplayed();
+    await expect(resetwalletPage.resetwalletBtn).toBeDisplayed();
+    await expect(this.biometric).toBeDisplayed();
 }
+
+
+
+async (){
+    
+}
+async (){
+    
+}
+    async loginSOL() {
+
+
+    }
 
 }
 

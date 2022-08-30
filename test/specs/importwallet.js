@@ -5,7 +5,6 @@ const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const remindmelaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
 const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
 const menutabsPage = require('../pageobjects/sol.pages.js/menutabs.page');
-const importwalletPage = require('../pageobjects/sol.pages.js/importwallet.page');
 const { async } = require('../pageobjects/sol.pages.js/dashboard.page');
 const createneonwalletPage = require('../pageobjects/neon.pages.js/createneonwallet.page');
 const neondashboardPage = require('../pageobjects/neon.pages.js/neondashboard.page');
@@ -42,7 +41,7 @@ describe('Import Sol Account', async () => {
         await ImportWalletPage.importwallet(process.env.VAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
         // need verify button clickable or not
         await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await importwalletPage.verifyConfirmPinToSetPinBackBtDisplay();
+        await ImportWalletPage.verifyConfirmPinToSetPinBackBtDisplay();
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
         // Need to handle the popup
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
@@ -94,7 +93,7 @@ describe('Import Neon Account', async () => {
         await ImportWalletPage.importwallet(process.env.VAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
         // need verify button clickable or not
         await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await importwalletPage.verifyConfirmPinToSetPinBackBtDisplay();
+        await ImportWalletPage.verifyConfirmPinToSetPinBackBtDisplay();
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
         // Need to handle the popup
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);

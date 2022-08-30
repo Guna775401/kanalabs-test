@@ -2,3 +2,5 @@ Swap Result = Failed!
 Swap Fail Reason = Transaction failed. Please try again
 Swap Result = Failed!
 Swap Fail Reason = Swap slippage error. Please try again 
+Market Name = Mercurial 
+Market Token Name = USDT -> USDC 

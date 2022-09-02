@@ -100,7 +100,7 @@ class NeonDashboardPage {
 
     async verifyNeonDash() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const walletNeon = 'new UiSelector().text("NEON - Devnet").className("android.widget.TextView")'
+        const walletNeon = 'new UiSelector().text("Neon - Devnet").className("android.widget.TextView")'
         const walletNEON = await $(`android=${walletNeon}`)
         await walletNEON.waitForDisplayed({ timeout: 120000 })
         await expect(walletNEON).toBeDisplayed();

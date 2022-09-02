@@ -31,11 +31,11 @@ exports.config = {
   specs: [
     [
       // './test/specs/**/*.js',
-      './test/specs/createwallet.js',
+      //'./test/specs/createwallet.js',
       //'./test/specs/dashboard.js',
       //'./test/specs/login.js'
-    //  './test/specs/importwallet.js',
-      //'./test/specs/swap.js',
+      './test/specs/importwallet.js',
+      './test/specs/swap.js',
       // './test/specs/stake_unstake.js',
       //'./test/specs/lend_borrow.js',
       // './test/specs/send.js',

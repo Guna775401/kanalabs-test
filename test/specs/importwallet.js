@@ -14,49 +14,47 @@ require('dotenv').config()
 describe('Import Sol Account', async () => {
 
     it('IS1: Import acount valid seed pharse with invaild name', async () => {
-        await LogoutPage.logoutNeon();
-        await resetwalletPage.clickResetWalletbutton();
+        //  await LogoutPage.logoutNeon();
+        //await resetwalletPage.clickResetWalletbutton();
+        await CreateWalletPage.firstnextBtn();
         await CreateWalletPage.clickSolWalletlogo();
-        // need to INVAILDSEEDPHRASE to VAILDSEEDPHRASE
-        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
-        // handle the popup
-
+        await ImportWalletPage.importwallet1(process.env.VAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
+       // await ImportWalletPage.invalidWalletNameToastHandle();
         await ImportWalletPage.clickbackbtn();
     });
 
-    it('IS2: Import acount invalid seed pharse with vaild name ', async () => {
+   it('IS2: Import acount invalid seed pharse with vaild name ', async () => {
 
-        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
-        // Need to handle the popup
+        await ImportWalletPage.invalidSeedPhraseimportwallet( process.env.VAILDWALLETNAME, process.env.INVAILDSEEDPHRASE);
+        await ImportWalletPage.invalidSeedPhraseToastHandle();
         await ImportWalletPage.clickbackbtn();
     });
     it('IS3: Import acount invalid seed pharse with invaild name', async () => {
 
-        await ImportWalletPage.importwallet(process.env.INVAILDSEEDPHRASE, process.env.INVAILDWALLETNAME);
-        // Need to handle the popup
+        await ImportWalletPage.invalidSeedPhraseimportwallet( process.env.INVAILDWALLETNAME, process.env.INVAILDSEEDPHRASE);
+        await ImportWalletPage.invaildWalletName_InvaildSeedphraseToastHandle();
         await ImportWalletPage.clickbackbtn();
     });
     it('IS4: Import acount Setpin confirmpin mismatch popup handling', async () => {
 
         await ImportWalletPage.importwallet(process.env.VAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
-        // need verify button clickable or not
-        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await ImportWalletPage.verifyConfirmPinToSetPinBackBtDisplay();
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
-        // Need to handle the popup
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterIncorrectConfirmPin(process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINZERO, process.env.PINONE);
+        // await CreateWalletPage.verifyPinDoesntMatchPopup();
+        await CreateWalletPage.enterIncorrectConfirmPinClearValue();
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await dashboardPage.verifySolDash();
     });
-    it.only('IS5: Import acount valid seed pharse with vaild name', async () => {
+    it('IS5: Import acount valid seed pharse with vaild name', async () => {
 
-       await CreateWalletPage.firstnextBtn();
-    //    await LogoutPage.logout();
-      //  await resetwalletPage.clickResetWalletbutton();
+        await CreateWalletPage.firstnextBtn();
+        //await LogoutPage.logout();
+        //await resetwalletPage.clickResetWalletbutton();
         await CreateWalletPage.clickSolWalletlogo();
         await ImportWalletPage.importwallet(process.env.SEEDBORING, process.env.VAILDWALLETNAME);
-        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-       await dashboardPage.verifySolDash();
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await dashboardPage.verifySolDash();
 
     });
 
@@ -92,25 +90,25 @@ describe('Import Neon Account', async () => {
 
         await ImportWalletPage.importwallet(process.env.VAILDSEEDPHRASE, process.env.VAILDWALLETNAME);
         // need verify button clickable or not
-        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await ImportWalletPage.verifyConfirmPinToSetPinBackBtDisplay();
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINONE);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
         // Need to handle the popup
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-       // await remindmelaterPage.remindmelater();
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        // await remindmelaterPage.remindmelater();
         await neondashboardPage.verifyNeonDash();
-        
+
     });
     it('IN5: Import Neon acount valid seed pharse with vaild name', async () => {
 
-       //   await CreateWalletPage.firstnextBtn();
+        //   await CreateWalletPage.firstnextBtn();
         await LogoutPage.logoutNeon();
         await resetwalletPage.clickResetWalletbutton();
         await createneonwalletPage.clickNeonWalletlogo();
         await ImportWalletPage.importwallet(process.env.SEEDDEMO, process.env.VAILDWALLETNAME);
-        await CreateWalletPage.entersetPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO,process.env.PINZERO);
-       await neondashboardPage.verifyNeonDash();
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
+        await neondashboardPage.verifyNeonDash();
 
 
     })

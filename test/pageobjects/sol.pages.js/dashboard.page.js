@@ -119,7 +119,7 @@ class DashBoardPage {
 
     // Display function
     async verifymenuoption() {
-        await (await this.menuTab).waitForDisplayed({ timeout: 10000 });
+        await (await this.menuTab).waitForDisplayed({ timeout: 5000 });
         await expect(this.menuTab).toBeDisplayed();
     }
     async verifyWalletName_SolLogo() {

@@ -9,7 +9,7 @@ require('dotenv').config()
 
 describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
 
-  it.only('SS1: USDT To USDC First Market Swap', async () => {
+  it('SS1: USDT To USDC First Market Swap', async () => {
     await swapPage.clickSwapBtn();
     await swapPage.verifyDevToMainNetWarning();
     await swapPage.changeToDevtoMain();
@@ -22,7 +22,7 @@ describe('Solana Swap USDT to USDC & USDC to USDT ', () => {
     await swapPage.verifyUSDTSwapped();
   });
 
-  it.only('SS2: USDT To USDC Second Market Swap', async () => {
+  it('SS2: USDT To USDC Second Market Swap', async () => {
     await swapPage.refresh();
     await swapPage.clickSwapBtn();
     await swapPage.verifySwapScreen();

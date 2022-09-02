@@ -347,6 +347,7 @@ class CreateWalletPage {
 
         await expect(this.confirmYourPinText).toBeDisplayed();
         await expect(this.confirmYourPinDesText).toBeDisplayed();
+        await expect(this.confirmPinBackBtn).toBeDisplayed();
         await (await this.loginPin1).click();
         await (await this.loginPin1).setValue(pin1);
         await (await this.loginPin2).setValue(pin2);

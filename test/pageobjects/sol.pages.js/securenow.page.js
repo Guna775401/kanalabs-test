@@ -1,4 +1,4 @@
-const remindmeLaterPage = require("./remindmelater.page");
+const RemindMeLater = require("./remindmelater.page");
 
 class SecureNowPage {
 
@@ -262,7 +262,7 @@ class SecureNowPage {
         await (await this.start).waitForDisplayed({ timeout: 60000 });
         await expect(this.secureyourwalletText).toBeDisplayed();
         await expect(this.secureyourwalletDesText).toBeDisplayed();
-        await expect(remindmeLaterPage.remindMeLaterBtn).toBeDisplayed();
+     //   await expect(RemindMeLater.remindMeLaterBtn).toBeDisplayed();
         await (await this.start).click();
         await expect(this.secureyourwalletText).toBeDisplayed();
         await expect(this.writedownyourseedonPaperText).toBeDisplayed();

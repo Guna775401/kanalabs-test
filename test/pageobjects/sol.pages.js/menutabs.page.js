@@ -168,9 +168,29 @@ class MenuTabsOptions {
         const nameyourwalletDesText = 'new UiSelector().text("Give an unique name to your wallet. You will be able to receive tokens using this wallet name, without the need for using a complicated public address! Powered by Kana and SNS").className("android.widget.TextView")'
         const nameyourwalletDesText1 =  $(`android=${nameyourwalletDesText}`)
         return nameyourwalletDesText1;
+ }
+  get networkText() { 
+        const network = 'new UiSelector().text("Network").className("android.widget.TextView")'
+        const network1 =  $(`android=${network}`)
+        return network1;
+    } 
+    get changePinText() { 
+        const changepin = 'new UiSelector().text("Change Pin").className("android.widget.TextView")'
+        const changepin1 =  $(`android=${changepin}`)
+        return changepin1;
+    } 
+    get changePinDesText() { 
+        const changepindes = 'new UiSelector().text("Please enter your current Pin to update your new pin").className("android.widget.TextView")'
+        const changepin1 =  $(`android=${changepindes}`)
+        return changepin1;
+    } 
+    get() {
 
-
-    } get() { } get() { } get() { } get() { } get() { } get() { } get() { }
+     } 
+     
+     
+     
+     get() { } get() { } get() { } get() { } get() { }
 
     //return $('')
 
@@ -202,12 +222,14 @@ class MenuTabsOptions {
     }
 
     async verifyDisplay_DevNetAndMainNet() {
-        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
-        await browser.pause(10000);
+        await (await this.menuTab).waitForDisplayed({ timeout: 30000 });
+        await browser.pause(5000);
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
+        await expect(this.networkText).toBeDisplayed();
         await expect(this.devNetworkTab).toBeDisplayed();
         await expect(this.mainNetworkTab).toBeDisplayed();
+        await expect(this.backBtnNetwork).toBeDisplayed();
         await this.backBtnNetwork.click();
     }
 
@@ -346,7 +368,10 @@ async clickmenuINMultipleWallet_ViewOption(){
     // }
 
     async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
+        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 30000 });
+        await expect(this.changepinToBackDash).toBeDisplayed();
+        await expect(this.changePinText).toBeDisplayed();
+        await expect(this.changePinDesText).toBeDisplayed();
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);
@@ -356,8 +381,9 @@ async clickmenuINMultipleWallet_ViewOption(){
         await (await createwalletPage.loginPin5).setValue(pin5);
         await (await createwalletPage.loginPin6).setValue(pin6);
     }
+
     async changePin_SetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
+        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 30000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);
@@ -367,8 +393,9 @@ async clickmenuINMultipleWallet_ViewOption(){
         await (await createwalletPage.loginPin5).setValue(pin5);
         await (await createwalletPage.loginPin6).setValue(pin6);
     }
-    async changePin_ConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
+    
+    async loginEnterPin(pin1, pin2, pin3, pin4, pin5, pin6) {
+        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 30000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);

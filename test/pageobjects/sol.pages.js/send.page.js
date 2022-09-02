@@ -1,5 +1,7 @@
-const { sleep } = require("@wdio/utils");
+const swapPage = require("./swap.page");
 
+
+var fs = require('fs');
 
 class SendPage {
 
@@ -169,9 +171,9 @@ class SendPage {
 
     async clickSendDoneBtn() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
+        // const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
+        // const doneTxt = await $(`android=${donetxt}`)
+        await swapPage.doneText.waitForDisplayed({ timeout: 30000 });
 
         const successOrFailRes = await (this.successOrFail).getText();
         const typeFailText = await (this.result).getText();
@@ -180,18 +182,31 @@ class SendPage {
         let fail = await (this.sendFailedDonebutton).isDisplayed();
 
         if (sucess) {
-            console.log(successOrFailRes);
+            fs.appendFile('./reports/send.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/send.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
             await (await this.sendDonebutton).click();
         }
-        else if (fail == true) {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+        else if (fail) {
+            fs.appendFile('./reports/send.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/send.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
             await (await this.sendFailedDonebutton).click();
 
         }
         else {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+            fs.appendFile('./reports/send.txt', successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/send.txt', typeFailText + '\n', function (err) {
+                console.log(err)
+            })
         }
     }
 
@@ -277,14 +292,31 @@ class SendPage {
     async verifyBalanceEqualToMax_Amount() {
         await this.balanceAmountNextScreen.waitForDisplayed({ timeout: 30000 });
         var balance = await (await this.balanceAmountNextScreen).getText();
-        var balance1 = balance.replace(/[^0-9 ^.]/g, ''); 
+        var balance1 = balance.replace(/[^0-9 ^.]/g, '');
         await (await this.maxBtn).click();
         const maxAmount = await (await this.inputAmount).getText();
-        (balance1==maxAmount)
+        (balance1 == maxAmount)
 
     }
 
-    async() {
+    async selctDashSol() {
+        await swapPage.sOLText.waitForDisplayed({ timeout: 30000 });
+        const sol = await (await swapPage.sOLText).isDisplayed();
+
+        for (let i = 0; i <= 5; i++) {
+            if (sol) {
+                await (await swapPage.sOLText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+            const sol1 = await (await swapPage.sOLText).isDisplayed();
+        }
 
     }
     async() {

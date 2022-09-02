@@ -54,7 +54,6 @@ describe('Create wallet Sol', () => {
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await RemindMeLaterPage.remindmelater();
         await DashboardPage.verifySolDash();
-
     })
 
     it('CS4: Create new Sol wallet vaild wallet name Secure Now', async () => {
@@ -72,7 +71,6 @@ describe('Create wallet Sol', () => {
         await securenowPage.clickContinueandFinishBtn();
         await DashboardPage.verifySolDash();
     });
-
 });
 
 describe('Create wallet Neon', async () => {
@@ -92,7 +90,7 @@ describe('Create wallet Neon', async () => {
         await CreateWalletPage.enterWalletName(process.env.VAILDWALLETNAME);
         await CreateWalletPage.continueBtnClick();
         await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
-        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINONE, process.env.PINZERO, process.env.PINZERO, process.env.PINONE, process.env.PINONE);
+        await CreateWalletPage.enterIncorrectConfirmPin(process.env.PINZERO, process.env.PINONE, process.env.PINZERO, process.env.PINZERO, process.env.PINONE, process.env.PINONE);
         // await CreateWalletPage.verifyPinDoesntMatchPopup();
         await CreateWalletPage.enterIncorrectConfirmPinClearValue();
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);

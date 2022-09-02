@@ -14,23 +14,23 @@ class Loginpage {
 
     get welcomeBackText() {
         const welcomeBack = 'new UiSelector().text("Welcome Back").className("android.widget.TextView")'
-        const welcomeback =  $(`android=${welcomeBack}`)
+        const welcomeback = $(`android=${welcomeBack}`)
         return welcomeback;
     }
     get enterPinText() {
         const enterPin = 'new UiSelector().text("Enter Pin").className("android.widget.TextView")'
-        const enterPin1 =  $(`android=${enterPin}`)
+        const enterPin1 = $(`android=${enterPin}`)
         return enterPin1;
     }
     get SignInWithBiometricsText() {
         const SignInWithBiometrics = 'new UiSelector().text("Sign in with biometrics?").className("android.widget.TextView")'
-        const SignInWithBiometrics1 =  $(`android=${SignInWithBiometrics}`)
+        const SignInWithBiometrics1 = $(`android=${SignInWithBiometrics}`)
         return SignInWithBiometrics1;
     }
 
     get cantloginText() {
         const cantlogin = 'new UiSelector().text("Can’t login? You can erase your current wallet and set up a new one").className("android.widget.TextView")'
-        const cantlogin1 =  $(`android=${cantlogin}`)
+        const cantlogin1 = $(`android=${cantlogin}`)
         return cantlogin1;
     }
     // get() {
@@ -41,12 +41,12 @@ class Loginpage {
 
     get() {
         const mainDash = 'new UiSelector().text("").className("android.widget.TextView")'
-        const mainDash1 =  $(`android=${mainDash}`)
+        const mainDash1 = $(`android=${mainDash}`)
         return mainDash1;
     }
     get() {
         const mainDash = 'new UiSelector().text("").className("android.widget.TextView")'
-        const mainDash1 =  $(`android=${mainDash}`)
+        const mainDash1 = $(`android=${mainDash}`)
         return mainDash1;
     }
 
@@ -55,7 +55,7 @@ class Loginpage {
 
     get incorrectPinPopupText() {
         const pleaseEnterCorrectPin = 'new UiSelector().text("Please enter the correct Pin").className("android.widget.TextView")'
-        const pleaseEnterCorrectPin1 =  $(`android=${pleaseEnterCorrectPin}`)
+        const pleaseEnterCorrectPin1 = $(`android=${pleaseEnterCorrectPin}`)
         return pleaseEnterCorrectPin1;
     }
 
@@ -80,24 +80,25 @@ class Loginpage {
     async verifyEyeiconClickable() {
         await expect(this.eyeIcon).toBeClickable();
     }
-async verifyLoginScreenUI(){
-    await (this.enterPinText).waitForDisplayed({ timeout: 60000 })
-   // await expect(this.welcomeBackText).toBeDisplayed();
-    await expect(this.enterPinText).toBeDisplayed();
-    await expect(this.SignInWithBiometricsText).toBeDisplayed();
-    await expect(this.cantloginText).toBeDisplayed();
-    await expect(resetwalletPage.resetwalletBtn).toBeDisplayed();
-    await expect(this.biometric).toBeDisplayed();
-}
+    async verifyLoginScreenUI() {
+        await (this.enterPinText).waitForDisplayed({ timeout: 60000 })
+        // await expect(this.welcomeBackText).toBeDisplayed();
+        await expect(this.eyeIcon).toBeDisplayed();
+        await expect(this.enterPinText).toBeDisplayed();
+        await expect(this.SignInWithBiometricsText).toBeDisplayed();
+        await expect(this.cantloginText).toBeDisplayed();
+        await expect(resetwalletPage.resetwalletBtn).toBeDisplayed();
+        await expect(this.biometric).toBeDisplayed();
+    }
 
 
 
-async (){
-    
-}
-async (){
-    
-}
+    async() {
+
+    }
+    async() {
+
+    }
     async loginSOL() {
 
 

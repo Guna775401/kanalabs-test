@@ -56,6 +56,7 @@ class CreateWalletPage {
     get termsAndConditionBtn() {
         return $('~goToTermsAndConditions')
     }
+    
 
     // UI Elements
     get whatsKanaText() {
@@ -214,6 +215,8 @@ class CreateWalletPage {
 
 
     async firstnextBtn() {
+       // driver.touchAction({actions: 'tap', x: 479, y: 360})
+
         await this.nextBtn.waitForDisplayed({ timeout: 60000 });
         await expect(this.whatsKanaText).toBeDisplayed();
         await expect(this.whatsKanaDesText).toBeDisplayed();
@@ -295,18 +298,12 @@ class CreateWalletPage {
     }
 
     async backButtonClick() {
-        const backbutton = $('~goBackFromNameWallet');
-        await backbutton.waitForDisplayed({ timeout: 60000 });
-        await expect(backbutton).toBeDisplayed();
-        await backbutton.click();
+       
+        await this.backBtn.waitForDisplayed({ timeout: 60000 });
+        await expect(this.backBtn).toBeDisplayed();
+        await this.backBtn.click();
     }
 
-
-    async backButtonExisting() {
-        const backbutton = $('~goBackFromNameWallet');
-        await backbutton.waitForDisplayed({ timeout: 60000 });
-        await expect(backbutton).toBeExisting();
-    }
     async continueBtnClick() {
         await this.continueBtn.waitForDisplayed({ timeout: 60000 });
         await (this.continueBtn).click();
@@ -381,8 +378,13 @@ class CreateWalletPage {
 
     // Popup Handles
     async verifyInvaildWalletNamePopup() {
-        await expect(this.incorrectPopupText).toBeDisplayed();
-        await expect(this.invaildWalletNameText).toBeDisplayed();
+      //  await expect(this.incorrectPopupText).toBeDisplayed();
+     //   await expect(this.invaildWalletNameText).toBeDisplayed();
+        driver.touchAction([
+            {action: 'longPress', x: 525, y: 322},
+            {action: 'moveTo', x: 517, y: 184},
+            'release'
+          ]);
     }
     async verifyPinDoesntMatchPopup() {
         await (this.pindoesntmatchText).waitForDisplayed({ timeout: 5000 });

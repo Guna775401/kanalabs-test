@@ -44,6 +44,7 @@ class ResetWalletPage {
     }
 
     async clickResetWalletbutton() {
+        
         await (await this.resetwalletBtn).click();
         await expect(this.areYouSureText).toBeDisplayed();
         await expect(this.onceErasedText).toBeDisplayed();

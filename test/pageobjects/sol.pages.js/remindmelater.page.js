@@ -5,6 +5,11 @@ class RemindMeLaterPage {
     get remindMeLaterBtn() {
         return $('~openReminMeLater');
     }
+
+    open () {
+        return super.open('remindMeLaterBtn');
+    }
+    
     get skipNowBtn() {
         return $('~skipNow');
     }

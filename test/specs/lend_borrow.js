@@ -152,6 +152,61 @@ describe('DevNet Lend/Borrow ', () => {
 
 })
 
+
+describe (' Test 1', () => {
+
+    it('LBM : Verify Solend Market place can SOL Deposit or Not ', async () => {
+        // await lend_borrowPage.popupClose();
+        await menutabsPage.changeToDevtoMain();
+        await dashboardPage.verifySolDashMainNet();
+        
+        await lend_borrowPage.clickLend_BorrowBtn();
+        await lend_borrowPage.clickStartLendBtn();
+        await lend_borrowPage.selectSOL();
+        await lend_borrowPage.selectSolend();
+        await lend_borrowPage.enterSupplyAmount(process.env.SUPPLYSOL);
+        await lend_borrowPage.getSupplyAmount();
+        await lend_borrowPage.clickSupplyBtn();
+        await lend_borrowPage.verifyDoneBtn();
+    })
+
+    it('LBM : Verify Solend Market place can USDC Borrow or Not ', async () => {
+        await lend_borrowPage.clickLend_BorrowBtn();
+        await lend_borrowPage.clickStartLendBtn();
+        await lend_borrowPage.selectUSDC();
+        await lend_borrowPage.selectSolend();
+        await lend_borrowPage.clickBorrowTab();
+        await lend_borrowPage.clickBorrowMaxBtn();
+        await lend_borrowPage.getBorrowAmount();
+        await lend_borrowPage.clickBorrowBtn();
+        await lend_borrowPage.verifyDoneBtn();
+    })
+
+    it('LBM : Verify Solend Market place can USDC Repay or Not ', async () => {
+        await lend_borrowPage.clickLend_BorrowBtn();
+        await lend_borrowPage.clickStartLendBtn();
+        await lend_borrowPage.selectUSDC();
+        await lend_borrowPage.selectSolend();
+        await lend_borrowPage.clickRepayMaxBtn();
+        await lend_borrowPage.getRepayAmount();
+        await lend_borrowPage.clickRepayBtn();
+        await lend_borrowPage.verifyDoneBtn();
+    })
+    it('LBM : Verify Solend Market place can SOL Withdraw or Not ', async () => {
+        await lend_borrowPage.clickLend_BorrowBtn();
+        await lend_borrowPage.clickStartLendBtn();
+        await lend_borrowPage.selectUSDC();
+        await lend_borrowPage.selectSolend();
+        await lend_borrowPage.clickWithdrawMaxBtn();
+        await lend_borrowPage.getWithdrawAmount();
+        await lend_borrowPage.clickWithdrawBtn();
+        await lend_borrowPage.verifyDoneBtn();
+    })
+})
+
+
+
+
 describe('MainNet Lend/Borroww ', () => {
 
     it('LBM1 : Verify SOL Pool Name Eqaul Or Not POP Token Name', async () => {
@@ -166,15 +221,14 @@ describe('MainNet Lend/Borroww ', () => {
         await lend_borrowPage.popupClose();
         await lend_borrowPage.verify_Second_TokenNameSamePopUpTokenName();
     })
-    it('LBM3 : Verify Before Supply Try to Borrow Come popup ', async () => {
 
+    it('LBM3 : Verify Before Supply Try to Borrow Come popup ', async () => {
         await lend_borrowPage.clickBorrowTab();
         await lend_borrowPage.clickBorrowMaxBtn();
         await lend_borrowPage.verifyBeforeSupply_BorrowPoPUP();
     })
 
     it('LBM4 : Verify first Pool Lend/Borrow UI Text ', async () => {
-
         await lend_borrowPage.popupClose();
         await lend_borrowPage.verifyLend_BorrowScreenUI();
         await lend_borrowPage.firstPoolSelect();

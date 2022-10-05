@@ -64,12 +64,7 @@ class DashBoardPage {
     get() {
         return $('');
     }
-    get() {
-        return $('');
-    }
-    get() {
-        return $('');
-    }
+    
 
     get sendSolToken() {
         return $('~sendSolToken');
@@ -80,12 +75,12 @@ class DashBoardPage {
 
     get devnetDash() {
         const devDash = 'new UiSelector().text("Solana - Devnet").className("android.widget.TextView")'
-        const devDash1 =  $(`android=${devDash}`)
+        const devDash1 = $(`android=${devDash}`)
         return devDash1;
     }
     get mainnetDash() {
         const mainDash = 'new UiSelector().text("Solana - Mainnet").className("android.widget.TextView")'
-        const mainDash1 =  $(`android=${mainDash}`)
+        const mainDash1 = $(`android=${mainDash}`)
         return mainDash1;
     }
 
@@ -96,6 +91,45 @@ class DashBoardPage {
     //     return $('~');
     // }
 
+
+    // Create view wallet in wallets
+    get firstWallet() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[1]/android.widget.TextView[1]');
+    }
+    get secondWallet() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[2]/android.widget.TextView[1]');
+    }
+    get thirdWallet() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[3]/android.widget.TextView[1]');
+    }
+    get fourthWallet() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[4]/android.widget.TextView[1]');
+    }
+
+    // Wallet widget
+
+    get firstWalletwidget() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[1]/android.view.View');
+    }
+    get secondWalletwidget() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[2]/android.view.View');
+    }
+    get thirdWalletwidget() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[3]/android.view.View');
+    }
+    get fourthWalletwidget() {
+        return $('(//android.view.ViewGroup[@content-desc="changeActiveAccount"])[4]/android.view.View');
+    }
+
+
+// Creat wallet In Create/View Wallet
+
+get ceate_WalletBtn() {
+    return $('//android.view.ViewGroup[@content-desc="createSolWallet"]/android.widget.TextView');
+}
+
+
+    
     async verifySolDash() {
         await this.devnetDash.waitForDisplayed({ timeout: 120000 })
         await expect(this.devnetDash).toBeDisplayed();
@@ -153,20 +187,57 @@ class DashBoardPage {
         await this.menuTab.click();
         await menutabsPage.dashboardNetworkTab.click();
         await menutabsPage.devNetworkTab.click();
+        await menutabsPage.menuCancelButton.click();
+        await browser.pause(5000)
+
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
     }
     async mainNetworkChange() {
         await (this.menuTab).waitForDisplayed({ timeout: 60000 });
         await this.menuTab.click();
         await menutabsPage.dashboardNetworkTab.click();
         await menutabsPage.mainNetworkTab.click();
+        await menutabsPage.menuCancelButton.click();
+        await browser.pause(5000)
+
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 172 },
+            { action: 'moveTo', x: 517, y: 628 },
+            'release'
+        ]);
     }
 
 
-    async() {
+    async clickCreate_View_Wallet() {
+        await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
+        await this.create_Viewwallet.click();
     }
 
-    async() {
+    async clickFirst_Wallet() {
+        await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
+        await this.create_Viewwallet.click();
+        await this.firstWallet.click();
     }
+    async clickSecond_Wallet() {
+        await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
+        await this.create_Viewwallet.click();
+        await this.secondWallet.click();
+    }
+    async clickThird_Wallet() {
+        await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
+        await this.create_Viewwallet.click();
+        await this.thirdWallet.click();
+    }
+    async clickFourth_Wallet() {
+        await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
+        await this.create_Viewwallet.click();
+        await this.fourthWallet.click();
+    }
+
 
     async() {
     }

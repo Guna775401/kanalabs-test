@@ -207,16 +207,16 @@ class Lend_BorrowPage {
         res1 = ('Result = ' + res1);
 
         const sucess = await (this.successDoneBtn).isDisplayed();
-       // const fail = await expect(this.failDoneBtn).toBeDisplayed();
+        // const fail = await expect(this.failDoneBtn).toBeDisplayed();
 
         if (sucess) {
-            await this.successDoneBtn.waitForDisplayed({ timeout: 60000 })
-            fs.appendFile('./reports/lend_borrow.txt', res + '\n', function (err) {
-                console.log(err)
-            })
-            fs.appendFile('./reports/lend_borrow.txt', res1 + '\n', function (err) {
-                console.log(err)
-            })
+            // await this.successDoneBtn.waitForDisplayed({ timeout: 60000 })
+            // fs.appendFile('./reports/lend_borrow.txt', res + '\n', function (err) {
+            //     console.log(err)
+            // })
+            // fs.appendFile('./reports/lend_borrow.txt', res1 + '\n', function (err) {
+            //     console.log(err)
+            // })
             await (await this.successDoneBtn).click();
         }
         else {
@@ -228,7 +228,7 @@ class Lend_BorrowPage {
             })
             await (await this.failDoneBtn).click();
         }
-      }
+    }
 
     get() {
         return $('~');
@@ -241,25 +241,54 @@ class Lend_BorrowPage {
     }
 
     // UI Element
-    async verifyLend_BorrowUIText() {
-        await this.startLendBtn.waitForDisplayed({ timeout: 30000 })
 
+    get lend_borrowText() {
         const lend_borrowtext = 'new UiSelector().text("Lend / Borrow").className("android.widget.TextView")'
         const lend_borrowtxt = $(`android=${lend_borrowtext}`)
-        await lend_borrowtxt.waitForDisplayed({ timeout: 30000 })
-        await expect(lend_borrowtxt).toBeDisplayed();
-
-        await expect(this.backBtn).toBeDisplayed();
-
-        await expect(this.startLendBtn).toBeDisplayed();
-
+        return lend_borrowtxt;
+    }
+    get lend_borrowAggeratorText() {
         const lend_borrowAggeratortext = 'new UiSelector().text("Aggregated Lend/Borrow.").className("android.widget.TextView")'
         const lend_borrowAggeratortxt = $(`android=${lend_borrowAggeratortext}`)
-        await expect(lend_borrowAggeratortxt).toBeDisplayed();
-
+        return lend_borrowAggeratortxt;
+    }
+    get lend_borrowDesriptionText() {
         const lend_borrowDesriptiontext = 'new UiSelector().text("Now lend/borrow at the best rates from across the entire Solana ecosystem").className("android.widget.TextView")'
         const lend_borrowDesriptiontxt = $(`android=${lend_borrowDesriptiontext}`)
-        await expect(lend_borrowDesriptiontxt).toBeDisplayed();
+        return lend_borrowDesriptiontxt;
+    }
+    get() {
+        return;
+    }
+    get() {
+        return;
+    }
+    get() {
+        return;
+    }
+    get() {
+        return;
+    }
+    get() {
+        return;
+    } get() {
+        return;
+    } get() {
+        return;
+    } get() {
+        return;
+    }
+
+
+
+    async verifyLend_BorrowUIText() {
+        await this.startLendBtn.waitForDisplayed({ timeout: 10000 })
+        await this.lend_borrowText.waitForDisplayed({ timeout: 10000 })
+        await expect(this.lend_borrowText).toBeDisplayed();
+        await expect(this.backBtn).toBeDisplayed();
+        await expect(this.startLendBtn).toBeDisplayed();
+        await expect(this.lend_borrowAggeratorText).toBeDisplayed();
+        await expect(this.lend_borrowDesriptionText).toBeDisplayed();
     }
 
 
@@ -366,13 +395,13 @@ class Lend_BorrowPage {
         await expect(this.lend_borrowBtn).toBeDisplayed();
     }
 
+
     async clickLend_Borrow() {
         await this.lend_borrowBtn.waitForDisplayed({ timeout: 30000 })
         await (await this.lend_borrowBtn).click();
         await this.startLendBtn.waitForDisplayed({ timeout: 30000 })
-        const lend_borrowtext = 'new UiSelector().text("Lend / Borrow").className("android.widget.TextView")'
-        const lend_borrowtxt = $(`android=${lend_borrowtext}`)
-        await expect(lend_borrowtxt).toBeDisplayed();
+        await expect(this.lend_borrowText).toBeDisplayed();
+        await expect(this.lend_borrowAggeratorText).toBeDisplayed();
         await (await this.startLendBtn).click();
 
     }
@@ -465,22 +494,21 @@ class Lend_BorrowPage {
         const res = await expect(usdctext1).toBeDisplayed();
         if (res) {
             await (await usdctext1).click();
-
         }
-        if (res == false) {
-            driver.touchAction([
-                { action: 'longPress', x: 479, y: 2271 },
-                { action: 'moveTo', x: 471, y: 881 },
-                'release'
-            ]);
-            await (await usdctext1).click();
-        }
+        // else if (res == false) {
+        //     driver.touchAction([
+        //         { action: 'longPress', x: 479, y: 2271 },
+        //         { action: 'moveTo', x: 471, y: 881 },
+        //         'release'
+        //     ]);
+        //     await (await usdctext1).click();
+        // }
         else {
-            driver.touchAction([
-                { action: 'longPress', x: 425, y: 1919 },
-                { action: 'moveTo', x: 429, y: 904 },
-                'release'
-            ]);
+            // driver.touchAction([
+            //     { action: 'longPress', x: 425, y: 1919 },
+            //     { action: 'moveTo', x: 429, y: 904 },
+            //     'release'
+            // ]);
             await (await usdctext1).click();
         }
     }
@@ -904,8 +932,44 @@ class Lend_BorrowPage {
     async clickRepayBtn() {
         await this.repaybtn.waitForDisplayed({ timeout: 5000 })
         await (await this.repaybtn).click();
-        
+
     }
+    async getSupplyAmount() {
+        var supplyAmount = await (await this.supplyEnterAmount).getText();
+        supplyAmount = ('SupplyAmount :  ' + supplyAmount)
+
+        fs.appendFile('./reports/lend_borrow.txt', supplyAmount + '\n', function (err) {
+            console.log(err)
+        })
+    }
+
+    async getBorrowAmount() {
+        var borrowAmount = await (await this.borrowEnterAmount).getText();
+        borrowAmount = ('BorrowAmount : ' + borrowAmount)
+
+        fs.appendFile('./reports/lend_borrow.txt', borrowAmount + '\n', function (err) {
+            console.log(err)
+        })
+    }
+
+    async getWithdrawAmount() {
+        var withdrawAmount = await (await this.withdrawEnterAmount).getText();
+        withdrawAmount = ('WithdrawAmount : ' + withdrawAmount)
+
+        fs.appendFile('./reports/lend_borrow.txt', withdrawAmount + '\n', function (err) {
+            console.log(err)
+        })
+    }
+
+    async getRepayAmount() {
+        var repayAmount = await (await this.repayEnterAmount).getText();
+        repayAmount = ('RepayAmount : ' + repayAmount)
+
+        fs.appendFile('./reports/lend_borrow.txt', repayAmount + '\n', function (err) {
+            console.log(err)
+        })
+    }
+
 
 
     // Click MAX button

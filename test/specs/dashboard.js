@@ -22,9 +22,9 @@ describe('Verify Dashboard SOL', async () => {
         await dashboardPage.verifyHistorytab();
         await dashboardPage.verifyTokentab();
         await dashboardPage.verifyCreate_Viewwallet();
-       });
+    });
 
-    it('DS2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value and ', async () => {
+    it('DS2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value ', async () => {
         await dashboardPage.verifymenuoption();
         await neondashboardPage.verifyNeonWallet();
         await dashboardPage.verifyWalletName_SolLogo();
@@ -52,13 +52,14 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.verifyShow_Seed_phrase();
         await menutabsPage.clickCancelbtn();
     });
-    
-    it('DS5: Verify Clickable and Displayed or Not DevNet and MainNet', async () => {
+
+    it('DS5: Verify Menu option text displayed or Not ', async () => {
         await menutabsPage.verifyDisplay_DevNetAndMainNet();
+        // Need Referral & Logount text
     });
 
     it('DS6: Verify ChangePin funtionality working or not', async () => {
-   
+
         // Need run becz fail
         await logutPage.clickMenuSol();
         await menutabsPage.clickChangePin();
@@ -116,9 +117,36 @@ describe('Verify Dashboard SOL', async () => {
 
     });
 
-    it('DS: Verify ', async () => {
+    it('DS: If i have four solana wallet then i change Devnet to Mainnet need to change three wallet are Mainnet ', async () => {
+        await dashboardPage.verifySolDash();
+        await dashboardPage.mainNetworkChange();
+        await dashboardPage.clickFirst_Wallet();
+        await dashboardPage.mainnetDash();
+        await dashboardPage.clickSecond_Wallet();
+        await dashboardPage.mainnetDash();
+        await dashboardPage.clickThird_Wallet();
+        await dashboardPage.mainnetDash();
+        await dashboardPage.clickFourth_Wallet();
+        await dashboardPage.mainnetDash();
+
+        await dashboardPage.devNetworkChange();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickFirst_Wallet();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickSecond_Wallet();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickThird_Wallet();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickFourth_Wallet();
+        await dashboardPage.verifySolDash();
 
     });
+
+
+
+    
+
+
     it('DS: Verify ', async () => {
 
     });

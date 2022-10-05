@@ -12,6 +12,7 @@ const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
 const RemindMeLaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
 const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
 const securenowPage = require('../pageobjects/sol.pages.js/securenow.page');
+
 require('dotenv').config()
 
 

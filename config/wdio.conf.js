@@ -1,4 +1,3 @@
-const allure = require('allure-commandline')
 const wdio = require('webdriverio');
 const path = require('path')
 
@@ -31,14 +30,14 @@ exports.config = {
   specs: [
     [
       // './test/specs/**/*.js',
-      //'./test/specs/createwallet.js',
+      // './test/specs/createwallet.js',
       //'./test/specs/dashboard.js',
       //'./test/specs/login.js'
       './test/specs/importwallet.js',
-      './test/specs/swap.js',
+     // './test/specs/swap.js',
       // './test/specs/stake_unstake.js',
       //'./test/specs/lend_borrow.js',
-      // './test/specs/send.js',
+       './test/specs/send.js',
     ],
   ],
 
@@ -83,7 +82,7 @@ exports.config = {
 
     platformName: "Android",
     "appium:automationName": "UiAutomator2",
-    "appium:platformVersion": "11",
+    "appium:platformVersion": "12",
     "appium:deviceName": "Moto g71",
     "appium:appPackage": "com.kanaswapapp",
     "appium:appActivity": "com.kanaswapapp.MainActivity",
@@ -195,34 +194,6 @@ exports.config = {
   // see also: https://webdriver.io/docs/dot-reporter
 
   reporters: ['spec'],
-  // reporters: [['allure', {
-  //     outputDir: 'allure-results',
-  //     disableWebdriverStepsReporting: true,
-  //     disableWebdriverScreenshotsReporting: false,
-  // }]],
-
-  //  onComplete: function() {
-  //     const reportError = new Error('Could not generate Allure report')
-  //     const generation = allure(['generate', 'allure-results', '--clean'])
-  //     return new Promise((resolve, reject) => {
-  //         const generationTimeout = setTimeout(
-  //             () => reject(reportError),
-  //             5000)
-
-  //         generation.on('exit', function(exitCode) {
-  //             clearTimeout(generationTimeout)
-
-  //             if (exitCode !== 0) {
-  //                 return reject(reportError)
-  //             }
-
-  //             console.log('Allure report successfully generated')
-  //             resolve()
-  //         })
-  //     })
-  //},
-
-  //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {

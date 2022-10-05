@@ -26,11 +26,11 @@ class SwapPage {
     get slidetBtn() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup');
     }
-    // get swapNowText() {
-    //     const swapScreen = 'new UiSelector().text("Swap").className("android.widget.TextView")'
-    //     const SwapScreen =  $(`android=${swapScreen}`)
-    //     return SwapScreen;
-    // }
+
+
+    get swapNowBtn() {
+        return $('~startSwapping')
+    }
 
     get balance() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[3]');
@@ -38,7 +38,10 @@ class SwapPage {
     get maxBtn() {
         return $('~maxAmountForSwap');
     }
-
+    // Insufficient balance text
+    get insufficientBalanceText() {
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[4]')
+    }
     // New Elements
 
     get youPaydropdown() {
@@ -46,6 +49,9 @@ class SwapPage {
     }
     get youPayInputAmount() {
         return $("~tokenAmountForSwap");
+    }
+    get youReceiveInputAmount() {
+        return $("~setTokenAmount2");
     }
     get youReceivedropdown() {
         return $("~searchTextForToken2");
@@ -64,12 +70,12 @@ class SwapPage {
     }
 
     get result() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]')
     }
 
     // Please check your dashboard for changes 
     get checkYourDashboardChanges() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]');
     }
     // const findindBestRoute = 'new UiSelector().text("Finding you the best route and price").className("android.widget.TextView")'
     // const findindBestRoute1 = $(`android=${findindBestRoute}`)
@@ -81,24 +87,42 @@ class SwapPage {
 
 
     get bestPricetxt() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView')
     }
 
     // Market places
 
     get marketPlace1() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup');
     }
     get marketPlace2() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup');
     }
 
     get marketPlace3() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup');
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup');
     }
     get marketPlace4() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup');
+        return $('');
     }
+
+
+    // get marketPlace1() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup');
+    //     //        /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup
+
+    // }
+    // get marketPlace2() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup');
+    // }
+
+    // get marketPlace3() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup');
+    // }
+    // get marketPlace4() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup');
+    // }
+
     get marketPlace5() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup');
     }
@@ -108,18 +132,37 @@ class SwapPage {
     }
 
     // Market Place route Name 
+
     get marketPlaceName1() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]')
     }
     get marketPlaceName2() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[1]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[1]')
     }
     get marketPlaceName3() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView[1]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]')
     }
     get marketPlaceName4() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.TextView[1]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[1]')
     }
+
+
+
+    // get marketPlaceName1() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]')
+    //         //    /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup
+    // }
+    // get marketPlaceName2() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[1]')
+    // }
+    // get marketPlaceName3() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView[1]')
+    // }
+    // get marketPlaceName4() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.TextView[1]')
+    // }
+
+
     get marketPlaceName5() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.TextView[1]')
     }
@@ -129,18 +172,33 @@ class SwapPage {
 
 
     // Market Place route token Name 
+
     get marketPlaceTokenName1() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[2]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[2]')
     }
     get marketPlaceTokenName2() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[2]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[2]')
     }
     get marketPlaceTokenName3() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView[2]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[2]')
     }
     get marketPlaceTokenName4() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.TextView[2]')
+        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[2]')
     }
+
+    // get marketPlaceTokenName1() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[2]')
+    // }
+    // get marketPlaceTokenName2() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[2]')
+    // }
+    // get marketPlaceTokenName3() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.TextView[2]')
+    // }
+    // get marketPlaceTokenName4() {
+    //     return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup/android.widget.TextView[2]')
+    // }
+
     get marketPlaceTokenName5() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup/android.widget.TextView[2]')
     }
@@ -150,6 +208,11 @@ class SwapPage {
 
     // Ui Elements
 
+    get swapNowText() {
+        const swapNowtext = 'new UiSelector().text("Swap now").className("android.widget.TextView")'
+        const swapNowtext1 = $(`android=${swapNowtext}`)
+        return swapNowtext1;
+    }
     get youPayText() {
         const youPay = 'new UiSelector().text("You pay").className("android.widget.TextView")'
         const youPay1 = $(`android=${youPay}`)
@@ -164,6 +227,16 @@ class SwapPage {
         const rate = 'new UiSelector().text("Rate").className("android.widget.TextView")'
         const rate1 = $(`android=${rate}`)
         return rate1;
+    }
+    get kanaswapFeesText() {
+        const kanaswapFees = 'new UiSelector().text("Kanaswap fee").className("android.widget.TextView")'
+        const kanaswapFees1 = $(`android=${kanaswapFees}`)
+        return kanaswapFees1;
+    }
+    get slippageText() {
+        const slippage = 'new UiSelector().text("Slippage").className("android.widget.TextView")'
+        const slippage1 = $(`android=${slippage}`)
+        return slippage1;
     }
     get bestPriceText() {
         const bestPrice = 'new UiSelector().text("Best price").className("android.widget.TextView")'
@@ -185,6 +258,9 @@ class SwapPage {
         const searchText = $(`android=${search}`)
         return searchText;
     }
+
+
+
     get uSDTText() {
         const usdttxt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
         const uSDTtxt = $(`android=${usdttxt}`)
@@ -230,6 +306,123 @@ class SwapPage {
         const uSDHtxt = $(`android=${usdhtxt}`)
         return uSDHtxt;
     }
+
+    get c98Text() {
+        const c98txt = 'new UiSelector().text("C98").className("android.widget.TextView")'
+        const c98txt1 = $(`android=${c98txt}`)
+        return c98txt1;
+    }
+    get nINJAText() {
+        const nINJAtxt = 'new UiSelector().text("NINJA").className("android.widget.TextView")'
+        const nINJAtxt1 = $(`android=${nINJAtxt}`)
+        return nINJAtxt1;
+    }
+
+    get uSDTetText() {
+        const uSDTettxt = 'new UiSelector().text("USDTet").className("android.widget.TextView")'
+        const uSDTettxt1 = $(`android=${uSDTettxt}`)
+        return uSDTettxt1;
+    }
+    get stSolText() {
+        const stSoltxt = 'new UiSelector().text("stSOL").className("android.widget.TextView")'
+        const stSoltxt1 = $(`android=${stSoltxt}`)
+        return stSoltxt1;
+    }
+    get soETHText() {
+        const soETHtxt = 'new UiSelector().text("soETH").className("android.widget.TextView")'
+        const soETHtxt1 = $(`android=${soETHtxt}`)
+        return soETHtxt1;
+    }
+    get scnSOLText() {
+        const scnSOLtxt = 'new UiSelector().text("scnSOL").className("android.widget.TextView")'
+        const scnSOLtxt1 = $(`android=${scnSOLtxt}`)
+        return scnSOLtxt1;
+    }
+    get mNDEText() {
+        const mNDEtxt = 'new UiSelector().text("MNDE").className("android.widget.TextView")'
+        const mNDEtxt1 = $(`android=${mNDEtxt}`)
+        return mNDEtxt1;
+    }
+    get soTOMOText() {
+        const soTOMOtxt = 'new UiSelector().text("soTOMO").className("android.widget.TextView")'
+        const soTOMOtxt1 = $(`android=${soTOMOtxt}`)
+        return soTOMOtxt1;
+    }
+    get gSTText() {
+        const gSTtxt = 'new UiSelector().text("GST").className("android.widget.TextView")'
+        const gSTtxt1 = $(`android=${gSTtxt}`)
+        return gSTtxt1;
+    }
+    get dFLText() {
+        const dFLtxt = 'new UiSelector().text("DFL").className("android.widget.TextView")'
+        const dFLtxt1 = $(`android=${dFLtxt}`)
+        return dFLtxt1;
+    }
+    get pAIText() {
+        const pAItxt = 'new UiSelector().text("PAI").className("android.widget.TextView")'
+        const pAItxt1 = $(`android=${pAItxt}`)
+        return pAItxt1;
+    }
+    get rAYText() {
+        const rAYtxt = 'new UiSelector().text("RAY").className("android.widget.TextView")'
+        const rAYtxt1 = $(`android=${rAYtxt}`)
+        return rAYtxt1;
+    }
+    get sTEPText() {
+        const sTEPtxt = 'new UiSelector().text("STEP").className("android.widget.TextView")'
+        const sTEPtxt1 = $(`android=${sTEPtxt}`)
+        return sTEPtxt1;
+    }
+    get uXDText() {
+        const uXDtxt = 'new UiSelector().text("UXD").className("android.widget.TextView")'
+        const uXDtxt1 = $(`android=${uXDtxt}`)
+        return uXDtxt1;
+    }
+    get gMTText() {
+        const gMTtxt = 'new UiSelector().text("GMT").className("android.widget.TextView")'
+        const gMTtxt1 = $(`android=${gMTtxt}`)
+        return gMTtxt1;
+    }
+
+    get aPTText() {
+        const apttext = 'new UiSelector().text("APT").className("android.widget.TextView")'
+        const apttext1 = $(`android=${apttext}`)
+        return apttext1;
+    }
+
+    get fTTText() {
+        const ftttext = 'new UiSelector().text("FTT").className("android.widget.TextView")'
+        const ftttext1 = $(`android=${ftttext}`)
+        return ftttext1;
+    }
+
+    get fUMText() {
+        const fUMtext = 'new UiSelector().text("FUM").className("android.widget.TextView")'
+        const fUMtext1 = $(`android=${fUMtext}`)
+        return fUMtext1;
+    }
+    get fORGEText() {
+        const fORGEtext = 'new UiSelector().text("FORGE").className("android.widget.TextView")'
+        const fORGEtext1 = $(`android=${fORGEtext}`)
+        return fORGEtext1;
+    }
+    get dUSTText() {
+        const dUSTtext = 'new UiSelector().text("DUST").className("android.widget.TextView")'
+        const dUSTtext1 = $(`android=${dUSTtext}`)
+        return dUSTtext1;
+    }
+    get uSHText() {
+        const uSHtext = 'new UiSelector().text("USH").className("android.widget.TextView")'
+        const uSHtext1 = $(`android=${uSHtext}`)
+        return uSHtext1;
+    }
+    get cCGText() {
+        const cCGtext = 'new UiSelector().text("CCG").className("android.widget.TextView")'
+        const cCGtext1 = $(`android=${cCGtext}`)
+        return cCGtext1;
+    }
+
+
     get doneText() {
         const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
         const doneTxt = $(`android=${donetxt}`)
@@ -243,7 +436,7 @@ class SwapPage {
 
     get swapText() {
         const swapScreen = 'new UiSelector().text("Swap").className("android.widget.TextView")'
-        const swapScreen1 =  $(`android=${swapScreen}`)
+        const swapScreen1 = $(`android=${swapScreen}`)
         return swapScreen1;
     }
     get findindBestRouteText() {
@@ -321,10 +514,17 @@ class SwapPage {
         return oRCASwap;
     }
 
+
+
     get() {
 
     }
 
+
+    async verifySwapNow() {
+        await this.swapNowText.waitForDisplayed({ timeout: 15000 })
+        await expect(this.swapNowText).toBeDisplayed();
+    }
 
     async verifySwapbtn() {
         await expect(this.swapBtn).toBeDisplayed();
@@ -404,13 +604,13 @@ class SwapPage {
     }
 
     async thirdMarketPlace() {
+        await this.marketPlace2.waitForDisplayed({ timeout: 60000 })
+
         driver.touchAction([
-            { action: 'longPress', x: 551, y: 2026 },
-            { action: 'moveTo', x: 563, y: 1658 },
+            { action: 'longPress', x: 502, y: 1999 },
+            { action: 'moveTo', x: 502, y: 1643 },
             'release'
         ]);
-
-        await this.marketPlace2.waitForDisplayed({ timeout: 60000 })
 
         const firstmarketName2 = await this.marketPlaceName1.getText()
         const firstmarketName3 = await this.marketPlaceName2.getText();
@@ -517,7 +717,24 @@ class SwapPage {
 
     async getBalance() {
     }
+    async verifyInsufficientBalanceText() {
+        await this.insufficientBalanceText.waitForDisplayed({ timeout: 30000 })
+        var insufficient = await this.insufficientBalanceText.getText();
+        (insufficient == process.env.INSUFFICIENT)
+    }
 
+    async clickMaxBtn() {
+        await this.maxBtn.waitForDisplayed({ timeout: 10000 })
+        await (await this.maxBtn).click();
+    }
+
+    async enterGreaterthanMaxamount() {
+        await (await this.maxBtn).click();
+        var maxAmount = await (this.youPayInputAmount).getText();
+        maxAmount = maxAmount.replace(/[^a-z,^0-9^.]+/i)
+        maxAmount = (maxAmount + 1)
+        await (this.youPayInputAmount).setValue(maxAmount);
+    }
 
     async getMaxAmount() {
         await this.maxBtn.waitForDisplayed({ timeout: 60000 })
@@ -527,6 +744,20 @@ class SwapPage {
         (maxAmount == balanceAmount);
     }
 
+    async verifyYouReceiveFieldDisabled() {
+        await this.swapNowText.waitForDisplayed({ timeout: 15000 })
+        await expect(this.youReceiveInputAmount).toBeDisabled();
+    }
+
+    async enterAmountAfterYouPayFieldDisabled(amount) {
+        await this.swapNowText.waitForDisplayed({ timeout: 15000 })
+        await this.youPayInputAmount.click();
+        await this.youPayInputAmount.setValue(amount);
+        await expect(this.youPayInputAmount).toBeDisabled();
+        await expect(this.youReceiveInputAmount).toBeDisabled();
+
+    }
+
     async refresh() {
 
         driver.touchAction([
@@ -534,7 +765,7 @@ class SwapPage {
             { action: 'moveTo', x: 452, y: 904 },
             'release'
         ]);
-        await browser.pause(4000)
+        await browser.pause(5000)
     }
 
     async clickSwapBtn() {
@@ -568,16 +799,13 @@ class SwapPage {
         await expect(this.backBtn).toBeDisplayed();
         await (await this.startSwappinBtn).click();
         await expect(this.backBtn).toBeDisplayed();
-        await this.swapText.waitForDisplayed({ timeout: 30000 })
+        await expect(this.maxBtn).toBeDisplayed();
         await expect(this.swapText).toBeDisplayed();
+        await expect(this.swapNowText).toBeDisplayed();
+        await expect(this.swapNowBtn).toBeDisabled();
     }
 
-    async verifySwapNow() {
-        const swapNow = 'new UiSelector().text("Swap now").className("android.widget.TextView")'
-        const SwapNow = await $(`android=${swapNow}`)
-        await SwapNow.waitForDisplayed({ timeout: 120000 })
-        await expect(SwapNow).toBeDisplayed();
-    }
+
 
     async enterAmtInput(amount) {
 
@@ -598,7 +826,7 @@ class SwapPage {
 
     }
 
-    async uSDTtoUSDC(usdt) {
+    async selectUSDTtoUSDC(usdt) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -609,7 +837,7 @@ class SwapPage {
         await expect(this.uSDCText).toBeDisplayed();
     }
 
-    async uSDCtoUSDT(usdc, usdt) {
+    async selectUSDCtoUSDT(usdc, usdt) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -624,7 +852,70 @@ class SwapPage {
         await (this.uSDTText).click();
     }
 
-    async uSDCtoSOL(usdc, sol) {
+    async selectUSDCtoFUM(usdc, fum) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdc);
+        await (this.uSDCText).click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(fum);
+        await (this.fUMText).click();
+    }
+
+    async selectFUMtoUSDC(fum, usdc) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(fum);
+        await (this.fUMText).click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(usdc);
+        await (this.uSDCText).click();
+    }
+
+    async selectFUMtoUXD(fum, uxd) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(fum);
+        await (this.fUMText).click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(uxd);
+        await (this.uXDText).click();
+    }
+
+    async selectUXDtoFUM(uxd , fum) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(uxd);
+        await (this.uXDText).click();
+        
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(fum);
+        await (this.fUMText).click();
+    }
+
+
+
+
+    async selectUSDCtoSOL(usdc, sol) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -639,7 +930,7 @@ class SwapPage {
         await this.sOLText.click();
     }
 
-    async sOLtoUSDT(usdt) {
+    async selectSOLtoUSDT(usdt) {
 
         await (await this.youReceivedropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -648,7 +939,7 @@ class SwapPage {
         await this.uSDTText.click();
     }
 
-    async uSDTtoSOL(usdt, sol) {
+    async selectUSDTtoSOL(usdt, sol) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -663,7 +954,7 @@ class SwapPage {
         await this.sOLText.click();
     }
 
-    async sOLtoSRM(srm) {
+    async selectSOLtoSRM(srm) {
 
         await expect(this.sOLText).toBeDisplayed();
 
@@ -674,7 +965,7 @@ class SwapPage {
         await this.sRMText.click();
     }
 
-    async sRMtoSOL(srm, sol) {
+    async selectSRMtoSOL(srm, sol) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -689,7 +980,7 @@ class SwapPage {
         await this.sOLText.click();
     }
 
-    async sRMtoUST(srm, ust) {
+    async selectSRMtoUST(srm, ust) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -704,7 +995,7 @@ class SwapPage {
         await this.uSTText.click();
     }
 
-    async uSTtoSRM(ust, srm) {
+    async selectUSTtoSRM(ust, srm) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -719,7 +1010,7 @@ class SwapPage {
         await this.sRMText.click();
     }
 
-    async uSDHtoUSDT(usdh, usdt) {
+    async selectUSDHtoUSDT(usdh, usdt) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -734,7 +1025,7 @@ class SwapPage {
         await this.uSDTText.click();
     }
 
-    async uSDTtoUSDH(usdt, usdh) {
+    async selectUSDTtoUSDH(usdt, usdh) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -749,7 +1040,7 @@ class SwapPage {
         await this.uSDHText.click();
     }
 
-    async sOLtomSOL(mSOL) {
+    async selectSOLtomSOL(mSOL) {
         await expect(this.sOLText).toBeDisplayed();
 
         await (await this.youReceivedropdown).click();
@@ -759,7 +1050,7 @@ class SwapPage {
         await this.mSolText.click();
     }
 
-    async mSOLtoSOL(mSOL, sol) {
+    async selectmSOLtoSOL(mSOL, sol) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -774,7 +1065,7 @@ class SwapPage {
         await this.sOLText.click();
     }
 
-    async soSUSHItoORCA(soSUSHI, orca) {
+    async selectsoSUSHItoORCA(soSUSHI, orca) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -790,7 +1081,7 @@ class SwapPage {
     }
 
 
-    async oRCAtosoSUSHI(orca, soSUSHI) {
+    async selectORCAtosoSUSHI(orca, soSUSHI) {
 
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
@@ -812,6 +1103,22 @@ class SwapPage {
         await (await this.youPaydropdownSearch).click();
         await (await this.youPaydropdownSearch).setValue(usdc);
         await this.uSDCText.click();
+    }
+    async selectSOL(sol) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(sol);
+        await this.sOLText.click();
+    }
+    async selectORCA(orca) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(orca);
+        await this.oRCAText.click();
     }
 
     async selectUST(ust) {
@@ -842,13 +1149,22 @@ class SwapPage {
     }
 
     async selectmSOL(mSOL) {
-
         await (await this.youPaydropdown).click();
         await expect(this.searchForTokenText).toBeDisplayed();
         await (await this.youPaydropdownSearch).click();
         await (await this.youPaydropdownSearch).setValue(mSOL);
         await this.mSolText.click();
     }
+
+    async selectC98(c98) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(c98);
+        await this.c98Text.click();
+    }
+
 
 
 
@@ -1312,26 +1628,18 @@ class SwapPage {
 
     } get() {
 
-    } get() {
-
-    } get() {
-
     }
 
     async verifySwapScreenUI() {
 
-        // const swapScreen = 'new UiSelector().text("Swap").className("android.widget.TextView")'
-        // const SwapScreen = $(`android=${swapScreen}`)
-        // await SwapScreen.waitForDisplayed({ timeout: 10000 })
-        // await expect(swapScreen).toBeDisplayed();
-
         await (this.youPayText).waitForDisplayed({ timeout: 10000 })
         await expect(this.youPayText).toBeDisplayed();
-
         await expect(this.youReceiveText).toBeDisplayed();
 
         await (this.rateText).waitForDisplayed({ timeout: 30000 })
         await expect(this.rateText).toBeDisplayed();
+        await expect(this.kanaswapFeesText).toBeDisplayed();
+        await expect(this.slippageText).toBeDisplayed();
 
         await expect(this.bestPriceText).toBeDisplayed();
     }
@@ -1360,7 +1668,7 @@ class SwapPage {
             'release'
         ]);
         await browser.pause(4000);
-        await this.swapBtn.click();
+        //await this.swapBtn.click();
     }
 
     async changeToMainToDev() {
@@ -1377,4 +1685,4 @@ class SwapPage {
 
     }
 }
-module.exports = new SwapPage(); 
+    module.exports = new SwapPage(); 

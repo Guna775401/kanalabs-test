@@ -1,5 +1,10 @@
-const { sleep } = require("@wdio/utils");
+const swapPage = require("./swap.page");
 
+
+var fs = require('fs');
+const menutabsPage = require("./menutabs.page");
+const dashboardPage = require("./dashboard.page");
+const createwalletPage = require("./createwallet.page");
 
 class SendPage {
 
@@ -23,8 +28,18 @@ class SendPage {
         return $('//android.view.ViewGroup[@content-desc="contentViewDismiss"]/android.widget.TextView[4]');
     }
 
+    get walletNameSendScreen() {
+        return $('//android.view.ViewGroup[@content-desc="contentViewDismiss"]/android.widget.TextView[1]');
+    }
+
+    // Balance Amount 
+
     get balanceAmount() {
         return $('//android.view.ViewGroup[@content-desc="contentViewDismiss"]/android.widget.TextView[5]');
+    }
+
+    get nextScreenBalance() {
+        return $('//android.view.ViewGroup[@content-desc="SOLEnterTokenAmount"]/android.view.ViewGroup[2]/android.widget.TextView[4]');
     }
 
     // Input Address Field
@@ -116,7 +131,7 @@ class SendPage {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[4]');
     }
     get slideBtn() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup');
+        return $('//android.view.ViewGroup[@content-desc="SOLEnterTokenAmount"]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup');
 
     }
     get sendDonebutton() {
@@ -128,10 +143,10 @@ class SendPage {
     }
 
     get successOrFail() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]')
+        return $('//android.view.ViewGroup[@content-desc="SOLNFTSendSuccess"]/android.widget.TextView[1]')
     }
     get result() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]')
+        return $('//android.view.ViewGroup[@content-desc="SOLTokenSendFailed"]/android.widget.TextView[2]')
     }
 
 
@@ -155,9 +170,57 @@ class SendPage {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[4]')
     }
 
+
+    // Dashboard First token balance
+
+    get dashboardFirstTokenBalance() {
+        return $('(//android.view.ViewGroup[@content-desc="sendSolToken"])[1]/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+    get dashboardSecondTokenBalance() {
+        return $('(//android.view.ViewGroup[@content-desc="sendSolToken"])[2]/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+    get dashboardThirdTokenBalance() {
+        return $('(//android.view.ViewGroup[@content-desc="sendSolToken"])[3]/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+    get dashboardFourthTokenBalance() {
+        return $('(//android.view.ViewGroup[@content-desc="sendSolToken"])[4]/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+    get dashboarTokenBalance() {
+        return $('(//android.view.ViewGroup[@content-desc="sendSolToken"])[5]/android.view.ViewGroup/android.widget.TextView[2]');
+    }
+
+    get() {
+        return $('');
+    }
+    get() {
+        return $('');
+    }
+
     get() {
     }
     get() {
+    }
+
+    get create_Viewwallet() {
+        return $('~CREATEORVIEWWALLET');
+    }
+
+    async checkBalanceThreeScreens(address) {
+
+        var firstbalance = await this.dashboardFirstTokenBalance.getText();
+
+        await this.sendBtn.click();
+        var secondbalance = await this.balanceAmount.getText();
+        await this.addressInput.setValue(address);
+        await this.continueBtn.click();
+
+        var thirdbalance = await this.nextScreenBalance.getText();
+
+        secondbalance = secondbalance.replace(/[^Balance: ]/g, '');
+        thirdbalance = thirdbalance.replace(/[^Balance: ]/g, '');
+
+        (firstbalance == secondbalance == thirdbalance)
+
     }
 
 
@@ -169,29 +232,36 @@ class SendPage {
 
     async clickSendDoneBtn() {
 
-        const donetxt = 'new UiSelector().text("Done").className("android.widget.TextView")'
-        const doneTxt = await $(`android=${donetxt}`)
-        await doneTxt.waitForDisplayed({ timeout: 30000 });
-
-        const successOrFailRes = await (this.successOrFail).getText();
-        const typeFailText = await (this.result).getText();
+        await swapPage.doneText.waitForDisplayed({ timeout: 30000 });
 
         let sucess = await (this.sendDonebutton).isDisplayed();
         let fail = await (this.sendFailedDonebutton).isDisplayed();
 
         if (sucess) {
-            console.log(successOrFailRes);
+
+            const successOrFailRes = await (this.successOrFail).getText();
+
+            // (successOrFailRes == "SOL Token Sent!")
+
+            fs.appendFile('./reports/send.txt', "Result : " + successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+
             await (await this.sendDonebutton).click();
         }
-        else if (fail == true) {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
+        else if (fail) {
+
+            const successOrFailRes = await (this.successOrFail).getText();
+            const typeFailText = await (this.result).getText();
+
+            fs.appendFile('./reports/send.txt', "Result : " + successOrFailRes + '\n', function (err) {
+                console.log(err)
+            })
+            fs.appendFile('./reports/send.txt', "Fail Reason : " + typeFailText + '\n', function (err) {
+                console.log(err)
+            })
             await (await this.sendFailedDonebutton).click();
 
-        }
-        else {
-            console.log(successOrFailRes);
-            console.log(typeFailText);
         }
     }
 
@@ -216,73 +286,973 @@ class SendPage {
         await (await this.dashboardFivethToken).click();
     }
 
-    async selectUSDC() {
-        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+
+
+    // async selectUSDC() {
+    //     await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    //     await expect(this.selectTokenDropdown).toBeDisplayed();
+    //     await (await this.selectTokenDropdown).click();
+
+    //     // const usdc = 'new UiSelector().text("USDC").className("android.widget.TextView")'
+    //     // const uSDC = await $(`android=${usdc}`)
+    //     await swapPage.uSDCText.waitForDisplayed({ timeout: 30000 });
+    //     await swapPage.uSDCText.click();
+    //     await (await this.continueBtn).click();
+    // }
+
+    // async selectUSDT() {
+    //     await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    //     await expect(this.selectTokenDropdown).toBeDisplayed();
+    //     await (await this.selectTokenDropdown).click();
+
+    //     // const usdt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
+    //     // const uSDT = await $(`android=${usdt}`)
+    //     await swapPage.uSDTText.waitForDisplayed({ timeout: 30000 });
+    //     await swapPage.uSDTText.click();
+    //     await (await this.continueBtn).click();
+    // }
+    // async selectUSDH() {
+    //     await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    //     await expect(this.selectTokenDropdown).toBeDisplayed();
+    //     await (await this.selectTokenDropdown).click();
+
+    //     const usdh = 'new UiSelector().text("USDH").className("android.widget.TextView")'
+    //     const uSDH = await $(`android=${usdh}`)
+    //     await uSDH.waitForDisplayed({ timeout: 30000 });
+    //     await uSDH.click();
+    //     await (await this.continueBtn).click();
+    // }
+    // async selectUST() {
+    //     await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    //     await expect(this.selectTokenDropdown).toBeDisplayed();
+    //     await (await this.selectTokenDropdown).click();
+
+    //     const ust = 'new UiSelector().text("UST").className("android.widget.TextView")'
+    //     const uST = await $(`android=${ust}`)
+    //     await uST.waitForDisplayed({ timeout: 30000 });
+    //     await uST.click();
+    //     await (await this.continueBtn).click();
+    // }
+    // async selectsoSUSHI() {
+    //     await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    //     await expect(this.selectTokenDropdown).toBeDisplayed();
+    //     await (await this.selectTokenDropdown).click();
+
+    //     const soSUSHI = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
+    //     const soSUSHI1 = await $(`android=${soSUSHI}`)
+    //     await soSUSHI1.waitForDisplayed({ timeout: 30000 });
+    //     await soSUSHI1.click();
+    //     await (await this.continueBtn).click();
+    // }
+
+    async selectsoSUSHI() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
         await expect(this.selectTokenDropdown).toBeDisplayed();
         await (await this.selectTokenDropdown).click();
 
-        const usdc = 'new UiSelector().text("USDC").className("android.widget.TextView")'
-        const uSDC = await $(`android=${usdc}`)
-        await uSDC.waitForDisplayed({ timeout: 30000 });
-        await uSDC.click();
-        await (await this.continueBtn).click();
+        for (let i = 0; i <= 10; i++) {
+
+            const soSUSHI = await (await swapPage.soSUSHIText).isDisplayed();
+
+            if (soSUSHI) {
+                await (await swapPage.soSUSHIText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async selectSOL() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const sol1 = await (await swapPage.sOLText).isDisplayed();
+
+            if (sol1) {
+                await (await swapPage.sOLText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectUSDC() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const usdc = await (await swapPage.uSDCText).isDisplayed();
+
+            if (usdc) {
+                await (await swapPage.uSDCText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectUST() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ust = await (swapPage.uSTText).isDisplayed();
+
+            if (ust) {
+                await (await swapPage.uSTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
     }
 
     async selectUSDT() {
-        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
         await expect(this.selectTokenDropdown).toBeDisplayed();
         await (await this.selectTokenDropdown).click();
 
-        const usdt = 'new UiSelector().text("USDT").className("android.widget.TextView")'
-        const uSDT = await $(`android=${usdt}`)
-        await uSDT.waitForDisplayed({ timeout: 30000 });
-        await uSDT.click();
-        await (await this.continueBtn).click();
+        for (let i = 0; i <= 10; i++) {
+
+            const usdt = await (swapPage.uSDTText).isDisplayed();
+
+            if (usdt) {
+                await (await swapPage.uSDTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
     }
+    async selectSRM() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const srm = await (swapPage.sRMText).isDisplayed();
+
+            if (srm) {
+                await (await swapPage.sRMText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+
+    async selectORCA() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const orca = await (swapPage.oRCAText).isDisplayed();
+
+            if (orca) {
+                await (await swapPage.oRCAText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+
     async selectUSDH() {
-        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
         await expect(this.selectTokenDropdown).toBeDisplayed();
         await (await this.selectTokenDropdown).click();
 
-        const usdh = 'new UiSelector().text("USDH").className("android.widget.TextView")'
-        const uSDH = await $(`android=${usdh}`)
-        await uSDH.waitForDisplayed({ timeout: 30000 });
-        await uSDH.click();
-        await (await this.continueBtn).click();
+        for (let i = 0; i <= 10; i++) {
+
+            const usdh = await (swapPage.uSDHText).isDisplayed();
+
+            if (usdh) {
+                await (await swapPage.uSDHText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
     }
-    async selectUST() {
-        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    async selectRAY() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
         await expect(this.selectTokenDropdown).toBeDisplayed();
         await (await this.selectTokenDropdown).click();
 
-        const ust = 'new UiSelector().text("UST").className("android.widget.TextView")'
-        const uST = await $(`android=${ust}`)
-        await uST.waitForDisplayed({ timeout: 30000 });
-        await uST.click();
-        await (await this.continueBtn).click();
+        for (let i = 0; i <= 10; i++) {
+
+            const ray = await (swapPage.rAYText).isDisplayed();
+
+            if (ray) {
+                await (await swapPage.rAYText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
     }
-    async selectsoSUSHI() {
-        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+    async selectAPT() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
         await expect(this.selectTokenDropdown).toBeDisplayed();
         await (await this.selectTokenDropdown).click();
 
-        const soSUSHI = 'new UiSelector().text("soSUSHI").className("android.widget.TextView")'
-        const soSUSHI1 = await $(`android=${soSUSHI}`)
-        await soSUSHI1.waitForDisplayed({ timeout: 30000 });
-        await soSUSHI1.click();
-        await (await this.continueBtn).click();
+        for (let i = 0; i <= 10; i++) {
+
+            const apt = await (swapPage.aPTText).isDisplayed();
+
+            if (apt) {
+                await (await swapPage.aPTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
     }
+    async selectFTT() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ftt = await (swapPage.fTTText).isDisplayed();
+
+            if (ftt) {
+                await (await swapPage.fTTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async selectFUM() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const fum = await (swapPage.fUMText).isDisplayed();
+
+            if (fum) {
+                await (await swapPage.fUMText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDUST() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const dust = await (swapPage.dUSTText).isDisplayed();
+
+            if (dust) {
+                await (await swapPage.dUSTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectFORGE() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const forge = await (swapPage.fORGEText).isDisplayed();
+
+            if (forge) {
+                await (await swapPage.fORGEText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectUSH() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ush = await (swapPage.uSHText).isDisplayed();
+
+            if (ush) {
+                await (await swapPage.uSHText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectCCG() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ccg = await (swapPage.cCGText).isDisplayed();
+
+            if (ccg) {
+                await (await swapPage.cCGText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async selectPAI() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const pai = await (swapPage.pAIText).isDisplayed();
+
+            if (pai) {
+                await (await swapPage.pAIText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async selectDFL() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const dfl = await (swapPage.dFLText).isDisplayed();
+
+            if (dfl) {
+                await (await swapPage.dFLText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectGST() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const gst = await (swapPage.gSTText).isDisplayed();
+
+            if (gst) {
+                await (await swapPage.gSTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectMNDE() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const mnde = await (swapPage.mNDEText).isDisplayed();
+
+            if (mnde) {
+                await (await swapPage.mNDEText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async selectsoTOMO() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const soTOMO = await (swapPage.soTOMOText).isDisplayed();
+
+            if (soTOMO) {
+                await (await swapPage.soTOMOText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectUXD() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const uxd = await (swapPage.uXDText).isDisplayed();
+
+            if (uxd) {
+                await (await swapPage.uXDText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectGMT() {
+
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
+        await expect(swapPage.sOLText).toBeDisplayed();
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const gmt = await (swapPage.gMTText).isDisplayed();
+
+            if (gmt) {
+                await (await swapPage.gMTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+
 
 
     async verifyBalanceEqualToMax_Amount() {
         await this.balanceAmountNextScreen.waitForDisplayed({ timeout: 30000 });
         var balance = await (await this.balanceAmountNextScreen).getText();
-        var balance1 = balance.replace(/[^0-9 ^.]/g, ''); 
+        var balance1 = balance.replace(/[^0-9 ^.]/g, '');
         await (await this.maxBtn).click();
         const maxAmount = await (await this.inputAmount).getText();
-        (balance1==maxAmount)
+        (balance1 == maxAmount)
+    }
+
+   get selectTokenSol() {
+        const seltoken = 'new UiSelector().text("Selected Token: SOL").className("android.widget.TextView")'
+        const seltoken1 =  $(`android=${seltoken}`)
+        return seltoken1;
 
     }
+
+    async verify_Selected_Token_Sol() {
+        await (this.selectTokenSol).waitForDisplayed({ timeout: 15000 });
+        await expect(this.selectTokenSol).toBeDisplayed();
+    }
+
+    async verify_Selected_Token_mSol() {
+
+    }
+
+    async selectDashSOL() {
+
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const sol = await (await swapPage.sOLText).isDisplayed();
+
+            if (sol) {
+                await (await swapPage.sOLText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashUSDC() {
+        await (await this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+            const sol = await (await swapPage.uSDCText).isDisplayed();
+
+            if (sol) {
+                await (await swapPage.uSDCText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async selectDashUST() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ust = await (swapPage.uSTText).isDisplayed();
+
+            if (ust) {
+                await (await swapPage.uSTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+
+    async selectDashUSDT() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const usdt = await (swapPage.uSDTText).isDisplayed();
+
+            if (usdt) {
+                await (await swapPage.uSDTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+    async selectDashSRM() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const srm = await (swapPage.sRMText).isDisplayed();
+
+            if (srm) {
+                await (await swapPage.sRMText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+
+    async selectDashORCA() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const orca = await (swapPage.oRCAText).isDisplayed();
+
+            if (orca) {
+                await (await swapPage.oRCAText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+
+    async selectDashUSDH() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const usdh = await (swapPage.uSDHText).isDisplayed();
+
+            if (usdh) {
+                await (await swapPage.uSDHText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+
+            }
+        }
+    }
+    async selectDashRAY() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ray = await (swapPage.rAYText).isDisplayed();
+
+            if (ray) {
+                await (await swapPage.rAYText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashAPT() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const apt = await (swapPage.aPTText).isDisplayed();
+
+            if (apt) {
+                await (await swapPage.aPTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashFTT() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ftt = await (swapPage.fTTText).isDisplayed();
+
+            if (ftt) {
+                await (await swapPage.fTTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+
+    async selectDashFUM() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const fum = await (swapPage.fUMText).isDisplayed();
+
+            if (fum) {
+                await (await swapPage.fUMText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashDUST() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const dust = await (swapPage.dUSTText).isDisplayed();
+
+            if (dust) {
+                await (await swapPage.dUSTText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashFORGE() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const forge = await (swapPage.fORGEText).isDisplayed();
+
+            if (forge) {
+                await (await swapPage.fORGEText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashUSH() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ush = await (swapPage.uSHText).isDisplayed();
+
+            if (ush) {
+                await (await swapPage.uSHText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+    async selectDashCCG() {
+        await this.create_Viewwallet.waitForDisplayed({ timeout: 10000 });
+
+        for (let i = 0; i <= 10; i++) {
+
+            const ccg = await (swapPage.cCGText).isDisplayed();
+
+            if (ccg) {
+                await (await swapPage.cCGText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+
+
 
     async() {
 
@@ -293,57 +1263,107 @@ class SendPage {
     async() {
 
     }
-    async() {
 
-    }
-
-
-
-
-    async verifySendscreen() {
+    get sendText() {
         const send = 'new UiSelector().text("Send").className("android.widget.TextView")'
-        const sendscreen = await $(`android=${send}`)
-        await sendscreen.waitForDisplayed({ timeout: 30000 });
-        await expect(sendscreen).toBeDisplayed();
-        await expect(this.backBtn).toBeDisplayed();
-        await expect(this.continueBtn).toBeDisplayed();
+        const sendscreen = $(`android=${send}`)
+        return sendscreen;
     }
+
+
+
+    async verify_WalletName_Dashboard_And_Sendscreen() {
+
+        var dashName = await dashboardPage.walletName.getText();
+        await this.sendBtn.click();
+        var sendName = await this.walletNameSendScreen.getText();
+        (dashName == sendName)
+    }
+
+    get toAddressText() {
+        const address = 'new UiSelector().text("To Address of the wallet").className("android.widget.TextView")'
+        const addressInput = $(`android=${address}`)
+        return addressInput;
+    }
+    get selectTokenDropdownText() {
+        const selectToken = 'new UiSelector().text("Select Token To Transfer").className("android.widget.TextView")'
+        const selectTokenDropdown = $(`android=${selectToken}`)
+        return selectTokenDropdown;
+    }
+
+    get balanceText() {
+        const balance = 'new UiSelector().text("Balance").className("android.widget.TextView")'
+        const balancetxt = $(`android=${balance}`)
+        return balancetxt;
+    }
+
+    get invalidToastText() {
+        const balance = 'new UiSelector().text("Please Enter Valid To Address").className("android.widget.TextView")'
+        const balancetxt = $(`android=${balance}`)
+        return balancetxt;
+    }
+
+    get() {
+
+    }
+    get() {
+
+    }
+    get() {
+
+    }
+    get() {
+
+    }
+
+
+
+
 
     async verifySendUI() {
-        const address = 'new UiSelector().text("To Address or Name of the wallet").className("android.widget.TextView")'
-        const addressInput = await $(`android=${address}`)
-        await addressInput.waitForDisplayed({ timeout: 30000 });
-        await expect(addressInput).toBeDisplayed();
-        const selectToken = 'new UiSelector().text("Select Token To Transfer").className("android.widget.TextView")'
-        const selectTokenDropdown = await $(`android=${selectToken}`)
-        await expect(selectTokenDropdown).toBeDisplayed();
-        // const balance = 'new UiSelector().text("Balance").className("android.widget.TextView")'
-        // const balancetxt = await $(`android=${balance}`)
-        // await expect(balancetxt).toBeDisplayed();
+        await this.sendText.waitForDisplayed({ timeout: 15000 });
+        await expect(this.sendText).toBeDisplayed();
+        await expect(this.backBtn).toBeDisplayed();
+        await expect(this.continueBtn).toBeDisplayed();
+        await expect(this.toAddressText).toBeDisplayed();
+        await expect(this.selectTokenDropdownText).toBeDisplayed();
     }
 
     async enterAddress(address) {
-        await this.inputAddressField.waitForDisplayed({ timeout: 30000 });
+        await this.inputAddressField.waitForDisplayed({ timeout: 15000 });
         await (await this.inputAddressField).click();
+        await (await this.inputAddressField).clearValue();
         await (await this.inputAddressField).setValue(address);
-        driver.hideKeyboard();
+        await driver.hideKeyboard();
     }
     async clearAddress() {
         await this.inputAddressField.waitForDisplayed({ timeout: 30000 });
         await (await this.inputAddressField).clearValue();
-        driver.hideKeyboard();
+        await driver.hideKeyboard();
     }
 
     async enterAmount(amount) {
-        await this.inputAmount.waitForDisplayed({ timeout: 30000 });
+        await this.inputAmount.waitForDisplayed({ timeout: 10000 });
         await (await this.inputAmount).click();
         await (await this.inputAmount).setValue(amount);
-        driver.hideKeyboard();
+        await driver.hideKeyboard();
         //await browser.pause(3000)
     }
     async clickContinueBtn() {
-        await this.continueBtn.waitForDisplayed({ timeout: 30000 });
+        await this.continueBtn.waitForDisplayed({ timeout: 10000 });
         await (await this.continueBtn).click();
+    }
+
+    async invaildPublicAddress_PopupHandle() {
+
+        await createwalletPage.popupId.waitForDisplayed({ timeout: 5000 });
+        await expect(createwalletPage.popupId).toHaveText('Please Enter Valid To Address')
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 322 },
+            { action: 'moveTo', x: 517, y: 184 },
+            'release'
+        ]);
+
     }
 
     async verifySendUI1() {
@@ -371,17 +1391,78 @@ class SendPage {
         ]);
 
     }
-    async selectUNKNOWN() {
+
+
+    async select_mSOL_TokenDropdown() {
         await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
         await expect(this.selectTokenDropdown).toBeDisplayed();
-
-
         await (await this.selectTokenDropdown).click();
-        const unKnownSel = 'new UiSelector().text("Unknown Solana Token").className("android.widget.TextView")'
-        const unKnownSel1 = $(`android=${unKnownSel}`)
-        await expect(unKnownSel1).toBeDisplayed();
-        unKnownSel1.click
+
+        for (let i = 0; i <= 10; i++) {
+
+            const mSol = await (await swapPage.mSolText).isDisplayed();
+
+            if (mSol) {
+                await (await swapPage.mSolText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
     }
+
+    async select_SRM_TokenDropdown() {
+        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const srm = await (await swapPage.sRMText).isDisplayed();
+
+            if (srm) {
+                await (await swapPage.sRMText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+    async select_ORCA_TokenDropdown() {
+        await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
+        await expect(this.selectTokenDropdown).toBeDisplayed();
+        await (await this.selectTokenDropdown).click();
+
+        for (let i = 0; i <= 10; i++) {
+
+            const mSol = await (await swapPage.mSolText).isDisplayed();
+
+            if (mSol) {
+                await (await swapPage.mSolText).click();
+                return;
+            }
+            else {
+                driver.touchAction([
+                    { action: 'longPress', x: 517, y: 1823 },
+                    { action: 'moveTo', x: 517, y: 1026 },
+                    'release'
+                ]);
+            }
+        }
+    }
+
+
 
     async selectSecondToken() {
         await this.selectTokenDropdown.waitForDisplayed({ timeout: 10000 })
@@ -466,16 +1547,20 @@ class SendPage {
         await expect(this.sendDonebutton).toBeDisplayed();
     }
 
-
-
-
+    async clickAmount_Screen_BackBtn() {
+        await this.backbtnamountscreen.waitForDisplayed({ timeout: 10000 });
+        await this.backbtnamountscreen.click();
+    }
+    async clickPublicAddress_Screen_BackBtn() {
+        await this.backBtn.waitForDisplayed({ timeout: 10000 });
+        await this.backBtn.click();
+    }
 
 
 
 
 
 }
-
 
 
 module.exports = new SendPage();

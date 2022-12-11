@@ -1,4 +1,4 @@
-var assert = require('assert');
+const RemindMeLater = require("./remindmelater.page");
 
 class SecureNowPage {
 
@@ -41,10 +41,10 @@ class SecureNowPage {
         return $('~confrimSeedBackBtn');
     }
 
-// continue button seed correct answer after continue
-get correctContinueBtn() {
-    return $('~confrimSeedContinueBtn');
-}
+    // continue button seed correct answer after continue
+    get correctContinueBtn() {
+        return $('~confrimSeedContinueBtn');
+    }
 
     get finishBtn() {
         return $('~goToHomeDashboardFromSuccessProtection');
@@ -142,35 +142,164 @@ get correctContinueBtn() {
 
 
 
-    get flashItemCopy() {
-        return $('');
+    get secureyourwalletText() {
+        const secureYourWallet = 'new UiSelector().text("Secure your wallet").className("android.widget.TextView")'
+        const secureYourWallet1 =  $(`android=${secureYourWallet}`)
+        return secureYourWallet1;
     }
 
+    get secureyourwalletDesText() {
+        const secureYourWalletDes = 'new UiSelector().text("Dont risk losing your funds. Protect your wallet by saving your Seed phrase in a place you trust. It is the only way to recover your wallet if you get locked out of the app or get a new device.").className("android.widget.TextView")'
+        const secureYourWalletDes1 =  $(`android=${secureYourWalletDes}`)
+        return secureYourWalletDes1;
+    }
+    // get secureyourseedphraseText() {
+    //     const secureyourseedphrase = 'new UiSelector().text("").className("android.widget.TextView")'
+    //     const secureyourseedphrase1 = await $(`android=${secureyourseedphrase}`)
+    //     return secureyourseedphrase1;
+    // }
+    get writedownyourseedonPaperText() {
+        const secureyourseedphraseonPaper = 'new UiSelector().text("Write down your seed phrase on a paper and store in a safe place.").className("android.widget.TextView")'
+        const secureyourseedphraseonPaper1 =  $(`android=${secureyourseedphraseonPaper}`)
+        return secureyourseedphraseonPaper1;
+    }
 
+    get secureyourwalletAllText() {
+        const securitylevel = 'new UiSelector().text("Security level: Very strong").className("android.widget.TextView")'
+        const securitylevel1 =  $(`android=${securitylevel}`)
+
+        const risesAre = 'new UiSelector().text("Risks are:").className("android.widget.TextView")'
+        const risesAre1 =  $(`android=${risesAre}`)
+
+        const youlosit = 'new UiSelector().text("• You lose it").className("android.widget.TextView")'
+        const youlosit1 =  $(`android=${youlosit}`)
+
+        const youforget = 'new UiSelector().text("• You forget where you put it").className("android.widget.TextView")'
+        const youforget1 =  $(`android=${youforget}`)
+
+        const someone = 'new UiSelector().text("• Someone else finds it").className("android.widget.TextView")'
+        const someone1 =  $(`android=${someone}`)
+
+        // const otheroption = 'new UiSelector().text("Other options: Doesn't have to be paper!").className("android.widget.TextView")'
+        // const otheroption1 = await $(`android=${otheroption}`)
+
+        const tips = 'new UiSelector().text("Tips:").className("android.widget.TextView")'
+        const tips1 =  $(`android=${tips}`)
+
+        const storeinbank = 'new UiSelector().text("• Store in bank vault").className("android.widget.TextView")'
+        const storeinbank1 =  $(`android=${storeinbank}`)
+
+        const storeinsafe = 'new UiSelector().text("• Store in a safe place").className("android.widget.TextView")'
+        const storeinsafe1 =  $(`android=${storeinsafe}`)
+
+        const storeinmultiple = 'new UiSelector().text("• Store in multiple secret places").className("android.widget.TextView")'
+        const storeinmultiple1 =  $(`android=${storeinmultiple}`)
+
+        // const secureyourseedphrase = 'new UiSelector().text("").className("android.widget.TextView")'
+        // const secureyourseedphrase1 = await $(`android=${secureYourWalletDes}`)
+
+        // Doesn't work give a array or {}
+
+        return securitylevel1, risesAre1, youlosit1, youforget1, someone1, tips1, storeinbank1, storeinsafe1, storeinmultiple1;
+
+
+
+    }
+    get writedownyourseedText() {
+        const writedown = 'new UiSelector().text("Write down your seed phrase").className("android.widget.TextView")'
+        const writedown1 =  $(`android=${writedown}`)
+        return writedown1;
+    }
+    // get writedownyourseedDesText() {
+    //     const writedownDes = `new UiSelector().text("This is your seed phrase. You'll be asked to re-enter this phrase (in order) on the next step.").className("android.widget.TextView")`
+    //     const writedownDes1 = await $(`android=${writedownDes}`)
+    //     return writedownDes1;    
+    // }
+
+    get copyseedText() {
+        const copyseed = 'new UiSelector().text("Copy Seeds").className("android.widget.TextView")'
+        const copyseed1 =  $(`android=${copyseed}`)
+        return copyseed1;
+    }
+    get confirmyourseedText() {
+        const confirmyourseed = 'new UiSelector().text("Confirm your seed").className("android.widget.TextView")'
+        const confirmyourseed1 =  $(`android=${confirmyourseed}`)
+        return confirmyourseed1;
+    }
+    get selecteachwordText() {
+        const selecteach = 'new UiSelector().text("Select each word in the order it was presented to you").className("android.widget.TextView")'
+        const selecteach1 =  $(`android=${selecteach}`)
+        return selecteach1;
+    }
+    get congratulationsText() {
+        const congratulations = 'new UiSelector().text("Congratulations!").className("android.widget.TextView")'
+        const congratulations1 =  $(`android=${congratulations}`)
+        return congratulations1;
+    }
+    // get congratulationDesText() {
+    //     const congratulationsdes = 'new UiSelector().text("You've successfully protected your wallet. Remember to keep your seed phrase safe, it's your responsibility!").className("android.widget.TextView")'
+    //     const congratulationsdes1 = await $(`android=${congratulationsdes}`)
+    //     return congratulationsdes1;
+    // }
+    
+    get tabtorevealText() {
+        const tabtoreveal = 'new UiSelector().text("Tap to reveal your seed phrase").className("android.widget.TextView")'
+        const tabtoreveal1 =  $(`android=${tabtoreveal}`)
+        return tabtoreveal1;
+    }
+    get makesureText() {
+        const makesure = 'new UiSelector().text("Make sure no one is watching your screen.").className("android.widget.TextView")'
+        const makesure1 =  $(`android=${makesure}`)
+        return makesure1;
+    }
+    get() {
+        const selecteach = 'new UiSelector().text("").className("android.widget.TextView")'
+        const selecteach1 =  $(`android=${selecteach}`)
+        return;
+    }
+    get remindMeLaterBtn() {
+        return $('~openReminMeLater');
+    }
     async clickstartBtn() {
-        await (await this.start).waitForDisplayed({ timeout: 120000 });
+        await (await this.start).waitForDisplayed({ timeout: 60000 });
+        await expect(this.secureyourwalletText).toBeDisplayed();
+        await expect(this.secureyourwalletDesText).toBeDisplayed();
+        await expect(this.remindMeLaterBtn).toBeDisplayed();
         await (await this.start).click();
+        await expect(this.secureyourwalletText).toBeDisplayed();
+        await expect(this.writedownyourseedonPaperText).toBeDisplayed();
+        await expect(this.secureyourwalletAllText).toBeDisplayed();
         await (await this.secureStart).click();
     }
 
     async eyeIconClick() {
+        await expect(this.tabtorevealText).toBeDisplayed();
+        await expect(this.makesureText).toBeDisplayed();
         await (await this.eyeIcon).click();
-
     }
 
     async continueBtnClick() {
+        await expect(this.backBtn).toBeDisplayed();
+        await expect(this.writedownyourseedText).toBeDisplayed();
+        // await expect(this.writedownyourseedDesText).toBeDisplayed();
+        await expect(this.copySeeds).toBeDisplayed();
+        await expect(this.copyseedText).toBeDisplayed();
         await (await this.continueBtn).click();
     }
 
     async confirmSeedContinueBtnClick() {
+        await expect(this.backBtn).toBeDisplayed();
+        await expect(this.confirmyourseedText).toBeDisplayed();
+        await expect(this.selecteachwordText).toBeDisplayed();
         await (await this.confirmSeedContinueBtn).click();
 
     }
     async clickContinueandFinishBtn() {
-        await (await this.correctContinueBtn).waitForDisplayed({ timeout: 120000 });
+        await (await this.correctContinueBtn).waitForDisplayed({ timeout: 30000 });
         await (await this.correctContinueBtn).click();
+        await expect(this.congratulationsText).toBeDisplayed();
+        //await expect(this.congratulationsDesText).toBeDisplayed();
         await (await this.finishBtn).click();
-
     }
 
 
@@ -276,11 +405,8 @@ get correctContinueBtn() {
                 default:
                     console.log("Error");
             }
-
         }
-
     }
-
 }
 
 

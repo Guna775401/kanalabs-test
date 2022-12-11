@@ -1,8 +1,0 @@
-Result = SOL Deposit successful!
-Result = Please check your dashboard for changes 
-Result = SOL Deposit successful!
-Result = Please check your dashboard for changes 
-Result = SOL Deposit successful!
-Result = Please check your dashboard for changes 
-Result = USDC Deposit successful!
-Result = Please check your dashboard for changes 

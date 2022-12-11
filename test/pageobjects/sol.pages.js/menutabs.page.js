@@ -1,8 +1,7 @@
-const createwalletPage = require("./createwallet.page");
-const { createwallet } = require("./createwallet.page");
-const dashboardPage = require("./dashboard.page");
-const { logout } = require("./logut.page");
 
+const createwalletPage = require("./createwallet.page");
+const dashboardPage = require("./dashboard.page");
+const logutPage = require("./logut.page");
 
 class MenuTabsOptions {
 
@@ -86,8 +85,11 @@ class MenuTabsOptions {
     get menuMultipleWallet_ViewOption() {
         return $('//android.view.ViewGroup[@content-desc="solShowAccount"]/android.view.ViewGroup[2]')
     }
-    get menuCancelButton() {
+    get menuCloseButton() {
         return $('~SolDrawerClose');
+    }
+    get() {
+        solHeaderNetworkButton
     }
     get menuCreateWallet() {
         return $('~createWalletWrapper')
@@ -154,30 +156,54 @@ class MenuTabsOptions {
     // Text
     get createWalletText() {
         const createwalletText = 'new UiSelector().text("Create Wallet").className("android.widget.TextView")'
-        const createwalletText1 =  $(`android=${createwalletText}`)
+        const createwalletText1 = $(`android=${createwalletText}`)
         return createwalletText1;
     }
 
     get nameYourWalletText() {
         const nameyourwalletText = 'new UiSelector().text("Name your wallet").className("android.widget.TextView")'
-        const nameyourwalletText1 =  $(`android=${nameyourwalletText}`)
+        const nameyourwalletText1 = $(`android=${nameyourwalletText}`)
         return nameyourwalletText1;
 
     }
     get nameYourWalletDesText() {
         const nameyourwalletDesText = 'new UiSelector().text("Give an unique name to your wallet. You will be able to receive tokens using this wallet name, without the need for using a complicated public address! Powered by Kana and SNS").className("android.widget.TextView")'
-        const nameyourwalletDesText1 =  $(`android=${nameyourwalletDesText}`)
+        const nameyourwalletDesText1 = $(`android=${nameyourwalletDesText}`)
         return nameyourwalletDesText1;
+    }
+    get networkText() {
+        const network = 'new UiSelector().text("Network").className("android.widget.TextView")'
+        const network1 = $(`android=${network}`)
+        return network1;
+    }
+    get changePinText() {
+        const changepin = 'new UiSelector().text("Change Pin").className("android.widget.TextView")'
+        const changepin1 = $(`android=${changepin}`)
+        return changepin1;
+    }
+    get changePinDesText() {
+        const changepindes = 'new UiSelector().text("Please enter your current Pin to update your new Pin").className("android.widget.TextView")'
+        const changepin1 = $(`android=${changepindes}`)
+        return changepin1;
+    }
+    get() {
+
+    }
 
 
-    } get() { } get() { } get() { } get() { } get() { } get() { } get() { }
+
+    get() { } get() { } get() { } get() { }
 
     //return $('')
+
+    async clickMenuCancelBtn() {
+        await this.menuCloseButton.click();
+    }
+
 
     async() {
         return $('')
     }
-
     async verifyNetwork() {
         await expect(this.dashboardNetworkTab).toBeDisplayed();
     }
@@ -202,38 +228,32 @@ class MenuTabsOptions {
     }
 
     async verifyDisplay_DevNetAndMainNet() {
-        await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
-        await browser.pause(10000);
+        await (await this.menuTab).waitForDisplayed({ timeout: 30000 });
+        //await browser.pause(5000);
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
+        await expect(this.networkText).toBeDisplayed();
         await expect(this.devNetworkTab).toBeDisplayed();
         await expect(this.mainNetworkTab).toBeDisplayed();
+        await expect(this.backBtnNetwork).toBeDisplayed();
         await this.backBtnNetwork.click();
     }
 
+
     async VerifyMenu_Wallet() {
         await (await this.menuSolWalletCard).waitForDisplayed({ timeout: 30000 });
-        await expect(this.menuCancelButton).toBeDisplayed();
+        await expect(this.menuCloseButton).toBeDisplayed();
         await expect(this.menuSolWalletCard).toBeDisplayed();
         await expect(this.menuSolWalletName).toBeDisplayed();
         await expect(this.menuSolWalletBalance).toBeDisplayed();
         await expect(this.menuPublicAddress).toBeDisplayed();
-        await expect(this.menuMultipleWallet_ViewOption).toBeDisplayed();
-        await (this.menuMultipleWallet_ViewOption).click();
-        await expect(this.createWalletText).toBeDisplayed();
-        await expect(this.menuCreateWallet).toBeDisplayed();
+        // await expect(this.menuMultipleWallet_ViewOption).toBeDisplayed();
+        // await (this.menuMultipleWallet_ViewOption).click();
+        // await expect(this.createWalletText).toBeDisplayed();
+        // await expect(this.menuCreateWallet).toBeDisplayed();
     }
 
-    async enterWalletName(walletName) {
-        await expect(createwalletPage.backBtn).toBeDisplayed();
-        await expect(this.nameYourWalletText).toBeDisplayed();
-        await expect(this.nameYourWalletDesText).toBeDisplayed();
-        await (await createwalletPage.inputwalletName).click();
-        await (await createwalletPage.inputwalletName).clearValue();
-        await (await createwalletPage.inputwalletName).setValue(walletName)
-        driver.hideKeyboard();
-        await (await createwalletPage.continueBtn).click();
-    }
+
 
     async verifyCreateFirstName(WalletName1) {
         var name = await (await dashboardPage.walletName).getText();
@@ -254,24 +274,33 @@ class MenuTabsOptions {
 
     // Click Function
 
-async clickmenuINMultipleWallet_ViewOption(){
-    await expect(this.menuMultipleWallet_ViewOption).toBeDisplayed();
-    await (this.menuMultipleWallet_ViewOption).click();
+    async clickmenuINMultipleWallet_ViewOption() {
+        await expect(this.menuMultipleWallet_ViewOption).toBeDisplayed();
+        await (this.menuMultipleWallet_ViewOption).click();
 
-}
+    }
 
     async clickMenuTab() {
+        await browser.pause(5000);
         await this.menuTab.click();
     }
     async clickChangePin() {
-        await expect(this.dashboardChangePin).toBeDisplayed();
+       // await expect(this.dashboardChangePin).toBeDisplayed();
         await this.dashboardChangePin.click();
     }
-    async clickCancelbtn() {
-        await (await this.cancelButton).click();
+    async clickChangePinBackBtn() {
+        await expect(this.changePinText).toBeDisplayed();
+        await expect(this.changePinDesText).toBeDisplayed();
+        await this.changepinToBackDash.click();
     }
 
+get scrollViewInMenuCreateWallet(){
+    return $('//android.view.ViewGroup[@content-desc="SolHomeDashboard"]/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView')
+}
+
     async clickCreateWalletINMenutab() {
+        await expect(this.scrollViewInMenuCreateWallet).toBeDisplayed();
+        await this.scrollViewInMenuCreateWallet.click();
         await (await this.menuCreateWallet).click();
     }
 
@@ -310,6 +339,15 @@ async clickmenuINMultipleWallet_ViewOption(){
         await this.backBtnNetwork.click();
     }
 
+    async verifyLogoutTab() {
+        await logutPage.logoutTab.click();
+        await expect(logutPage.logoutYes).toBeDisplayed();
+        await expect(logutPage.areYouSureLogoutText).toBeDisplayed();
+        await expect(logutPage.logoutCancelBtn).toBeDisplayed();
+
+    }
+
+
     async verifyClickable_MainNet() {
         await expect(this.dashboardNetworkTab).toBeClickable();
         await expect(this.mainNetworkTab).toBeClickable();
@@ -321,15 +359,27 @@ async clickmenuINMultipleWallet_ViewOption(){
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
         await this.devNetworkTab.click();
-
+        await browser.pause(5000)
+        await this.backBtnNetwork.click();
+        await this.menuCloseButton.click();
+        
+        driver.touchAction([
+            { action: 'longPress', x: 486, y: 149 },
+            { action: 'moveTo', x: 452, y: 904 },
+            'release'
+        ]);
     }
 
     async changeToDevtoMain() {
+        await browser.pause(5000)
         await (await this.menuTab).waitForDisplayed({ timeout: 60000 });
         await this.menuTab.click();
         await this.dashboardNetworkTab.click();
         await this.mainNetworkTab.click();
-        await browser.pause(2000)
+        await browser.pause(5000)
+        await this.backBtnNetwork.click();
+        await this.menuCloseButton.click();
+        // await browser.pause(2000)
         driver.touchAction([
             { action: 'longPress', x: 486, y: 149 },
             { action: 'moveTo', x: 452, y: 904 },
@@ -345,19 +395,10 @@ async clickmenuINMultipleWallet_ViewOption(){
     //     await (await this.solDarkmode).click();
     // }
 
-    async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
 
-        await (await createwalletPage.loginPin1).click();
-        await (await createwalletPage.loginPin1).setValue(pin1);
-        await (await createwalletPage.loginPin2).setValue(pin2);
-        await (await createwalletPage.loginPin3).setValue(pin3);
-        await (await createwalletPage.loginPin4).setValue(pin4);
-        await (await createwalletPage.loginPin5).setValue(pin5);
-        await (await createwalletPage.loginPin6).setValue(pin6);
-    }
+
     async changePin_SetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
+        //   await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 30000 });
 
         await (await createwalletPage.loginPin1).click();
         await (await createwalletPage.loginPin1).setValue(pin1);
@@ -367,17 +408,8 @@ async clickmenuINMultipleWallet_ViewOption(){
         await (await createwalletPage.loginPin5).setValue(pin5);
         await (await createwalletPage.loginPin6).setValue(pin6);
     }
-    async changePin_ConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
-        await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 240000 });
 
-        await (await createwalletPage.loginPin1).click();
-        await (await createwalletPage.loginPin1).setValue(pin1);
-        await (await createwalletPage.loginPin2).setValue(pin2);
-        await (await createwalletPage.loginPin3).setValue(pin3);
-        await (await createwalletPage.loginPin4).setValue(pin4);
-        await (await createwalletPage.loginPin5).setValue(pin5);
-        await (await createwalletPage.loginPin6).setValue(pin6);
-    }
+
 
     async verifychangePintoDashBackbtn() {
         await expect(this.changepinToBackDash).toBeDisplayed();

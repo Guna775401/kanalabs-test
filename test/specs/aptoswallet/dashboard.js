@@ -1,16 +1,15 @@
-const loginPage = require("../pageobjects/login.page");
-const neondashboardPage = require("../pageobjects/neon.pages.js/neondashboard.page");
-const { createwallet } = require("../pageobjects/sol.pages.js/createwallet.page");
-const { async } = require("../pageobjects/sol.pages.js/dashboard.page");
-const dashboardPage = require("../pageobjects/sol.pages.js/dashboard.page");
-const lend_borrowPage = require("../pageobjects/sol.pages.js/lend_borrow.page");
-const logutPage = require("../pageobjects/sol.pages.js/logut.page");
-const { logout } = require("../pageobjects/sol.pages.js/logut.page");
-const menutabsPage = require("../pageobjects/sol.pages.js/menutabs.page");
-const sendPage = require("../pageobjects/sol.pages.js/send.page");
-const stakePage = require("../pageobjects/sol.pages.js/stake.page");
-const swapPage = require("../pageobjects/sol.pages.js/swap.page");
-const turboPage = require("../pageobjects/sol.pages.js/turbo.page");
+const loginPage = require("../../pageobjects/login.page");
+const neondashboardPage = require("../../pageobjects/neon.pages.js/neondashboard.page");
+const dashboardPage = require("../../pageobjects/sol.pages.js/dashboard.page");
+const lend_borrowPage = require("../../pageobjects/sol.pages.js/lend_borrow.page");
+const logutPage = require("../../pageobjects/sol.pages.js/logut.page");
+const menutabsPage = require("../../pageobjects/sol.pages.js/menutabs.page");
+const sendPage = require("../../pageobjects/sol.pages.js/send.page");
+const stakePage = require("../../pageobjects/sol.pages.js/stake.page");
+const swapPage = require("../../pageobjects/sol.pages.js/swap.page");
+const CreateWalletPage = require('../../pageobjects/sol.pages.js/createwallet.page');
+
+
 
 
 
@@ -23,10 +22,9 @@ describe('Verify Dashboard SOL', async () => {
         await dashboardPage.verifyHistorytab();
         await dashboardPage.verifyTokentab();
         await dashboardPage.verifyCreate_Viewwallet();
-        // Need create/view wallet verify function
     });
 
-    it('DS2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value and ', async () => {
+    it('DS2: Verify Displayed or Not Sol wallet dashboard and Menu option Neon wallet and Cliped copy and Scan QR and Holdling value ', async () => {
         await dashboardPage.verifymenuoption();
         await neondashboardPage.verifyNeonWallet();
         await dashboardPage.verifyWalletName_SolLogo();
@@ -54,45 +52,36 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.verifyShow_Seed_phrase();
         await menutabsPage.clickCancelbtn();
     });
-    // DS3 same to DS5
 
-
-    it('DS9: Verify Clickable and Displayed or Not DevNet and MainNet', async () => {
+    it('DS5: Verify Menu option text displayed or Not ', async () => {
         await menutabsPage.verifyDisplay_DevNetAndMainNet();
-        // await menutabsPage.clickCancelbtn();
-    })
+        // Need Referral & Logount text
+    });
 
-    it('DS10: Verify ChangePin funtionality working or not', async () => {
+    it('DS6: Verify ChangePin funtionality working or not', async () => {
 
         // Need run becz fail
         await logutPage.clickMenuSol();
         await menutabsPage.clickChangePin();
-        await menutabsPage.verifychangePintoDashBackbtn();
         await menutabsPage.changePin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO)
-        await menutabsPage.changePin_SetPin(process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE);
-        await menutabsPage.verifyConfirmPinToSetPin();
-        await menutabsPage.changePin_ConfirmPin(process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE, process.env.PINONE);
+        await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+        await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
         await dashboardPage.verifySolDash();
         await logutPage.logout();
-        await loginPage.verifyEyeicon();
-        // Need to verify biometric and etc
+        await loginPage.verifyLoginScreenUI();
+        await menutabsPage.loginEnterPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
+    });
 
-        // and login
-        await menutabsPage.changePin_ConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINONE);
-
-
-
-    })
-    it('DS10: Create/View Wallet use can wallet create or not ', async () => {
+    it('DS7: Create/View Wallet use can wallet create or not ', async () => {
 
 
-    })
+    });
 
 
     it('DS: Verify Menu Wallet Logo and Name and Balance etc  ', async () => {
         await menutabsPage.clickMenuTab();
         await menutabsPage.VerifyMenu_Wallet();
-    })
+    });
 
     it('DS : Verify Menu option in Create Wallet option while using New 4 Wallet Created displayed or not  ', async () => {
         await menutabsPage.clickCreateWalletINMenutab();
@@ -113,12 +102,12 @@ describe('Verify Dashboard SOL', async () => {
         await menutabsPage.clickmenuINMultipleWallet_ViewOption();
         await menutabsPage.enterWalletName(process.env.WALLETNAME4);
         await menutabsPage.verifyCreateFourthName(process.env.WALLETNAME4);
-    })
+    });
 
     it('DS : Verify ', async () => {
 
 
-    })
+    });
 
     it('DS: Verify Change pin after login new pin or not ', async () => {
         await menutabsPage.clickMenuTab();
@@ -126,14 +115,41 @@ describe('Verify Dashboard SOL', async () => {
 
 
 
-    })
+    });
+
+    it('DS: If i have four solana wallet then i change Devnet to Mainnet need to change three wallet are Mainnet ', async () => {
+        await dashboardPage.verifySolDash();
+        await dashboardPage.mainNetworkChange();
+        await dashboardPage.clickFirst_Wallet();
+        await dashboardPage.mainnetDash();
+        await dashboardPage.clickSecond_Wallet();
+        await dashboardPage.mainnetDash();
+        await dashboardPage.clickThird_Wallet();
+        await dashboardPage.mainnetDash();
+        await dashboardPage.clickFourth_Wallet();
+        await dashboardPage.mainnetDash();
+
+        await dashboardPage.devNetworkChange();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickFirst_Wallet();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickSecond_Wallet();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickThird_Wallet();
+        await dashboardPage.verifySolDash();
+        await dashboardPage.clickFourth_Wallet();
+        await dashboardPage.verifySolDash();
+
+    });
+
+
+
+    
+
 
     it('DS: Verify ', async () => {
 
-    })
-    it('DS: Verify ', async () => {
-
-    })
+    });
 
 
 

@@ -3,7 +3,24 @@
 class NeonDashboardPage {
 
 
-    // SolWallet in dashboard Neon Wallet logo
+    get neonFaucetBtn() {
+        return $('addFaucetNeon');
+    }
+    
+
+
+
+    // Neon wallet dashboard 
+    
+    get solanaWalletIcon() {
+        return $('//android.view.ViewGroup[@content-desc="changeWalletTypeNeon"]/android.view.ViewGroup');
+    }
+    get aptosWalletIcon() {
+        return $('//android.view.ViewGroup[@content-desc="goToNeonWallet"]/android.view.ViewGroup');
+    }
+
+
+
     get neonWallet() {
         return $('~goToNeonWallet');
     }
@@ -100,7 +117,7 @@ class NeonDashboardPage {
 
     async verifyNeonDash() {
         //await this.solWallet.waitForDisplayed({ timeout: 60000 });
-        const walletNeon = 'new UiSelector().text("NEON - Devnet").className("android.widget.TextView")'
+        const walletNeon = 'new UiSelector().text("Neon - Devnet").className("android.widget.TextView")'
         const walletNEON = await $(`android=${walletNeon}`)
         await walletNEON.waitForDisplayed({ timeout: 120000 })
         await expect(walletNEON).toBeDisplayed();
@@ -151,7 +168,7 @@ class NeonDashboardPage {
 
 
     async clickNeonWalletDash() {
-        await browser.pause(10000)
+       // await browser.pause(10000)
         await expect(this.neonWallet).toBeDisplayed();
         await (await this.neonWallet).click();
     }

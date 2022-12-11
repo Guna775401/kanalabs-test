@@ -1,4 +1,3 @@
-const allure = require('allure-commandline')
 const wdio = require('webdriverio');
 const path = require('path')
 
@@ -30,16 +29,36 @@ exports.config = {
   //
   specs: [
     [
-      // './test/specs/**/*.js',
 
-      // './test/specs/createwallet.js',
-      //'./test/specs/dashboard.js',
+      // Sol wallet
+
+      './test/specs/solwallet/createwallet.js',
+      './test/specs/solwallet/importwallet.js',
+      './test/specs/solwallet/dashboard.js',
+      // './test/specs/solwallet/send.js',
+      //'./test/specs/solwallet/swap.js',
+      // './test/specs/solwallet/stake_unstake.js',
+      //'./test/specs/solwallet/lend_borrow.js',
+
+
+      // Neon Wallet
+
+      // './test/specs/neonwallet/createwallet.js',
+      //'./test/specs/neonwallet/importwallet.js',
+      // './test/specs/neonwallet/dashboard.js',
+      //'./test/specs/neonwallet/send.js',
+
+      // Aptos Wallet
+
+      //'./test/specs/aptoswallet/createwallet.js',
+      //'./test/specs/aptoswallet/importwallet.js',
+      //'./test/specs/aptoswallet/dashboard.js',
+      //'./test/specs/aptoswallet/send.js',
+
+      // './test/specs/**/*.js',
       //'./test/specs/login.js'
-        './test/specs/importwallet.js',
-       './test/specs/swap.js',
-      // './test/specs/stake_unstake.js',
-      //'./test/specs/lend_borrow.js',
-      // './test/specs/send.js',
+
+
     ],
   ],
 
@@ -84,14 +103,15 @@ exports.config = {
 
     platformName: "Android",
     "appium:automationName": "UiAutomator2",
-    "appium:platformVersion": "11",
+    "appium:platformVersion": "12",
     "appium:deviceName": "Moto g71",
     "appium:appPackage": "com.kanaswapapp",
     "appium:appActivity": "com.kanaswapapp.MainActivity",
     "appium:udid": "ZD2225BZ8T",
-    "appium:noRest": "true",
-    "appium:ignoreHiddenApiPolicyError": "true",
-    "appium:autoGrantPermission": true
+    // "appium:noRest": "true",
+    // "appium:ignoreHiddenApiPolicyError": "true",
+    "appium:autoGrantPermissions": true,
+    "appium:autoLaunch": true
 
     // platformName: "Android",
     // "appium:automationName": "UiAutomator2",
@@ -171,7 +191,8 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['appium'],
+
+  //services: ['appium'],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -195,34 +216,6 @@ exports.config = {
   // see also: https://webdriver.io/docs/dot-reporter
 
   reporters: ['spec'],
-  // reporters: [['allure', {
-  //     outputDir: 'allure-results',
-  //     disableWebdriverStepsReporting: true,
-  //     disableWebdriverScreenshotsReporting: false,
-  // }]],
-
-  //  onComplete: function() {
-  //     const reportError = new Error('Could not generate Allure report')
-  //     const generation = allure(['generate', 'allure-results', '--clean'])
-  //     return new Promise((resolve, reject) => {
-  //         const generationTimeout = setTimeout(
-  //             () => reject(reportError),
-  //             5000)
-
-  //         generation.on('exit', function(exitCode) {
-  //             clearTimeout(generationTimeout)
-
-  //             if (exitCode !== 0) {
-  //                 return reject(reportError)
-  //             }
-
-  //             console.log('Allure report successfully generated')
-  //             resolve()
-  //         })
-  //     })
-  //},
-
-  //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {

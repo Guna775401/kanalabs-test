@@ -912,7 +912,124 @@ class SwapPage {
         await (this.fUMText).click();
     }
 
+    async selectFUMtoSOL(fum, sol) {
 
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(fum);
+        await this.fUMText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(sol);
+        await this.sOLText.click();
+    }
+
+    async selectSOLtoFUM(sol, fum) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(sol);
+        await this.sOLText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(fum);
+        await this.fUMText.click();
+    }
+    async selectSOLtoUXD(sol, uxd) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(sol);
+        await this.sOLText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(uxd);
+        await this.uXDText.click();
+    }
+
+    async selectUXDtoSOL(uxd,sol) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(uxd);
+        await this.uXDText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(sol);
+        await this.sOLText.click();
+    }
+
+
+    async selectUSDCtoPAI(usdc,pai) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(usdc);
+        await this.uSDCText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(pai);
+        await this.pAIText.click();
+    }
+    async selectPAItoUSDC(pai,usdc) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(pai);
+        await this.pAIText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(usdc);
+        await this.uSDCText.click();
+    }
+
+    async selectPAItoSTEP(pai,step) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(pai);
+        await this.pAIText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(step);
+        await this.sTEPText.click();
+    }
+
+    async selectSTEPtoPAI(step,pai) {
+
+        await (await this.youPaydropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youPaydropdownSearch).click();
+        await (await this.youPaydropdownSearch).setValue(step);
+        await this.sTEPText.click();
+
+        await (await this.youReceivedropdown).click();
+        await expect(this.searchForTokenText).toBeDisplayed();
+        await (await this.youReceivedropdownSearch).click();
+        await (await this.youReceivedropdownSearch).setValue(pai);
+        await this.pAIText.click();
+    }
 
 
     async selectUSDCtoSOL(usdc, sol) {

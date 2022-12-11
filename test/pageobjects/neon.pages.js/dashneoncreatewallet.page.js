@@ -15,5 +15,9 @@ get continueBtn() {
     return $('~createWalletNeon');
 }
 
+
+
+
+
 }
 module.exports = new NeonDashCreateWallet();

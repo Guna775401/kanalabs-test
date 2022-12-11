@@ -1,9 +1,9 @@
 const { AppiumDriver } = require('appium/build/lib/appium');
-const createWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
-const LoginPage = require('../pageobjects/login.page');
-const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
-const { async } = require('../pageobjects/sol.pages.js/dashboard.page');
-const loginPage = require('../pageobjects/login.page');
+const createWalletPage = require('../../pageobjects/sol.pages.js/createwallet.page');
+const LoginPage = require('../../pageobjects/login.page');
+const LogoutPage = require('../../pageobjects/sol.pages.js/logut.page');
+const { async } = require('../../pageobjects/sol.pages.js/dashboard.page');
+const loginPage = require('../../pageobjects/login.page');
 //const SecurePage = require('../pageobjects/secure.page');
 
 describe('My Login application', () => {

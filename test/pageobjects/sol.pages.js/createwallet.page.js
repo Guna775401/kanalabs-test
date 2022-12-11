@@ -1,5 +1,6 @@
-const ImportWalletPage = require('./importwallet.page');
 
+const ImportWalletPage = require('./importwallet.page');
+const menutabsPage = require('./menutabs.page');
 
 class CreateWalletPage {
 
@@ -8,8 +9,8 @@ class CreateWalletPage {
     get nextBtn() {
         return $('~nextButton');
     }
-    get nextBtn1() {
-        return $('~nextButton');
+    get errMessage() {
+        return $('//android.view.ViewGroup[@content-desc="SOLNameWallet"]/android.widget.TextView[4]');
     }
     // Choose wallet Sol
     get solWallet() {
@@ -50,13 +51,19 @@ class CreateWalletPage {
     get loginPin6() {
         return $('~pin6');
     }
-    get popupdismiss() {
-        return $('~com.kanaswapapp:id/ib_core_onboarding_container')
+   get popupId() {
+         return $('~toastText1')
     }
+    open() {
+        return super.open('popupId');
+    }
+
+
     get termsAndConditionBtn() {
         return $('~goToTermsAndConditions')
     }
-    
+
+
 
     // UI Elements
     get whatsKanaText() {
@@ -101,7 +108,7 @@ class CreateWalletPage {
 
     }
     get chooseYourWalletDesText() {
-        const chooseYourWalletDes = 'new UiSelector().text("Choose your walletType, Kana Labs Supports two types of wallets!").className("android.widget.TextView")'
+        const chooseYourWalletDes = 'new UiSelector().text("Choose your walletType, Kana Labs Supports three types of wallets!").className("android.widget.TextView")'
         const chooseYourWalletDes1 = $(`android=${chooseYourWalletDes}`)
         return chooseYourWalletDes1;
     }
@@ -127,7 +134,7 @@ class CreateWalletPage {
         return nameyourwallet1;
     }
     get nameyourwalletDesText() {
-        const nameyourwalletDes = 'new UiSelector().text("Give an unique name to your wallet. You will be able to receive tokens using this wallet name, without the need for using a complicated public address! Powered by Kana and SNS").className("android.widget.TextView")'
+        const nameyourwalletDes = 'new UiSelector().text("Give an Unique Name to Your Wallet. You will be able to create additional wallets from within the dashboard.").className("android.widget.TextView")'
         const nameyourwalletDes1 = $(`android=${nameyourwalletDes}`)
         return nameyourwalletDes1;
     }
@@ -158,14 +165,22 @@ class CreateWalletPage {
         const confirmyourpinDes1 = $(`android=${confirmyourpinDes}`)
         return confirmyourpinDes1;
     }
+
+    // Need to change
+
+    get walletCreateLoaderText() {
+        const walletCreateloadertext = 'new UiSelector().text("Hang on while your Wallets are being Created").className("android.widget.TextView")'
+        const walletCreateloadertext1 = $(`android=${walletCreateloadertext}`)
+        return walletCreateloadertext1;
+    }
     get proccessingYourRequestText() {
         const proccessingYourRequest = 'new UiSelector().text("Processing your request, Please wait!").className("android.widget.TextView")'
         const proccessingYourRequest1 = $(`android=${proccessingYourRequest}`)
         return proccessingYourRequest1;
     }
 
-    get incorrectPopupText() {
-        const incorrectPopup = 'new UiSelector().text("Please Enter only Alphabets and Numbers!").className("android.widget.TextView")'
+    get walletNameIncorrectText() {
+        const incorrectPopup = 'new UiSelector().text("*Please Enter only Alphabets and Numbers!").className("android.widget.TextView")'
         const incorrectPopup1 = $(`android=${incorrectPopup}`)
         return incorrectPopup1;
     }
@@ -181,10 +196,10 @@ class CreateWalletPage {
         return pindoesntmatch1;
     }
 
-    get() {
-        const chooseYourWalletDes = 'new UiSelector().text("").className("android.widget.TextView")'
-        const chooseYourWalletDes1 = $(`android=${chooseYourWalletDes}`)
-        return chooseYourWalletDes1;
+    get moreThanSpaePopupText() {
+        const morethanspace = 'new UiSelector().text("Please Dont Enter more than single space!").className("android.widget.TextView")'
+        const morethanspace1 = $(`android=${morethanspace}`)
+        return morethanspace1;
     }
     get() {
         const chooseYourWalletDes = 'new UiSelector().text("").className("android.widget.TextView")'
@@ -215,9 +230,8 @@ class CreateWalletPage {
 
 
     async firstnextBtn() {
-       // driver.touchAction({actions: 'tap', x: 479, y: 360})
 
-        await this.nextBtn.waitForDisplayed({ timeout: 60000 });
+        await this.nextBtn.waitForDisplayed({ timeout: 30000 });
         await expect(this.whatsKanaText).toBeDisplayed();
         await expect(this.whatsKanaDesText).toBeDisplayed();
         await (await this.nextBtn).click();
@@ -227,10 +241,13 @@ class CreateWalletPage {
         await expect(this.seamLessText).toBeDisplayed();
         await expect(this.seamLessUiDesText).toBeDisplayed();
         await (await this.nextBtn).click();
-    };
+    }
 
     get colorGet() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup')
+    }
+    get colors() {
+        return $('~SolHomeDashboard')
     }
     async getcolor() {
         // let el1 = driver.element("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
@@ -240,10 +257,12 @@ class CreateWalletPage {
 
         //div._highlighter-box_619e8
 
-        const ele = $('div._highlighter-box_619e8')
-        const color = await ele.getCSSProperty('color')
-        console.log('color :' + color);
-
+        try {
+            const color = await this.colors.getCSSProperty('background-color')
+            console.log('color:' + color);
+        } catch (e) {
+            console.log('error:', e)
+        }
 
         // getCssProperty(ele, 'color').then(function(color) {
         //     console.log(color);
@@ -257,20 +276,65 @@ class CreateWalletPage {
     }
 
     async createwallet(walletName) {
+
+        await this.solWallet.waitForDisplayed({ timeout: 60000 });
+        await expect(this.chooseYourWalletText).toBeDisplayed();
+        await expect(this.chooseYourWalletDesText).toBeDisplayed();
+        await (await this.solWallet).click();
+        await (await this.createNewWalletbtn).click();
+        await expect(this.backBtn).toBeDisplayed();
+        await expect(this.nameYourWalletText).toBeDisplayed();
+        await expect(this.nameyourwalletDesText).toBeDisplayed();
+        await expect(this.walletNameText).toBeDisplayed();
+        await (await this.inputwalletName).clearValue();
+        await (await this.inputwalletName).setValue(walletName);
+        await driver.hideKeyboard();
+        await (await this.continueBtn).click();
+    }
+
+    async verifyPopup(walletName, walletName1) {
+
         await this.solWallet.waitForDisplayed({ timeout: 60000 });
         await expect(this.chooseYourWalletText).toBeDisplayed();
         await expect(this.chooseYourWalletDesText).toBeDisplayed();
         await (await this.solWallet).click();
         await (await this.createNewWalletbtn).click();
         await (await this.inputwalletName).click();
-        await (await this.inputwalletName).setValue(walletName);
-        driver.hideKeyboard();
         await expect(this.backBtn).toBeDisplayed();
         await expect(this.nameYourWalletText).toBeDisplayed();
         await expect(this.nameyourwalletDesText).toBeDisplayed();
         await expect(this.walletNameText).toBeDisplayed();
+        await (await this.inputwalletName).setValue(walletName);
+        await driver.hideKeyboard();
+
+        const errmessage = await this.errMessage.getText(); // Can use this also  await expect(this.invaildWalletNameText).toBeDisplayed();
+        ( errmessage == process.env.ERRORMESSAGE )
+        // Need to delete this line
         await (await this.continueBtn).click();
+
+        await expect(this.popupId).toHaveText('Please Enter only Alphabets and Numbers!')
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 322 },
+            { action: 'moveTo', x: 517, y: 184 },
+            'release'
+        ]);
+        await expect(this.walletNameIncorrectText).toBeDisplayed();
+
+        await (await this.inputwalletName).clearValue();
+        await (await this.inputwalletName).setValue(walletName1);
+       // await expect(this.popupId).toHaveText('Please Dont Enter more than single space!')
+
+        // driver.touchAction([
+        //     { action: 'longPress', x: 525, y: 322 },
+        //     { action: 'moveTo', x: 517, y: 184 },
+        //     'release'
+        // ]);
+
+        //await (await this.continueBtn).click();
+       // await expect(this.invaildWalletNameText).toBeDisplayed();
     }
+
+
     async clickSolWalletlogo() {
         await this.solWallet.waitForDisplayed({ timeout: 60000 });
         await expect(this.chooseYourWalletText).toBeDisplayed();
@@ -283,6 +347,7 @@ class CreateWalletPage {
         await expect(this.importExistingWalletDesText).toBeDisplayed();
         await expect(ImportWalletPage.importWalletBtn).toBeDisplayed();
         await expect(this.termsAndConditionBtn).toBeDisplayed();
+        await expect(this.termsAndConditionText).toBeDisplayed();
         await (this.createNewWalletbtn).click();
     }
 
@@ -292,14 +357,15 @@ class CreateWalletPage {
         await expect(this.nameYourWalletText).toBeDisplayed();
         await expect(this.nameyourwalletDesText).toBeDisplayed();
         await expect(this.walletNameText).toBeDisplayed();
-        await (this.inputwalletName).click();
+        await (this.inputwalletName).clearValue();
         await (this.inputwalletName).setValue(name);
-        driver.hideKeyboard();
-    }
-
+        await driver.hideKeyboard();
+        await (this.continueBtn).click();
+       }
+   
     async backButtonClick() {
-       
-        await this.backBtn.waitForDisplayed({ timeout: 60000 });
+
+        await this.backBtn.waitForDisplayed({ timeout: 15000 });
         await expect(this.backBtn).toBeDisplayed();
         await this.backBtn.click();
     }
@@ -309,7 +375,7 @@ class CreateWalletPage {
         await (this.continueBtn).click();
     }
 
-    async entersetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
+    async enterSetPin(pin1, pin2, pin3, pin4, pin5, pin6) {
         await (await this.loginPin1).waitForDisplayed({ timeout: 15000 });
 
         await expect(this.setYourPinText).toBeDisplayed();
@@ -322,6 +388,7 @@ class CreateWalletPage {
         await (await this.loginPin5).setValue(pin5);
         await (await this.loginPin6).setValue(pin6);
     }
+
     async enterConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
         await (await this.loginPin1).waitForDisplayed({ timeout: 10000 });
 
@@ -335,10 +402,24 @@ class CreateWalletPage {
         await (await this.loginPin4).setValue(pin4);
         await (await this.loginPin5).setValue(pin5);
         await (await this.loginPin6).setValue(pin6);
-        await expect(this.proccessingYourRequestText).toBeDisplayed();
+        await expect(this.walletCreateLoaderText).toBeDisplayed();
     }
+    async enterConfirmPin1(pin1, pin2, pin3, pin4, pin5, pin6) {
+        await (await this.loginPin1).waitForDisplayed({ timeout: 10000 });
 
-    async enterIncorrectConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
+        await expect(this.confirmYourPinText).toBeDisplayed();
+        await expect(this.confirmYourPinDesText).toBeDisplayed();
+        await expect(this.confirmPinBackBtn).toBeDisplayed();
+        await (await this.loginPin1).click();
+        await (await this.loginPin1).setValue(pin1);
+        await (await this.loginPin2).setValue(pin2);
+        await (await this.loginPin3).setValue(pin3);
+        await (await this.loginPin4).setValue(pin4);
+        await (await this.loginPin5).setValue(pin5);
+        await (await this.loginPin6).setValue(pin6);
+       }
+   
+       async enterIncorrectConfirmPin(pin1, pin2, pin3, pin4, pin5, pin6) {
 
         await (await this.loginPin1).waitForDisplayed({ timeout: 10000 });
 
@@ -352,16 +433,40 @@ class CreateWalletPage {
         await (await this.loginPin4).setValue(pin4);
         await (await this.loginPin5).setValue(pin5);
         await (await this.loginPin6).setValue(pin6);
+
+        await expect(this.popupId).toHaveText('Confirm Pin doesn’t match')
+
+        driver.touchAction([
+            { action: 'longPress', x: 525, y: 322 },
+            { action: 'moveTo', x: 517, y: 184 },
+            'release'
+        ]);
+
     }
+    async enterIncorrectPin(pin1, pin2, pin3, pin4, pin5, pin6) {
 
-    async enterIncorrectConfirmPinClearValue() {
+        await (await this.loginPin1).waitForDisplayed({ timeout: 10000 });
 
-        await (await this.loginPin6).clearValue();
-        await (await this.loginPin5).clearValue();
-        await (await this.loginPin4).clearValue();
-        await (await this.loginPin3).clearValue();
-        await (await this.loginPin2).clearValue();
-        await (await this.loginPin1).clearValue();
+        await expect(menutabsPage.changePinText).toBeDisplayed();
+        await expect(menutabsPage.changePinDesText).toBeDisplayed();
+        await expect(menutabsPage.changepinToBackDash).toBeDisplayed();
+        await (await this.loginPin1).click();
+        await (await this.loginPin1).setValue(pin1);
+        await (await this.loginPin2).setValue(pin2);
+        await (await this.loginPin3).setValue(pin3);
+        await (await this.loginPin4).setValue(pin4);
+        await (await this.loginPin5).setValue(pin5);
+        await (await this.loginPin6).setValue(pin6);
+
+        // await expect(this.popupId).toHaveText('Please enter the correct pin')
+
+        // driver.touchAction([
+        //     { action: 'longPress', x: 525, y: 322 },
+        //     { action: 'moveTo', x: 517, y: 184 },
+        //     'release'
+        // ]);
+        
+        await (menutabsPage.changepinToBackDash).click();
     }
 
     async enterPin(pin1, pin2, pin3, pin4, pin5, pin6) {
@@ -376,20 +481,26 @@ class CreateWalletPage {
         await (await this.loginPin6).setValue(pin6);
     }
 
-    // Popup Handles
-    async verifyInvaildWalletNamePopup() {
-      //  await expect(this.incorrectPopupText).toBeDisplayed();
-     //   await expect(this.invaildWalletNameText).toBeDisplayed();
-        driver.touchAction([
-            {action: 'longPress', x: 525, y: 322},
-            {action: 'moveTo', x: 517, y: 184},
-            'release'
-          ]);
-    }
-    async verifyPinDoesntMatchPopup() {
-        await (this.pindoesntmatchText).waitForDisplayed({ timeout: 5000 });
-        await expect(this.pindoesntmatchText).toBeDisplayed();
-    }
+    async changePin(pin1, pin2, pin3, pin4, pin5, pin6) {
+        // await (await createwalletPage.loginPin1).waitForDisplayed({ timeout: 30000 });
+       //  await expect(menutabsPage.changepinToBackDash).toBeDisplayed();
+         await expect(menutabsPage.changePinText).toBeDisplayed();
+         await expect(menutabsPage.changePinDesText).toBeDisplayed();
+ 
+         await (this.loginPin1).click();
+         await (await this.loginPin1).setValue(pin1);
+         await (await this.loginPin2).setValue(pin2);
+         await (await this.loginPin3).setValue(pin3);
+         await (await this.loginPin4).setValue(pin4);
+         await (await this.loginPin5).setValue(pin5);
+         await (await this.loginPin6).setValue(pin6);
+     }
+
+
+
+    // Hang on while your Wallets are being Created
+
+
 
 }
 module.exports = new CreateWalletPage();

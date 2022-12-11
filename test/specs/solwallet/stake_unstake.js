@@ -1,12 +1,12 @@
-const dashboardPage = require("../pageobjects/sol.pages.js/dashboard.page");
-const stakePage = require("../pageobjects/sol.pages.js/stake.page");
-const swapPage = require("../pageobjects/sol.pages.js/swap.page");
-const menutabsPage = require("../pageobjects/sol.pages.js/menutabs.page");
+const dashboardPage = require("../../pageobjects/sol.pages.js/dashboard.page");
+const stakePage = require("../../pageobjects/sol.pages.js/stake.page");
+const swapPage = require("../../pageobjects/sol.pages.js/swap.page");
+const menutabsPage = require("../../pageobjects/sol.pages.js/menutabs.page");
 
 require('dotenv').config()
 
 
-describe.only('Stake/UnStake DevNet', () => {
+describe('Stake/UnStake DevNet', () => {
 
     it('StD1 : Verify ExchangeRate eqaul to display mSOL or Not (Like 1 Sol = 0.94904 Need to give a 1 SOL recieve mSOl equal) PleaseUi see ', async () => {
         await dashboardPage.verifySolDash();
@@ -93,7 +93,7 @@ describe.only('Stake/UnStake DevNet', () => {
     })
 })
 
-describe.only('Stake/UnStake MainNet', () => {
+describe('Stake/UnStake MainNet', () => {
 
     it('StM1 : Verify MainNet ExchangeRate eqaul to display mSOL or Not (Like 1 Sol = 0.94904 Need to give a 1 SOL recieve mSOl equal) PleaseUi see ', async () => {
         await dashboardPage.verifySolDash();

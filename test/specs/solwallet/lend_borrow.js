@@ -1,7 +1,7 @@
-const dashboardPage = require("../pageobjects/sol.pages.js/dashboard.page");
-const lend_borrowPage = require("../pageobjects/sol.pages.js/lend_borrow.page")
-const menutabsPage = require("../pageobjects/sol.pages.js/menutabs.page");
-const swapPage = require("../pageobjects/sol.pages.js/swap.page");
+const dashboardPage = require("../../pageobjects/sol.pages.js/dashboard.page");
+const lend_borrowPage = require("../../pageobjects/sol.pages.js/lend_borrow.page")
+const menutabsPage = require("../../pageobjects/sol.pages.js/menutabs.page");
+const swapPage = require("../../pageobjects/sol.pages.js/swap.page");
 
 require('dotenv').config()
 

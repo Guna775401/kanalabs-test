@@ -1,13 +1,13 @@
-const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
-const dashboardPage = require('../pageobjects/sol.pages.js/dashboard.page');
-const ImportWalletPage = require('../pageobjects/sol.pages.js/importwallet.page');
-const LogoutPage = require('../pageobjects/sol.pages.js/logut.page');
-const remindmelaterPage = require('../pageobjects/sol.pages.js/remindmelater.page');
-const resetwalletPage = require('../pageobjects/sol.pages.js/resetwallet.page');
-const menutabsPage = require('../pageobjects/sol.pages.js/menutabs.page');
-const { async } = require('../pageobjects/sol.pages.js/dashboard.page');
-const createneonwalletPage = require('../pageobjects/neon.pages.js/createneonwallet.page');
-const neondashboardPage = require('../pageobjects/neon.pages.js/neondashboard.page');
+const CreateWalletPage = require('../../pageobjects/sol.pages.js/createwallet.page');
+const dashboardPage = require('../../pageobjects/sol.pages.js/dashboard.page');
+const ImportWalletPage = require('../../pageobjects/sol.pages.js/importwallet.page');
+const LogoutPage = require('../../pageobjects/sol.pages.js/logut.page');
+const remindmelaterPage = require('../../pageobjects/sol.pages.js/remindmelater.page');
+const resetwalletPage = require('../../pageobjects/sol.pages.js/resetwallet.page');
+const menutabsPage = require('../../pageobjects/sol.pages.js/menutabs.page');
+const { async } = require('../../pageobjects/sol.pages.js/dashboard.page');
+const createneonwalletPage = require('../../pageobjects/neon.pages.js/createneonwallet.page');
+const neondashboardPage = require('../../pageobjects/neon.pages.js/neondashboard.page');
 
 require('dotenv').config()
 
@@ -55,6 +55,7 @@ describe('Import Sol Account', async () => {
         await CreateWalletPage.entersetPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await CreateWalletPage.enterConfirmPin(process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO, process.env.PINZERO);
         await dashboardPage.verifySolDash();
+       // await CreateWalletPage.getcolor();
 
     });
 

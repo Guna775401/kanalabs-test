@@ -3,7 +3,6 @@ class LogoutPage {
 
     get menuTabSol() {
         return $('~solHomeDashboardBackIcon');
-        //android.view.ViewGroup[@content-desc="setDrawerOpen"]/android.view.ViewGroup
     }
 
     get logoutTab() {
@@ -12,7 +11,7 @@ class LogoutPage {
     get logoutYes() {
         return $('~goToLogin');
     }
-    get cancelBtn() {
+    get logoutCancelBtn() {
         return $('~showLogoutModalSol');
     }
     // NEON
@@ -31,7 +30,7 @@ class LogoutPage {
     }
 
     get areYouSureLogoutText() {
-        const areYouSureLogout = 'new UiSelector().text("Are you sure you want to Logout?").className("android.widget.TextView")'
+        const areYouSureLogout = 'new UiSelector().text("Are you sure you want to Log out?").className("android.widget.TextView")'
         const areYouSureLogout1 = $(`android=${areYouSureLogout}`)
         return areYouSureLogout1;
     }
@@ -40,13 +39,14 @@ class LogoutPage {
 
     async logout() {
         await browser.pause(5000);
-        await this.menuTabSol.waitForDisplayed({ timeout: 60000 });
+        await this.menuTabSol.waitForDisplayed({ timeout: 15000 });
         await (this.menuTabSol).click();
         await (this.logoutTab).click();
         await expect(this.areYouSureLogoutText).toBeDisplayed();
-        await expect(this.cancelBtn).toBeDisplayed();
+        await expect(this.logoutCancelBtn).toBeDisplayed();
         await (this.logoutYes).click();
     }
+
     async logoutNeon() {
         await browser.pause(5000);
         await this.menuTabNeon.waitForDisplayed({ timeout: 60000 });
@@ -62,6 +62,9 @@ class LogoutPage {
     }
     async clickMenuNeon() {
         await (await this.menuTabNeon).click()
+    }
+    async clickLogoutCancelBtn() {
+        await (await this.logoutCancelBtn).click()
     }
 
 }

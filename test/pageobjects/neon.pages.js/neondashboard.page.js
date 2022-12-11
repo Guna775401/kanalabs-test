@@ -3,7 +3,24 @@
 class NeonDashboardPage {
 
 
-    // SolWallet in dashboard Neon Wallet logo
+    get neonFaucetBtn() {
+        return $('addFaucetNeon');
+    }
+    
+
+
+
+    // Neon wallet dashboard 
+    
+    get solanaWalletIcon() {
+        return $('//android.view.ViewGroup[@content-desc="changeWalletTypeNeon"]/android.view.ViewGroup');
+    }
+    get aptosWalletIcon() {
+        return $('//android.view.ViewGroup[@content-desc="goToNeonWallet"]/android.view.ViewGroup');
+    }
+
+
+
     get neonWallet() {
         return $('~goToNeonWallet');
     }
@@ -151,7 +168,7 @@ class NeonDashboardPage {
 
 
     async clickNeonWalletDash() {
-        await browser.pause(10000)
+       // await browser.pause(10000)
         await expect(this.neonWallet).toBeDisplayed();
         await (await this.neonWallet).click();
     }

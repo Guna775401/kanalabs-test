@@ -1,96 +1,102 @@
-const dashboardPage = require("../pageobjects/sol.pages.js/dashboard.page");
-const importwalletPage = require("../pageobjects/sol.pages.js/importwallet.page");
-const { async } = require("../pageobjects/sol.pages.js/send.page");
-const sendPage = require("../pageobjects/sol.pages.js/send.page");
-const swapPage = require("../pageobjects/sol.pages.js/swap.page");
+const neondashboardPage = require("../../pageobjects/neon.pages.js/neondashboard.page");
+const dashboardPage = require("../../pageobjects/sol.pages.js/dashboard.page");
+const menutabsPage = require("../../pageobjects/sol.pages.js/menutabs.page");
+const sendPage = require("../../pageobjects/sol.pages.js/send.page");
+const swapPage = require("../../pageobjects/sol.pages.js/swap.page");
 require('dotenv').config()
 
 
+
+it('SSD1 : Verify Invalid Public address couldnt allow popup ', async () => {
+   await menutabsPage.changeToMaintoDev();
+   await dashboardPage.verifySolDash();
+   await sendPage.verify_WalletName_Dashboard_And_Sendscreen();
+   await sendPage.verifySendUI();
+   await sendPage.enterAddress(process.env.INVAILDPUBLICADDRESS)
+   await sendPage.clickContinueBtn();
+   await sendPage.invaildPublicAddress_PopupHandle();
+})
+
+it('SSD2 : Verify Valid public address Send tokens Sol Maxout amount equal to Balance ', async () => {
+
+   await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS)
+   await sendPage.clickContinueBtn();
+   await sendPage.verifyBalanceEqualToMax_Amount();
+
+})
+
+it('SSD3 : Verify Valid public address Send tokens mSol Maxout amount equal to Balance ', async () => {
+   await sendPage.clickAmount_Screen_BackBtn();
+   await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS);
+   await sendPage.select_mSOL_TokenDropdown();
+   await sendPage.clickContinueBtn();
+   await sendPage.verifyBalanceEqualToMax_Amount();
+
+})
+
+it('SSD3 : Verify Valid public address Send tokens Sol Minimum(0.00001) amount and Valid amount ', async () => {
+   await sendPage.enterAmount(process.env.DECIMALAMOUNT);
+   await sendPage.slidetoSend();
+   await sendPage.clickSendDoneBtn();
+
+
+})
+it('SSD4 : Verify Valid public address Send mSOL decimal amount ', async () => {
+   await sendPage.clickSendBtn();
+   await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS)
+   await sendPage.select_mSOL_TokenDropdown();
+   await sendPage.clickContinueBtn();
+   await sendPage.enterAmount(process.env.DECIMALAMOUNT);
+   await sendPage.slidetoSend();
+   await sendPage.clickSendDoneBtn();
+
+})
+it('SSD5 : Verify Valid public address Send tokens mSol Minimum(0.001) amount and Valid amount', async () => {
+
+})
+
+it('SSD6 : Verify 1 Sol send Devnet', async () => {
+   await dashboardPage.devNetworkChange();
+   await dashboardPage.verifySolDash();
+   await sendPage.clickSendBtn();
+   await sendPage.verifySendscreen();
+   await sendPage.verifySendUI();
+   await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS)
+   await sendPage.clickContinueBtn();
+   await sendPage.enterAmount(process.env.DEVNETAMOUNT);
+   // await sendPage.verifySendUI1();
+   await sendPage.slidetoSend();
+   await sendPage.clickSendDoneBtn();
+   // await sendPage.();
+
+})
+// Need to mSOL select option
+xit('SSD3 : Send 1 mSOL Devnet ', async () => {
+   await dashboardPage.verifySolDash();
+   await sendPage.clickSendBtn();
+   await sendPage.verifySendscreen();
+   await sendPage.verifySendUI();
+   await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS);
+   // await sendPage.selectSecondToken(); mSOL select option
+   await sendPage.clickContinueBtn();
+   await sendPage.enterAmount(process.env.DEVNETAMOUNTUNKNOWTOKENDECIMAL);
+   // await sendPage.verifySendUI1();
+   await sendPage.slidetoSend();
+   await sendPage.clickSendDoneBtn();
+})
+
+
+it(' Dashboard tokens balane & select token to transfer balance & Next screen send balance Equal or not ', async () => {
+
+
+
+
+
+
+})
 describe('Solana Send DevNet', () => {
-   it(' ', async () => { })
-
-
-   it(' ', async () => { })
-   it(' ', async () => { })
-   it(' ', async () => { })
-   it(' ', async () => { })
-   it(' ', async () => { })
-
-   // Need to Login
-
-   it('SSD1 : Verify Invalid Public address couldnt allow popup ', async () => {
-      await dashboardPage.devNetworkChange();
-      await dashboardPage.verifySolDash();
-      await sendPage.clickSendBtn();
-      await sendPage.verifySendscreen();
-      await sendPage.verifySendUI();
-      await sendPage.enterAddress(process.env.INVAILDPUBLICADDRESS)
-      await sendPage.clickContinueBtn();
-      // Need popup handle
-
-   })
-   it('SSD2 : Verify Valid public address Send tokens Sol Maxout amount equal to Balane ', async () => {
-
-      await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS)
-      await sendPage.clickContinueBtn();
-      await sendPage.verifyBalanceEqualToMax_Amount();
-
-   })
-   it('SSD3 : Verify Valid public address Send tokens Sol Minimum(0.001) amount and Valid amount ', async () => {
-      await sendPage.enterAmount(process.env.DECIMALAMOUNT);
-      await sendPage.slidetoSend();
-      await sendPage.clickSendDoneBtn();
-
-
-   })
-   it('SSD4 : Verify Valid public address Send tokens mSOL Maxout amount and Valid amount ', async () => {
-
-
-   })
-   it('SSD5 : Verify Valid public address Send tokens mSol Minimum(0.001) amount and Valid amount', async () => {
-
-   })
-
-   it('SSD6 : Verify 1 Sol send Devnet', async () => {
-      await dashboardPage.devNetworkChange();
-      await dashboardPage.verifySolDash();
-      await sendPage.clickSendBtn();
-      await sendPage.verifySendscreen();
-      await sendPage.verifySendUI();
-      await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS)
-      await sendPage.clickContinueBtn();
-      await sendPage.enterAmount(process.env.DEVNETAMOUNT);
-      // await sendPage.verifySendUI1();
-      await sendPage.slidetoSend();
-      await sendPage.clickSendDoneBtn();
-      // await sendPage.();
-
-   })
-   // Need to mSOL select option
-   xit('SSD3 : Send 1 mSOL Devnet ', async () => {
-      await dashboardPage.verifySolDash();
-      await sendPage.clickSendBtn();
-      await sendPage.verifySendscreen();
-      await sendPage.verifySendUI();
-      await sendPage.enterAddress(process.env.HURRYPUBLICADDERSS);
-      // await sendPage.selectSecondToken(); mSOL select option
-      await sendPage.clickContinueBtn();
-      await sendPage.enterAmount(process.env.DEVNETAMOUNTUNKNOWTOKENDECIMAL);
-      // await sendPage.verifySendUI1();
-      await sendPage.slidetoSend();
-      await sendPage.clickSendDoneBtn();
-   })
-
-
-   it(' Dashboard tokens balane & select token to transfer balance & Next screen send balance Equal or not ', async () => {
-
-
-
-
-
-
-   })
-
+   // it(' ', async () => { })
+   // it(' ', async () => { })
 })
 
 
@@ -522,6 +528,7 @@ describe('Solana Send Main Net in Dashboard ', async () => {
       await sendPage.slidetoSend();
       await sendPage.clickSendDoneBtn();
    })
+
    it('SSMD3 : Solana Send MainNet in Dashboard USDC Token', async () => {
 
       await dashboardPage.verifySolDashMainNet();
@@ -705,9 +712,5 @@ describe('Solana Send Main Net in Dashboard ', async () => {
       await sendPage.slidetoSend();
       await sendPage.clickSendDoneBtn();
    })
-
-
-
-
 
 })

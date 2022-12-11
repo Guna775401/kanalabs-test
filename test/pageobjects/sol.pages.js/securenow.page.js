@@ -211,7 +211,7 @@ class SecureNowPage {
         return writedown1;
     }
     // get writedownyourseedDesText() {
-    //     const writedownDes = 'new UiSelector().text("This is your seed phrase. You'll be asked to re-enter this phrase (in order) on the next step.").className("android.widget.TextView")'
+    //     const writedownDes = `new UiSelector().text("This is your seed phrase. You'll be asked to re-enter this phrase (in order) on the next step.").className("android.widget.TextView")`
     //     const writedownDes1 = await $(`android=${writedownDes}`)
     //     return writedownDes1;    
     // }
@@ -236,10 +236,10 @@ class SecureNowPage {
         const congratulations1 =  $(`android=${congratulations}`)
         return congratulations1;
     }
-    // get() {
-    //     const selecteach = 'new UiSelector().text("You've successfully protected your wallet. Remember to keep your seed phrase safe, it's your responsibility!").className("android.widget.TextView")'
-    //     const selecteach1 = await $(`android=${selecteach}`)
-    //     return;
+    // get congratulationDesText() {
+    //     const congratulationsdes = 'new UiSelector().text("You've successfully protected your wallet. Remember to keep your seed phrase safe, it's your responsibility!").className("android.widget.TextView")'
+    //     const congratulationsdes1 = await $(`android=${congratulationsdes}`)
+    //     return congratulationsdes1;
     // }
     
     get tabtorevealText() {
@@ -257,12 +257,14 @@ class SecureNowPage {
         const selecteach1 =  $(`android=${selecteach}`)
         return;
     }
-
+    get remindMeLaterBtn() {
+        return $('~openReminMeLater');
+    }
     async clickstartBtn() {
         await (await this.start).waitForDisplayed({ timeout: 60000 });
         await expect(this.secureyourwalletText).toBeDisplayed();
         await expect(this.secureyourwalletDesText).toBeDisplayed();
-        await expect(RemindMeLater.remindMeLaterBtn).toBeDisplayed();
+        await expect(this.remindMeLaterBtn).toBeDisplayed();
         await (await this.start).click();
         await expect(this.secureyourwalletText).toBeDisplayed();
         await expect(this.writedownyourseedonPaperText).toBeDisplayed();
@@ -296,6 +298,7 @@ class SecureNowPage {
         await (await this.correctContinueBtn).waitForDisplayed({ timeout: 30000 });
         await (await this.correctContinueBtn).click();
         await expect(this.congratulationsText).toBeDisplayed();
+        //await expect(this.congratulationsDesText).toBeDisplayed();
         await (await this.finishBtn).click();
     }
 

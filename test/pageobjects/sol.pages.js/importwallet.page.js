@@ -17,11 +17,11 @@ class Importwallet {
     get importBtn() {
         return $('~importAccount');
     }
-    
+
     get backBtn() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup');
     }
-    
+
     get eyeIcon() {
         return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup');
     }
@@ -57,7 +57,7 @@ class Importwallet {
     }
 
     get incorrectWalletNameErrorMessageText() {
-        const incorrectWalletNameErrorMessage = 'new UiSelector().text("*Please Enter Wallet Name! ").className("android.widget.TextView")'
+        const incorrectWalletNameErrorMessage = 'new UiSelector().text("*Please Enter only Alphabets and Numbers!").className("android.widget.TextView")'
         const incorrectWalletNameErrorMessage1 = $(`android=${incorrectWalletNameErrorMessage}`)
         return incorrectWalletNameErrorMessage1;
     }
@@ -108,6 +108,9 @@ class Importwallet {
         driver.hideKeyboard();
         await (await this.importBtn).click();
     }
+    get popupId() {
+        return $('~toastText1')
+    }
     async importwallet1(seeds, name) {
         await this.importWalletBtn.waitForDisplayed({ timeout: 5000 })
         await (await this.importWalletBtn).click();
@@ -120,18 +123,47 @@ class Importwallet {
         await (await this.seedPharse).setValue(seeds);
         await (await this.walletName).click();
         await (await this.walletName).setValue(name);
-driver.hideKeyboard();
-        //await expect(this.walletnameinccorrectToastText).toBeDisplayed();
+        await driver.hideKeyboard();
+
         await expect(this.incorrectWalletNameErrorMessageText).toBeDisplayed();
+        // const errmessage = await createwalletPage.errMessage.getText(); 
+        // ( errmessage == process.env.ERRORMESSAGE )
+
+        await this.importBtn.click();
+        await expect(await this.popupId).toHaveText('Please Enter only Alphabets and Numbers!')
 
         driver.touchAction([
-            { action: 'longPress', x: 471, y: 314 },
-            { action: 'moveTo', x: 467, y: 218 },
+            { action: 'longPress', x: 525, y: 322 },
+            { action: 'moveTo', x: 517, y: 184 },
             'release'
         ]);
+        await expect(this.incorrectWalletNameErrorMessageText).toBeDisplayed();
     }
 
-    async invalidSeedPhraseimportwallet(name, seeds) {
+    async invalidSeedPhraseimportwallet(seeds, name) {
+        await this.importWalletBtn.waitForDisplayed({ timeout: 5000 })
+        await (await this.importWalletBtn).click();
+        await expect(this.backBtn).toBeDisplayed();
+        await expect(this.importFromSeedText).toBeDisplayed();
+        await expect(this.importFromSeedDesText).toBeDisplayed();
+        await expect(this.seedPharseText).toBeDisplayed();
+        await expect(this.walletNameText).toBeDisplayed();
+        await (await this.seedPharse).click();
+        await (await this.seedPharse).setValue(seeds);
+        await (await this.walletName).click();
+        await (await this.walletName).setValue(name);
+
+        driver.hideKeyboard();
+        await (await this.importBtn).click();
+
+        await expect(await this.popupId).toHaveText('This is not a valid phrase')
+
+    }
+
+
+
+    async invaildWalletName_InvaildSeedphrase(name, seeds, seeds1) {
+
         await this.importWalletBtn.waitForDisplayed({ timeout: 5000 })
         await (await this.importWalletBtn).click();
         await expect(this.backBtn).toBeDisplayed();
@@ -144,43 +176,28 @@ driver.hideKeyboard();
         await (await this.seedPharse).click();
         await (await this.seedPharse).setValue(seeds);
         driver.hideKeyboard();
+
+
+        await expect(this.incorrectWalletNameErrorMessageText).toBeDisplayed();
+
+        // const errmessage = await createwalletPage.errMessage.getText(); // Can use this also 
+        // ( errmessage == process.env.ERRORMESSAGE )
+
         await (await this.importBtn).click();
-    }
 
-
-    async invalidWalletNameToastHandle() {
-        await expect(this.walletnameinccorrectToastText).toBeDisplayed();
-        await expect(this.incorrectWalletNameErrorMessageText).toBeDisplayed();
+        await expect(await this.popupId).toHaveText('Please Enter only Alphabets and Numbers!')
 
         driver.touchAction([
-            { action: 'longPress', x: 471, y: 314 },
-            { action: 'moveTo', x: 467, y: 218 },
+            { action: 'longPress', x: 525, y: 322 },
+            { action: 'moveTo', x: 517, y: 184 },
             'release'
         ]);
-    }
-    async invalidSeedPhraseToastHandle() {
-         await expect(this.seedphraseinccorrectToastText).toBeDisplayed();
+
+        await (await this.seedPharse).clearValue();
+        await (await this.seedPharse).setValue(seeds1);
+        await (await this.importBtn).click();
         await expect(this.incorrectseedErrorMessageText).toBeDisplayed();
-
-        driver.touchAction([
-            { action: 'longPress', x: 471, y: 314 },
-            { action: 'moveTo', x: 467, y: 218 },
-            'release'
-        ]);
-    }
-
-    async invaildWalletName_InvaildSeedphraseToastHandle() {
-        await expect(this.walletnameinccorrectToastText).toBeDisplayed();
         await expect(this.incorrectWalletNameErrorMessageText).toBeDisplayed();
-        await expect(this.incorrectseedErrorMessageText).toBeDisplayed();
-
-        driver.touchAction([
-            { action: 'longPress', x: 471, y: 314 },
-            { action: 'moveTo', x: 467, y: 218 },
-            'release'
-        ]);
-
-
     }
 
 

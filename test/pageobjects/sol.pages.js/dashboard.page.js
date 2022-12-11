@@ -18,6 +18,16 @@ class DashBoardPage {
         return $('~');
     }
 
+    // Solana wallet Dashboard
+    get aptosWalletIcon() {
+        return $('(//android.view.ViewGroup[@content-desc="goToNeonWallet"])[1]/android.view.ViewGroup');
+    }
+
+    get neonWalletIcon() {
+        return $('(//android.view.ViewGroup[@content-desc="goToNeonWallet"])[2]/android.widget.ImageView');
+    }
+
+
     get menuTab() {
         return $('~solHomeDashboardBackIcon');
     }
@@ -47,24 +57,24 @@ class DashBoardPage {
         return $('~sendSolToken');
     }
     get solLogoDash() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]');
+        return $('//android.view.ViewGroup[@content-desc="SolHomeDashboard"]/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]');
     }
 
     get walletName() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[1]')
+        return $('//android.view.ViewGroup[@content-desc="SolHomeDashboard"]/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView[1]')
     }
 
     get holdlingValueText() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[2]');
+        return $('//android.view.ViewGroup[@content-desc="SolHomeDashboard"]/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView[2]')
     }
 
     get holdlingValueAmount() {
-        return $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView[3]');
+        return $('//android.view.ViewGroup[@content-desc="SolHomeDashboard"]/android.view.ViewGroup[1]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView[3]');
     }
     get() {
         return $('');
     }
-    
+
 
     get sendSolToken() {
         return $('~sendSolToken');
@@ -122,21 +132,21 @@ class DashBoardPage {
     }
 
 
-// Creat wallet In Create/View Wallet
+    // Creat wallet In Create/View Wallet
 
-get ceate_WalletBtn() {
-    return $('//android.view.ViewGroup[@content-desc="createSolWallet"]/android.widget.TextView');
-}
+    get create_WalletBtn() {
+        return $('~createSolWallet');
+    }
 
 
-    
+
     async verifySolDash() {
-        await this.devnetDash.waitForDisplayed({ timeout: 120000 })
+        await this.devnetDash.waitForDisplayed({ timeout: 60000 })
         await expect(this.devnetDash).toBeDisplayed();
     }
 
     async verifySolDashMainNet() {
-        await this.mainnetDash.waitForDisplayed({ timeout: 120000 })
+        await this.mainnetDash.waitForDisplayed({ timeout: 60000 })
         await expect(this.mainnetDash).toBeDisplayed();
     }
 
@@ -150,6 +160,14 @@ get ceate_WalletBtn() {
     async verifyCreate_Viewwallet() {
         await expect(this.create_Viewwallet).toBeDisplayed();
     }
+    async verify_AptoswalletIcon() {
+        await expect(this.aptosWalletIcon).toBeDisplayed();
+    }
+    async verify_NeonwalletIcon() {
+        await expect(this.neonWalletIcon).toBeDisplayed();
+    }
+
+
 
     // Display function
     async verifymenuoption() {
@@ -187,7 +205,8 @@ get ceate_WalletBtn() {
         await this.menuTab.click();
         await menutabsPage.dashboardNetworkTab.click();
         await menutabsPage.devNetworkTab.click();
-        await menutabsPage.menuCancelButton.click();
+        await menutabsPage.backBtnNetwork.click();
+        await menutabsPage.menuCloseButton.click();
         await browser.pause(5000)
 
         driver.touchAction([
@@ -196,50 +215,56 @@ get ceate_WalletBtn() {
             'release'
         ]);
     }
-    async mainNetworkChange() {
-        await (this.menuTab).waitForDisplayed({ timeout: 60000 });
-        await this.menuTab.click();
-        await menutabsPage.dashboardNetworkTab.click();
-        await menutabsPage.mainNetworkTab.click();
-        await menutabsPage.menuCancelButton.click();
-        await browser.pause(5000)
+   
 
-        driver.touchAction([
-            { action: 'longPress', x: 525, y: 172 },
-            { action: 'moveTo', x: 517, y: 628 },
-            'release'
-        ]);
+    async clickCreateWalletBtn() {
+        await (this.create_WalletBtn).waitForDisplayed({ timeout: 10000 });
+        await this.create_WalletBtn.click();
     }
-
 
     async clickCreate_View_Wallet() {
         await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
         await this.create_Viewwallet.click();
     }
 
+    get proccessingYourRequestText() {
+        const proccessingYourRequest = 'new UiSelector().text("Processing your request, Please wait!").className("android.widget.TextView")'
+        const proccessingYourRequest1 = $(`android=${proccessingYourRequest}`)
+        return proccessingYourRequest1;
+    }
+
     async clickFirst_Wallet() {
         await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
         await this.create_Viewwallet.click();
         await this.firstWallet.click();
+        await expect(this.proccessingYourRequestText).toBeDisplayed();
     }
     async clickSecond_Wallet() {
         await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
         await this.create_Viewwallet.click();
         await this.secondWallet.click();
+        await expect(this.proccessingYourRequestText).toBeDisplayed();
     }
     async clickThird_Wallet() {
         await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
         await this.create_Viewwallet.click();
         await this.thirdWallet.click();
+        await expect(this.proccessingYourRequestText).toBeDisplayed();
     }
     async clickFourth_Wallet() {
         await (this.create_Viewwallet).waitForDisplayed({ timeout: 10000 });
         await this.create_Viewwallet.click();
         await this.fourthWallet.click();
+        await expect(this.proccessingYourRequestText).toBeDisplayed();
     }
 
 
-    async() {
+    async verifyWalletName(walletname) {
+        await this.devnetDash.waitForDisplayed({ timeout: 60000 })
+        await expect(this.devnetDash).toBeDisplayed();
+        var name = await this.walletName.getText();
+        (name == walletname)
+       // await expect(walletname).toBeDisplayed();
     }
 
     async() {

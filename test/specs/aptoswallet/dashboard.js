@@ -1,13 +1,13 @@
-const loginPage = require("../pageobjects/login.page");
-const neondashboardPage = require("../pageobjects/neon.pages.js/neondashboard.page");
-const dashboardPage = require("../pageobjects/sol.pages.js/dashboard.page");
-const lend_borrowPage = require("../pageobjects/sol.pages.js/lend_borrow.page");
-const logutPage = require("../pageobjects/sol.pages.js/logut.page");
-const menutabsPage = require("../pageobjects/sol.pages.js/menutabs.page");
-const sendPage = require("../pageobjects/sol.pages.js/send.page");
-const stakePage = require("../pageobjects/sol.pages.js/stake.page");
-const swapPage = require("../pageobjects/sol.pages.js/swap.page");
-const CreateWalletPage = require('../pageobjects/sol.pages.js/createwallet.page');
+const loginPage = require("../../pageobjects/login.page");
+const neondashboardPage = require("../../pageobjects/neon.pages.js/neondashboard.page");
+const dashboardPage = require("../../pageobjects/sol.pages.js/dashboard.page");
+const lend_borrowPage = require("../../pageobjects/sol.pages.js/lend_borrow.page");
+const logutPage = require("../../pageobjects/sol.pages.js/logut.page");
+const menutabsPage = require("../../pageobjects/sol.pages.js/menutabs.page");
+const sendPage = require("../../pageobjects/sol.pages.js/send.page");
+const stakePage = require("../../pageobjects/sol.pages.js/stake.page");
+const swapPage = require("../../pageobjects/sol.pages.js/swap.page");
+const CreateWalletPage = require('../../pageobjects/sol.pages.js/createwallet.page');
 
 
 

@@ -6,10 +6,7 @@ class RemindMeLaterPage {
         return $('~openReminMeLater');
     }
 
-    open () {
-        return super.open('remindMeLaterBtn');
-    }
-    
+
     get skipNowBtn() {
         return $('~skipNow');
     }
@@ -48,6 +45,7 @@ class RemindMeLaterPage {
 
 
     async remindmelater() {
+
         await (await this.remindMeLaterBtn).waitForDisplayed({ timeout: 60000 });
         await expect(securenowPage.secureyourwalletText).toBeDisplayed();
         await expect(securenowPage.secureyourwalletDesText).toBeDisplayed();
@@ -56,11 +54,14 @@ class RemindMeLaterPage {
         await expect(this.skipYourAccountSecurityText).toBeDisplayed();
         await expect(this.pleaseAcceptTheConditionText).toBeDisplayed();
         await expect(await this.skipNowBtn).toBeDisabled();
+        await expect(this.checkBox).not.toBeChecked()
         await (await this.checkBox).click();
+       // await expect(this.checkBox).toBeSelected()
+        await expect(this.pleaseAcceptTheConditionText).not.toBeDisplayed();
         await expect(this.skipNowBtn).toBeEnabled();
         await expect(this.secureNowBtn).toBeDisplayed();
         await (await this.skipNowBtn).click();
-        await expect(this.pleaseEnsureText).toBeDisplayed();
+        //await expect(this.pleaseEnsureText).toBeDisplayed();
     }
 
 }

@@ -1,0 +1,10 @@
+Market Name = Mercurial 
+Market Token Name = USDT -> USDC 
+Market Name = Mercurial 
+Market Token Name = USDT -> USDC 
+Market Name = saber 
+Market Token Name = USDT -> USDC 
+Market Name = Raydium X saber 
+Market Token Name = USDC -> USDT 
+Market Name = Mercurial X Aldrin 
+Market Token Name = SOL -> mSOL -> USDC 

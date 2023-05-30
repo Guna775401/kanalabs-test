@@ -1,0 +1,4 @@
+Failed!
+Error: 503 : {"jsonrpc":"2.0","error":{"code":503,"message":"Service unavailable"}, "id": null}
+
+Error: failed to send transaction: Transaction simulation failed: Error processing Instruction 0: insufficient funds for instruction
